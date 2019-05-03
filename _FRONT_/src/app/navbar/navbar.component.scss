@@ -1,0 +1,74 @@
+/* SCSS NAVBAR */
+
+/* Unlist */
+.unlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    // width: 1000px;
+    margin: 0 auto;
+}
+
+/* Navigatie */
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    background: #000000;
+    min-height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    li { 
+        width: 150px; 
+        text-align: center;
+    }
+
+    a {
+        display: block;
+        padding: 1em 2em;
+        color: #ffffff;
+        background: #000000;
+        transition: .25s all ease-in-out;
+    }
+}
+
+.wrap:hover > li a { color: #999; }
+.wrap:hover > li a:hover { color: #ffffff; }
+
+.social {
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    padding: 15px 50px 0 0;
+    
+    li {
+        padding: 10px;
+    }
+
+    a {
+        color: #ffffff;
+        transition: .25s all ease-in-out;
+    }
+}
+
+.social:hover > li a { color: #999; }
+.social:hover > li a:hover { color: #ffffff; }
+
+
+
+
+
+
+
+
+
+
+
