@@ -1,4 +1,5 @@
 /* SCSS NAVBAR */
+@import "../../variables.scss";
 
 /* Unlist */
 .unlist {
@@ -8,7 +9,6 @@
 }
 
 .container {
-    // width: 1000px;
     margin: 0 auto;
 }
 
@@ -18,7 +18,7 @@ a {
 }
 
 .wrap {
-    background: #000000;
+    background: $Black;
     min-height: 50px;
     display: flex;
     justify-content: flex-start;
@@ -32,14 +32,14 @@ a {
     a {
         display: block;
         padding: 1em 2em;
-        color: #ffffff;
-        background: #000000;
+        color: $White;
+        background: $Black;
         transition: .25s all ease-in-out;
     }
 }
 
-.wrap:hover > li a { color: #999; }
-.wrap:hover > li a:hover { color: #ffffff; }
+.wrap:hover > li a { color: $Grey; }
+.wrap:hover > li a:hover { color: $White; }
 
 .social {
     right: 0;
@@ -47,20 +47,20 @@ a {
     justify-content: flex-end;
     position: absolute;
     top: 0;
-    padding: 15px 50px 0 0;
+    padding: 8px 50px 0 0;
     
     li {
         padding: 10px;
     }
 
     a {
-        color: #ffffff;
+        color: $White;
         transition: .25s all ease-in-out;
     }
 }
 
-.social:hover > li a { color: #999; }
-.social:hover > li a:hover { color: #ffffff; }
+.social:hover > li a { color: $Grey; }
+.social:hover > li a:hover { color: $White; }
 
 
 
