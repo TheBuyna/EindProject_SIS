@@ -5,7 +5,7 @@ Nieuws Website
 
 **Stap 1**
 
-Om Angular te laten werken moet jij de volgende commano uitvoeren in jouw angular directory(_FRONT_)
+Om Angular te laten werken moet jij de volgende commando uitvoeren in jouw angular directory(_FRONT_)
 
 ```
 npm install
