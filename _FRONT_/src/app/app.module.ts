@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TopNewsComponent } from './top-news/top-news.component';
+import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopNewsComponent
+    TopNewsComponent,
+    RightSidebarComponent
   ],
   imports: [
     BrowserModule
