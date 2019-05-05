@@ -5,7 +5,11 @@ Nieuws Website
 
 **Stap 1**
 
+<<<<<<< HEAD
 Om Angular te laten werken moet jij de volgende commando uitvoeren in jouw angular directory(_FRONT_)
+=======
+Om Angular te laten werken moet jij de volgende command uitvoeren in jouw angular directory(_FRONT_)
+>>>>>>> 5189ef6bd0d8428e9a709fbf80bf2763822b9372
 
 ```
 npm install
@@ -16,5 +20,65 @@ Dit installeert al uw dependent packages van angular en meer...
 
 Start jouw frontend server:
 ```
-ng server
+ng serve
 ```
+
+## Git
+
+### **Nieuwe branch voor nieuwe features/component**
+
+Als jij wilt iets nieuw inbouwen, maak een nieuwe branch. 
+```Commando
+git branch <<nieuw_Branch>>
+```
+
+> **TIP**:
+> Vergeet niet naar nieuwe branch te springen.
+> ```
+> git checkout <<nieuw_Branch>>
+> ```
+
+### **Commiten en Pushen**
+
+Wanneer jij commit doet, voeg jij de nieuwe veranderingen aan jij project. Dit kan handig zijn wanneer jij een bug of nog andere problemen tegen. Omdat later kunnen we version rollback doen naar laatste commit.
+
+Om te committen doe jij de volgende stappen:
+
+**Stap 1: git status**
+
+Check eerst welke files jij veradendering heeft gebracht:
+```
+git status
+```
+
+**Stap 2: git add**
+
+Jij kunt één per één jouw changes van jouw file toevoegen:
+```
+git add <<naam_file>>
+```
+Of gewoon alle changes in één keer:
+```
+git add .
+```
+
+Dit command voegt jij changes in jouw project naar de 'staging area'. Wanneer jij commit doet, al jouw changes in 'staging area' gaat dan committen.
+
+**Stap 3: git commit**
+
+Na al jouw changes toegevoegd te hebben naar de 'staging area', kan jij committen:
+```
+git commit -m "<<korte beschrijving van jouw changes>>"
+```
+
+**Stap 4: git push**
+
+Na elke commit kan jij ook pushen, maar ik zou aanraden om maar één keer per 1 dag/2 dagen.
+
+```
+git push origin <<huidege_Branch_naam>>
+```
+
+### **Merges en conflicten**
+
+Na elke meetings/springs gaan wij mergen. Hoe wij daat gaan doen, ben ik nog aan het opzoeken. :)
