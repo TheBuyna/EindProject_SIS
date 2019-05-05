@@ -28,7 +28,7 @@ Als jij wilt iets nieuw inbouwen, maak een nieuwe branch.
 git branch <<nieuw_Branch>>
 ```
 
-> [!TIP]
+> **TIP**:
 > Vergeet niet naar nieuwe branch te springen.
 > ```
 > git checkout <<nieuw_Branch>>
