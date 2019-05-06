@@ -1,0 +1,74 @@
+/* SCSS NAVBAR */
+@import "../../variables.scss";
+
+/* Unlist */
+.unlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+/* Navigatie */
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    background: $Black;
+    min-height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    li { 
+        width: 150px; 
+        text-align: center;
+
+        a {
+            display: block;
+            padding: 1em 2em;
+            color: $White;
+            background: $Black;
+            transition: .25s all ease-in-out;
+        }
+    }
+}
+
+.wrap:hover > li a { color: $Grey; }
+.wrap:hover > li a:hover { color: $White; }
+
+.social {
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    padding: 8px 50px 0 0;
+    
+    li {
+        padding: 10px;
+    }
+
+    a {
+        color: $White;
+        transition: .25s all ease-in-out;
+    }
+}
+
+.social:hover > li a { color: $Grey; }
+.social:hover > li a:hover { color: $White; }
+
+
+
+
+
+
+
+
+
+
+
