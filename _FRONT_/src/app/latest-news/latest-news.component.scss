@@ -1,0 +1,41 @@
+
+
+.latest-news-wrap {
+    width: 25%;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    .latest-news-title {
+        h3 {
+            text-transform: uppercase;
+        }
+    }
+     .latest-news-widgets {
+         a {
+            display: flex;
+            flex-direction: row;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            background-color: #DDD;
+            padding: 5px;
+        .lNews-image {
+            width: 30%;
+            margin: auto 0;
+            margin-right: 15px;
+            img {
+                width: 100%;
+            }
+        }
+        .lNews-text {
+            width: 70%;
+            span {
+                color: #707070;
+                text-transform: uppercase;
+            }
+            p {
+
+            }
+        }
+         }
+        
+    }
+}
