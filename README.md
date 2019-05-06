@@ -77,4 +77,27 @@ git push origin <<huidege_Branch_naam>>
 
 ### **Merges en conflicten**
 
-Na elke meetings/springs gaan wij mergen. Hoe wij daat gaan doen, ben ik nog aan het opzoeken. :)
+Na elke meetings/springs gaan wij mergen. 
+
+
+**Stap 1**
+
+Ga naar jouw branch die jij wenst te mergen. In dit geval naar _master_ branch.
+```
+git checkout master
+```
+
+**Stap 2**
+
+```
+git merge <<naam_branch_die_jij_wenst_te_mergen>>
+```
+
+**Stap 3**
+
+Los het eventuele conflicten op. 
+
+> **TIP**:
+> Gebruik Visual Studio Code terminal.
+> VSCode heeft handige feature om het gemakkelijker te maken.
+> ![Vscode merger conflict editor](https://i.stack.imgur.com/5QGkf.gif)
