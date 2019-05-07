@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFontAwesomeModule} from 'angular-font-awesome';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { HomeMainArticlesComponent } from './home-main-articles/home-main-articles.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
     RightSidebarComponent,
     NavbarComponent,
     FooterComponent,
-    ScrollTopComponent
+    ScrollTopComponent,
+    HomeMainArticlesComponent
   ],
   imports: [
     BrowserModule,
