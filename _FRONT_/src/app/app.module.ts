@@ -8,6 +8,7 @@ import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFontAwesomeModule} from 'angular-font-awesome';
 import { FooterComponent } from './footer/footer.component';
+import { HomeMainArticlesComponent } from './home-main-articles/home-main-articles.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     TopNewsComponent,
     RightSidebarComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeMainArticlesComponent
   ],
   imports: [
     BrowserModule,
