@@ -1,9 +1,9 @@
 @import "../../variables.scss";
 
 :host {
-  float: right;
-  width: 24%;
-  padding: 1em;
+  // float: left;
+  // width: 24%;
+  // padding: 1em;
 
   .right-sidebar {
     display: flex;
@@ -20,7 +20,7 @@
           width: 100%;
           color: #000;
           text-decoration: none;
-          font-size: .8em;
+          // font-size: .8em;
 
 
           .side-widget-img {
@@ -63,6 +63,7 @@
             }
 
             h2 {
+              font-size: 1em;
               padding-left: 1em;
               padding-right: 1em;
               margin-bottom: 0;

@@ -46,8 +46,7 @@
         position: absolute;
         left: 3vh;
         bottom: 1vh;
-
-
+        
         #main-text-category {
           font-weight: bold;
           padding: .4em;
@@ -55,6 +54,11 @@
           border-radius: 6px;
           z-index: 2;
           color: $White;
+        }
+
+        h2 {
+          margin-top: 1em;
+          font-size: 1.7em;
         }
       }
 
