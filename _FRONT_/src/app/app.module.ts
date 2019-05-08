@@ -10,6 +10,7 @@ import { AngularFontAwesomeModule} from 'angular-font-awesome';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { HomeMainArticlesComponent } from './home-main-articles/home-main-articles.component';
+import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeMainArticlesComponent } from './home-main-articles/home-main-articl
     NavbarComponent,
     FooterComponent,
     ScrollTopComponent,
-    HomeMainArticlesComponent
+    HomeMainArticlesComponent,
+    LatestNewsComponent
   ],
   imports: [
     BrowserModule,
