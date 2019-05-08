@@ -1,3 +1,4 @@
+@import "../../variables.scss";
 
 :host {
   float: right;
@@ -39,12 +40,12 @@
               position: absolute;
               top: 0;
               right: 0;
-              color: #FFF;
+              color: $Black;
 
               div {
                 margin: .5em .5em;
                 padding: 0.3em;
-                background: rgba(38, 50, 56, 1);
+                background: $BGrey_Lightest;
                 border-radius: 6px;
               }
             }
@@ -54,7 +55,7 @@
             padding-bottom: 1em;
 
             #main-text-category {
-              background: rgba(158, 158, 158, 1);
+              background: $BGrey;
               display: block;
               margin: 0;
               padding: .5em;

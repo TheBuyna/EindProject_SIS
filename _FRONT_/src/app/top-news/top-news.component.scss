@@ -1,3 +1,4 @@
+@import "../../variables.scss";
 
 #tNews-top-wrap {
   width: 100%;
@@ -49,11 +50,11 @@
 
         #main-text-category {
           font-weight: bold;
-          padding: 0.2em;
-          background: rgba(1,87,155 ,1);
+          padding: .4em;
+          background: $BGrey;
           border-radius: 6px;
           z-index: 2;
-          color: #FFF;
+          color: $White;
         }
       }
 
@@ -62,11 +63,12 @@
         right: 0;
         top: 0;
         display: flex;
+        color: $Black;
 
         div {
           margin: .5em .5em;
           padding: 0.3em;
-          background: rgba(38, 50, 56, 1);
+          background: $BGrey_Lightest;
           border-radius: 6px;
         }
       }
