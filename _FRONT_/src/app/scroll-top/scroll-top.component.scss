@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    background: $BGrey_Light;
+    border-radius: .2em;
+    padding: 0;
+}
+
+.show-scrollTop {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+
+.up {
+    font-size: 2em;
+    padding: 10px;
+  }

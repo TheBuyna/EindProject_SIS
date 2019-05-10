@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFontAwesomeComponent } from 'angular-font-awesome';
 
 @Component({
   selector: 'navbar',
@@ -9,7 +10,15 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public toggle : boolean = true;
+  
+  toggleEvent(event){
+    this.toggle = !this.toggle;
+    
+    console.log(this.toggle);
   }
-
+  
+  ngOnInit() {
+    
+  }
 }

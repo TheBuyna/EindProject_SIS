@@ -1,5 +1,8 @@
 @import "../../variables.scss";
 
+:host {
+    clear: both;
+}
 .unlist {
     list-style: none;
     padding: 0;
@@ -7,13 +10,15 @@
 }
 
 .foot {
+    width: 100%;
     background: $DarkGrey;
     min-height: 100px;
     color: $LightGrey;
-    bottom: 0;
     padding: 1em 1.5em;
     display: flex;
     position: relative;
+    left: 0;
+    
 }
 
 .foot-widget-left,

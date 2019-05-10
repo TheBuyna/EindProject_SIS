@@ -13,33 +13,96 @@
 }
 
 /* Navigatie */
-a {
-    text-decoration: none;
+
+// .hamburger { width: 100%; }
+a[href="#menu"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: $BGrey_Dark;
+    width: 60px;
+    margin-top: 7px;
+    font-size: 2rem;
+    text-align: center;
+    color: $White;
+    z-index: 1;
+}
+.sidenav {
+    z-index: 800;
+    transition: left .25s ease-in-out;
+
+    ul {
+        position: absolute;
+        z-index: 5;
+        margin-top: 50px;
+        position: fixed;
+        height: 100vh;
+
+        li { border-bottom: 1px solid $DimGrey; }
+        li:last-child { border-bottom: 0; }
+    }
+
+    a { display: block; }
 }
 
+.menu-wrap { 
+    margin-left: 50px; 
+    background: $BGrey;
+    width: 300px;
+
+    li { 
+        padding: 1em 0 1em; 
+        margin-left: 15px;
+    }
+
+    a { color: $White; }
+    a:hover { color: $Grey; }
+}
+.social-wrap {
+    background: $DarkGrey;
+    width: 50px;
+
+    a { 
+        color: $Grey;
+        padding: .5em;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    a:hover { color: $White; }
+}
+
+a { text-decoration: none; }
+
 .wrap {
-    background: $Black;
+    background: $BGrey_Dark;
     min-height: 50px;
     display: flex;
     justify-content: flex-start;
     position: relative;
+    padding-left: 50px;
 
     li { 
         width: 150px; 
         text-align: center;
-    }
 
-    a {
-        display: block;
-        padding: 1em 2em;
-        color: $White;
-        background: $Black;
-        transition: .25s all ease-in-out;
+        a {
+            display: block;
+            padding: 1em 2em;
+            color: $White;
+            background: $BGrey_Dark;
+            transition: .25s all ease-in-out;
+        }
     }
 }
 
-.wrap:hover > li a { color: $Grey; }
-.wrap:hover > li a:hover { color: $White; }
+.wrap:hover > li a { 
+    color: $Grey; 
+}
+.wrap:hover > li a:hover { 
+    background: $BGrey_Darker;
+    color: $White; 
+}
 
 .social {
     right: 0;
@@ -60,8 +123,12 @@ a {
     }
 }
 
-.social:hover > li a { color: $Grey; }
-.social:hover > li a:hover { color: $White; }
+.social:hover > li a { 
+    color: $Grey; 
+}
+.social:hover > li a:hover {
+     color: $White; 
+    }
 
 
 
