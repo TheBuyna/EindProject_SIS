@@ -1,11 +1,11 @@
 # EindProject_SIS
 Nieuws Website
 
-## Setup
-
+## Setup 
+### **Angular(_FRONT_)**
 **Stap 1**
 
-Om Angular te laten werken moet jij de volgende command uitvoeren in jouw angular directory(_FRONT_)
+Voor frontend gebruiken wij Angular. Om Angular te laten werken moet jij de volgende command uitvoeren in jouw angular directory(_FRONT_)
 
 ```
 npm install
@@ -17,6 +17,24 @@ Dit installeert al uw dependent packages van angular en meer...
 Start jouw frontend server:
 ```
 ng serve
+```
+
+### **Symfony 4(_BACK_)**
+**Stap 1**
+> **TIP**:
+> Jij moet eerst [Composer](https://getcomposer.org/download/) package manager globaal installeren.
+
+Voor backend gebruiken wij Symfony 4. Om Symfony te laten werken moet jij de volgende command uitvoeren in jouw symfony directory(_BACK_)
+```
+composer install
+```
+Dit installeert al je nodige packages.
+
+**Stap 2**
+
+Start jouw backend server:
+```
+php bin/console server:run
 ```
 
 ## Git
@@ -36,7 +54,7 @@ git branch <<nieuw_Branch>>
 
 ### **Commiten en Pushen**
 
-Wanneer jij commit doet, voeg jij de nieuwe veranderingen aan jij project. Dit kan handig zijn wanneer jij een bug of nog andere problemen tegen. Omdat later kunnen we version rollback doen naar laatste commit.
+Wanneer jij commit doet, voeg jij de nieuwe veranderingen aan jij project. Dit kan handig zijn wanneer jij een bug of nog andere problemen tegen komt. Omdat later kunnen we version rollback doen naar laatste commit.
 
 Om te committen doe jij de volgende stappen:
 
