@@ -1,5 +1,5 @@
   <div id="tNews-top-wrap" class="row">
-    <div id="tNews-main" class="col-sm-12 col-lg-6 col-md-6 col-xl-3 col-12">
+    <!-- <div id="tNews-main" class="col-sm-12 col-lg-6 col-md-6 col-xl-3 col-12">
       <a href="#">
         <div class="tNews-main-img">
           <img src="../../assets/images/example1.jpg" alt="noImage">
@@ -74,6 +74,28 @@
         <div class="tNews-main-text">
           <span id="main-text-category">Business</span>
           <h2>Google’s Alphabet rollout could still be a Qwikster-like farce</h2>
+        </div>
+        <div class="tNews-main-info">
+          <div class="main-info-views">
+            <i class="fa fa-eye"></i>
+            <span class="info-view-text">233.3K</span>
+          </div>
+          <div class="main-info-comm">
+            <i class="fa fa-comment"></i>
+            <span class="info-comm-text">23</span>
+          </div>
+        </div>
+      </a>
+    </div> -->
+    <div id="tNews-main" class="col-sm-12 col-lg-6 col-md-6 col-xl-3 col-12" *ngFor="let article of allArticles | slice:0:4; let i=index">
+      <a href="{{article.url}}" >
+        <div class="tNews-main-img">
+          <img src="{{article.urlToImage}}" alt="noImage">
+        </div>
+        <div id="main-text-bg"></div>
+        <div class="tNews-main-text">
+          <span id="main-text-category">Business</span>
+          <h2>{{article.title}}</h2>
         </div>
         <div class="tNews-main-info">
           <div class="main-info-views">

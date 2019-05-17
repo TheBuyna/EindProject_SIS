@@ -2,16 +2,18 @@
   <div class="latest-news-title">
     <h3>Latest news</h3>
   </div>
-  <div class="latest-news-widgets"><a>
+  <div class="latest-news-widgets"*ngFor="let article of allArticles">
+    <a>
       <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
+        <img src="{{article.urlToImage}}">
       </div>
       <div class="lNews-text">
         <span  id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
+        <p>{{article.title}}</p>
       </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
+    </a>
+  </div>
+  <!-- <div class="latest-news-widgets"><a>
       <div class="lNews-image">
         <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
       </div>
@@ -100,5 +102,5 @@
         <span id="main-text-category">tech</span>
         <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
       </div>
-    </a></div>
+    </a></div> -->
 </div>
