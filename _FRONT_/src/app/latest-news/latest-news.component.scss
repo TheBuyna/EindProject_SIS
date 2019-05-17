@@ -1,14 +1,25 @@
 @import "../../variables.scss";
 
 :host {
+
+  .latest-news-title {
+    h3 {
+      font-size: 1.68rem;
+    }
+  }
     .latest-news-wrap {
-    
+      background: var(--background-color);
+      color: var(--text-color);
+      transition: .5s ease-in-out;
+
       .latest-news-widgets {
+        border-bottom: 1px solid $LightGrey;
+        padding: 0 5px;
+
         a {
           display: flex;
           flex-direction: row;
           margin: .3em 0;
-          background-color: #DDD;
           padding: 5px;
           font-size: .7em;
     
@@ -30,13 +41,15 @@
             width: 60%;
     
             #main-text-category {
-              background: $BGrey;
+              color: $LightGrey;
               display: block;
               margin: 0;
               padding: .5em;
-              font-weight: bold;
+              // font-weight: bold;
               text-transform: uppercase;
             }
+
+            p { padding-left: .5em; }
           }
         }
         &:hover {

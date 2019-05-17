@@ -11,14 +11,15 @@
 
 .foot {
     width: 100%;
-    background: $DarkGrey;
+    background: var(--footer-main);
     min-height: 100px;
     color: $LightGrey;
     padding: 1em 1.5em;
     display: flex;
     position: relative;
     left: 0;
-    
+    transition: .5s ease-in-out;
+    // border-top: 1px solid $DarkGrey;
 }
 
 .foot-widget-left,
@@ -26,8 +27,7 @@
 .foot-widget-right {
     width: 33%;
     padding: 20px;
-
-    h3 { color: $White; }
+    border-top: 1px solid $DarkGrey;
 }
 
 .social {
@@ -64,15 +64,16 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background: $BGrey;
+    background: var(--footer-bottom);
     width: 100%;
-    height: 30px;
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid $BGrey;
+    transition: .5s all ease-in-out;
 }
 
 .foot-bottom-text {
-    padding: 0 1em;
+    padding-left: 44px;
     font-size: .8em;
 
     p { margin: 8px 0; }

@@ -1,4 +1,13 @@
 
+:root {
+    --primary-color: $BodyGrey; // white
+    --background-color: $BodyGrey; // light grey
+    --text-color: $Black; // dark grey
+    --footer-main: $DarkGrey;
+    --footer-bottom: $BGrey;
+  }
+
+
 $Black: #000000;
 $White: #ffffff;
 $Grey:#999;
@@ -6,6 +15,8 @@ $DarkGrey: #444444;
 $LightGrey: #8D8D8D;
 $DimGrey: #555555;
 $BGrey: #333333;
+$BodyGrey: #EEEEEE;
+$LighterGrey: #DDDDDD;
 
 /*TEAL THEME*/
 $Teal: #009688;
@@ -26,7 +37,7 @@ $Indigo_Darker: #283593;
 $Indigo_Darkest: #1A237E;
 
 /*BLUE GREY THEME*/
-$BGrey: #607D8B;
+$B-Grey: #607D8B;
 $BGrey_Light: #78909C;
 $BGrey_Lighter: #B0BEC5;
 $BGrey_Lightest: #CFD8DC;

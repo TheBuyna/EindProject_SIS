@@ -4,10 +4,18 @@
   // float: left;
   // width: 50%;
 
+  .main-small-widget-title {
+    h3 {
+      font-size: 1.68rem;
+    }
+  }
+
   .feature-article-widget {
     display: flex;
     flex-direction: column;
-
+    background: var(--background-color);
+    padding: 15px;
+    transition: .5s all ease-in-out;
 
     img {
       display: block;
@@ -24,25 +32,28 @@
       right: 0;
       color: $Black;
 
-      div {
-        margin: .5em .5em;
-        padding: 0.3em;
-        background: $BGrey_Lightest;
-        border-radius: 6px;
+      div { 
+        color: $White; 
+        font-size: .8em;
       }
+
+      span { padding: 0 4px; }
     }
 
     #main-text-category {
-      background: $BGrey;
+      // background: $BGrey;
+      color: $LightGrey;
       display: block;
       margin: 0;
-      padding: .5em;
-      font-weight: bold;
+      padding: 0 .5em;
+      text-transform: uppercase;
+      // font-weight: bold;
     }
 
     .feature-small-widget-wrap {
       display: flex;
-      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+      background: var(--background-color);
+      border-bottom: 1px solid $LightGrey;
       padding-bottom: 0;
       justify-content: space-between;
 
@@ -51,7 +62,7 @@
         margin: .2em;
         margin-bottom: 1em;
         padding-bottom: 0;
-        background: $White;
+        background: var(--background-color);
         // border: 1px solid $Black;
 
         a {
@@ -68,13 +79,15 @@
 
           .main-feature-small-text {
             padding-bottom: 1em;
+            background: var(--background-color);
+            color: var(--text-color);
 
             h2 {
-              padding: .2em;
-              padding-right: 1em;
-              padding-bottom: 0;
-              margin-bottom: 0;
-              margin-top: 0;
+              // padding: .2em;
+              // padding-right: 1em;
+              // padding-bottom: 0;
+              // margin-bottom: 0;
+              // margin-top: 0;
               font-weight: normal;
               font-size: 1em;
             }
@@ -94,13 +107,17 @@
     .feature-big-widget-wrap {
       margin-top: 1em;
 
+      div:last-child { border-bottom: none; }
+
       .feature-big-widget-article {
+        border-bottom: 1px solid $LighterGrey;
+
         a {
           display: flex;
           text-decoration: none;
-          color: #000;
+          color: var(--text-color);
           margin: 1em 0;
-          background: $White;
+          background: var(--background-color);
 
           .main-feature-big-img {
             overflow: hidden;
@@ -115,13 +132,15 @@
 
           .main-feature-big-text {
               width: 60%;
+              transition: .5s all ease-in-out;
+
             h2 {
-              font-size: 1.3em;
-              padding-left: 1em;
+              font-size: 1em;
+              padding-left: .5em;
             }
 
             p {
-              padding-left: 1em;
+              padding-left: .5em;
               font-size: .8em;
             }
           }
