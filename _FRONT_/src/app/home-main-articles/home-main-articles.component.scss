@@ -63,7 +63,7 @@
           .main-feature-small-img {
             overflow: hidden;
             position: relative;
-            max-height: 50%;
+            height: 50%;
           }
 
           .main-feature-small-text {
@@ -83,7 +83,7 @@
           &:hover {
             .main-feature-small-img {
               img {
-                transform: scale(1.3);
+                transform: scale(1.1);
               }
             }
           }
@@ -131,7 +131,7 @@
           &:hover {
             .main-feature-big-img {
               img {
-                transform: scale(1.3);
+                transform: scale(1.1);
               }
             }
           }

@@ -113,17 +113,24 @@ class SecurityController extends AbstractController
         $user = $this->getUser();
         $data = json_decode($request->getContent(),true);
         $oldPassword = $data["oldPassword"];
+        $newPlainPassword = $data["plainNewPassword"];
 
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
-            $newEncodedPassword = $passwordEncoder->encodePassword($user, $data['plainNewPassword']);
-            $user->setPassword($newEncodedPassword);
+            $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
+            if ($oldPassword !== $newPlainPassword) {
+                $user->setPassword($newEncodedPassword);
 
-            $em->persist($user);
-            $em->flush();
+                $em->persist($user);
+                $em->flush();
 
-            return new JsonResponse([
-                "success" => "You changed your password successfully!"
-            ], 200);
+                return new JsonResponse([
+                    "success" => "You changed your password successfully!"
+                ], 200);
+            } else {
+                return new JsonResponse([
+                    "error" => 'New password cant be the same as old one!'
+                ], 500);
+            }
 
         } else {
             return new JsonResponse([
