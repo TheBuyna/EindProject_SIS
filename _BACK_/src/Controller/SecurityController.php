@@ -86,10 +86,7 @@ class SecurityController extends AbstractController
                 ->setCity($city)
                 ->setTelephone($telephone)
                 ->setPostalCode($postalCode)
-                ->setPassword($passwordEncoder->encodePassword(
-                    $user,
-                    $plainPassword
-                ));
+                ->setPassword($passwordEncoder->encodePassword($user, $plainPassword));
             $em->persist($user);
             $em->flush();
         } catch (\Exception $exception) {
@@ -102,13 +99,49 @@ class SecurityController extends AbstractController
         ], 200);
     }
 
+
     /**
-     * @Route("/apiCheck", name="api_auth_login")
-//     * @return Response
+     * @Route("/api/resetPassword", name="password_reset_api", methods={"POST"})
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function apiResetPassword(Request $request,UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $em)
+    {
+//        dd($this->getUser());
+        $user = $this->getUser();
+        $data = json_decode($request->getContent(),true);
+        $oldPassword = $data["oldPassword"];
+
+        if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
+            $newEncodedPassword = $passwordEncoder->encodePassword($user, $data['plainNewPassword']);
+            $user->setPassword($newEncodedPassword);
+
+            $em->persist($user);
+            $em->flush();
+
+            return new JsonResponse([
+                "success" => "You changed your password successfully!"
+            ], 200);
+
+        } else {
+            return new JsonResponse([
+                "error" => 'Old password is incorrect!'
+            ], 500);
+        }
+//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
+    }
+
+    /**
+     * @Route("/apiCheck")
+     * @return Response
      */
     public function apiLogin()
     {
-//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
-        dd($this->getUser());
+        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
+//        dd($this->getUser());
     }
+
+
 }
