@@ -17,7 +17,7 @@ export class HomeMainArticlesComponent implements OnInit {
 
   get_articles(search: string) {
     this.articleService.get_article(search).subscribe((result) => {
-        this.allArticles = result.articles;
+        this.allArticles = result["articles"];
          console.log(result);
     });
   }

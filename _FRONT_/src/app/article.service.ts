@@ -17,8 +17,9 @@ export class ArticleService {
       return this.http.get(articles);
    }
 
-   get_top_headlines(country: string){
-     let headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + '&language=nl&apiKey=' + this.API_KEY;
+   get_top_headlines(country: string, category: string = null){
+// tslint:disable-next-line: max-line-length
+     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + '&apiKey=' + this.API_KEY;
      return this.http.get(headLineArticle);
    }
 
