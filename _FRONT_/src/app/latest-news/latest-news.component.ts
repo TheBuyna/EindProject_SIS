@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ArticleService } from '../article.service';
+
 @Component({
   selector: 'app-latest-news',
   templateUrl: './latest-news.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articleService:ArticleService) { }
 
   ngOnInit() {
+    this.get_articles();
   }
 
+  get_articles() {
+    this.articleService.get_top_headlines('nl').subscribe((result) => {
+        this.allArticles = result.articles;
+         console.log(result);
+    });
+  }
 }

@@ -12,6 +12,9 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { HomeMainArticlesComponent } from './home-main-articles/home-main-articles.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ArticleService } from './article.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +29,12 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ArticleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
