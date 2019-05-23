@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../article.service';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-right-sidebar',
@@ -8,7 +8,7 @@ import { ArticleService } from '../article.service';
 })
 export class RightSidebarComponent implements OnInit {
 
-  constructor(private articleService:ArticleService) { }
+  constructor(private articleService: ArticleService) { }
 
   allArticles;
   ngOnInit() {
@@ -17,8 +17,7 @@ export class RightSidebarComponent implements OnInit {
 
   get_articles(category: string, country: string) {
     this.articleService.get_article_category(category, country).subscribe((result) => {
-        this.allArticles = result["articles"];
-         console.log(result);
+        this.allArticles = result['articles'];
     });
   }
 

@@ -30,7 +30,9 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.themeService.toggleLight();
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {

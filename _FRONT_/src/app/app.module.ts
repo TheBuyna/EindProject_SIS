@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { ArticleService } from './article.service';
+import { ArticleService } from './services/article.service';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,13 @@ import { ArticleService } from './article.service';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UiSwitchModule
   ],
   providers: [
     ArticleService
-    FormsModule,
-    ReactiveFormsModule,
-    UiSwitchModule,
   ],
   bootstrap: [AppComponent]
 })

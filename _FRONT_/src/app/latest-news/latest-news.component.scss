@@ -39,6 +39,8 @@
     
           .lNews-text {
             width: 60%;
+            background: var(--background-color);
+            color: var(--text-color);
     
             #main-text-category {
               color: $LightGrey;
@@ -48,7 +50,8 @@
               text-transform: uppercase;
             }
 
-            p { padding-left: .5em; }
+            p { 
+              padding-left: .5em; }
           }
         }
         &:hover {

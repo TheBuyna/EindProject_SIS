@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ArticleService } from '../article.service';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-home-main-articles',
@@ -17,8 +17,7 @@ export class HomeMainArticlesComponent implements OnInit {
 
   get_articles(search: string) {
     this.articleService.get_article(search).subscribe((result) => {
-        this.allArticles = result["articles"];
-         console.log(result);
+        this.allArticles = result['articles'];
     });
   }
 }

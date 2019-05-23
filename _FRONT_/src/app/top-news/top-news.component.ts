@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ArticleService } from '../article.service';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-top-news',
@@ -9,17 +9,16 @@ import { ArticleService } from '../article.service';
 })
 export class TopNewsComponent implements OnInit {
 
-  constructor(private articleService:ArticleService) { }
+  constructor(private articleService: ArticleService) { }
 
-  allArticles:any;
+  allArticles: any;
   ngOnInit() {
     this.get_articles();
   }
 
   get_articles() {
     this.articleService.get_top_headlines('us').subscribe((result) => {
-        this.allArticles = result["articles"];
-         console.log(result);
+        this.allArticles = result['articles'];
     });
   }
 }
