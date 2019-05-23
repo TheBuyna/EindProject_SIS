@@ -17,9 +17,9 @@ export class ArticleService {
       return this.http.get(articles);
    }
 
-   get_top_headlines(country: string, category: string = null){
+   get_top_headlines(country: string, category: string = null, pageLimit: number = null){
 // tslint:disable-next-line: max-line-length
-     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + '&apiKey=' + this.API_KEY;
+     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + '&apiKey=' + this.API_KEY;
      return this.http.get(headLineArticle);
    }
 
