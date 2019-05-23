@@ -3,14 +3,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import "variables.scss";
 
+html {
+    background: $BodyGrey;
+}
 body {
     box-sizing: border-box;
-    background: #EEE;
+    background: var(--primary-color);
+    color: var(--text-color);
     margin: 0;
     font-family: 'Roboto Slab', Helvetica, sans-serif;
+    transition: .5s ease-in-out;
 }
 
 .containerCustom {
     width: 80%; 
     margin: 0 auto;
 }
+
