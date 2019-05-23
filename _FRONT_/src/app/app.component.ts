@@ -14,7 +14,6 @@ export class AppComponent {
   
   theme = "light";
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService) {}
   
-  }
 }

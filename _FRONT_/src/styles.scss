@@ -3,7 +3,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import "variables.scss";
 
-
+html {
+    background: $BodyGrey;
+}
 body {
     box-sizing: border-box;
     background: var(--primary-color);
@@ -17,3 +19,4 @@ body {
     width: 80%; 
     margin: 0 auto;
 }
+
