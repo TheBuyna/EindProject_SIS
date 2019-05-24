@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleService } from './services/article.service';
 import { CategoryComponent } from './category/category.component';
+import { ImagePreloadDirective } from './image-preload.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryComponent } from './category/category.component';
     ScrollTopComponent,
     HomeMainArticlesComponent,
     LatestNewsComponent,
-    CategoryComponent
+    CategoryComponent,
+    ImagePreloadDirective
   ],
   imports: [
     CommonModule,

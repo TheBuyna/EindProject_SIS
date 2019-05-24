@@ -8,7 +8,7 @@
     <div class="side-widget" *ngFor="let article of allArticles | slice:0:10;">
       <a href="{{article.url}}" target="_blank">
         <div class="side-widget-img">
-          <img src="{{article.urlToImage}}" alt="noImage">
+          <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
           <div class="poNews-info">
             <div class="info-views">
               <i class="fa fa-eye"></i>
