@@ -14,6 +14,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleService } from './article.service';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ArticleService } from './article.service';
     FooterComponent,
     ScrollTopComponent,
     HomeMainArticlesComponent,
-    LatestNewsComponent
+    LatestNewsComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
