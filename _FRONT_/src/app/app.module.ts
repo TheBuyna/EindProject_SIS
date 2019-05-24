@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleService } from './services/article.service';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ArticleService } from './services/article.service';
     FooterComponent,
     ScrollTopComponent,
     HomeMainArticlesComponent,
-    LatestNewsComponent
+    LatestNewsComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
