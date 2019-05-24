@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ArticleService } from "../services/article.service";
+
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articleService:ArticleService) { }
 
+  allArticles
   ngOnInit() {
+    this.get_articles();
   }
 
+  get_articles() {
+    this.articleService.get_top_headlines('be', 'business')
+  }
 }
