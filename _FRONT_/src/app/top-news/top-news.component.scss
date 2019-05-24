@@ -56,9 +56,6 @@
         
         #main-text-category {
           font-weight: bold;
-          padding: .4em;
-          background: $BGrey;
-          border-radius: 6px;
           z-index: 2;
           color: $White;
         }
@@ -77,11 +74,14 @@
         color: $Black;
 
         div {
-          margin: .5em .5em;
+          // margin: .5em .5em;
           padding: 0.3em;
-          background: $BGrey_Lightest;
-          border-radius: 6px;
+          // background: $BGrey_Lightest;
+          color: $White;
+          font-size: .8em;
         }
+
+        span { padding-left: 4px; }
       }
 
       &:hover {

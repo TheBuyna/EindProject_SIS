@@ -1,21 +1,22 @@
-<div>
-  <nav id="mainnav">
+
+  <nav class="mainnav">
     <!-- <div> -->
-      <div class="hamburger" (click)="toggleEvent($event)" >
-        <a routerLink="#menu" class="menu">
+    <div>
+      <div class="hamburger" (click)="toggleEvent($event)">
+        <a href="#menu" class="menu">
           <span class="fa fa-reorder"></span>
         </a>
       </div>
       <div class="sidenav" [hidden]="toggle">
         <div>
             <ul class="social-wrap unlist">
-              <li><a routerLink="#" title=""><span class="fa fa-facebook"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-twitter"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-google-plus"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-instagram"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-linkedin"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-youtube"></span></a></li>
-              <li><a routerLink="#" title=""><span class="fa fa-pinterest"></span></a></li>
+              <li class="facebook"><a href="#" title=""><span class="fa fa-facebook"></span></a></li>
+              <li class="twitter"><a href="#" title=""><span class="fa fa-twitter"></span></a></li>
+              <li class="google"><a href="#" title=""><span class="fa fa-google-plus"></span></a></li>
+              <li class="instagram"><a href="#" title=""><span class="fa fa-instagram"></span></a></li>
+              <li class="linkedin"><a href="#" title=""><span class="fa fa-linkedin"></span></a></li>
+              <li class="youtube"><a href="#" title=""><span class="fa fa-youtube"></span></a></li>
+              <li class="pinterest"><a href="#" title=""><span class="fa fa-pinterest"></span></a></li>
               </ul>
         </div>
         <div>
@@ -28,22 +29,27 @@
         </ul>
         </div>
       </div>
+    </div>
     <!-- </div> -->
-    <ul class="unlist wrap">
-        <li><a routerLink="#" title="">HOME</a></li>
-        <li><a routerLink="#" title="">FEATURES</a></li>
-        <li><a routerLink="#" title="">BUY</a></li>
-        <li><a routerLink="#" title="">SPORTS</a></li>
-        <li><a routerLink="#" title="">SHOP</a></li>
-    </ul>
-
-    <ul class="unlist social">
-      <li><a routerLink="#" title=""><span class="fa fa-facebook"></span></a></li>
-      <li><a routerLink="#" title=""><span class="fa fa-twitter"></span></a></li>
-      <li><a routerLink="#" title=""><span class="fa fa-google-plus"></span></a></li>
-  </ul>
+    <div class="mainmenu">
+      <ul class="unlist wrap">
+          <li><a href="#" title="">HOME</a></li>
+          <li><a href="#" title="">FEATURES</a></li>
+          <li><a href="#" title="">BUY</a></li>
+          <li><a href="#" title="">SPORTS</a></li>
+          <li><a href="#" title="">SHOP</a></li>
+      </ul>
+    </div>
+    <div>
+        <ui-switch size="small" color="#FFCC00" [formControl]="darkTheme" class="darkmode"></ui-switch>
+    </div>
+    <div class="handle">Menu</div>
   </nav>
-  <div>
-    
-  </div>
+
+<div class="icon-bar" [hidden]="!toggle">
+    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+    <a href="#" class="google"><i class="fa fa-google"></i></a> 
+    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
 </div>

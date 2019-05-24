@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'news-site';
+
+  darkTheme =  new FormControl(false);
+  
+  theme = "light";
+
+  constructor(private themeService: ThemeService) {}
+  
 }

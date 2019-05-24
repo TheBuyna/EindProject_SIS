@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ArticleService } from '../article.service';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-latest-news',
@@ -18,8 +18,7 @@ export class LatestNewsComponent implements OnInit {
 
   get_articles() {
     this.articleService.get_top_headlines('us', 'entertainment').subscribe((result) => {
-        this.allArticles = result["articles"];
-         console.log(result);
+        this.allArticles = result['articles'];
     });
   }
 }

@@ -14,30 +14,36 @@
 
 /* Navigatie */
 
-// .hamburger { width: 100%; }
+.darkmode { 
+    top: 0;
+    right: 0;
+    padding: 1em; 
+}
+
 a[href="#menu"] {
     position: absolute;
     top: 0;
     left: 0;
     display: block;
-    background: $BGrey_Dark;
+    background: $Black;
     width: 60px;
-    margin-top: 7px;
+    margin-top: 5px;
     font-size: 2rem;
     text-align: center;
     color: $White;
-    z-index: 1;
+    z-index: 200;
 }
 .sidenav {
     z-index: 800;
-    transition: left .25s ease-in-out;
+    
 
     ul {
         position: absolute;
         z-index: 5;
-        margin-top: 50px;
+        margin-top: 56px;
         position: fixed;
         height: 100vh;
+        transition: right .5s ease-in-out;
 
         li { border-bottom: 1px solid $DimGrey; }
         li:last-child { border-bottom: 0; }
@@ -48,7 +54,7 @@ a[href="#menu"] {
 
 .menu-wrap { 
     margin-left: 50px; 
-    background: $BGrey;
+    background: $DarkGrey;
     width: 300px;
 
     li { 
@@ -59,11 +65,20 @@ a[href="#menu"] {
     a { color: $White; }
     a:hover { color: $Grey; }
 }
+
+ui-switch {
+    position: fixed;
+    z-index: 500;
+
+    .checked[_ngcontent-hic-c8] { background: #FFCC00; }
+}
+
 .social-wrap {
-    background: $DarkGrey;
+    background: $DimGrey;
     width: 50px;
 
     a { 
+        width: 100%;
         color: $Grey;
         padding: .5em;
         text-align: center;
@@ -72,14 +87,22 @@ a[href="#menu"] {
     a:hover { color: $White; }
 }
 
+.facebook:hover { background: #3B5998; }
+.twitter:hover { background: #55ACEE; }
+.google:hover { background: #DD4B39; }
+.instagram:hover { background: #3F729B; }
+.linkedin:hover { background: #007BB5; }
+.youtube:hover { background: #BB0000; }
+.pinterest:hover { background: #C8232C; }
+
 a { text-decoration: none; }
 
 .wrap {
-    background: $BGrey_Dark;
+    position: relative;
+    background: $Black;
     min-height: 50px;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
+    justify-content: center;
     padding-left: 50px;
 
     li { 
@@ -90,7 +113,7 @@ a { text-decoration: none; }
             display: block;
             padding: 1em 2em;
             color: $White;
-            background: $BGrey_Dark;
+            background: $Black;
             transition: .25s all ease-in-out;
         }
     }
@@ -100,36 +123,54 @@ a { text-decoration: none; }
     color: $Grey; 
 }
 .wrap:hover > li a:hover { 
-    background: $BGrey_Darker;
     color: $White; 
 }
 
-.social {
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
+.handle {
     position: absolute;
+    width: 100%;
+    box-sizing: border-box;
     top: 0;
-    padding: 8px 50px 0 0;
-    
-    li {
-        padding: 10px;
-    }
+    left: 0;
+    color: $White;
+    font-size: 1.3em;
+    text-align: center;
+    padding-top: .5em;
+    z-index: -100;
 
-    a {
-        color: $White;
-        transition: .25s all ease-in-out;
-    }
 }
 
-.social:hover > li a { 
-    color: $Grey; 
-}
-.social:hover > li a:hover {
-     color: $White; 
+.icon-bar {
+    position: fixed;
+    background: $Black;
+    top: calc(50% - 150px);
+    right: 0;
+    z-index: 800;
+    // -webkit-transform: translateY(-50%);
+    // -ms-transform: translateY(-50%);
+    // transform: translateY(-50%);
+  }
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+
+@media screen and (max-width: 860px) {
+    .wrap {
+        li { display: none; } 
     }
 
+    a[href="#menu"] { margin-top: 0; }
 
+    .handle { z-index: 100; }
+    .sidenav ul { margin-top: 50px; }
+    .icon-bar { display: none; }
+}
 
 
 
