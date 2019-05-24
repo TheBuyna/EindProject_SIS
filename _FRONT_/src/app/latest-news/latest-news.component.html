@@ -3,7 +3,7 @@
 </div>
 <div class="latest-news-wrap">
   <div class="latest-news-widgets"*ngFor="let article of allArticles">
-    <a>
+    <a href="{{article.url}}" target="_blank">
       <div class="lNews-image">
         <img src="{{article.urlToImage}}">
       </div>
