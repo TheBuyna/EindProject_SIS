@@ -1,6 +1,18 @@
 /* SCSS NAVBAR */
 @import "../../variables.scss";
 
+.brand {
+    height: 50px;
+    z-index: 800;
+    .navbar-brand {
+        padding: 1em;
+    
+        img {
+            height: 100%;
+        }
+    }
+}
+
 /* Unlist */
 .unlist {
     list-style: none;
