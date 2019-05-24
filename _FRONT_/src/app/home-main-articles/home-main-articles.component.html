@@ -6,7 +6,7 @@
 <div class="feature-article-widget">
   <div class="feature-small-widget-wrap">
     <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:0:3;">
-      <a href="{{article.url}}">
+      <a href="{{article.url}}" target="_blank">
         <div class="main-feature-small-img">
           <img src="{{article.urlToImage}}" alt="noImage">
           <div class="feNews-info">
@@ -29,7 +29,7 @@
   </div>
   <div class="feature-big-widget-wrap">
     <div class="feature-big-widget-article" *ngFor="let article of allArticles">
-      <a href="{{article.url}}">
+      <a href="{{article.url}}" target="_blank">
           <div class="main-feature-big-img">
               <img src="{{article.urlToImage}}" alt="noImage">
               <div class="feNews-info">
