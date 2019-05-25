@@ -13,10 +13,12 @@ export class CategoryComponent implements OnInit {
 
   allArticles
   ngOnInit() {
-    this.get_articles();
+    this.get_articles('busines', 'fr');
   }
 
-  get_articles() {
-    this.articleService.get_top_headlines('be', 'business')
+  get_articles(category: string, country: string) {
+    this.articleService.get_article_category(category, country).subscribe((result) => {
+        this.allArticles = result['articles'];
+    });
   }
 }

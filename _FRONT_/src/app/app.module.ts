@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './category/category.component';
 import { ArticleService } from './services/article.service';
+import { SportsComponent } from './sports/sports.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ArticleService } from './services/article.service';
     ScrollTopComponent,
     HomeMainArticlesComponent,
     LatestNewsComponent,
-    CategoryComponent
+    CategoryComponent,
+    SportsComponent
   ],
   imports: [
     CommonModule,
