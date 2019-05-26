@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'home', component: HomeMainArticlesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path:  'auth', loadChildren:  './auth/auth.module#AuthModule'}
 ];
 
 @NgModule({

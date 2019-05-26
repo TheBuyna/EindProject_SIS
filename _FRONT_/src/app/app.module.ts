@@ -20,6 +20,8 @@ import { ArticleService } from './services/article.service';
 import { CategoryComponent } from './category/category.component';
 import { ImagePreloadDirective } from './image-preload.directive';
 
+import { NgFlashMessagesModule } from 'ng-flash-messages';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { ImagePreloadDirective } from './image-preload.directive';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    UiSwitchModule
+    UiSwitchModule,
+    NgFlashMessagesModule.forRoot()
   ],
   providers: [
     ArticleService
