@@ -1,19 +1,25 @@
-<div class="container">
-    <div class="logo">Login</div>
-    <div class="login-item">
+<div class="login_card">
+    <div class="logo_container">
+        <i class="fa fa-sign-in"></i>
+    </div>
+    <div class="form_container">
       <form #myform="ngForm" (ngSubmit)="login(myform)" class="form form-login">
-        <div class="form-field">
-          <label class="user" for="login-email"><span class="hidden">Email</span></label>
-          <input name="username" id="login-email" type="email" class="form-input" placeholder="Email" required ngModel>
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fa fa-user"></i></div>
+          </div>
+          <input name="username" id="login-email" type="email" class="form-control" placeholder="Email" required ngModel>
         </div>
   
-        <div class="form-field">
-          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
-          <input name="password" id="login-password" type="password" class="form-input" placeholder="Password" required ngModel>
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fa fa-key"></i></div>
+          </div>
+          <input name="password" id="login-password" type="password" class="form-control" placeholder="Password" required ngModel>
         </div>
   
-        <div class="form-field">
-          <input type="submit" value="Log in">
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Login</button>
         </div>
       </form>
     </div>
