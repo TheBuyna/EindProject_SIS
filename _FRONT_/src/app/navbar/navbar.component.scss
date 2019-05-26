@@ -20,6 +20,8 @@
     padding: 1em; 
 }
 
+.mainnav { position: relative; }
+
 a[href="#menu"] {
     position: absolute;
     top: 0;
@@ -36,7 +38,6 @@ a[href="#menu"] {
 .sidenav {
     z-index: 800;
     
-
     ul {
         position: absolute;
         z-index: 5;
@@ -124,6 +125,34 @@ a { text-decoration: none; }
 }
 .wrap:hover > li a:hover { 
     color: $White; 
+}
+
+.search-btn {
+    position: absolute;
+    color: $White;
+    top: 0;
+    right: 0;
+    margin-right: 100px;
+    padding: 8px 0;
+    height: 100%;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.search-lb {
+    display: block;
+    text-align: center;
+}
+
+.btn { padding: 0 10px; }
+
+.search {
+    border: none;
+    border-bottom: 1px solid black;
+    background: #EEEEEE;
+    padding-left: 10px;
+    margin: 5px 5px 0 0;
 }
 
 .handle {

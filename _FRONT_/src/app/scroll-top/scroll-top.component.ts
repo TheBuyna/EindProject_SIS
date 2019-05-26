@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, Inject, HostListener, Output,EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
@@ -10,8 +10,9 @@ export class ScrollTopComponent implements OnInit {
 
   windowScrolled: boolean;
     constructor(@Inject(DOCUMENT) private document: Document) {}
+    @Output() totop: EventEmitter<any> = new EventEmitter();
     @HostListener("window:scroll", [])
-    onWindowScroll() {
+       onWindowScroll() {
         if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
             this.windowScrolled = true;
         } 
@@ -27,6 +28,8 @@ export class ScrollTopComponent implements OnInit {
                 window.scrollTo(0, currentScroll - (currentScroll / 8));
             }
         })();
+        
+        this.totop.emit();
     }
     ngOnInit() {}
 
