@@ -17,13 +17,14 @@ export class RegisterComponent implements OnInit {
   }
 
   register(form) {
+    console.log(form.value);  
     this.auth.registerUser(form.value).subscribe(
       (res) => {
         this.router.navigate(['/auth/login']);
         this.ngFlashMessageService.showFlashMessage({
           messages: [res.success + " Please Login!"],
           dismissible: true,
-          timeout: false,
+          timeout: 5000,
           type: 'success'
         });
 

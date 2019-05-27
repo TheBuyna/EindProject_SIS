@@ -1,3 +1,54 @@
-<p>
-  category works!
-</p>
+<div class="main-small-widget-title">
+  <h3>
+    {{category}}
+  </h3>
+</div>
+<div class="feature-article-widget">
+  <div class="feature-small-widget-wrap">
+    <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:0:3;">
+      <a href="{{article.url}}" target="_blank">
+        <div class="main-feature-small-img">
+          <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+          <div class="feNews-info">
+            <div class="info-views">
+              <i class="fa fa-eye"></i>
+              <span class="info-view-text">233.3K</span>
+            </div>
+            <div class="info-comm">
+              <i class="fa fa-comment"></i>
+              <span class="info-comm-text">23</span>
+            </div>
+          </div><!-- end poNews-info -->
+        </div><!-- end side-wdiget -->
+        <div class="main-feature-small-text">
+          <span id="main-text-category">{{article.source.name}}</span>
+          <h2>{{article.title}}</h2>
+        </div><!-- end side-widget-text -->
+      </a>
+    </div><!-- end-small-feature-article -->
+  </div>
+  <div class="feature-big-widget-wrap">
+    <div class="feature-big-widget-article" *ngFor="let article of allArticles">
+      <a href="{{article.url}}" target="_blank">
+          <div class="main-feature-big-img">
+              <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+              <div class="feNews-info">
+                <div class="info-views">
+                  <i class="fa fa-eye"></i>
+                  <span class="info-view-text">233.3K</span>
+                </div>
+                <div class="info-comm">
+                  <i class="fa fa-comment"></i>
+                  <span class="info-comm-text">23</span>
+                </div>
+              </div><!-- end poNews-info -->
+            </div><!-- end side-wdiget -->
+            <div class="main-feature-big-text">
+              <span id="main-text-category">{{article.source.name}}</span>
+              <h2>{{article.title}}</h2>
+              <p>{{article.description}}</p>
+            </div><!-- end side-widget-text -->
+      </a>
+    </div>
+  </div>
+</div>

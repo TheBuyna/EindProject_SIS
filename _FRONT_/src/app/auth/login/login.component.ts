@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.ngFlashMessageService.showFlashMessage({
           messages: [err.error.message],
           dismissible: true,
-          timeout: false,
+          timeout: 5000,
           type: 'danger'
         });
       }

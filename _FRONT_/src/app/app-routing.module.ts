@@ -3,9 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
 import { HomeMainArticlesComponent } from './home-main-articles/home-main-articles.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'category', component: CategoryComponent },
+  {
+    path: 'category/:categoryName',
+    component: CategoryComponent,
+    canActivate: [AuthGuard]
+  },
   { path: 'home', component: HomeMainArticlesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:  'auth', loadChildren:  './auth/auth.module#AuthModule'}
