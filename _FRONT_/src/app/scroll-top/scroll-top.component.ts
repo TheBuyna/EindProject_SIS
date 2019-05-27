@@ -10,7 +10,9 @@ export class ScrollTopComponent implements OnInit {
 
   windowScrolled: boolean;
     constructor(@Inject(DOCUMENT) private document: Document) {}
+    
     @Output() totop: EventEmitter<any> = new EventEmitter();
+
     @HostListener("window:scroll", [])
        onWindowScroll() {
         if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {

@@ -9,8 +9,9 @@ import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'news-site';
-  @Input() fire;
+  title = 'TNS | The News Spot';
+  event: string = 'test app';
+  
   darkTheme =  new FormControl(false);
   
   theme = "light";
@@ -19,7 +20,7 @@ export class AppComponent {
 
   broadcastTop($e){
     console.log('event ontvangen');
-    this.fire = $e;
+   // this.fire = $e;
     console.log($e);
   }
 }

@@ -11,18 +11,19 @@ export class HomeMainArticlesComponent implements OnInit {
 
   constructor(private articleService: ArticleService) { }
   allArticles: any;
-  @Input() fire;
+  @Input('messages') mess: any;
   
   ngOnInit() {
     this.get_articles('belgium');
   }
+
 
   get_articles(search: string) {
     this.articleService.get_article(search).subscribe((result) => {
         this.allArticles = result['articles'];
     });
   }
-
+  
   toUp() {
     (function smoothscroll() {
         var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -31,5 +32,7 @@ export class HomeMainArticlesComponent implements OnInit {
             window.scrollTo(0, currentScroll - (currentScroll / 8));
         }
     })();
-}
+  }
+
+
 }
