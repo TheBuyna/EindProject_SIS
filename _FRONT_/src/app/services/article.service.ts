@@ -10,6 +10,7 @@ export class ArticleService {
   constructor(private http:HttpClient) {}
 
   API_KEY = '8242b00c3eee4bf794d4bf1d138ee112';
+  // API_KEY = '8242b00c3eee4bf794d4bf1d138ee112as';
 
    get_article(searchQuery: string) {
       let replacedQuery = searchQuery.split(' ').join('-')

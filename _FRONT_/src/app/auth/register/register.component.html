@@ -1,0 +1,53 @@
+<div class="register_card">
+    <div class="logo_container">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+    </div>
+  <div class="form_container">
+    <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register" ngNativeValidate>
+
+      <div class="form-group">
+            <label class="user" for="register-firstName"><span class="hidden">First Name:</span></label>
+            <input name="first_name" [(ngModel)]="first_name" id="register-firstName" type="text" class="form-control" placeholder="First Name" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-lastName"><span class="hidden">Last Name:</span></label>
+        <input name="last_name" [(ngModel)]="last_name" id="register-lastName" type="text" class="form-control" placeholder="Last Name" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-email"><span class="hidden">Email:</span></label>
+        <input name="email" [(ngModel)]="email" id="register-email" type="email" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-streetName"><span class="hidden">Street Name:</span></label>
+        <input name="street_name" [(ngModel)]="street_name" id="register-streetName" type="text" class="form-control" placeholder="Street Name" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-houseNumber"><span class="hidden">House Number:</span></label>
+        <input name="house_number" [(ngModel)]="house_number" id="register-houseNumber" type="text" class="form-control" placeholder="House Number" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-mailBoxNumber"><span class="hidden">Mailbox Number:</span></label>
+        <input name="mailbox_number" [(ngModel)]="mailbox_number" id="register-mailBoxNumber" type="text" class="form-control" placeholder="Mailbox Number">
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-city"><span class="hidden">City:</span></label>
+        <input name="city" [(ngModel)]="city" id="register-city" type="text" class="form-control" placeholder="City" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-postalCode"><span class="hidden">Postal Code:</span></label>
+        <input name="postal_code" [(ngModel)]="postal_code" id="register-postalCode" type="text" class="form-control" placeholder="Postal Code" required>
+      </div>
+      <div class="form-group">
+        <label class="user" for="register-telephone"><span class="hidden">Telephone:</span></label>
+        <input name="telephone" [(ngModel)]="telephone" id="register-telephone" type="text" class="form-control" placeholder="Telephone">
+      </div>
+
+      <div class="form-group">
+        <label class="lock" for="register-password"><span class="hidden">Password</span></label>
+        <input name="password" [(ngModel)]="password" id="register-password" type="password" class="form-control" placeholder="Password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import { AngularFontAwesomeComponent } from 'angular-font-awesome';
 import { element } from '@angular/core/src/render3';
 import { FormControl } from '@angular/forms';
 import { ThemeService } from '../services/theme.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'navbar',
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
   
   darkTheme = new FormControl(false);
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private authService: AuthService) {
     this.darkTheme.valueChanges.subscribe(value => {
       if (value) {
         this.themeService.toggleDark();

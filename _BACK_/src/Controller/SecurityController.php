@@ -71,6 +71,14 @@ class SecurityController extends AbstractController
         $postalCode = $data["postal_code"];
         $plainPassword = $data["password"];
 
+//        foreach($data->entries as $row) {
+//            foreach($row as $key => $val) {
+//                if ($key === null) {
+//                    $key =
+//                }
+//            }
+//        }
+
 
 
         try{

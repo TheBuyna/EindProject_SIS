@@ -15,10 +15,15 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { CommonModule } from '@angular/common';
 
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ArticleService } from './services/article.service';
 import { CategoryComponent } from './category/category.component';
 import { ImagePreloadDirective } from './image-preload.directive';
+
+import { NgFlashMessagesModule } from 'ng-flash-messages';
+import { AuthGuard } from './auth.guard';
+import { ThemeService } from './services/theme.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -41,10 +46,17 @@ import { ImagePreloadDirective } from './image-preload.directive';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    UiSwitchModule
+    UiSwitchModule,
+    NgFlashMessagesModule.forRoot(),
+
   ],
   providers: [
-    ArticleService
+    ArticleService, AuthGuard, ThemeService, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

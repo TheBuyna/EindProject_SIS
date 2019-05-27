@@ -32,7 +32,21 @@
     padding: 1em; 
 }
 
-a[href="#menu"] {
+// a[href="#menu"] {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     display: block;
+//     background: $Black;
+//     width: 60px;
+//     margin-top: 5px;
+//     font-size: 2rem;
+//     text-align: center;
+//     color: $White;
+//     z-index: 200;
+// }
+
+ .menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,9 +56,12 @@ a[href="#menu"] {
     margin-top: 5px;
     font-size: 2rem;
     text-align: center;
-    color: $White;
     z-index: 200;
-}
+
+    span {
+        color: $White;
+    }
+ }
 .sidenav {
     z-index: 800;
     
@@ -177,7 +194,8 @@ a { text-decoration: none; }
         li { display: none; } 
     }
 
-    a[href="#menu"] { margin-top: 0; }
+    // a[href="#menu"] { margin-top: 0; }
+    .menu { margin-top: 0; }
 
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 50px; }
