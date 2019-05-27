@@ -16,9 +16,9 @@ import { CommonModule } from '@angular/common';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { CategoryComponent } from './category/category.component';
 import { ArticleService } from './services/article.service';
-import { SportsComponent } from './sports/sports.component';
+import { CategoryComponent } from './category/category.component';
+import { ImagePreloadDirective } from './image-preload.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { SportsComponent } from './sports/sports.component';
     HomeMainArticlesComponent,
     LatestNewsComponent,
     CategoryComponent,
-    SportsComponent
+    ImagePreloadDirective
   ],
   imports: [
     CommonModule,

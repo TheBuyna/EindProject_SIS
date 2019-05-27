@@ -10,14 +10,14 @@ import { ArticleService } from "../services/article.service";
 export class SportsComponent implements OnInit {
 
   constructor(private articleService:ArticleService) { }
-
-  allArticles
+  allArticles: any;
   ngOnInit() {
-    this.get_articles();
+    this.get_articles('sports', 'be');
   }
 
-  get_articles() {
-    this.articleService.get_top_headlines('be', 'sports')
+  get_articles(category: string, country: string) {
+    this.articleService.get_article_category(category, country).subscribe((result) => {
+        this.allArticles = result['articles'];
+    });
   }
-
 }

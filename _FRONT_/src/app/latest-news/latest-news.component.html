@@ -5,7 +5,7 @@
   <div class="latest-news-widgets"*ngFor="let article of allArticles">
     <a href="{{article.url}}" target="_blank">
       <div class="lNews-image">
-        <img src="{{article.urlToImage}}">
+        <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
       </div>
       <div class="lNews-text">
         <span  id="main-text-category">{{article.source.name}}</span>

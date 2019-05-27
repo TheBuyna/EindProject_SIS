@@ -13,7 +13,7 @@ export class CategoryComponent implements OnInit {
 
   allArticles
   ngOnInit() {
-    this.get_articles('busines', 'fr');
+    this.get_articles('business', 'fr');
   }
 
   get_articles(category: string, country: string) {
