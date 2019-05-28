@@ -45,7 +45,7 @@
         <li><a href="#" title="">SHOP</a></li>
       </ul>
     </div>
-    <div class="search-btn">
+    <div class="search-logo">
         <i class="fa fa-search" (click)="searchDisplay($event)"></i>
     </div>
     <div>
@@ -56,8 +56,8 @@
 
   <!-- Search form -->
   <div [hidden]="visible">
-      <form class="search-lb">
-          <input class="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="tsearch" name="news-search">
+      <form class="search-frm">
+          <input class="search-inp" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="tsearch" name="news-search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchFunc()">Search</button>
       </form>
   </div>

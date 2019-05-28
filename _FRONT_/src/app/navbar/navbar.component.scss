@@ -139,7 +139,7 @@ a { text-decoration: none; }
     color: $White; 
 }
 
-.search-btn {
+.search-logo {
     position: absolute;
     color: $White;
     top: 0;
@@ -152,19 +152,21 @@ a { text-decoration: none; }
     z-index: 500;
 }
 
-.search-lb {
+.search-frm {
     display: block;
     text-align: center;
 }
 
 .btn { padding: 0 10px; }
 
-.search {
+.search-inp {
     border: none;
-    border-bottom: 1px solid black;
-    background: #EEEEEE;
+    border-bottom: 1px solid var(--text-color);
+    background: var(--background-color);
+    color: var(--text-color);
     padding-left: 10px;
     margin: 5px 5px 0 0;
+    transition: .5s all ease-in-out;
 }
 
 .handle {

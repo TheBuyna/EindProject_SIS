@@ -1,9 +1,7 @@
 @import "../../variables.scss";
 
 :host {
-  // float: left;
-  // width: 50%;
-
+  
   .main-small-widget-title {
     h3 {
       font-size: 1.68rem;
@@ -41,13 +39,11 @@
     }
 
     #main-text-category {
-      // background: $BGrey;
       color: $LightGrey;
       display: block;
       margin: 0;
       padding: 0 .5em;
       text-transform: uppercase;
-      // font-weight: bold;
     }
 
     .feature-small-widget-wrap {
@@ -63,7 +59,6 @@
         margin-bottom: 1em;
         padding-bottom: 0;
         background: var(--background-color);
-        // border: 1px solid $Black;
 
         a {
           width: 100%;
@@ -83,11 +78,6 @@
             color: var(--text-color);
 
             h2 {
-              // padding: .2em;
-              // padding-right: 1em;
-              // padding-bottom: 0;
-              // margin-bottom: 0;
-              // margin-top: 0;
               font-weight: normal;
               font-size: 1em;
             }
@@ -121,6 +111,7 @@
           color: var(--text-color);
           margin: 1em 0;
           background: var(--background-color);
+          transition: .5s all ease-in-out;
 
           .main-feature-big-img {
             overflow: hidden;
@@ -135,7 +126,6 @@
 
           .main-feature-big-text {
               width: 60%;
-              transition: .5s all ease-in-out;
 
             h2 {
               font-size: 1em;
