@@ -9,83 +9,63 @@
     margin: 0;
 }
 
-.foot {
-    width: 100%;
-    background: var(--footer-main);
-    min-height: 100px;
-    color: $LightGrey;
-    padding: 1em 1.5em;
-    display: flex;
-    position: relative;
-    left: 0;
-    transition: .5s ease-in-out;
-    // border-top: 1px solid $DarkGrey;
-}
-
-.foot-widget-left,
-.foot-widget-midden,
-.foot-widget-right {
-    width: 33%;
-    padding: 20px;
-    border-top: 1px solid $DarkGrey;
-}
-
-.social {
-    display: flex;
-    top: 0;
-    
-    li {
-        padding: 10px 10px 10px 0;
+.footer {
+    background-color: $DarkGrey;
+    border-top: 2px solid $Black;
+    .foot {
+        padding: 2em 4em;
     }
 }
 
-.links-style a {
-    text-decoration: none;
-    color: $LightGrey;
-}
-
-.links-style a:hover { color: $White; }
-
-.blog-list {
-    li {
-        width: 100%;
-        border-bottom: 1px solid $DimGrey;
-        padding: 1em 0;
-        font-size: .8em;
-    }
-
-    li:last-child {
-        border: 0;
-        margin-bottom: .5em;
+.foot-1,
+.foot-2,
+.foot-3,
+#Copy {
+    @media screen and (max-width: 750px) {
+        text-align: center;
     }
 }
 
 .foot-bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: var(--footer-bottom);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid $BGrey;
-    transition: .5s all ease-in-out;
-}
-
-.foot-bottom-text {
-    padding-left: 44px;
-    font-size: .8em;
-
-    p { margin: 8px 0; }
+    margin-top: 3em;
+    background-color: $BGrey;
+    padding: 1em;
 }
 
 .foot-bottom-menu-list {
     display: flex;
-    margin: 8px 0;
+    padding: 8px 0;
+    
     
     li {
         width: 100px;
         text-align: center;
         font-size: .8em;
+        a {
+            color: $Red;
+            font-weight: bold;
+        }
     }
 }
+
+h3 {
+    color: $Black;
+    margin-bottom: 1em;
+    text-shadow: -1.5px 0 $White, 0 1.5px $White, 1.5px 0 $White, 0 -1.5px $White;
+    border-bottom: 0.5px solid $BGrey;
+    text-transform: uppercase;
+}
+
+p {
+    color: $White;
+    text-transform: capitalize;
+}
+
+#Copy {
+    text-transform: lowercase !important;
+}
+
+#tip {
+    color: $Red;
+}
+
