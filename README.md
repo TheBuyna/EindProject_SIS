@@ -30,6 +30,24 @@ composer install
 ```
 Dit installeert al je nodige packages.
 
+**Step 2: Configureer de databse in .env file**
+
+Zoek naar de .env file in de _BACK_ folder. In de file is er een gedeelte `DATABASE_URL`. Pas het aan naar jouw lokale database.
+Bijvorbeeld:
+
+
+**Stap 3: Installeer de database en de dummy data**
+```
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load
+```
+Als jij error krijgt dat de database bestaat, zou dat normaal gezien geen probleem zijn, dus werk gewoon verder aan jouw project. Maar als jij problemen krijgt met de database, dan verwijder de hele database met de volgende commando:
+```
+php bin/console doctrine:database:drop --force
+```
+Probeer nu opnieuw de database te installeren.
+
 **Stap 2**
 
 Start jouw backend server:

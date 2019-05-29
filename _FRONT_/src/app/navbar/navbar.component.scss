@@ -1,6 +1,7 @@
 /* SCSS NAVBAR */
 @import "../../variables.scss";
 
+
 /* Unlist */
 .unlist {
     list-style: none;
@@ -20,12 +21,38 @@
     padding: 1em; 
 }
 
+// a[href="#menu"] {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     display: block;
+//     background: $Black;
+//     width: 60px;
+//     margin-top: 5px;
+//     font-size: 2rem;
+//     text-align: center;
+//     color: $White;
+//     z-index: 200;
+// }
+
 .mainnav { 
     position: relative;
     border-bottom: 1px solid $LighterGrey;
 }
 
-.hamburger { display: none; }
+.hamburger { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: $Black;
+    width: 60px;
+    margin-top: 5px;
+    font-size: 2rem;
+    text-align: center;
+    color: $White;
+    z-index: 200;
+}
 
 .logo {
     position: absolute;
@@ -40,19 +67,6 @@
     }
 }
 
-a[href="#menu"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    background: $Black;
-    width: 60px;
-    margin-top: 5px;
-    font-size: 2rem;
-    text-align: center;
-    color: $White;
-    z-index: 200;
-}
 .sidenav {
     z-index: 800;
     
@@ -223,18 +237,12 @@ a { text-decoration: none; }
         li { display: none; } 
     }
 
+    // a[href="#menu"] { margin-top: 0; }
+    .menu { margin-top: 0; }
+
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 60px; }
     .icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
     .search-logo { margin-right: 70px; }
 }
-
-
-
-
-
-
-
-
-

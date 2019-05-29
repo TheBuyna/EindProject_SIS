@@ -17,7 +17,7 @@ export class TopNewsComponent implements OnInit {
   }
 
   get_articles() {
-    this.articleService.get_top_headlines('us').subscribe((result) => {
+    this.articleService.get_top_headlines('be').subscribe((result) => {
         this.allArticles = result['articles'];
     });
   }

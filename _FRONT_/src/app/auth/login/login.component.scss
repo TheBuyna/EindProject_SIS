@@ -1,0 +1,54 @@
+@import "../../../variables.scss";
+
+.login_card {
+    height: 50vh;
+    width: 45vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    background: $Grey;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+    .logo_container {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        top: -4em;
+        left: 8em;
+        border-radius: 50%;
+        background: $White;
+        padding: auto;
+        color: $Black;
+        text-align: center;
+
+        i {
+            padding-top: .15em;
+            font-size: 7em;
+        }
+    }
+
+    .form_container {
+        form {
+            .input-group {
+                padding: 1em;
+                .input-group-text {
+                    width: 2em;
+                    background: $Black;
+                    color: white;
+                    border: 0;
+                    border-radius: 0.25rem 0 0 0.25rem;
+                }
+            }
+            
+        }
+    }
+}
+
