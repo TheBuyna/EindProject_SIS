@@ -24,6 +24,7 @@ import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { AuthGuard } from './auth.guard';
 import { ThemeService } from './services/theme.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HomeMainArticlesComponent,
     LatestNewsComponent,
     CategoryComponent,
-    ImagePreloadDirective
+    ImagePreloadDirective,
+    HomepageComponent
   ],
   imports: [
     CommonModule,
