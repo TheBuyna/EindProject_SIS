@@ -33,6 +33,8 @@ Dit installeert al je nodige packages.
 **Step 2: Configureer de databse in .env file**
 
 Zoek naar de .env file in de _BACK_ folder. In de file is er een gedeelte `DATABASE_URL`. Pas het aan naar jouw lokale database.
+Bijvorbeeld:
+
 
 **Stap 3: Installeer de database en de dummy data**
 ```
