@@ -54,6 +54,8 @@ export class NavbarComponent implements OnInit {
         this.searchedArticles = result['articles'];
         this.visible = true;
         console.log(this.searchedArticles);
+
+        this.tsearch = '';
       });
     }
   }

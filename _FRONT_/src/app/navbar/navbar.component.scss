@@ -20,7 +20,12 @@
     padding: 1em; 
 }
 
-.mainnav { position: relative; }
+.mainnav { 
+    position: relative;
+    border-bottom: 1px solid $LighterGrey;
+}
+
+.hamburger { display: none; }
 
 .logo {
     position: absolute;
@@ -28,9 +33,10 @@
 
     h1 {
         font-family: 'Almendra SC', serif;
-        color: $White;
         margin-left: 80px;
         padding-top: 5px;
+
+        a { color: yellow; }
     }
 }
 
@@ -115,11 +121,11 @@ a { text-decoration: none; }
     background: $Black;
     height: 60px;
     display: flex;
-    justify-content: center;
-    padding-left: 50px;
+  //  justify-content: center;
+    padding-left: 150px;
 
     li { 
-        width: 150px; 
+      //  width: 150px; 
         text-align: center;
 
         a {
@@ -157,7 +163,11 @@ a { text-decoration: none; }
     text-align: center;
 }
 
-.btn { padding: 0 10px; }
+.btn { 
+    padding: 0 10px; 
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
 
 .search-inp {
     border: none;
@@ -182,6 +192,7 @@ a { text-decoration: none; }
     padding-top: 8px;
     z-index: -100;
 
+    a { color: $White; }
 }
 
 .icon-bar {
@@ -205,6 +216,7 @@ a { text-decoration: none; }
   }
 
 @media screen and (max-width: 1015px) {
+    .hamburger { display: block; }
     .logo { display: none; }
 
     .wrap {
