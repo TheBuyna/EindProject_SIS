@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
      */
     this.auth.loginUser(form.value).subscribe(
       (res) => {
-        console.log(res);
         localStorage.setItem('token', res['token']);
         this.router.navigate(['/home']);
       },

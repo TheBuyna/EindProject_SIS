@@ -40,10 +40,9 @@
     <div class="mainmenu">
       <ul class="unlist wrap">
           <li><a routerLink="/home" title="">HOME</a></li>
-          <li><a routerLink="/category" title="">Category</a></li>
-          <li><a [routerLink]="['/category', 'entertainment']" title="">Entertainment</a></li>
-          <li><a [routerLink]="['/category', 'sports']" title="">SPORTS</a></li>
-          <li><a href="#" title="">SHOP</a></li>
+          <li><a routerLink="/category" title="" *ngIf="authService.loggedIn()">Category</a></li>
+          <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()">Entertainment</a></li>
+          <li><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()">SPORTS</a></li>
           <li><a routerLink="/auth/login" title="" *ngIf="!authService.loggedIn()">Sign in</a></li>
           <li><a routerLink="/auth/register" title="" *ngIf="!authService.loggedIn()">Register</a></li>
           <li><a title="" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>

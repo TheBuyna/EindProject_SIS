@@ -3,17 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4bccf0e4-6dca-4313-9d4e-3506b05541ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/auth/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/auth/login/login.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/auth/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/category/category.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/category/category.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/category/category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/category/category.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/footer/footer.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/navbar/navbar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/services/auth.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,15 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+            <state relative-caret-position="3552">
+              <caret line="156" column="84" selection-start-line="156" selection-start-column="72" selection-end-line="156" selection-end-column="84" />
               <folding>
                 <element signature="e#34#54#0#PHP" expanded="true" />
-                <element signature="e#674#690#0#PHP" expanded="true" />
-                <element signature="e#1143#1169#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,19 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AccountController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
+            <state relative-caret-position="641">
               <caret line="69" column="19" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
             </state>
           </provider>
@@ -80,6 +68,7 @@
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ApiArticlesController.php" />
       </list>
     </option>
   </component>
@@ -190,9 +179,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="797" />
-    <option name="y" value="-19" />
-    <option name="width" value="1294" />
+    <option name="x" value="408" />
+    <option name="y" value="-24" />
+    <option name="width" value="1298" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -201,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,10 +214,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,17 +262,20 @@
       <workItem from="1558861345123" duration="22000" />
       <workItem from="1558862325137" duration="4899000" />
       <workItem from="1558944955979" duration="3195000" />
+      <workItem from="1559117472054" duration="2187000" />
+      <workItem from="1559120120676" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28259000" />
+    <option name="totallyTimeSpent" value="31052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18976545" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -331,15 +328,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ApiArticlesController.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        <state relative-caret-position="3552">
+          <caret line="156" column="84" selection-start-line="156" selection-start-column="72" selection-end-line="156" selection-end-column="84" />
           <folding>
             <element signature="e#34#54#0#PHP" expanded="true" />
-            <element signature="e#674#690#0#PHP" expanded="true" />
-            <element signature="e#1143#1169#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -350,16 +353,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
+        <state relative-caret-position="641">
           <caret line="69" column="19" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
         </state>
       </provider>
