@@ -36,6 +36,11 @@
         </div>
       </div>
     </div>
+
+    <div class="logo">
+      <h1><a href="#" title="Home">TNS</a></h1>
+    </div>
+
     <!-- </div> -->
     <div class="mainmenu">
       <ul class="unlist wrap">
@@ -48,11 +53,22 @@
           <li><a title="" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
       </ul>
     </div>
+    <div class="search-logo">
+        <i class="fa fa-search" (click)="searchDisplay($event)"></i>
+    </div>
     <div>
         <ui-switch size="small" color="#FFCC00" [formControl]="darkTheme" class="darkmode"></ui-switch>
     </div>
-    <div class="handle">Menu</div>
+    <div class="handle"><a href="#" title="">TNS | The News Spot</a></div>
   </nav>
+
+  <!-- Search form -->
+  <div [hidden]="visible">
+      <form class="search-frm">
+          <input class="search-inp" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="tsearch" name="news-search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchFunc()">Search</button>
+      </form>
+  </div>
 
 <div class="icon-bar" [hidden]="!toggle">
     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
