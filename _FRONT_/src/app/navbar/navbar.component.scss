@@ -150,7 +150,7 @@ a { text-decoration: none; }
     color: $White;
     top: 0;
     right: 0;
-    margin-right: 100px;
+    margin-right: 90px;
     padding: 8px 0;
     height: 100%;
     font-size: 1.5em;
@@ -192,7 +192,7 @@ a { text-decoration: none; }
     padding-top: 8px;
     z-index: -100;
 
-    a { color: $White; }
+    a { color: yellow; }
 }
 
 .icon-bar {
@@ -227,6 +227,7 @@ a { text-decoration: none; }
     .sidenav ul { margin-top: 60px; }
     .icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
+    .search-logo { margin-right: 70px; }
 }
 
 
