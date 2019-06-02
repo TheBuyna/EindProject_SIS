@@ -49,7 +49,7 @@
             <img class="nav-profile-img rounded-circle" src="#">
           </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-            <a ngbDropdownItem href="#"><i class="fa fa-user-circle"></i> Profile</a>
+            <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
             <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
           </div>
         </li>
@@ -95,7 +95,7 @@
           <img class="nav-profile-img rounded-circle" src="#">
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-          <a ngbDropdownItem href="#"><i class="fa fa-user-circle"></i> Profile</a>
+          <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
           <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>

@@ -41,6 +41,9 @@
 
     .dropdown-menu {
         padding: 0;
+        a {
+            cursor: pointer;
+        }
     }
 }
 

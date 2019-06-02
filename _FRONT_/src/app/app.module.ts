@@ -28,6 +28,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CategoryComponent,
     ImagePreloadDirective,
     HomepageComponent,
-    ProfileComponent
+    ProfileComponent,
+    BeautifyKeyStringPipe
   ],
   imports: [
     CommonModule,
