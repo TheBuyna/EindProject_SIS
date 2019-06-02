@@ -259,4 +259,20 @@ class User implements UserInterface
             $url .= sprintf('?size=%dx%d', $size, $size);
         return $url;
     }
+
+    public function getAllInfo(): array
+    {
+        $user["email"] = $this->getEmail();
+        $user["first_Name"] = $this->getFirstName();
+        $user["last_Name"] = $this->getLastName();
+        $user["street_Name"] = $this->getStreetName();
+        $user["house_Number"] = $this->getHouseNumber();
+        $user["mailBox_Number"] = $this->getMailboxNumber();
+        $user["city"] = $this->getCity();
+        $user["telephone"] = $this->getTelephone();
+        $user["postal_Code"] = $this->getPostalCode();
+        $user["avatar_Url"] = $this->getAvatarUrl();
+
+        return $user;
+    }
 }

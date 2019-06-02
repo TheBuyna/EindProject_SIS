@@ -179,13 +179,8 @@ class SecurityController extends AbstractController
      */
     public function apiVerify(Request $request)
     {
-//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
-//        dd($this->getUser());
-//        return new JsonResponse([
-//            "token" => str_replace("Bearer ", "", $request->headers->get('Authorization'))
-//        ], 200);
         return new JsonResponse([
-            "user" => $this->getUser()->getFirstName()
+            "user" => $this->getUser()->getAllInfo()
         ], 200);
     }
 }
