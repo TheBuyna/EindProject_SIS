@@ -25,6 +25,9 @@ import { AuthGuard } from './auth.guard';
 import { ThemeService } from './services/theme.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     LatestNewsComponent,
     CategoryComponent,
     ImagePreloadDirective,
-    HomepageComponent
+    HomepageComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +54,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     ReactiveFormsModule,
     UiSwitchModule,
     NgFlashMessagesModule.forRoot(),
-
+    NgbModule,
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 
