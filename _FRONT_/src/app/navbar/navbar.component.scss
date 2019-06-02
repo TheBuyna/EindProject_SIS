@@ -38,6 +38,10 @@
 .mainnav { 
     position: relative;
     border-bottom: 1px solid $LighterGrey;
+
+    .dropdown-menu {
+        padding: 0;
+    }
 }
 
 .hamburger { 
@@ -77,9 +81,14 @@
         position: fixed;
         height: 100vh;
         transition: right .5s ease-in-out;
+        color: #000;
 
         li { border-bottom: 1px solid $DimGrey; }
         li:last-child { border-bottom: 0; }
+
+        li .dropdown-item {
+            color: #000;
+        }
     }
 
     a { display: block; }
