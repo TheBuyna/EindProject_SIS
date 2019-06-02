@@ -11,9 +11,17 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  isEmailError: boolean;
+  isPasswordError: boolean;
+  renderedError: string;
+  passwordError: string;
+  emailError: string;
+
   constructor(private auth: AuthService, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
   ngOnInit() {
+    this.isEmailError = false;
+    this.isPasswordError = false;
   }
 
   register(form) {
@@ -29,7 +37,35 @@ export class RegisterComponent implements OnInit {
         });
 
       },
-      (err) => console.log(err)
+      (err) => {
+        // console.log(err.error.error);
+        if (err.error.error.includes('Duplicate entry')) {
+          this.isEmailError = true;
+          this.emailError = 'Sorry, but user with this email has already been registered!';
+          this.isPasswordError = false;
+          this.ngFlashMessageService.showFlashMessage({
+            messages: ['Sorry, but user with this email has already been registered!'],
+            dismissible: true,
+            timeout: 5000,
+            type: 'danger'
+          });
+        } else if (err.error.error.includes('Invalid email address')) {
+          this.isEmailError = true;
+          this.emailError = err.error.error;
+          this.isPasswordError = false;
+        } else {
+          if (err.error.error.includes('Password')) {
+            this.isPasswordError = true;
+            this.passwordError = err.error.error;
+          }
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [err.error.error],
+            dismissible: true,
+            timeout: 5000,
+            type: 'danger'
+          });
+        }
+      }
     );
   }
 }
