@@ -14,14 +14,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  login(form){
-    /**
-     * 'POST' methode met FormData
-     */
+  login(form) {
     this.auth.loginUser(form.value).subscribe(
       (res) => {
-        localStorage.setItem('token', res['token']);
-        this.router.navigate(['/home']);
+        localStorage.setItem('token', res.token);
+        if (this.auth.redirectUrl) {
+          console.log(this.auth.redirectUrl);
+          this.router.navigate([this.auth.redirectUrl]);
+        } else {
+          this.router.navigate(['/home']);
+        }
       },
       (err) => {
         this.ngFlashMessageService.showFlashMessage({

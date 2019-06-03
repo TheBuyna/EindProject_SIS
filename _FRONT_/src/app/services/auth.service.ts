@@ -12,6 +12,7 @@ export class AuthService {
   private REGISTER_URL = "http://127.0.0.1:8000/api/register";
   private LOGIN_URL = "http://localhost:8000/api/login_check";
   private CHECK_JWT = "http://localhost:8000/apiCheck";
+  public redirectUrl: string;
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
   registerUser(user) {
@@ -41,6 +42,7 @@ export class AuthService {
   checkToken() {
     this.http.get(this.CHECK_JWT).subscribe(
       (resultaat) => {
+      // console.log(resultaat);
       console.log(JSON.stringify(resultaat));
     },
     (err) => {
@@ -61,5 +63,4 @@ export class AuthService {
     }
     );
   }
-  
 }

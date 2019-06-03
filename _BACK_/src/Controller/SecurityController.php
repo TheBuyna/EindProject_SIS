@@ -65,22 +65,42 @@ class SecurityController extends AbstractController
         $lastName = $data["last_name"];
         $streetName = $data["street_name"];
         $houseNumber = $data["house_number"];
-        $mailboxNumber = $data["mailbox_number"];
         $city = $data["city"];
-        $telephone = $data["telephone"];
         $postalCode = $data["postal_code"];
         $plainPassword = $data["password"];
 
-//        foreach($data->entries as $row) {
-//            foreach($row as $key => $val) {
-//                if ($key === null) {
-//                    $key =
-//                }
-//            }
-//        }
+        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
+        $contains_number    = preg_match('@[0-9]@', $plainPassword);
 
+        //Password validation
+        if (strlen($plainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
 
-
+        //Email validation
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return new JsonResponse([
+                "error" => 'Invalid email address!'
+            ], 500);
+        }
         try{
             $user = new User();
 
@@ -90,11 +110,15 @@ class SecurityController extends AbstractController
                 ->setLastName($lastName)
                 ->setStreetName($streetName)
                 ->setHouseNumber($houseNumber)
-                ->setMailboxNumber($mailboxNumber)
                 ->setCity($city)
-                ->setTelephone($telephone)
                 ->setPostalCode($postalCode)
                 ->setPassword($passwordEncoder->encodePassword($user, $plainPassword));
+            if (isset($data["mailbox_number"])) {
+                $user->setMailboxNumber($data["mailbox_number"]);
+            }
+            if (isset($data["telephone"])) {
+                $user->setTelephone($data["telephone"]);
+            }
             $em->persist($user);
             $em->flush();
         } catch (\Exception $exception) {
@@ -122,6 +146,8 @@ class SecurityController extends AbstractController
         $data = json_decode($request->getContent(),true);
         $oldPassword = $data["oldPassword"];
         $newPlainPassword = $data["plainNewPassword"];
+
+
 
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
             $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
@@ -152,11 +178,39 @@ class SecurityController extends AbstractController
      * @Route("/apiCheck")
      * @return Response
      */
-    public function apiLogin()
+    public function apiVerify(Request $request)
     {
-        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
-//        dd($this->getUser());
+        return new JsonResponse([
+            "user" => $this->getUser()->getAllInfo()
+        ], 200);
     }
 
+    private function passwordValidation($plainPassword) {
 
+        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
+        $contains_number    = preg_match('@[0-9]@', $plainPassword);
+
+        //Password validation
+        if (strlen($plainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
+    }
 }

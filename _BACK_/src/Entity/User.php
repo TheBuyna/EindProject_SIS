@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -21,6 +22,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Groups("main")
+     * @Assert\Email()
      */
     private $email;
 
@@ -256,5 +258,21 @@ class User implements UserInterface
         if ($size)
             $url .= sprintf('?size=%dx%d', $size, $size);
         return $url;
+    }
+
+    public function getAllInfo(): array
+    {
+        $user["email"] = $this->getEmail();
+        $user["first_Name"] = $this->getFirstName();
+        $user["last_Name"] = $this->getLastName();
+        $user["street_Name"] = $this->getStreetName();
+        $user["house_Number"] = $this->getHouseNumber();
+        $user["mailBox_Number"] = $this->getMailboxNumber();
+        $user["city"] = $this->getCity();
+        $user["telephone"] = $this->getTelephone();
+        $user["postal_Code"] = $this->getPostalCode();
+        $user["avatar_Url"] = $this->getAvatarUrl();
+
+        return $user;
     }
 }

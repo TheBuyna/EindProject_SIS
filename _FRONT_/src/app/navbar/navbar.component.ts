@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
 
   public toggle : boolean = true;
   public visible : boolean = true;
+
+  avatar_url;
   
   toggleEvent(event){
     this.toggle = !this.toggle;
