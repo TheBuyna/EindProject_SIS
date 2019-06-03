@@ -48,7 +48,14 @@ php bin/console doctrine:database:drop --force
 ```
 Probeer nu opnieuw de database te installeren.
 
-**Stap 2**
+**Stap 4: Genereer private en public key voor jwt**
+
+```
+$ openssl genrsa -out config/jwt/private.pem -aes256 4096
+$ openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
+```
+
+**Stap 5**
 
 Start jouw backend server:
 ```
