@@ -11,7 +11,7 @@ import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 })
 export class AppComponent {
   title = 'TNS | The News Spot';
-  event: string = 'test app';
+  //event: string = 'test app';
   
   darkTheme =  new FormControl(false);
   
@@ -19,9 +19,10 @@ export class AppComponent {
 
   constructor(private themeService: ThemeService) {}
 
-  broadcastTop($e){
-    console.log('event ontvangen');
-   // this.fire = $e;
-    console.log($e);
-  }
+  // searchRequest: string;
+
+  // broadcast($e){
+  //   this.searchRequest = $e;
+  //   console.log(this.searchRequest);
+  // }
 }

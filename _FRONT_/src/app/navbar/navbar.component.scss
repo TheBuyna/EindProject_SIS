@@ -245,6 +245,12 @@ a { text-decoration: none; }
 }
 
 @media screen and (max-width: 768px) {
+    .mainnav {
+        position: fixed;
+        z-index: 500;
+        width: 100%;
+        top: 0;
+    }
     .icon-bar {
         width: 30px;
 

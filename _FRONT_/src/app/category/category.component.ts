@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
@@ -12,16 +12,21 @@ import { AuthService } from '../services/auth.service';
 })
 export class CategoryComponent implements OnInit {
 
+  //@Input() searchRequest;
+
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService) { }
 
   SERVER_URL = "http://localhost:8000/apiCheck";
 
   category;
   allArticles;
+  searchText;
   ngOnInit() {
     this.authService.checkToken();
     this.route.paramMap.subscribe(params => {
       this.category =  params.get('categoryName');
+      this.searchText = params.get('searQuery');
+      console.log(this.searchText);
       this.getArticles();
     });
   }
