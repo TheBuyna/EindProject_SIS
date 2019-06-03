@@ -18,11 +18,6 @@
 }
 
 .foot-1,
-.foot-2 {
-    border-left: 1px solid $Red;
-}
-
-.foot-1,
 .foot-2,
 .foot-3,
 #Copy {
@@ -54,14 +49,15 @@
 }
 
 h3 {
-    color: $LightGrey;
+    color: $Black;
     margin-bottom: 1em;
+    text-shadow: -1.5px 0 $White, 0 1.5px $White, 1.5px 0 $White, 0 -1.5px $White;
     border-bottom: 0.5px solid $BGrey;
     text-transform: uppercase;
 }
 
 p {
-    color: $LightGrey;
+    color: $White;
     text-transform: capitalize;
 }
 
