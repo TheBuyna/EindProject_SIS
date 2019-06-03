@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgFlashMessageService } from 'ng-flash-messages';
 
 
 @Injectable({
@@ -11,7 +12,8 @@ export class AuthService {
   private REGISTER_URL = "http://127.0.0.1:8000/api/register";
   private LOGIN_URL = "http://localhost:8000/api/login_check";
   private CHECK_JWT = "http://localhost:8000/apiCheck";
-  constructor(private http: HttpClient, private router: Router) { }
+  public redirectUrl: string;
+  constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
   registerUser(user) {
     return this.http.post<any>(this.REGISTER_URL, user);
@@ -35,5 +37,30 @@ export class AuthService {
   logoutUser() {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
+  }
+
+  checkToken() {
+    this.http.get(this.CHECK_JWT).subscribe(
+      (resultaat) => {
+      // console.log(resultaat);
+      console.log(JSON.stringify(resultaat));
+    },
+    (err) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          this.router.navigate(['/auth/login']);
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [err.error.message],
+            dismissible: true,
+            timeout: 10000,
+            type: 'danger'
+          });
+          if (err.error.message === 'Expired JWT Token' || err.error.message === 'Invalid JWT Token'){
+            localStorage.removeItem('token');
+          }
+        }
+      }
+    }
+    );
   }
 }

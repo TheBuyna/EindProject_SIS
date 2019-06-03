@@ -24,6 +24,13 @@ import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { AuthGuard } from './auth.guard';
 import { ThemeService } from './services/theme.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,10 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HomeMainArticlesComponent,
     LatestNewsComponent,
     CategoryComponent,
-    ImagePreloadDirective
+    ImagePreloadDirective,
+    HomepageComponent,
+    ProfileComponent,
+    BeautifyKeyStringPipe
   ],
   imports: [
     CommonModule,
@@ -48,7 +58,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ReactiveFormsModule,
     UiSwitchModule,
     NgFlashMessagesModule.forRoot(),
-
+    NgbModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 

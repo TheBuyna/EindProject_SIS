@@ -1,9 +1,6 @@
 @import "../../variables.scss";
 
 :host {
-  // float: left;
-  // width: 24%;
-  // padding: 1em;
 
   .side-title { 
     h3 {
@@ -27,8 +24,6 @@
           width: 100%;
           color: $Black;
           text-decoration: none;
-          // font-size: .8em;
-
 
           .side-widget-img {
             position: relative;
