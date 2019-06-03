@@ -71,21 +71,26 @@ export class ProfileComponent implements OnInit {
   }
 
   resetPassword(form) {
+    console.log(form.value);
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     this.http.post("http://127.0.0.1:8000/api/resetPassword", form.value, httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        this.ngFlashMessageService.showFlashMessage({
+        messages: [res['success']],
+        dismissible: true,
+        timeout: 5000,
+        type: 'success'
+      });
       },
       (err) => {
-        console.log(err.error.error)
-        // this.ngFlashMessageService.showFlashMessage({
-        //   messages: [err.error.message],
-        //   dismissible: true,
-        //   timeout: 5000,
-        //   type: 'danger'
-        // });
+        this.ngFlashMessageService.showFlashMessage({
+          messages: [err.error.error],
+          dismissible: true,
+          timeout: 5000,
+          type: 'danger'
+        });
       }
     );
   }

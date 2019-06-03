@@ -1,12 +1,12 @@
   <div class="row" *ngIf="userInfo">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3 profilePic">
           <div class="user-image">
             <img src="{{avatar_Url}}">
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
             <button class="btn btn-labeled btn-info" (click)="openModal(template)">
@@ -21,11 +21,11 @@
             <tr *ngFor="let key of userKeys; let i = index">
               <th scope="row">{{key|beautifyKeyString}}</th>
               <td >{{userValues[i]}}</td>
-              <td>
+              <!-- <td>
                 <button class="btn btn-labeled btn-info">
                   <span class="btn-label"><i class="fa fa-pencil"></i></span>Edit
                 </button>
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>
@@ -42,12 +42,19 @@
   </div>
   <div class="modal-body">
         <form #myform="ngForm" (ngSubmit)="resetPassword(myform); modalRef.hide()" class="form form-login">
-            <div class="input-group">
-                <input name="oldPassword" id="oldPassword" type="email" class="form-control" placeholder="Old Password" required ngModel>
+            <div class="form-group">
+                <label for="oldPassword">Enter your old password: </label>
+                <input name="oldPassword" id="oldPassword" type="password" class="form-control" placeholder="Old Password" required ngModel>
             </div>
         
-            <div class="input-group">
+            <div class="form-group">
+                <label for="plainNewPassword">Enter your new password: </label>
                 <input name="plainNewPassword" id="plainNewPassword" type="password" class="form-control" placeholder="New Password" required ngModel>
+            </div>
+        
+            <div class="form-group">
+                <label for="verifyNewPassword">Verify your new password: </label>
+                <input name="verifyNewPassword" id="verifyNewPassword" type="password" class="form-control" placeholder="Verify New Password" required ngModel>
             </div>
         
             <div class="col-12 text-center">
