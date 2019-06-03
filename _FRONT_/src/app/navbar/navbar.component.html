@@ -26,7 +26,7 @@
       </div>
       <div>
         <ul class="menu-wrap unlist">
-          <li><a routerLink="#" title="">HOME</a></li>
+          <li><a [routerLink]="['/home']" title="">HOME</a></li>
            <!-- Dropdown for Category -->
       <li ngbDropdown *ngIf="authService.loggedIn()">
           <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
