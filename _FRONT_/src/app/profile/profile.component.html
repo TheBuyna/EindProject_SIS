@@ -9,7 +9,7 @@
         <div class="col-md-10">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
-            <button class="btn btn-labeled btn-info" (click)="openModal(resetPasswordModal)">
+            <button class="btn btn-labeled btn-info" (click)="openModal(template)">
               <span class="btn-label"><i class="fa fa-key"></i></span>Change Password
             </button>
           </div>
@@ -32,3 +32,27 @@
       </div>
     </div>
   </div>
+<!-- Modal for reset password -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <form #myform="ngForm" (ngSubmit)="resetPassword(myform); modalRef.hide()" class="form form-login">
+            <div class="input-group">
+                <input name="oldPassword" id="oldPassword" type="email" class="form-control" placeholder="Old Password" required ngModel>
+            </div>
+        
+            <div class="input-group">
+                <input name="plainNewPassword" id="plainNewPassword" type="password" class="form-control" placeholder="New Password" required ngModel>
+            </div>
+        
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Reset Password</button>
+            </div>
+        </form>
+  </div>
+</ng-template>

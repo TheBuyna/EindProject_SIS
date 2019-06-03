@@ -30,6 +30,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,7 @@ import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
     UiSwitchModule,
     NgFlashMessagesModule.forRoot(),
     NgbModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 
