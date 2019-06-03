@@ -69,7 +69,6 @@ class SecurityController extends AbstractController
         $postalCode = $data["postal_code"];
         $plainPassword = $data["password"];
 
-
         $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
         $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
         $contains_number    = preg_match('@[0-9]@', $plainPassword);
@@ -148,6 +147,8 @@ class SecurityController extends AbstractController
         $oldPassword = $data["oldPassword"];
         $newPlainPassword = $data["plainNewPassword"];
 
+
+
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
             $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
             if ($oldPassword !== $newPlainPassword) {
@@ -182,5 +183,34 @@ class SecurityController extends AbstractController
         return new JsonResponse([
             "user" => $this->getUser()->getAllInfo()
         ], 200);
+    }
+
+    private function passwordValidation($plainPassword) {
+
+        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
+        $contains_number    = preg_match('@[0-9]@', $plainPassword);
+
+        //Password validation
+        if (strlen($plainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
     }
 }
