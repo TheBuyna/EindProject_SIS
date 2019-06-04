@@ -48,6 +48,7 @@
             background: var(--background-color);
             color: var(--text-color);
             transition: .5s all ease-in-out;
+            position: relative;
     
             #main-text-category {
               color: $LightGrey;
@@ -57,9 +58,18 @@
               padding: .5em;
               text-transform: uppercase;
             }
-
+            
             p { 
               padding-left: .5em; }
+              .btnReadLater {
+                position: absolute;
+                top: 0.2em;
+                right: 0;
+
+                .btn-sm {
+                  font-size: .600rem
+                }
+              }
           }
         }
         &:hover {

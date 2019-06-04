@@ -21,4 +21,8 @@ export class TopNewsComponent implements OnInit {
         this.allArticles = result['articles'];
     });
   }
+
+  saveReadLaterArticle(article) {
+    this.articleService.saveArticle(article);
+  }
 }

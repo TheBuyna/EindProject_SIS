@@ -70,6 +70,12 @@
             overflow: hidden;
             position: relative;
             height: 50%;
+            .btnReadLater {
+              position: absolute;
+              top: 0.2em;
+              right: .5em;
+
+            }
           }
 
           .main-feature-small-text {
