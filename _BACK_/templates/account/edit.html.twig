@@ -1,0 +1,21 @@
+{% extends 'content_base.html.twig' %}
+
+{% block title %}
+Edit user!
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+{% block content_body %}
+
+    {{ form_start(userForm, {
+        'attr': {'class': 'form-signin'}
+    }) }}
+    {{ form_widget(userForm) }}
+    <button type="submit" class="btn btn-primary">Update!</button>
+    {{ form_end(userForm) }}
+{% endblock %}
+
+
