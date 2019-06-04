@@ -15,8 +15,13 @@
           </div>
         </div>
       </div>
+
+      <button class="btn btn-labeled btn-info">
+        <span (click)="updateInfo()"><i class="fa fa-pencil"></i></span>
+      </button>
+
       <div class="row userInfoTable">
-        <table class="table table-light table-hover">
+        <!-- <table class="table table-light table-hover">
           <tbody>
             <tr *ngFor="let key of userKeys; let i = index">
               <th scope="row">{{key|beautifyKeyString}}</th>
@@ -28,10 +33,41 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
+
+        <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+          <div *ngFor="let key of userKeys; let i = index">
+            <label>
+              {{key|beautifyKeyString}}
+              <input [(ngModel)]="userValues[i]" type="text" formControlName="{{key}}" value="{{userValues[i]}}">
+            </label>
+          </div>
+          
+        
+          <!-- <label>
+            Last Name:
+            <input type="text" formControlName="lastName">
+          </label> -->
+        
+          <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        </form>
       </div>
     </div>
   </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Modal for reset password -->
 <ng-template #template>
   <div class="modal-header">

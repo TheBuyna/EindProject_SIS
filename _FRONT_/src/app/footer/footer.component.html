@@ -40,12 +40,36 @@
       </div>
     </div>
 
-    <div class="foot-toggle-menu" [hidden]="toggle1">
+    <div class="foot-toggle-menu" [hidden]="toggleMenu">
         <ul class="foot-toggle-menu-list unlist links-style">
-          <li><a href="#" title="">HOME</a></li>
-          <li><a href="#" title="">FEATURES</a></li>
-          <li><a href="#" title="">BUY</a></li>
-          <li><a href="#" title="">SHOP</a></li>
+          <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="Home Page">HOME</a></li>
+          <!-- Dropdown for Category -->
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
+              Category
+            </a>
+            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{'show-scrollTop': windowScrolled}">
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+            </div>
+          </li>
+          <!-- end Dropdown Category -->
+          <!-- Dropdown for logged in user -->
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
+              <img class="nav-profile-img rounded-circle" src="#">
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
+              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
+          </li>
+          <!-- end Dropdown -->
         </ul>
     </div>
 
@@ -55,17 +79,41 @@
       </div>
 
       <div class="hamburger" (click)="toggleEvent($event)">
-          <a href="#menu" class="menu">
+          <a class="menu">
             <span class="fa fa-reorder"></span>
           </a>
       </div>
 
       <div class="foot-bottom-menu">
         <ul class="foot-bottom-menu-list unlist links-style">
-          <li><a href="#" title="">HOME</a></li>
-          <li><a href="#" title="">FEATURES</a></li>
-          <li><a href="#" title="">BUY</a></li>
-          <li><a href="#" title="">SHOP</a></li>
+          <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="">HOME</a></li>
+          <!-- Dropdown for Category -->
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
+              Category
+            </a>
+            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+            </div>
+          </li>
+          <!-- end Dropdown Category -->
+          <!-- Dropdown for logged in user -->
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
+              <img class="nav-profile-img rounded-circle" src="#">
+            </a>
+            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
+              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
+          </li>
+          <!-- end Dropdown -->
         </ul>
       </div>
     </div>

@@ -1,4 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { ArticleService } from '../services/article.service';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'footer',
@@ -7,12 +11,12 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articleService:ArticleService, private authService: AuthService, private router:Router) { }
 
-  public toggle1 : boolean = true;
+  public toggleMenu : boolean = true;
   
   toggleEvent(event){
-    this.toggle1 = !this.toggle1;
+    this.toggleMenu = !this.toggleMenu;
     console.log("toggled");
   }
 
@@ -21,6 +25,17 @@ export class FooterComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-    this.toggle1=true;
+    this.toggleMenu = true;
   }
+
+  scrollToTop() {
+    (function smoothscroll() {
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo(0, currentScroll - (currentScroll / 8));
+        }
+    })();
+  }
+
 }

@@ -27,7 +27,11 @@
 
     .dropdown-menu {
         padding: 0;
-        a {
+        background: $DarkGrey;
+        color: $White;
+
+        a:hover { 
+            background: $DarkGrey;
             cursor: pointer;
         }
     }
@@ -70,18 +74,15 @@
         position: fixed;
         height: 100vh;
         transition: right .5s ease-in-out;
-        color: #000;
 
         li { border-bottom: 1px solid $DimGrey; }
         li:last-child { border-bottom: 0; }
-
-        li .dropdown-item {
-            color: #000;
-        }
     }
 
     a { display: block; }
 }
+
+.nav-link { padding: 0; }
 
 .menu-wrap { 
     margin-left: 50px; 
@@ -133,11 +134,9 @@ a { text-decoration: none; }
     background: $Black;
     height: 60px;
     display: flex;
-  //  justify-content: center;
     padding-left: 150px;
 
     li { 
-      //  width: 150px; 
         text-align: center;
 
         a {
@@ -239,7 +238,6 @@ a { text-decoration: none; }
 
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 60px; }
-    //.icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
     .search-logo { margin-right: 70px; }
 }
@@ -254,8 +252,6 @@ a { text-decoration: none; }
     .icon-bar {
         width: 30px;
 
-        a {
-            padding: 10px 0;
-        }
+        a { padding: 10px 0; }
     }
 }

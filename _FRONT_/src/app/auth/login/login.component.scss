@@ -1,10 +1,10 @@
 @import "../../../variables.scss";
-
+:root { background: var(--background-color); }
 .login_card {
     height: 50vh;
-    width: 45vh;
+    width: 45vw;
     margin: 0 auto;
-    margin-top: 10vh;
+    margin-top: 12vh;
     margin-bottom: 20vh;
     background: $Grey;
     position: relative;
@@ -50,5 +50,9 @@
             
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .login_card { margin-top: 20vh; }
 }
 
