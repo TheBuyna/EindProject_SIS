@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccountController extends BaseController
 {
     /**
-     * @Route("/account", name="app_account")
+     * @Route("/admin/account", name="app_account")
      */
     public function index(LoggerInterface $logger)
     {
