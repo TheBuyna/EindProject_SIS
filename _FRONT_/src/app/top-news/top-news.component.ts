@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-top-news',
@@ -9,7 +10,7 @@ import { ArticleService } from '../services/article.service';
 })
 export class TopNewsComponent implements OnInit {
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private authService: AuthService) { }
 
   allArticles: any;
   ngOnInit() {

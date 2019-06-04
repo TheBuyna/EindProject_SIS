@@ -9,7 +9,7 @@
       <a href="{{article.url}}" target="_blank">
         <div class="side-widget-img">
           <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
-          <div class="readLater">
+          <div class="readLater" *ngIf="authService.loggedIn()">
               <div class="btnReadLater">
                 <button class="btn btn-outline-light" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
                     Read Later...

@@ -11,7 +11,7 @@
         <span  id="main-text-category">{{article.source.name}}</span>
         <p>{{article.title}}</p>
         
-        <div class="btnReadLater">
+        <div class="btnReadLater" *ngIf="authService.loggedIn()">
             <button class="btn btn-outline-secondary btn-sm" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
               <i class="fa fa-plus"></i>
             </button>

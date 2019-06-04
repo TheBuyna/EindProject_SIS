@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home-main-articles',
@@ -9,7 +10,7 @@ import { ArticleService } from '../services/article.service';
 })
 export class HomeMainArticlesComponent implements OnInit {
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private authService: AuthService) { }
   allArticles: any;
   @Input('messages') mess: any;
   
