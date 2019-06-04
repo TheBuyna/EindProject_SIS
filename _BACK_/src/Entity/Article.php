@@ -52,7 +52,7 @@ class Article
     private $urlToImage;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     private $publishedAt;
 
@@ -150,12 +150,12 @@ class Article
         return $this;
     }
 
-    public function getPublishedAt(): ?\DateTimeInterface
+    public function getPublishedAt(): ?string
     {
         return $this->publishedAt;
     }
 
-    public function setPublishedAt(\DateTimeInterface $publishedAt): self
+    public function setPublishedAt(?string $publishedAt): self
     {
         $this->publishedAt = $publishedAt;
 
