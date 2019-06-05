@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserFormType;
+use App\Repository\HistoryArticleRepository;
+use App\Repository\ReadLaterArticleRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -65,7 +67,7 @@ class AccountController extends BaseController
     /**
      * @Route("/admin/user/delete/{id}", name="admin_delete_user")
      */
-    public function removeUser(EntityManagerInterface $em, UserRepository $userRepository, $id)
+    public function removeUser(EntityManagerInterface $em, UserRepository $userRepository, $id, HistoryArticleRepository $historyArticleRepository, ReadLaterArticleRepository $readLaterArticleRepository)
     {
         $user = $userRepository->findOneBy(['id' => $id]);
         $em->remove($user);

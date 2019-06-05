@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -77,6 +79,23 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\HistoryArticle", mappedBy="user", cascade={"remove"})
+     */
+    private $historyArticles;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ReadLaterArticle", mappedBy="user", cascade={"remove"})
+     */
+    private $readLaterArticles;
+
+    public function __construct()
+    {
+        $this->historyArticles = new ArrayCollection();
+        $this->readLaterArticles = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -276,4 +295,65 @@ class User implements UserInterface
         return $user;
     }
 
+    /**
+     * @return Collection|HistoryArticle[]
+     */
+    public function getHistoryArticles(): Collection
+    {
+        return $this->historyArticles;
+    }
+
+    public function addHistoryArticle(HistoryArticle $historyArticle): self
+    {
+        if (!$this->historyArticles->contains($historyArticle)) {
+            $this->historyArticles[] = $historyArticle;
+            $historyArticle->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHistoryArticle(HistoryArticle $historyArticle): self
+    {
+        if ($this->historyArticles->contains($historyArticle)) {
+            $this->historyArticles->removeElement($historyArticle);
+            // set the owning side to null (unless already changed)
+            if ($historyArticle->getUsers() === $this) {
+                $historyArticle->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ReadLaterArticle[]
+     */
+    public function getReadLaterArticles(): Collection
+    {
+        return $this->readLaterArticles;
+    }
+
+    public function addReadLaterArticle(ReadLaterArticle $readLaterArticle): self
+    {
+        if (!$this->readLaterArticles->contains($readLaterArticle)) {
+            $this->readLaterArticles[] = $readLaterArticle;
+            $readLaterArticle->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReadLaterArticle(ReadLaterArticle $readLaterArticle): self
+    {
+        if ($this->readLaterArticles->contains($readLaterArticle)) {
+            $this->readLaterArticles->removeElement($readLaterArticle);
+            // set the owning side to null (unless already changed)
+            if ($readLaterArticle->getUser() === $this) {
+                $readLaterArticle->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }
