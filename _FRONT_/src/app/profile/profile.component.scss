@@ -9,6 +9,17 @@
     background-color: var(--background-color);
     color: var(--text-color);
 
+    table {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+    
+    .buttonsRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &hover {
         background-color: var(--text-color);
         color: var(--background-color);

@@ -61,7 +61,21 @@ export class ArticleService {
     }
   );
   }
-  getHistoryArticle() {
-    return this.http.get('http://localhost:8000/api/article/getHistoryArticles');
+  getUserArticle(listName: string) {
+    let listUrl;
+    if (listName === 'history') {
+      listUrl = 'getHistoryArticles';
+    } else if (listName === 'readLater') {
+      listUrl = 'getReadLaterArticles';
+    }
+    return this.http.get('http://localhost:8000/api/article/' + listUrl);
+ }
+
+ deleteHistoryArticle(id: any) {
+  return this.http.get('http://localhost:8000/api/article/deleteHistoryArticle/' + id);
+ }
+
+ deleteReadLaterArticle(id: any) {
+  return this.http.get('http://localhost:8000/api/article/deleteReadLaterArticle/' + id);
  }
 }

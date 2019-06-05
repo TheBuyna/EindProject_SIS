@@ -5,7 +5,7 @@
 @import "variables.scss";
 
 html {
-    background: $BodyGrey;
+    background: var(--primary-color);
 }
 body {
     box-sizing: border-box;

@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+ :host {
+    background: var(--background-color);
+    color: var(--text-color);
+    .article-table {
+        margin: 4em auto;
+        padding-top: 4em;
+        background: var(--background-color);
+        color: var(--text-color);
+
+        table {
+            background: var(--background-color);
+            color: var(--text-color);
+            
+            .custom-modal  {
+                .modal-content {
+                        background: var(--background-color);
+                        border: 1px solid #FFF;
+                    }
+            }
+        }
+        .buttonsRow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    }
+    
+ }
+ 
+
+.my-pagination /deep/ {
+    padding: 1em;
+    .ngx-pagination {
+        a {
+            background: var(--background-color);
+            color: var(--text-color);
+        }
+        .current {
+            background: var(--text-color);
+            color:  var(--background-color);
+    }
+  }
+}

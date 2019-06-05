@@ -9,12 +9,17 @@
         <div class="col-md-9">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
-            <button class="btn btn-labeled btn-info" (click)="openModal(template)">
-              <span class="btn-label"><i class="fa fa-key"></i></span>Change Password
-            </button>
-            <a class="btn btn-labeled btn-dark" [routerLink]="['/history']">
-              <span class="btn-label"><i class="fa fa-history"></i></span>History
-            </a>
+            <div class="buttonsRow">
+                <button class="btn btn-labeled btn-info" (click)="openModal(template)">
+                  <span class="btn-label"><i class="fa fa-key"></i></span>Change Password
+                </button>
+                <a class="btn btn-labeled btn-dark" [routerLink]="['/listArticles/history']">
+                  <span class="btn-label"><i class="fa fa-history"></i></span>History
+                </a>
+                <a class="btn btn-labeled btn-success" [routerLink]="['/listArticles/readLater']">
+                  <span class="btn-label"><i class="fa fa-history"></i></span>Read Laters...
+                </a>
+            </div>
           </div>
         </div>
       </div>
