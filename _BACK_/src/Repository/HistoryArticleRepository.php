@@ -26,7 +26,8 @@ class HistoryArticleRepository extends ServiceEntityRepository
             ->andWhere('a.user = :val')
             ->setParameter('val', $user)
             ->getQuery()
-            ->getResult()
+//            ->getResult()
+            ->getArrayResult()
             ;
     }
     // /**

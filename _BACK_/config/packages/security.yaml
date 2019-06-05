@@ -44,15 +44,7 @@ security:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
         api_history_Article:
-            pattern:  ^/api/readArticle
-            stateless: true
-            anonymous: false
-            provider: app_user_provider
-            guard:
-                authenticators:
-                    - lexik_jwt_authentication.jwt_token_authenticator
-        api_read_later_Article:
-            pattern:  ^/api/saveReadLaterArticle
+            pattern:  ^/api/article
             stateless: true
             anonymous: false
             provider: app_user_provider

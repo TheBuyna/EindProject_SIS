@@ -34,7 +34,7 @@ export class ArticleService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/readArticle';
+    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveHistoryArticle';
     console.log(article);
     this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
       (response) => {
@@ -50,7 +50,7 @@ export class ArticleService {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  const SAVE_ARTICLE_URL = 'http://localhost:8000/api/saveReadLaterArticle';
+  const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveReadLaterArticle';
   console.log(article);
   this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
     (response) => {
@@ -60,5 +60,8 @@ export class ArticleService {
       console.log(error);
     }
   );
-}
+  }
+  getHistoryArticle() {
+    return this.http.get('http://localhost:8000/api/article/getHistoryArticles');
+ }
 }

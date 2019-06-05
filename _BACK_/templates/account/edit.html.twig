@@ -14,7 +14,8 @@ Edit user!
         'attr': {'class': 'form-signin'}
     }) }}
     {{ form_widget(userForm) }}
-    <button type="submit" class="btn btn-primary">Update!</button>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-secondary float-right" href="{{ path('app_form_users') }}">Cancel</a>
     {{ form_end(userForm) }}
 {% endblock %}
 

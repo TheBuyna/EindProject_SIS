@@ -1,0 +1,67 @@
+<div class="row container user-table">
+  <div class="col-sm-12">
+      <h1>History</h1>
+      <form>
+          <div class="input-group mb-3">
+              <input type="text"
+                     name="q"
+                     class="form-control"
+                     placeholder="Search..."
+              >
+              <div class="input-group-append">
+                  <button type="submit"
+                          class="btn btn-outline-secondary">
+                      <span class="fa fa-search"></span>
+                  </button>
+              </div>
+          </div>
+      </form>
+
+      <table class="table table-striped">
+          <thead>
+          <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Read at</th>
+              <th> </th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let article of allHisotryArticles">
+                  <td>{{ article.title}}</td>
+                  <td>{{ article.description | truncateText: 50}}</td>
+                  <td>{{ article.addedAt.date}}</td>
+                  <td class="buttonsRow">
+                      <a class="btn btn-primary" href="{{article.url}}" target="_blank">
+                          <span class="fa fa-external-link"></span>
+                      </a>
+                      <button type="button" class="btn btn-danger" (click)="openModal(confirmModal)">
+                          <span class="fa fa-trash"></span>
+                      </button>
+                  </td>
+                  <ng-template #confirmModal>
+                      <div class="modal-header">
+                        <h4 class="modal-title pull-left">Delete Article?</h4>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Are you sure you want to delete this article {{ article.title }}</p>
+                      </div>
+                      <div class="modal-footer">
+                          <a class="btn btn-danger" href="#">
+                              Delete
+                          </a>
+                          <button type="button" class="btn btn-secondary"  (click)="modalRef.hide()">Cancel</button>
+                      </div>
+                    </ng-template>
+              </tr>
+              <tr *ngIf="0 >= allHisotryArticles?.length">
+                  <td colspan="4" class="text-center">No articles!</td>
+              </tr>
+          </tbody>
+      </table>
+        
+  </div>
+</div>

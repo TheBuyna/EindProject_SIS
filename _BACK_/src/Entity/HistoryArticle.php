@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="HistoryArticleRepository")
@@ -33,16 +34,19 @@ class HistoryArticle
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("main")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups("main")
      */
     private $description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups("main")
      */
     private $url;
 
@@ -65,6 +69,12 @@ class HistoryArticle
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="historyArticles")
      */
     private $user;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @Groups("main")
+     */
+    private $addedAt;
 
     public function getId(): ?int
     {
@@ -181,12 +191,24 @@ class HistoryArticle
 
     public function getUser(): ?User
     {
-        return $this->users;
+        return $this->user;
     }
 
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getAddedAt(): ?\DateTimeInterface
+    {
+        return $this->addedAt;
+    }
+
+    public function setAddedAt(\DateTimeInterface $addedAt): self
+    {
+        $this->addedAt = $addedAt;
 
         return $this;
     }

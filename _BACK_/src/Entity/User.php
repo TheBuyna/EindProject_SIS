@@ -81,12 +81,12 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\HistoryArticle", mappedBy="user", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\HistoryArticle", mappedBy="user", cascade={"remove"}, fetch="EAGER")
      */
     private $historyArticles;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ReadLaterArticle", mappedBy="user", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\ReadLaterArticle", mappedBy="user", cascade={"remove"}, fetch="EAGER")
      */
     private $readLaterArticles;
 

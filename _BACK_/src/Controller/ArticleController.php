@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\HistoryArticle;
 use App\Entity\ReadLaterArticle;
+use App\Repository\HistoryArticleRepository;
+use App\Repository\ReadLaterArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -13,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("api/readArticle", name="api_article_save", methods={"POST"})
+     * @Route("api/article/saveHistoryArticle", name="api_article_save", methods={"POST"})
      */
     public function saveHistoryArticle(Request $request, EntityManagerInterface $em)
     {
@@ -43,6 +45,7 @@ class ArticleController extends AbstractController
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
+                ->setAddedAt(new \DateTime())
                 ->setUser($user);
             $em->persist($article);
             $em->flush();
@@ -57,7 +60,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("api/saveReadLaterArticle", name="api_read_later_article_save", methods={"POST"})
+     * @Route("api/article/saveReadLaterArticle", name="api_read_later_article_save", methods={"POST"})
      */
     public function saveReadLaterArticle(Request $request, EntityManagerInterface $em)
     {
@@ -97,6 +100,27 @@ class ArticleController extends AbstractController
         }
         return new JsonResponse([
             "success" => "The article '" .$article->getTitle(). "' has been saved!"
+        ], 200);
+    }
+
+    /**
+     * @Route("/api/article/getHistoryArticles")
+     * @return JsonResponse
+     */
+    public function getHistoryArticles(HistoryArticleRepository $historyArticleRepository)
+    {
+        return new JsonResponse([
+        "article" => $historyArticleRepository->findArticleById($this->getUser()->getId())
+        ], 200);
+    }
+    /**
+     * @Route("/api/article/getReadLaterArticles")
+     * @return JsonResponse
+     */
+    public function getReadLaterArticles(ReadLaterArticleRepository $readLaterArticleRepository)
+    {
+        return new JsonResponse([
+        "article" => $readLaterArticleRepository->findArticleById($this->getUser()->getId())
         ], 200);
     }
 }

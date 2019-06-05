@@ -25,7 +25,6 @@ class AccountController extends BaseController
      */
     public function index(LoggerInterface $logger)
     {
-
         $logger->debug('Checking account page for '.$this->getUser()->getEmail());
         return $this->render('account/index.html.twig', [
 
@@ -39,9 +38,13 @@ class AccountController extends BaseController
     {
         $user = $this->getUser();
 
-        return $this->json($user,200, [], [
-            'groups' => ['main']
-        ]);
+        return $this->json(
+            $user,
+            200,
+            [],
+            [
+                'groups' => ['main']
+            ]);
     }
 
     /**

@@ -5,6 +5,7 @@ import { CategoryComponent } from './category/category.component';
 import { AuthGuard } from './auth.guard';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path:  'auth', loadChildren:  './auth/auth.module#AuthModule'},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'history', component: HistoryComponent }
 ];
 
 @NgModule({
