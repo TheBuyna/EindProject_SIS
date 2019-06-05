@@ -35,5 +35,11 @@ export class HomeMainArticlesComponent implements OnInit {
     })();
   }
 
+  saveHistoryArticle(article) {
+    this.articleService.saveArticle(article);
+  }
 
+  saveReadLaterArticle(article) {
+    this.articleService.saveReadLaterArticle(article);
+  }
 }

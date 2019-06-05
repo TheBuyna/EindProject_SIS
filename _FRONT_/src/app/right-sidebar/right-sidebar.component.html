@@ -6,17 +6,15 @@
 <div class="right-sidebar">
   <div class="side-content">
     <div class="side-widget" *ngFor="let article of allArticles | slice:0:10;">
-      <a href="{{article.url}}" target="_blank">
+      <div class="btnReadLater" *ngIf="authService.loggedIn()">
+        <button class="btn btn-outline-light" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
+            Read Later...
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
         <div class="side-widget-img">
           <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
-          <div class="readLater" *ngIf="authService.loggedIn()">
-              <div class="btnReadLater">
-                <button class="btn btn-outline-light" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
-                    Read Later...
-                  <i class="fa fa-plus"></i>
-                </button>
-              </div>
-            </div>
         </div><!-- end side-wdiget -->
         <div class="side-widget-text">
           <span id="main-text-category">{{article.source.name}}</span>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +34,7 @@ export class ArticleService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/saveArticle';
+    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/readArticle';
     console.log(article);
     this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
       (response) => {
@@ -44,4 +45,20 @@ export class ArticleService {
       }
     );
  }
+
+ saveReadLaterArticle(article: JSON) {
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  const SAVE_ARTICLE_URL = 'http://localhost:8000/api/saveReadLaterArticle';
+  console.log(article);
+  this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
+    (response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+}
 }

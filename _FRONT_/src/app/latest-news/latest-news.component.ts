@@ -22,4 +22,12 @@ export class LatestNewsComponent implements OnInit {
         this.allArticles = result['articles'];
     });
   }
+
+  saveHistoryArticle(article) {
+    this.articleService.saveArticle(article);
+  }
+
+  saveReadLaterArticle(article) {
+    this.articleService.saveReadLaterArticle(article);
+  }
 }

@@ -59,6 +59,14 @@
         margin-bottom: 1em;
         padding-bottom: 0;
         background: var(--background-color);
+        position: relative;
+        
+        .btnReadLater {
+          position: absolute;
+          top: 0.2em;
+          right: .5em;
+          z-index: 5;
+        }
 
         a {
           width: 100%;
@@ -68,14 +76,7 @@
 
           .main-feature-small-img {
             overflow: hidden;
-            position: relative;
             height: 50%;
-            .btnReadLater {
-              position: absolute;
-              top: 0.2em;
-              right: .5em;
-
-            }
           }
 
           .main-feature-small-text {
@@ -110,6 +111,14 @@
 
       .feature-big-widget-article {
         border-bottom: 1px solid $LighterGrey;
+        position: relative;
+        
+        .btnReadLater {
+            position: absolute;
+            bottom: 1em;
+            right: 2em;
+            z-index: 5;
+        }
 
         a {
           display: flex;

@@ -9,7 +9,7 @@
             </button>
           </div>
         </div>
-      <a href="{{article.url}}" target="_blank">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
         <div class="tNews-main-img">
           <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
         </div>

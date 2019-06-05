@@ -17,6 +17,16 @@
       .latest-news-widgets {
         border-bottom: 1px solid $LightGrey;
         padding: 0 5px;
+        position: relative;
+        .btnReadLater {
+          position: absolute;
+          top: .5em;
+          right: 1em;
+          z-index: 5;
+          .btn-sm {
+            font-size: .600rem
+          }
+        }
 
         a {
           display: flex;
@@ -62,15 +72,6 @@
             
             p { 
               padding-left: .5em; }
-              .btnReadLater {
-                position: absolute;
-                top: 0.2em;
-                right: 0;
-
-                .btn-sm {
-                  font-size: .600rem
-                }
-              }
           }
         }
         &:hover {
