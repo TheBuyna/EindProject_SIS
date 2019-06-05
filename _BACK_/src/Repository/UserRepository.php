@@ -40,7 +40,7 @@ class UserRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('u');
 
         if ($term) {
-            $qb->andWhere('u.email LIKE :term OR u.roles LIKE :term OR u.firstName LIKE :term')
+            $qb->andWhere('u.email LIKE :term OR u.roles LIKE UPPER(:term) OR u.firstName LIKE :term')
                 ->setParameter('term', '%'.$term.'%')
             ;
         }

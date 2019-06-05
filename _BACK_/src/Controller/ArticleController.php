@@ -90,6 +90,7 @@ class ArticleController extends AbstractController
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
+                ->setAddedAt(new \DateTime())
                 ->setUser($user);
             $em->persist($article);
             $em->flush();
@@ -113,6 +114,26 @@ class ArticleController extends AbstractController
         "article" => $historyArticleRepository->findArticleById($this->getUser()->getId())
         ], 200);
     }
+
+    /**
+     * @Route("/api/article/deleteHistoryArticle/{id}")
+     */
+    public function deleteHistoryArticle(EntityManagerInterface $em, HistoryArticleRepository $historyArticleRepository, $id)
+    {
+        try{
+            $article = $historyArticleRepository->findOneBy(['id' => $id]);
+            $em->remove($article);
+            $em->flush();
+        } catch (\Exception $exception) {
+            return new JsonResponse([
+                "error" => $exception->getMessage()
+            ], 500);
+        }
+        return new JsonResponse([
+            "success" => 'The article has been deleted!'
+        ], 200);
+    }
+
     /**
      * @Route("/api/article/getReadLaterArticles")
      * @return JsonResponse
@@ -121,6 +142,25 @@ class ArticleController extends AbstractController
     {
         return new JsonResponse([
         "article" => $readLaterArticleRepository->findArticleById($this->getUser()->getId())
+        ], 200);
+    }
+
+    /**
+     * @Route("/api/article/deleteReadLaterArticle/{id}")
+     */
+    public function deleteReadLaterArticle(EntityManagerInterface $em, ReadLaterArticleRepository $readLaterArticleRepository, $id)
+    {
+        try{
+            $article = $readLaterArticleRepository->findOneBy(['id' => $id]);
+            $em->remove($article);
+            $em->flush();
+        } catch (\Exception $exception) {
+            return new JsonResponse([
+                "error" => $exception->getMessage()
+            ], 500);
+        }
+        return new JsonResponse([
+            "success" => 'The article has been deleted!'
         ], 200);
     }
 }

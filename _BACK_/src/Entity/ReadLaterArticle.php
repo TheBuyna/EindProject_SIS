@@ -66,6 +66,11 @@ class ReadLaterArticle
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $addedAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -187,6 +192,18 @@ class ReadLaterArticle
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getAddedAt(): ?\DateTimeInterface
+    {
+        return $this->addedAt;
+    }
+
+    public function setAddedAt(\DateTimeInterface $addedAt): self
+    {
+        $this->addedAt = $addedAt;
 
         return $this;
     }
