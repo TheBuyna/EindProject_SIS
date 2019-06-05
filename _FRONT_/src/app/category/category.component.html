@@ -20,15 +20,12 @@
             </div>
           </div><!-- end poNews-info -->
         </div><!-- end side-wdiget -->
-        <div class="main-feature-small-text">
-          <span id="main-text-category">{{article.source.name}}</span>
-          <h2>{{article.title}}</h2>
-        </div><!-- end side-widget-text -->
+        <h2>{{article.title}}</h2>
       </a>
     </div><!-- end-small-feature-article -->
   </div>
-  <div class="feature-big-widget-wrap">
-    <div class="feature-big-widget-article" *ngFor="let article of allArticles">
+  <div class="feature-big-widget-wrap row">
+    <div class="feature-big-widget-article col-lg-6 col-md-12 col-sm-12 col-xs-12" *ngFor="let article of allArticles | slice:3:15;">
       <a href="{{article.url}}" target="_blank">
           <div class="main-feature-big-img">
               <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
@@ -45,10 +42,38 @@
             </div><!-- end side-wdiget -->
             <div class="main-feature-big-text">
               <span id="main-text-category">{{article.source.name}}</span>
-              <h2>{{article.title}}</h2>
               <p>{{article.description}}</p>
             </div><!-- end side-widget-text -->
       </a>
     </div>
   </div>
-</div>
+
+  <div class="feature-big-widget-wrap2 row">
+    <div class="feature-big-widget-article2 col-lg-9 col-md-12 col-sm-12 col-xs-12" *ngFor="let article of allArticles | slice:15:100;">
+      <a href="{{article.url}}" target="_blank">
+        <div class="main-feature-big-img2">
+            <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+            <div class="feNews-info">
+              <div class="info-views">
+                <i class="fa fa-eye"></i>
+                <span class="">233.3K</span>
+              </div>
+              <div class="info-comm">
+                <i class="fa fa-comment"></i>
+                <span class="info-comm-text">23</span>
+              </div>
+            </div><!-- end poNews-info -->
+          </div><!-- end side-wdiget -->
+          <div class="main-feature-big-text2">
+            <h2>{{article.title}}</h2>
+            <p>{{article.description}}</p>
+          </div><!-- end side-widget-text -->
+    </a>
+    </div>
+  </div>
+
+  </div>
+
+  
+
+  

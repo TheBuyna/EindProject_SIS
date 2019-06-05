@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path:  'auth', loadChildren:  './auth/auth.module#AuthModule'},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'category', component: CategoryComponent}
 ];
 
 @NgModule({
