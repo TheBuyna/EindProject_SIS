@@ -1,6 +1,16 @@
 
 .user-pad {
     padding-top: 2em;
+    
+    .buttonsRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        a {
+            margin-top: 2em;
+        }
+    }
 }
 
 .userInfoTable {
@@ -14,11 +24,6 @@
         color: var(--text-color);
     }
     
-    .buttonsRow {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
     &hover {
         background-color: var(--text-color);
