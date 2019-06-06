@@ -23,11 +23,7 @@
     </div>
   </div>
   <div class="feature-big-widget-wrap">
-<<<<<<< HEAD
     <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:3;">
-      <a href="{{article.url}}" target="_blank">
-=======
-    <div class="feature-big-widget-article" *ngFor="let article of allArticles">
           <div class="btnReadLater" *ngIf="authService.loggedIn()">
             <button class="btn btn-outline-secondary" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
                 Read Later...
@@ -35,7 +31,6 @@
             </button>
           </div>
       <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
->>>>>>> e9cd87449b22dfa8c6ad4d06198b71b7c77c8582
           <div class="main-feature-big-img">
               <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
             </div><!-- end side-wdiget -->
