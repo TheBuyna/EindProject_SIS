@@ -44,6 +44,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() { 
+    this.getAvatarUrl();
     this.themeService.toggleLight();
   }
 
@@ -55,6 +56,18 @@ export class NavbarComponent implements OnInit {
   
   tsearch: any;
   searchedArticles;
+  
+  getAvatarUrl() {
+    this.authService.getUseremail().subscribe(
+      (res) => {
+        this.avatar_url = res['user']['email'];
+        console.log(res);
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    )
+  }
 
   searchFunc(){
     // if (this.tsearch) {

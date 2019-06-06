@@ -69,4 +69,8 @@ export class AuthService {
     }
     );
   }
+
+  getUseremail(){
+    return this.http.get(this.CHECK_JWT);
+  }
 }

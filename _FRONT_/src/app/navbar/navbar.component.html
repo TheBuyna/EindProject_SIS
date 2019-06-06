@@ -39,7 +39,7 @@
           <!-- Dropdown for logged in user -->
           <li ngbDropdown *ngIf="authService.loggedIn()">
             <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
-              <img class="nav-profile-img rounded-circle" src="#">
+              <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
               <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
@@ -85,7 +85,7 @@
       <!-- Dropdown for logged in user -->
       <li ngbDropdown *ngIf="authService.loggedIn()">
         <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
-          <img class="nav-profile-img rounded-circle" src="#">
+          <img class="nav-profile-img rounded-circle"  src="https://robohash.org/{{avatar_url}}?size=20x20">
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
           <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
