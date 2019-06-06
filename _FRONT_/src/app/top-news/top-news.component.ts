@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-top-news',
@@ -9,7 +10,7 @@ import { ArticleService } from '../services/article.service';
 })
 export class TopNewsComponent implements OnInit {
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private authService: AuthService) { }
 
   allArticles: any;
   ngOnInit() {
@@ -20,5 +21,13 @@ export class TopNewsComponent implements OnInit {
     this.articleService.get_top_headlines('be').subscribe((result) => {
         this.allArticles = result['articles'];
     });
+  }
+
+  saveHistoryArticle(article) {
+    this.articleService.saveArticle(article);
+  }
+
+  saveReadLaterArticle(article) {
+    this.articleService.saveReadLaterArticle(article);
   }
 }

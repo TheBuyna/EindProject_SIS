@@ -77,7 +77,9 @@ div.user-menu-container .thumbnail {
     font-size: 40px;
     margin-top: 0;
 }
-
+.user-table {
+    margin: 0 auto;
+}
 .square, .btn {
     border-radius: 0px!important;
 }

@@ -1,7 +1,7 @@
   <div class="row" *ngIf="userInfo">
     <div class="col-md-12 container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 profilePic">
           <div class="user-image">
             <img src="{{avatar_Url}}">
           </div>
@@ -9,7 +9,17 @@
         <div class="col-md-10 user-title">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
-            
+            <!-- <div class="buttonsRow">
+                <button class="btn btn-labeled btn-info" (click)="openModal(template)">
+                  <span class="btn-label"><i class="fa fa-key"></i></span> Change Password
+                </button>
+                <a class="btn btn-labeled btn-dark" [routerLink]="['/listArticles/history']">
+                  <span class="btn-label"><i class="fa fa-history"></i></span> History
+                </a>
+                <a class="btn btn-labeled btn-success" [routerLink]="['/listArticles/readLater']">
+                  <span class="btn-label"><i class="fa fa-history"></i></span> Read Laters...
+                </a>
+            </div> -->
           </div>
         </div>
       </div>
@@ -19,6 +29,12 @@
         <button class="btn-pwd" (click)="openModal(template)">
             <span class="pwd"><i class="fa fa-key"></i></span>Change Password
         </button>
+        <a [routerLink]="['/listArticles/history']">
+          <span class="btn-label"><i class="fa fa-history"></i></span> History
+        </a>
+        <a [routerLink]="['/listArticles/readLater']">
+          <span class="btn-label"><i class="fa fa-history"></i></span> Read Laters...
+        </a>
         <button class="changeDetails">
             <span (click)="updateInfo()"><i class="fa fa-pencil"></i></span>
           </button>
@@ -26,22 +42,8 @@
 
       
 
-      <div class="row userInfoTable">
-        <!-- <table class="table table-light table-hover">
-          <tbody>
-            <tr *ngFor="let key of userKeys; let i = index">
-              <th scope="row">{{key|beautifyKeyString}}</th>
-              <td >{{userValues[i]}}</td>
-              <td>
-                <button class="btn btn-labeled btn-info">
-                  <span class="btn-label"><i class="fa fa-pencil"></i></span>Edit
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table> -->
-
-        <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+     <div class="row userInfoTable">
+        <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit(myform)" ngNativeValidate>
           <div class="row">
               <div *ngFor="let key of userKeys; let i = index" class="col-md-6">
                   <label class="labelField">
@@ -82,12 +84,19 @@
   </div>
   <div class="modal-body">
         <form #myform="ngForm" (ngSubmit)="resetPassword(myform); modalRef.hide()" class="form form-login">
-            <div class="input-group">
-                <input name="oldPassword" id="oldPassword" type="email" class="form-control" placeholder="Old Password" required ngModel>
+            <div class="form-group">
+                <label for="oldPassword">Enter your old password: </label>
+                <input name="oldPassword" id="oldPassword" type="password" class="form-control" placeholder="Old Password" required ngModel>
             </div>
         
-            <div class="input-group">
+            <div class="form-group">
+                <label for="plainNewPassword">Enter your new password: </label>
                 <input name="plainNewPassword" id="plainNewPassword" type="password" class="form-control" placeholder="New Password" required ngModel>
+            </div>
+        
+            <div class="form-group">
+                <label for="verifyNewPassword">Verify your new password: </label>
+                <input name="verifyNewPassword" id="verifyNewPassword" type="password" class="form-control" placeholder="Verify New Password" required ngModel>
             </div>
         
             <div class="col-12 text-center">

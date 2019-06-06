@@ -5,7 +5,7 @@
 @import "variables.scss";
 
 html {
-    background: $BodyGrey;
+    background: var(--primary-color);
 }
 body {
     box-sizing: border-box;
@@ -21,3 +21,17 @@ body {
     width: 80%; 
     margin: 0 auto;
 }
+
+
+.readLater {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    z-index: 2;
+    justify-content: flex-end;
+
+    .btnReadLater {
+      margin: 1em;
+    }
+  }

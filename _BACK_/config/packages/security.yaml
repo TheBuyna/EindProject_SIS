@@ -36,13 +36,22 @@ security:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
         api_reset_Password:
-            pattern:  ^/api/resetPassword
+            pattern:  ^/api/
+#            pattern:  ^/api/resetPassword
             stateless: true
             anonymous: false
             provider: app_user_provider
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
+#        api_history_Article:
+#            pattern:  ^/api/article
+#            stateless: true
+#            anonymous: false
+#            provider: app_user_provider
+#            guard:
+#                authenticators:
+#                    - lexik_jwt_authentication.jwt_token_authenticator
 
         main:
             anonymous: true
@@ -73,5 +82,5 @@ security:
         - { path: ^/api/resetPassword, roles: IS_AUTHENTICATED_FULLY }
 #        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
-        #        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

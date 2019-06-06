@@ -66,7 +66,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         if (!$this->csrfTokenManager->isTokenValid($token)){
             throw new InvalidCsrfTokenException();
         }
-        return $this->userRepository->findOneBy(['email' => $credentials['email']]);
+        return $this->userRepository->findAdminUser(['email' => $credentials['email']]);
     }
 
     public function checkCredentials($credentials, UserInterface $user)

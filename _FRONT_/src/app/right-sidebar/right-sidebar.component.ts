@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-right-sidebar',
@@ -8,7 +9,7 @@ import { ArticleService } from '../services/article.service';
 })
 export class RightSidebarComponent implements OnInit {
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private authService: AuthService) { }
 
   allArticles;
   ngOnInit() {
@@ -21,4 +22,11 @@ export class RightSidebarComponent implements OnInit {
     });
   }
 
+  saveHistoryArticle(article) {
+    this.articleService.saveArticle(article);
+  }
+
+  saveReadLaterArticle(article) {
+    this.articleService.saveReadLaterArticle(article);
+  }
 }

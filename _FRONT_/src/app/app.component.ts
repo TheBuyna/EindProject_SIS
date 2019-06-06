@@ -2,6 +2,7 @@ import { Component, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemeService } from './services/theme.service';
 import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
+import { ArticleService } from './services/article.service';
 
 
 @Component({
@@ -17,7 +18,13 @@ export class AppComponent {
   
   theme = "light";
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private articleService: ArticleService) {}
+
+  broadcastTop($e){
+    console.log('event ontvangen');
+   // this.fire = $e;
+    console.log($e);
+  }
 
   // searchRequest: string;
 

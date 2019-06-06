@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,52 @@ export class ArticleService {
     return this.http.get(articles);
  }
 
+ saveArticle(article: JSON) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveHistoryArticle';
+    console.log(article);
+    this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+ }
+
+ saveReadLaterArticle(article: JSON) {
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveReadLaterArticle';
+  console.log(article);
+  this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
+    (response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+  }
+  getUserArticle(listName: string) {
+    let listUrl;
+    if (listName === 'history') {
+      listUrl = 'getHistoryArticles';
+    } else if (listName === 'readLater') {
+      listUrl = 'getReadLaterArticles';
+    }
+    return this.http.get('http://localhost:8000/api/article/' + listUrl);
+ }
+
+ deleteHistoryArticle(id: any) {
+  return this.http.get('http://localhost:8000/api/article/deleteHistoryArticle/' + id);
+ }
+
+ deleteReadLaterArticle(id: any) {
+  return this.http.get('http://localhost:8000/api/article/deleteReadLaterArticle/' + id);
+ }
 }

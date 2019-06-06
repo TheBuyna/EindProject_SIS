@@ -12,6 +12,7 @@ export class AuthService {
   private REGISTER_URL = "http://127.0.0.1:8000/api/register";
   private LOGIN_URL = "http://localhost:8000/api/login_check";
   private CHECK_JWT = "http://localhost:8000/apiCheck";
+  private UPDATE_URL = 'http://localhost:8000/api/updateuser';
   public redirectUrl: string;
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
@@ -37,6 +38,11 @@ export class AuthService {
   logoutUser() {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
+  }
+
+  updateUser(formValue) {
+    console.log(formValue);
+    return this.http.put(this.UPDATE_URL, formValue, { headers: { 'Content-Type': 'application/json' } });
   }
 
   checkToken() {

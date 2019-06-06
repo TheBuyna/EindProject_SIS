@@ -31,6 +31,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ArticleListsComponent } from './article-lists/article-lists.component';
+import { TruncateTextPipe } from './truncate-text.pipe';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+import { StringFilterPipe } from './string-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ImagePreloadDirective,
     HomepageComponent,
     ProfileComponent,
-    BeautifyKeyStringPipe
+    BeautifyKeyStringPipe,
+    ArticleListsComponent,
+    TruncateTextPipe,
+    StringFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -60,6 +68,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgFlashMessagesModule.forRoot(),
     NgbModule,
     ModalModule.forRoot(),
+    NgxPaginationModule,
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 

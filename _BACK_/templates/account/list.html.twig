@@ -1,0 +1,91 @@
+{% extends 'content_base.html.twig' %}
+{% block title %}Users({{ pagination.getTotalItemCount }}){% endblock %}
+{% block content_body %}
+    <div class="row container user-table">
+        <div class="col-sm-12">
+            <a href="{{ path('admin_user_new') }}" class="btn btn-primary float-right">
+                Add User <i class="fas fa-user-plus"></i>
+            </a>
+            <h1>Users ({{ pagination.getTotalItemCount }})</h1>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="q"
+                           class="form-control"
+                           placeholder="Search..."
+                           value="{{ app.request.query.get('q') }}"
+                    >
+                    <div class="input-group-append">
+                        <button type="submit"
+                                class="btn btn-outline-secondary">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Name</th>
+                    <th> </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in pagination %}
+                    <tr>
+                        <td>{{ user.email }}</td>
+                        <td style="width: 20%">
+                            {% for role in user.roles %}
+                                <p>{{ role }} </p>
+                            {% endfor %}
+                        </td>
+                        <td>{{ user.firstName }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ path('admin_user_edit', {id: user.id }) }}">
+                                <i class="fas fa-user-edit"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#user_{{ user.id }}">
+                                <span class="fa fa-user-slash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center">User not found.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% for user in pagination %}
+                <div class="modal fade" id="user_{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete User?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete this user {{ user.email }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-danger" href="{{ path('admin_delete_user', {id: user.id }) }}">
+                                    Delete
+                                </a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

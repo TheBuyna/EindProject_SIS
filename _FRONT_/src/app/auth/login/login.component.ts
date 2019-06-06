@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login(form) {
+    console.log(form.value);
     this.auth.loginUser(form.value).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
