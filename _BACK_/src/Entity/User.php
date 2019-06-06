@@ -296,6 +296,7 @@ class User implements UserInterface
         $user["telephone"] = $this->getTelephone();
         $user["postal_Code"] = $this->getPostalCode();
         $user["avatar_Url"] = $this->getAvatarUrl();
+        $user["theme"] = $this->getTheme();
 
         return $user;
     }

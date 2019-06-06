@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   public visible : boolean = true;
 
   avatar_url;
+  theme = 'light';
   
   toggleEvent(event){
     this.toggle = !this.toggle;
@@ -31,21 +32,25 @@ export class NavbarComponent implements OnInit {
     this.visible = !this.visible;
   }
 
+  currentModeDark: boolean;
+
   darkTheme = new FormControl(false);
   
   constructor(private themeService: ThemeService, private articleService:ArticleService, private authService: AuthService, private router:Router) {
     this.darkTheme.valueChanges.subscribe(value => {
-      if (value) {
-        this.themeService.toggleDark();
+      if (!value) {
+        this.theme = 'light';
+        this.themeService.toggleTheme(this.theme);
       } else {
-        this.themeService.toggleLight();
+        this.theme = 'dark';
+        this.themeService.toggleTheme(this.theme);
       }
     });
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.getAvatarUrl();
-    this.themeService.toggleLight();
+    this.themeService.toggleTheme(this.theme);
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -61,6 +66,8 @@ export class NavbarComponent implements OnInit {
     this.authService.getUseremail().subscribe(
       (res) => {
         this.avatar_url = res['user']['email'];
+        this.theme = res['user']['theme']
+        this.themeService.toggleTheme(this.theme);
         console.log(res);
       },
       (err) => {

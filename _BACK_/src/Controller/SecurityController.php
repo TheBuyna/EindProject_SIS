@@ -125,6 +125,7 @@ class SecurityController extends AbstractController
                 ->setHouseNumber($houseNumber)
                 ->setCity($city)
                 ->setPostalCode($postalCode)
+                ->setTheme('light')
                 ->setPassword($passwordEncoder->encodePassword($user, $plainPassword));
             if (isset($data["mailbox_number"])) {
                 $user->setMailboxNumber($data["mailbox_number"]);
@@ -160,7 +161,30 @@ class SecurityController extends AbstractController
         $oldPassword = $data["oldPassword"];
         $newPlainPassword = $data["plainNewPassword"];
 
-
+        $contains_uppercase = preg_match('@[A-Z]@', $newPlainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $newPlainPassword);
+        $contains_number    = preg_match('@[0-9]@', $newPlainPassword);
+        //Password validation
+        if (strlen($newPlainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
 
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
             $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
@@ -196,9 +220,7 @@ class SecurityController extends AbstractController
      */
     public function apiUpdateUser(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
     {
-//        dd($this->getUser());
         $data = json_decode($request->getContent(),true);
-//        dd($data);
         $email = $data["email"];
         $firstName = $data["first_Name"];
         $lastName = $data["last_Name"];
@@ -220,30 +242,12 @@ class SecurityController extends AbstractController
             if (isset($data["telephone"])) {
                 $user->setTelephone($data["telephone"]);
             }
-//        dd($user);
-//        $form = $this->createForm(UserFormType::class, $user);
-////        dd($form);
-//        $form->remove('password');
-//        $form->remove('roles');
-//        $form->submit($data);
-//
-////        $form->handleRequest($request);
-//        dd($form->getErrors());
-//        if (false === $form->isValid()) {
-//            return new JsonResponse(
-//                [
-//                    'errors' => $form->getErrors()
-//                ],
-//                JsonResponse::HTTP_BAD_REQUEST
-//            );
-//        }
         $em->persist($user);
         $em->flush();
 
         return new JsonResponse([
             "success" => $user->getFirstName(). " has been updated!"
         ], 200);
-//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
     }
 
     /**
@@ -284,5 +288,27 @@ class SecurityController extends AbstractController
                 "error" => 'Password must contain at least one number!'
             ], 500);
         }
+    }
+
+    /**
+     * @Route("/api/setTheme", methods={"PUT"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function setTheme(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
+    {
+        $data = json_decode($request->getContent(),true);
+        $user = $userRepository->findOneBy(['id' => $this->getUser()->getId()]);
+
+        $theme = $data['theme'];
+        $user->setTheme($theme);
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse([
+            "success" => "Theme has been set to ". $theme ."!"
+        ], 200);
     }
 }

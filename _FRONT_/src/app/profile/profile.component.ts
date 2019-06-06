@@ -94,6 +94,7 @@ export class ProfileComponent implements OnInit {
       this.userInfo = resultaat['user'];
       this.avatar_Url = this.userInfo['avatar_Url'];
       delete this.userInfo['avatar_Url'];
+      delete this.userInfo['theme']
       this.sortResults(this.userInfo);
     },
     (err) => {

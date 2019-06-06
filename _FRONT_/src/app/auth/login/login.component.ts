@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,19 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
+  constructor(private auth: AuthService, private router: Router, private ngFlashMessageService: NgFlashMessageService, private themeService: ThemeService) { }
 
   ngOnInit() {
   }
   login(form) {
-    console.log(form.value);
     this.auth.loginUser(form.value).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
+        this.auth.getUseremail().subscribe(
+          (res) => {
+            this.themeService.toggleTheme(res['user']['theme']);
+          }
+        )
         if (this.auth.redirectUrl) {
           console.log(this.auth.redirectUrl);
           this.router.navigate([this.auth.redirectUrl]);

@@ -43,7 +43,7 @@
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
               <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+              <a ngbDropdownItem (click)="authService.logoutUser(theme)"><i class="fa fa-sign-out"></i> Logout</a>
             </div>
           </li>
           <!-- end Dropdown -->
@@ -89,7 +89,7 @@
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
           <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-          <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+          <a ngbDropdownItem (click)="authService.logoutUser(theme)"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
       <!-- end Dropdown -->
@@ -105,7 +105,7 @@
     <i class="fa fa-search" (click)="searchDisplay($event)"></i>
   </div>
   <div>
-    <ui-switch size="small" color="#FFCC00" [formControl]="darkTheme" class="darkmode"></ui-switch>
+    <ui-switch size="small" color="#FFCC00" class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch>
   </div>
   <div class="handle"><a href="#" title="">TNS | The News Spot</a></div>
 </nav>

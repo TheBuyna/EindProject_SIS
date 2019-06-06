@@ -35,11 +35,26 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  logoutUser() {
+  logoutUser(theme: string) {
+    // console.log(theme);
+    this.setTheme(theme);
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
 
+  setTheme(theme: string) {
+    let themeJson = {
+      'theme': theme
+    }
+    return this.http.put('http://localhost:8000/api/setTheme', themeJson, { headers: { 'Content-Type': 'application/json' } }).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
   updateUser(formValue) {
     console.log(formValue);
     return this.http.put(this.UPDATE_URL, formValue, { headers: { 'Content-Type': 'application/json' } });
@@ -70,7 +85,7 @@ export class AuthService {
     );
   }
 
-  getUseremail(){
+  getUseremail() {
     return this.http.get(this.CHECK_JWT);
   }
 }
