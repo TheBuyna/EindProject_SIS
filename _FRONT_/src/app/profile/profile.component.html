@@ -1,24 +1,30 @@
   <div class="row" *ngIf="userInfo">
-    <div class="col-md-12">
+    <div class="col-md-12 container">
       <div class="row">
         <div class="col-md-2">
           <div class="user-image">
             <img src="{{avatar_Url}}">
           </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 user-title">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
-            <button class="btn btn-labeled btn-info" (click)="openModal(template)">
-              <span class="btn-label"><i class="fa fa-key"></i></span>Change Password
-            </button>
+            
           </div>
         </div>
       </div>
 
-      <button class="btn btn-labeled btn-info">
-        <span (click)="updateInfo()"><i class="fa fa-pencil"></i></span>
-      </button>
+      <div class="detailsTitle">
+        <h3>Profile Details</h3>
+        <button class="btn-pwd" (click)="openModal(template)">
+            <span class="pwd"><i class="fa fa-key"></i></span>Change Password
+        </button>
+        <button class="changeDetails">
+            <span (click)="updateInfo()"><i class="fa fa-pencil"></i></span>
+          </button>
+      </div>
+
+      
 
       <div class="row userInfoTable">
         <!-- <table class="table table-light table-hover">
@@ -36,20 +42,18 @@
         </table> -->
 
         <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit()" ngNativeValidate>
-          <div *ngFor="let key of userKeys; let i = index">
-            <label>
-              {{key|beautifyKeyString}}
-              <input [(ngModel)]="userValues[i]" type="text" formControlName="{{key}}" value="{{userValues[i]}}">
-            </label>
+          <div class="row">
+              <div *ngFor="let key of userKeys; let i = index" class="col-md-6">
+                  <label class="labelField">
+                    {{key|beautifyKeyString}}
+                    </label>
+                    <input [(ngModel)]="userValues[i]" type="text" formControlName="{{key}}" value="{{userValues[i]}}" class="inputField">
+                  
+              </div>
           </div>
-          
-        
-          <!-- <label>
-            Last Name:
-            <input type="text" formControlName="lastName">
-          </label> -->
-        
-          <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+          <div class="div-btn-update">
+            <button type="submit" [disabled]="!profileForm.valid" class="col-md-4 btn-update">Update</button>
+          </div>
         </form>
       </div>
     </div>

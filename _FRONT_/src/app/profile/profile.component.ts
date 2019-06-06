@@ -6,6 +6,7 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 import { ThemeService } from '../services/theme.service';
 import { FormGroup, FormControl, FormBuilder, FormArray, Validators, NgForm} from '@angular/forms';
 
+
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-profile',
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
   isDisabled = true;
 
   constructor(
+    private auth: AuthService,
     private http: HttpClient,
     private router: Router,
     private ngFlashMessageService: NgFlashMessageService,
@@ -57,6 +59,29 @@ export class ProfileComponent implements OnInit {
 
     onSubmit() {
       console.log(this.profileForm);
+      this.profileForm.disable();
+
+      this.auth.registerUser(this.profileForm.value).subscribe(
+        (res) => {
+          alert(res);
+          this.router.navigate(['/home']);
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [res.success + ' Profile updated!!'],
+            dismissible: true,
+            timeout: 5000,
+            type: 'success'
+          });
+  
+        },
+        (err) => {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: ['An error occured while updating!!'],
+            dismissible: true,
+            timeout: 5000,
+            type: 'danger'
+          });
+        }
+      );
     }
 
   private CHECK_JWT = "http://localhost:8000/apiCheck";
