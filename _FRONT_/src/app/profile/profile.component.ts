@@ -4,6 +4,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Router } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
 import { ThemeService } from '../services/theme.service';
+import { FormGroup, FormControl, FormBuilder, FormArray, Validators, NgForm} from '@angular/forms';
+
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
@@ -12,13 +14,73 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
   modalRef: BsModalRef;
+  isDisabled = true;
+
   constructor(
+    private auth: AuthService,
     private http: HttpClient,
     private router: Router,
     private ngFlashMessageService: NgFlashMessageService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private fb: FormBuilder
     ) { }
+
+    profileForm = this.fb.group({
+      first_Name: [{value:'', disabled: this.isDisabled}],
+      last_Name: [{value:'', disabled: this.isDisabled}],
+      street_Name: [{value:'', disabled: this.isDisabled}],
+      house_Number: [{value:'', disabled: this.isDisabled}],
+      mailBox_Number: [{value:'', disabled: this.isDisabled}],
+      city: [{value:'', disabled: this.isDisabled}],
+      telephone: [{value:'', disabled: this.isDisabled}],
+      postal_Code: [{value:'', disabled: this.isDisabled}],
+      email: [{value:'', disabled: this.isDisabled}]
+      
+    });
+
+    updateInfo() {
+      this.profileForm.enable();
+      console.log(this.profileForm);
+    }
+
+    // profileForm = new FormGroup({
+    //   first_Name: new FormControl({value:'', disabled: true} , Validators.required),
+    //   last_Name: new FormControl({value:'', disabled: true} , Validators.required),
+    //   street_Name: new FormControl({value:'', disabled: true} , Validators.required),
+    //   house_Number: new FormControl({value:'', disabled: true} , Validators.required),
+    //   mailBox_Number: new FormControl({value:'', disabled: true} , Validators.required),
+    //   city: new FormControl({value:'', disabled: true} , Validators.required),
+    //   telephone: new FormControl({value:'', disabled: true} , Validators.required),
+    //   postal_Code: new FormControl({value:'', disabled: true} , Validators.required),
+    //   email: new FormControl({value:'', disabled: true} , Validators.required),
+    // });
+
+    onSubmit(myForm) {
+      // console.log(this.profileForm);
+      // this.profileForm.disable();
+
+      this.auth.updateUser(myForm.value).subscribe(
+        (res) => {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [res['success']],
+            dismissible: true,
+            timeout: 5000,
+            type: 'success'
+          });
+  
+        },
+        (err) => {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: ['An error occured while updating!!'],
+            dismissible: true,
+            timeout: 5000,
+            type: 'danger'
+          });
+        }
+      );
+    }
 
   private CHECK_JWT = "http://localhost:8000/apiCheck";
   userInfo = [];
@@ -63,7 +125,9 @@ export class ProfileComponent implements OnInit {
     for (let value of valuesInput){
       this.userValues.push(value);
     }
+    console.log(this.userInfo);
   }
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(
       template
@@ -94,4 +158,6 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
+
+  
 }

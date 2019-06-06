@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserFormType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -147,37 +149,90 @@ class SecurityController extends AbstractController
         $data = json_decode($request->getContent(),true);
         $oldPassword = $data["oldPassword"];
         $newPlainPassword = $data["plainNewPassword"];
-        $verifyNewPassword = $data["verifyNewPassword"];
 
 
 
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
-            if ($newPlainPassword !== $verifyNewPassword) {
+            $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
+            if ($oldPassword !== $newPlainPassword) {
+                $user->setPassword($newEncodedPassword);
+
+                $em->persist($user);
+                $em->flush();
+
                 return new JsonResponse([
-                    "error" => 'Verify your password again, please!'
-                ], 500);
+                    "success" => "You changed your password successfully!"
+                ], 200);
             } else {
-                $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
-                if ($oldPassword !== $newPlainPassword) {
-                    $user->setPassword($newEncodedPassword);
-
-                    $em->persist($user);
-                    $em->flush();
-
-                    return new JsonResponse([
-                        "success" => "You changed your password successfully!"
-                    ], 200);
-                } else {
-                    return new JsonResponse([
-                        "error" => 'New password cant be the same as old one!'
-                    ], 500);
-                }
+                return new JsonResponse([
+                    "error" => 'New password cant be the same as old one!'
+                ], 500);
             }
+
         } else {
             return new JsonResponse([
                 "error" => 'Old password is incorrect!'
             ], 500);
         }
+//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
+    }
+
+    /**
+     * @Route("/api/updateuser", methods={"PUT"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function apiUpdateUser(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
+    {
+//        dd($this->getUser());
+        $data = json_decode($request->getContent(),true);
+//        dd($data);
+        $email = $data["email"];
+        $firstName = $data["first_Name"];
+        $lastName = $data["last_Name"];
+        $streetName = $data["street_Name"];
+        $houseNumber = $data["house_Number"];
+        $city = $data["city"];
+
+        $user = $userRepository->findOneBy(['id' => $this->getUser()->getId()]);
+        $user
+            ->setEmail($email)
+            ->setFirstName($firstName)
+            ->setLastName($lastName)
+            ->setStreetName($streetName)
+            ->setHouseNumber($houseNumber)
+            ->setCity($city);
+            if (isset($data["mailBox_Number"])) {
+                $user->setMailboxNumber($data["mailBox_Number"]);
+            }
+            if (isset($data["telephone"])) {
+                $user->setTelephone($data["telephone"]);
+            }
+//        dd($user);
+//        $form = $this->createForm(UserFormType::class, $user);
+////        dd($form);
+//        $form->remove('password');
+//        $form->remove('roles');
+//        $form->submit($data);
+//
+////        $form->handleRequest($request);
+//        dd($form->getErrors());
+//        if (false === $form->isValid()) {
+//            return new JsonResponse(
+//                [
+//                    'errors' => $form->getErrors()
+//                ],
+//                JsonResponse::HTTP_BAD_REQUEST
+//            );
+//        }
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse([
+            "success" => $user->getFirstName(). " has been updated!"
+        ], 200);
 //        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
     }
 

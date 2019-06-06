@@ -49,6 +49,18 @@ class UserRepository extends ServiceEntityRepository
             ->orderBy('u.id', 'ASC');
     }
 
+//    public function updateUser($id)
+//    {
+//
+//        return $this->createQueryBuilder('u')
+//            ->update()
+//            ->andWhere('i.id LIKE :id')
+//            ->setParameter('id', $id)
+//            ->getQuery()
+//            ->execute()
+//            ;
+//    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

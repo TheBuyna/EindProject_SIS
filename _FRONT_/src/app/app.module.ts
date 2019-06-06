@@ -78,6 +78,7 @@ import { StringFilterPipe } from './string-filter.pipe';
       multi: true
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

@@ -1,10 +1,10 @@
 @import "../../variables.scss";
 
 :host {
-  // float: left;
-  // width: 50%;
 
   .main-small-widget-title {
+    margin-top: 2em;
+
     h3 {
       font-size: 1.68rem;
       text-transform: uppercase;
@@ -42,13 +42,11 @@
     }
 
     #main-text-category {
-      // background: $BGrey;
       color: $LightGrey;
       display: block;
       margin: 0;
       padding: 0 .5em;
       text-transform: uppercase;
-      // font-weight: bold;
     }
 
     .feature-small-widget-wrap {
@@ -64,7 +62,6 @@
         margin-bottom: 1em;
         padding-bottom: 0;
         background: var(--background-color);
-        // border: 1px solid $Black;
 
         a {
           width: 100%;
@@ -84,11 +81,6 @@
             color: var(--text-color);
 
             h2 {
-              // padding: .2em;
-              // padding-right: 1em;
-              // padding-bottom: 0;
-              // margin-bottom: 0;
-              // margin-top: 0;
               font-weight: normal;
               font-size: 1em;
             }
@@ -108,8 +100,6 @@
     .feature-big-widget-wrap {
       margin-top: 1em;
       padding-right: 2px;
-      overflow-y: auto;
-      height: 800px;
 
       div:last-child { border-bottom: none; }
 
@@ -149,14 +139,10 @@
             }
           }
 
-
-
           &:hover {
             .main-feature-big-img {
               
-              img {
-                transform: scale(1.1);
-              }
+              img { transform: scale(1.1); }
             }
           }
         }
@@ -165,23 +151,10 @@
   }
 }
 
-/* SCROLL BAR */
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--background-color); 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scroll-handel); 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+@media screen and (max-width: 768px) {
+  .main-small-widget-title { 
+    h3 {
+      margin-top: 3em;
+    }
+  }
 }

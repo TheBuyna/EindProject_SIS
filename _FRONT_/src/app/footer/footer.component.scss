@@ -33,18 +33,14 @@
 .foot-widget-left,
 .foot-widget-midden,
 .foot-widget-right {
-    //width: 33%;
     padding: 20px;
-    //border-top: 1px solid $DarkGrey;
 }
 
 .social {
     display: flex;
     top: 0;
     
-    li {
-        padding: 10px 10px 10px 0;
-    }
+    li { padding: 10px 10px 10px 0; }
 }
 
 .links-style a {
@@ -98,7 +94,7 @@
     }
 }
 
-a[href="#menu"] {
+    .menu {
     position: absolute;
     top: 0;
     right: 0;
@@ -110,6 +106,7 @@ a[href="#menu"] {
     text-align: center;
     color: $LightGrey;
     z-index: 200;
+    cursor: pointer;
 }
 
 .foot-toggle-menu {
@@ -119,23 +116,33 @@ a[href="#menu"] {
     width: 200px;
     background: $BGrey;
     transition: right 1s ease-in-out;
+
     ul { transition: right 1s ease-in-out; }
+
     li {
         padding: .5em;
         border-bottom: 1px solid $DimGrey;
         
     }
+
     li:last-child { border-bottom: 0; }
 }
 
-@media screen and (min-width: 765px) {
-    .foot-bottom-menu-list {
-         display: flex;
+.nav-link { padding: 0; }
+
+.dropDown {
+    background: $DarkGrey;
+
+    a:hover { 
+        background: $DarkGrey;
+        cursor: pointer;
     }
+}
+
+@media screen and (min-width: 765px) {
+    .foot-bottom-menu-list { display: flex; }
 
     .foot-toggle-menu { display: none; }
 
-    a[href="#menu"] {
-        display: none;
-    }
+    .menu { display: none; }
 }

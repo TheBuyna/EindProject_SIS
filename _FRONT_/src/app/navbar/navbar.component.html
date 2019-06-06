@@ -1,11 +1,4 @@
 <nav class="mainnav">
-  <!-- <div class="brand">
-        <a class="navbar-brand" href="#">
-            <img src="/assets/images/TNS LOGO_BLACK.png" class="d-inline-block align-top" alt="">
-            The News Spot
-          </a>
-    </div> -->
-  <!-- <div> -->
   <div>
     <div class="hamburger" (click)="toggleEvent($event)">
       <a class="menu">
@@ -26,13 +19,13 @@
       </div>
       <div>
         <ul class="menu-wrap unlist">
-          <li><a [routerLink]="['/home']" title="">HOME</a></li>
+          <li (click)="toggleEvent($event)"><a [routerLink]="['/home']" title="">HOME</a></li>
            <!-- Dropdown for Category -->
-      <li ngbDropdown *ngIf="authService.loggedIn()">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
-            Category
-          </a>
-          <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
+              Category
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
               <li><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
               <li><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
               <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
@@ -40,26 +33,26 @@
               <li><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
               <li><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
               <li><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
-          </div>
-        </li>
-        <!-- end Dropdown Category -->
-        <!-- Dropdown for logged in user -->
-        <li ngbDropdown *ngIf="authService.loggedIn()">
-          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
-            <img class="nav-profile-img rounded-circle" src="#">
-          </a>
-          <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-            <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-            <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
-          </div>
-        </li>
-        <!-- end Dropdown -->
-        <li *ngIf="!authService.loggedIn()">
-          <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
-        </li>
-        <li *ngIf="!authService.loggedIn()">
-          <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
-        </li>
+            </div>
+          </li>
+          <!-- end Dropdown Category -->
+          <!-- Dropdown for logged in user -->
+          <li ngbDropdown *ngIf="authService.loggedIn()">
+            <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
+              <img class="nav-profile-img rounded-circle" src="#">
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
+              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
+          </li>
+          <!-- end Dropdown -->
+          <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
+            <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
+          </li>
+          <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
+            <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
+          </li>
         </ul>
       </div>
     </div>
