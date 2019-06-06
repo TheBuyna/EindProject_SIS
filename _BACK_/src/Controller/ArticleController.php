@@ -31,6 +31,7 @@ class ArticleController extends AbstractController
         $urlToImage = $data["urlToImage"];
         $publishedAt = $data["publishedAt"];
         $content = $data["content"];
+        date_default_timezone_set('Europe/Brussels');
 
         try{
             $article = new HistoryArticle();
@@ -66,6 +67,7 @@ class ArticleController extends AbstractController
     {
         $user = $this->getUser();
         $data = json_decode($request->getContent(),true);
+        date_default_timezone_set('Europe/Brussels');
 
         $source_id = $data["source"]["id"];
         $source_name = $data["source"]["name"];
