@@ -12,24 +12,22 @@
         table {
             background: var(--background-color);
             color: var(--text-color);
-            
-            .custom-modal  {
-                .modal-content {
-                        background: var(--background-color);
-                        border: 1px solid #FFF;
-                    }
-            }
         }
         .buttonsRow {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
     }
     
  }
- 
+ .modal-header,
+ .modal-body,
+ .modal-footer { 
+    color: var(--text-color);
+    background: var(--background-color);
+}
 
 .my-pagination /deep/ {
     padding: 1em;
@@ -39,8 +37,8 @@
             color: var(--text-color);
         }
         .current {
-            background: var(--text-color);
-            color:  var(--background-color);
+            background: var(--background-color);
+            color:  var(--text-color);
     }
   }
 }

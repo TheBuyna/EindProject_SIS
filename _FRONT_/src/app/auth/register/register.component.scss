@@ -3,23 +3,25 @@
 .register_card {
     margin-top: 10vh;
     margin-bottom: 20vh;
-    background: $Grey;
+   // background: $Grey;
     position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
 
-    .logo_container {
-        position: absolute;
+    .logoCont {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         height: 150px;
-        width: 150px;
+        position: absolute;
         top: -4em;
-        left: 25em;
+    }
+    .logo_container {
+        width: 150px;
         border-radius: 50%;
         background: $White;
         padding: auto;
@@ -33,8 +35,14 @@
     }
 
     .form_container {
-        padding-top: 4em;
+        margin: 0 auto;
+        padding-top: 8em;
+        text-align: -webkit-center;
+        font-weight: bold;
+
         form {
+            text-align: -webkit-left;
+
             .input-group {
                 padding: 1em;
                 .input-group-text {
@@ -45,7 +53,11 @@
                     border-radius: 0.25rem 0 0 0.25rem;
                 }
             }
-            
+            .btn { margin: 2em 0; }
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .register_card { margin-top: 20vh; }
 }

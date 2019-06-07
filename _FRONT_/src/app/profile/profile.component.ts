@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit {
       (resultaat) => {
       this.userInfo = resultaat['user'];
       this.avatar_Url = this.userInfo['avatar_Url'];
-     // delete this.userInfo['avatar_Url'];
+      delete this.userInfo['avatar_Url'];
       this.sortResults(this.userInfo);
     },
     (err) => {
