@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="feature-big-widget-wrap">
-    <div class="feature-big-widget-article" *ngFor="let article of allArticles">
+    <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:3;">
           <div class="btnReadLater" *ngIf="authService.loggedIn()">
             <button class="btn btn-outline-secondary" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
                 Read Later...

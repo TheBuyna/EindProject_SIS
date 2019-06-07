@@ -26,15 +26,15 @@
 
       <div class="detailsTitle">
         <h3>Profile Details</h3>
-        <button class="btn-pwd" (click)="openModal(template)">
+        <button class="btn-style" (click)="openModal(template)">
             <span class="pwd"><i class="fa fa-key"></i></span>Change Password
         </button>
-        <a [routerLink]="['/listArticles/history']">
-          <span class="btn-label"><i class="fa fa-history"></i></span> History
-        </a>
-        <a [routerLink]="['/listArticles/readLater']">
-          <span class="btn-label"><i class="fa fa-history"></i></span> Read Laters...
-        </a>
+        <button [routerLink]="['/listArticles/history']" class="btn-style">
+          <span class=""><i class="fa fa-history"></i></span> History
+        </button>
+        <button [routerLink]="['/listArticles/readLater']" class="btn-style">
+          <span class=""><i class="fa fa-bookmark"></i></span> Read Laters...
+        </button>
         <button class="changeDetails">
             <span (click)="updateInfo()"><i class="fa fa-pencil"></i></span>
           </button>
@@ -54,7 +54,7 @@
               </div>
           </div>
           <div class="div-btn-update">
-            <button type="submit" [disabled]="!profileForm.valid" class="col-md-4 btn-update">Update</button>
+            <button type="submit" [disabled]="!profileForm.valid" class="btn btn-dark col-md-2">Update</button>
           </div>
         </form>
       </div>
