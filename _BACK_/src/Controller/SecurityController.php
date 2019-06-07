@@ -3,25 +3,38 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserFormType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    private $router;
+
+    public function __construct(RouterInterface $router)
+    {
+        $this->router = $router;
+    }
+
     /**
-     * @Route("/", name="app_homepage")
+     * @Route("/", name="app_homepage")\
      */
     public function index()
     {
-        return $this->render('base.html.twig', [
-            'message' => 'TODO HOMEPAGE',
-        ]);
+//        return $this->render('base.html.twig', [
+//            'message' => 'TODO HOMEPAGE',
+//        ]);
+        return new RedirectResponse($this->router->generate('app_login'));
     }
 
     /**
@@ -65,22 +78,42 @@ class SecurityController extends AbstractController
         $lastName = $data["last_name"];
         $streetName = $data["street_name"];
         $houseNumber = $data["house_number"];
-        $mailboxNumber = $data["mailbox_number"];
         $city = $data["city"];
-        $telephone = $data["telephone"];
         $postalCode = $data["postal_code"];
         $plainPassword = $data["password"];
 
-//        foreach($data->entries as $row) {
-//            foreach($row as $key => $val) {
-//                if ($key === null) {
-//                    $key =
-//                }
-//            }
-//        }
+        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
+        $contains_number    = preg_match('@[0-9]@', $plainPassword);
 
+        //Password validation
+        if (strlen($plainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
 
-
+        //Email validation
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return new JsonResponse([
+                "error" => 'Invalid email address!'
+            ], 500);
+        }
         try{
             $user = new User();
 
@@ -90,11 +123,16 @@ class SecurityController extends AbstractController
                 ->setLastName($lastName)
                 ->setStreetName($streetName)
                 ->setHouseNumber($houseNumber)
-                ->setMailboxNumber($mailboxNumber)
                 ->setCity($city)
-                ->setTelephone($telephone)
                 ->setPostalCode($postalCode)
+                ->setTheme('light')
                 ->setPassword($passwordEncoder->encodePassword($user, $plainPassword));
+            if (isset($data["mailbox_number"])) {
+                $user->setMailboxNumber($data["mailbox_number"]);
+            }
+            if (isset($data["telephone"])) {
+                $user->setTelephone($data["telephone"]);
+            }
             $em->persist($user);
             $em->flush();
         } catch (\Exception $exception) {
@@ -123,6 +161,31 @@ class SecurityController extends AbstractController
         $oldPassword = $data["oldPassword"];
         $newPlainPassword = $data["plainNewPassword"];
 
+        $contains_uppercase = preg_match('@[A-Z]@', $newPlainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $newPlainPassword);
+        $contains_number    = preg_match('@[0-9]@', $newPlainPassword);
+        //Password validation
+        if (strlen($newPlainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
+
         if ($passwordEncoder->isPasswordValid($user, $oldPassword)) {
             $newEncodedPassword = $passwordEncoder->encodePassword($user, $newPlainPassword);
             if ($oldPassword !== $newPlainPassword) {
@@ -149,14 +212,103 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * @Route("/api/updateuser", methods={"PUT"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function apiUpdateUser(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
+    {
+        $data = json_decode($request->getContent(),true);
+        $email = $data["email"];
+        $firstName = $data["first_Name"];
+        $lastName = $data["last_Name"];
+        $streetName = $data["street_Name"];
+        $houseNumber = $data["house_Number"];
+        $city = $data["city"];
+
+        $user = $userRepository->findOneBy(['id' => $this->getUser()->getId()]);
+        $user
+            ->setEmail($email)
+            ->setFirstName($firstName)
+            ->setLastName($lastName)
+            ->setStreetName($streetName)
+            ->setHouseNumber($houseNumber)
+            ->setCity($city);
+            if (isset($data["mailBox_Number"])) {
+                $user->setMailboxNumber($data["mailBox_Number"]);
+            }
+            if (isset($data["telephone"])) {
+                $user->setTelephone($data["telephone"]);
+            }
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse([
+            "success" => $user->getFirstName(). " has been updated!"
+        ], 200);
+    }
+
+    /**
      * @Route("/apiCheck")
      * @return Response
      */
-    public function apiLogin()
+    public function apiVerify(Request $request)
     {
-        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
-//        dd($this->getUser());
+        return new JsonResponse([
+            "user" => $this->getUser()->getAllInfo()
+        ], 200);
     }
 
+    private function passwordValidation($plainPassword) {
 
+        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
+        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
+        $contains_number    = preg_match('@[0-9]@', $plainPassword);
+
+        //Password validation
+        if (strlen($plainPassword) < 6) {
+            return new JsonResponse([
+                "error" => 'Password must be at least 6 characters long'
+            ], 500);
+        }
+        if (!$contains_uppercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one uppercase!'
+            ], 500);
+        }
+        if (!$contains_lowercase) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one lowercase!'
+            ], 500);
+        }
+        if (!$contains_number) {
+            return new JsonResponse([
+                "error" => 'Password must contain at least one number!'
+            ], 500);
+        }
+    }
+
+    /**
+     * @Route("/api/setTheme", methods={"PUT"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function setTheme(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
+    {
+        $data = json_decode($request->getContent(),true);
+        $user = $userRepository->findOneBy(['id' => $this->getUser()->getId()]);
+
+        $theme = $data['theme'];
+        $user->setTheme($theme);
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse([
+            "success" => "Theme has been set to ". $theme ."!"
+        ], 200);
+    }
 }

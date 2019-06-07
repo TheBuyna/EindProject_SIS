@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UiSwitchModule } from 'ngx-toggle-switch';
+import { UiSwitchModule } from 'ngx-ui-switch';
 import { TopNewsComponent } from './top-news/top-news.component';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,6 +25,17 @@ import { AuthGuard } from './auth.guard';
 import { ThemeService } from './services/theme.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ArticleListsComponent } from './article-lists/article-lists.component';
+import { TruncateTextPipe } from './truncate-text.pipe';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+import { StringFilterPipe } from './string-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +49,12 @@ import { HomepageComponent } from './homepage/homepage.component';
     LatestNewsComponent,
     CategoryComponent,
     ImagePreloadDirective,
-    HomepageComponent
+    HomepageComponent,
+    ProfileComponent,
+    BeautifyKeyStringPipe,
+    ArticleListsComponent,
+    TruncateTextPipe,
+    StringFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -50,7 +66,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     ReactiveFormsModule,
     UiSwitchModule,
     NgFlashMessagesModule.forRoot(),
-
+    NgbModule,
+    ModalModule.forRoot(),
+    NgxPaginationModule,
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 
@@ -60,6 +78,7 @@ import { HomepageComponent } from './homepage/homepage.component';
       multi: true
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

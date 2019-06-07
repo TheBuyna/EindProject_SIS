@@ -3,9 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import url('https://fonts.googleapis.com/css?family=Almendra+SC&display=swap');
 @import "variables.scss";
+@import '~ngx-ui-switch/ui-switch.component.scss';
 
 html {
-    background: $BodyGrey;
+    background: var(--primary-color);
 }
 body {
     box-sizing: border-box;
@@ -14,6 +15,7 @@ body {
     margin: 0;
     font-family: 'Roboto Slab', Helvetica, sans-serif;
     transition: .5s ease-in-out;
+    padding-right: 0 !important 
 }
 
 .containerCustom {
@@ -21,3 +23,16 @@ body {
     margin: 0 auto;
 }
 
+
+.readLater {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    z-index: 2;
+    justify-content: flex-end;
+
+    .btnReadLater {
+      margin: 1em;
+    }
+  }

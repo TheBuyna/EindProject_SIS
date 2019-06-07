@@ -66,7 +66,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         if (!$this->csrfTokenManager->isTokenValid($token)){
             throw new InvalidCsrfTokenException();
         }
-        return $this->userRepository->findOneBy(['email' => $credentials['email']]);
+        return $this->userRepository->findAdminUser(['email' => $credentials['email']]);
     }
 
     public function checkCredentials($credentials, UserInterface $user)
@@ -77,11 +77,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)){
-            return new RedirectResponse($targetPath);
-        }
+//        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)){
+//            return new RedirectResponse($targetPath);
+//        }
 
-        return new RedirectResponse($this->router->generate('app_homepage'));
+        return new RedirectResponse($this->router->generate('app_form_users'));
     }
 
     protected function getLoginUrl()

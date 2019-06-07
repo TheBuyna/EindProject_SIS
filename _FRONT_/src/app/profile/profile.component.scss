@@ -1,0 +1,88 @@
+
+.userInfoTable {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+  .no-padding {
+    padding-right: 0;
+  }
+
+  .user-image {
+    img {
+      width: 100px;
+    }
+  }
+
+  .user-title {
+    padding: 40px 0 0 100px;
+
+  }
+
+  .detailsTitle {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    margin-left: -16px;
+  }
+
+  .changeDetails {
+    border: none;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border-bottom: 1px solid;
+    margin: 10px 0 0 20px;
+  }
+
+
+  .labelField {
+    width: 150px;
+    padding-top: 20px;
+  }
+
+  .btn-style {
+    border: none;
+    border-bottom: 1px solid;
+    background: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  .pwd {
+    padding-right: 10px;
+  }
+
+  .div-btn-update {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .btn-update {
+    background: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    .user-image {
+      margin-top: 5em;
+      text-align: center;
+    }
+
+    .user-title {
+      padding: 40px 0 0 0;
+    }
+
+    .detailsTitle {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      margin-left: 50px;
+    }
+  }

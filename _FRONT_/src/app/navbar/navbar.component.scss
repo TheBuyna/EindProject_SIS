@@ -21,23 +21,20 @@
     padding: 1em; 
 }
 
-// a[href="#menu"] {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     display: block;
-//     background: $Black;
-//     width: 60px;
-//     margin-top: 5px;
-//     font-size: 2rem;
-//     text-align: center;
-//     color: $White;
-//     z-index: 200;
-// }
-
 .mainnav { 
     position: relative;
     border-bottom: 1px solid $LighterGrey;
+
+    .dropdown-menu {
+        padding: 0;
+        background: $DarkGrey;
+        color: $White;
+
+        a:hover { 
+            background: $DarkGrey;
+            cursor: pointer;
+        }
+    }
 }
 
 .hamburger { 
@@ -51,6 +48,7 @@
     font-size: 2rem;
     text-align: center;
     color: $White;
+    cursor: pointer;
     z-index: 200;
 }
 
@@ -82,8 +80,13 @@
         li:last-child { border-bottom: 0; }
     }
 
-    a { display: block; }
+    a { 
+        display: block; 
+        cursor: pointer;
+    }
 }
+
+.nav-link { padding: 0; }
 
 .menu-wrap { 
     margin-left: 50px; 
@@ -135,11 +138,9 @@ a { text-decoration: none; }
     background: $Black;
     height: 60px;
     display: flex;
-  //  justify-content: center;
     padding-left: 150px;
 
     li { 
-      //  width: 150px; 
         text-align: center;
 
         a {
@@ -164,7 +165,7 @@ a { text-decoration: none; }
     color: $White;
     top: 0;
     right: 0;
-    margin-right: 100px;
+    margin-right: 90px;
     padding: 8px 0;
     height: 100%;
     font-size: 1.5em;
@@ -237,11 +238,24 @@ a { text-decoration: none; }
         li { display: none; } 
     }
 
-    // a[href="#menu"] { margin-top: 0; }
     .menu { margin-top: 0; }
 
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 60px; }
-    .icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
+    .search-logo { margin-right: 70px; }
+}
+
+@media screen and (max-width: 768px) {
+    .mainnav {
+        position: fixed;
+        z-index: 500;
+        width: 100%;
+        top: 0;
+    }
+    .icon-bar {
+        width: 30px;
+
+        a { padding: 10px 0; }
+    }
 }

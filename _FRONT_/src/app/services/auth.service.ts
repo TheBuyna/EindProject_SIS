@@ -12,6 +12,8 @@ export class AuthService {
   private REGISTER_URL = "http://127.0.0.1:8000/api/register";
   private LOGIN_URL = "http://localhost:8000/api/login_check";
   private CHECK_JWT = "http://localhost:8000/apiCheck";
+  private UPDATE_URL = 'http://localhost:8000/api/updateuser';
+  public redirectUrl: string;
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
   registerUser(user) {
@@ -33,14 +35,35 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  logoutUser() {
+  logoutUser(theme: string) {
+    // console.log(theme);
+    this.setTheme(theme);
     localStorage.removeItem('token');
     this.router.navigate(['/']);
+  }
+
+  setTheme(theme: string) {
+    let themeJson = {
+      'theme': theme
+    }
+    return this.http.put('http://localhost:8000/api/setTheme', themeJson, { headers: { 'Content-Type': 'application/json' } }).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+  updateUser(formValue) {
+    console.log(formValue);
+    return this.http.put(this.UPDATE_URL, formValue, { headers: { 'Content-Type': 'application/json' } });
   }
 
   checkToken() {
     this.http.get(this.CHECK_JWT).subscribe(
       (resultaat) => {
+      // console.log(resultaat);
       console.log(JSON.stringify(resultaat));
     },
     (err) => {
@@ -61,5 +84,8 @@ export class AuthService {
     }
     );
   }
-  
+
+  getUseremail() {
+    return this.http.get(this.CHECK_JWT);
+  }
 }
