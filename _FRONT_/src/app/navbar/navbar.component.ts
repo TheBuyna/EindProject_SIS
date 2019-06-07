@@ -36,21 +36,26 @@ export class NavbarComponent implements OnInit {
 
   darkTheme = new FormControl(false);
   
-  constructor(private themeService: ThemeService, private articleService:ArticleService, private authService: AuthService, private router:Router) {
+  constructor(private themeService: ThemeService, private articleService:ArticleService, public authService: AuthService, private router:Router) {
     this.darkTheme.valueChanges.subscribe(value => {
       if (!value) {
         this.theme = 'light';
-        this.themeService.toggleTheme(this.theme);
+        this.themeService.toggleLight();
       } else {
         this.theme = 'dark';
-        this.themeService.toggleTheme(this.theme);
+        this.themeService.toggleDark();
       }
     });
+    // if (this.authService.loggedIn()) {
+    //   // this.setTheme(this.theme);
+    //   console.log('asdfk;lj;lkj')
+    // }
   }
 
+  
   ngOnInit() {
     this.getAvatarUrl();
-    this.themeService.toggleTheme(this.theme);
+    // this.themeService.toggleTheme(this.theme);
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -61,14 +66,22 @@ export class NavbarComponent implements OnInit {
   
   tsearch: any;
   searchedArticles;
+
+  setTheme(theme: string) {
+    if (theme === 'light') {
+      this.darkTheme.setValue(false);
+    } else if (theme === 'dark') {
+      this.darkTheme.setValue(true);
+    }
+  }
   
   getAvatarUrl() {
     this.authService.getUseremail().subscribe(
       (res) => {
         this.avatar_url = res['user']['email'];
-        this.theme = res['user']['theme']
-        this.themeService.toggleTheme(this.theme);
-        console.log(res);
+        this.theme = res['user']['theme'];
+        this.setTheme(this.theme);
+        console.log(this.theme);
       },
       (err) => {
         console.log(err.error);

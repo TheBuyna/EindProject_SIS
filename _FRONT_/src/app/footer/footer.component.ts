@@ -11,7 +11,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private articleService:ArticleService, private authService: AuthService, private router:Router) { }
+  constructor(private articleService:ArticleService, public authService: AuthService, private router:Router) { }
 
   public toggleMenu : boolean = true;
   

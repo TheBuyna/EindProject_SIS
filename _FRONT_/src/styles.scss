@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import url('https://fonts.googleapis.com/css?family=Almendra+SC&display=swap');
 @import "variables.scss";
+@import '~ngx-ui-switch/ui-switch.component.scss';
 
 html {
     background: var(--primary-color);

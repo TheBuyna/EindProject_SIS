@@ -23,7 +23,7 @@ export const darkTheme = {
 })
 export class ThemeService {
 
-  toggleTheme(theme: string){
+  toggleTheme(theme: string) {
     console.log(theme);
     if ( theme === 'dark') {
       this.toggleDark();

@@ -17,6 +17,8 @@ export class ArticleListsComponent implements OnInit {
   errorMe;
   listName;
   listTitle;
+  filter;
+  p;
   ngOnInit() {
       this.route.paramMap.subscribe(params => {
       this.listName =  params.get('listName');
