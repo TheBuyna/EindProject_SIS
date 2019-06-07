@@ -4,10 +4,16 @@
     <bookmark url="file://$PROJECT_DIR$/templates/account/edit.html.twig" line="17" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a7654e31-e2f3-41e7-96fb-530f3601355d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/edit.html.twig" afterDir="false" />
+=======
+    <list default="true" id="4bccf0e4-6dca-4313-9d4e-3506b05541ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_FRONT_/src/app/profile/profile.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../_FRONT_/src/app/profile/profile.component.scss" afterDir="false" />
+>>>>>>> origin/indy
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +38,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="2115">
               <caret line="129" column="38" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+=======
+            <state relative-caret-position="-3108">
+              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+              <folding>
+                <element signature="e#34#54#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> origin/indy
             </state>
           </provider>
         </entry>
@@ -41,6 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="387">
               <caret line="302" selection-start-line="302" selection-end-line="302" />
             </state>
@@ -52,6 +67,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+=======
+            <state relative-caret-position="288">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+>>>>>>> origin/indy
             </state>
           </provider>
         </entry>
@@ -260,6 +279,32 @@
             <path>
               <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
               <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="jwt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_BACK_" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_BACK_" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/indy
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -342,6 +387,7 @@
       <workItem from="1559120120676" duration="606000" />
       <workItem from="1559148642291" duration="5755000" />
       <workItem from="1559464381960" duration="19608000" />
+<<<<<<< HEAD
       <workItem from="1559548293332" duration="7721000" />
       <workItem from="1559632303280" duration="23790000" />
       <workItem from="1559662140640" duration="13250000" />
@@ -349,15 +395,21 @@
       <workItem from="1559806585743" duration="7589000" />
       <workItem from="1559822321715" duration="1440000" />
       <workItem from="1559839300320" duration="2986000" />
+=======
+      <workItem from="1559548293332" duration="1922000" />
+>>>>>>> origin/indy
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="144276000" />
+=======
+    <option name="totallyTimeSpent" value="58337000" />
+>>>>>>> origin/indy
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2521322" />
@@ -652,8 +704,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="360">
           <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="87" />
+=======
+        <state relative-caret-position="288">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+>>>>>>> origin/indy
         </state>
       </provider>
     </entry>
@@ -681,8 +738,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/account/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="541">
           <caret line="76" column="66" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
+=======
+        <state relative-caret-position="-3108">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+>>>>>>> origin/indy
           <folding>
             <element signature="e#3576#3593#0#Twig" expanded="true" />
           </folding>

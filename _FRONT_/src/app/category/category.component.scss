@@ -63,27 +63,38 @@
         padding-bottom: 0;
         background: var(--background-color);
 
+        @media screen and (max-width: 415px) {
+          margin: 0;
+          margin-bottom: 1em;
+        }
+
         a {
           width: 100%;
           color: #000;
           text-decoration: none;
           font-size: .8em;
 
+          h2 {
+            font-size: 20px;
+            margin-top: 1em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            
+            @media screen and (max-width: 780px) {
+              font-size: 16px;
+              margin-top: 0.5em;
+            }
+
+            @media screen and (max-width: 415px) {
+              font-size: 8px;
+              margin-top: 4px;
+            }
+          }
+
           .main-feature-small-img {
             overflow: hidden;
             position: relative;
             height: 50%;
-          }
-
-          .main-feature-small-text {
-            padding-bottom: 1em;
-            background: var(--background-color);
-            color: var(--text-color);
-
-            h2 {
-              font-weight: normal;
-              font-size: 1em;
-            }
           }
 
           &:hover {
@@ -100,10 +111,99 @@
     .feature-big-widget-wrap {
       margin-top: 1em;
       padding-right: 2px;
+      overflow-y: auto;
+      height: 800px;
+      margin-left: 10%;
+      margin-right: 10%;
 
-      div:last-child { border-bottom: none; }
+      @media screen and (max-width: 780px) {
+        height: 550px;
+      }
+
+      @media screen and (max-width: 415px) {
+        height: 250px;
+        margin-left: 0;
+        margin-right: 0;
+      }
 
       .feature-big-widget-article {
+        border-bottom: 5px solid $LighterGrey;
+
+        a {
+          display: flex;
+          text-decoration: none;
+          color: var(--text-color);
+          margin: 1em 0;
+          background: var(--background-color);
+
+          @media screen and (max-width: 415px) {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .main-feature-big-img {
+            overflow: hidden;
+            position: relative;
+            width: 40%;
+            max-block-size: 100%;
+
+            @media screen and (max-width: 415px) {
+              width: 100%;
+            }
+
+            img {
+                max-height: 25vh;
+            }
+          }
+
+          .main-feature-big-text {
+              width: 60%;
+              transition: .5s all ease-in-out;
+              padding: 1em;
+              
+              @media screen and (max-width: 415px) {
+                width: 100%;
+                padding: 0.5em;
+              }
+             
+            #main-text-category {
+
+              @media screen and (max-width: 415px) {
+                font-size: 1em;
+                margin-bottom: 5px;
+              }
+            } 
+
+            p {
+              padding-left: .5em;
+              font-size: .8em;
+
+              @media screen and (max-width: 415px) {
+                padding-left: 0;
+                font-size: .6em;
+              }
+            }
+          }
+
+
+
+          &:hover {
+            .main-feature-big-img {
+              
+              img {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .feature-big-widget-wrap2 {
+      margin-top: 5em;
+      padding-right: 2px;
+
+      .feature-big-widget-article2 {
         border-bottom: 1px solid $LighterGrey;
 
         a {
@@ -113,7 +213,7 @@
           margin: 1em 0;
           background: var(--background-color);
 
-          .main-feature-big-img {
+          .main-feature-big-img2 {
             overflow: hidden;
             position: relative;
             width: 40%;
@@ -124,23 +224,33 @@
             }
           }
 
-          .main-feature-big-text {
+          .main-feature-big-text2 {
               width: 60%;
               transition: .5s all ease-in-out;
+              padding: 2em;
+
+              @media screen and (max-width: 780px) {
+                padding: 0.5em;
+              }
 
             h2 {
               font-size: 1em;
               padding-left: .5em;
+              margin-top: 2em;
             }
 
             p {
               padding-left: .5em;
               font-size: .8em;
+
+              @media screen and (max-width: 415px) {
+                display: none;
+              }
             }
           }
 
           &:hover {
-            .main-feature-big-img {
+            .main-feature-big-img2 {
               
               img { transform: scale(1.1); }
             }
