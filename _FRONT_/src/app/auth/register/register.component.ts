@@ -17,6 +17,17 @@ export class RegisterComponent implements OnInit {
   passwordError: string;
   emailError: string;
 
+  //Form properties for build prod
+  first_Name;
+  last_Name;
+  email;
+  street_Name;
+  house_Number;
+  mailbox_Number;
+  city;
+  postal_Code;
+  telephone;
+  password;
   constructor(private auth: AuthService, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
   ngOnInit() {

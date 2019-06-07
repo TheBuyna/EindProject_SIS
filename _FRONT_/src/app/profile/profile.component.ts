@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
       last_Name: [{value:'', disabled: this.isDisabled}],
       street_Name: [{value:'', disabled: this.isDisabled}],
       house_Number: [{value:'', disabled: this.isDisabled}],
-      mailBox_Number: [{value:'', disabled: this.isDisabled}],
+      mailbox_Number: [{value:'', disabled: this.isDisabled}],
       city: [{value:'', disabled: this.isDisabled}],
       telephone: [{value:'', disabled: this.isDisabled}],
       postal_Code: [{value:'', disabled: this.isDisabled}],

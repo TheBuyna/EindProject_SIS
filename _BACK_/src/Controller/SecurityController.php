@@ -74,12 +74,12 @@ class SecurityController extends AbstractController
         $data = json_decode($request->getContent(),true);
 
         $email = $data["email"];
-        $firstName = $data["first_name"];
-        $lastName = $data["last_name"];
-        $streetName = $data["street_name"];
-        $houseNumber = $data["house_number"];
+        $firstName = $data["first_Name"];
+        $lastName = $data["last_Name"];
+        $streetName = $data["street_Name"];
+        $houseNumber = $data["house_Number"];
         $city = $data["city"];
-        $postalCode = $data["postal_code"];
+        $postalCode = $data["postal_Code"];
         $plainPassword = $data["password"];
 
         $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
@@ -127,8 +127,8 @@ class SecurityController extends AbstractController
                 ->setPostalCode($postalCode)
                 ->setTheme('light')
                 ->setPassword($passwordEncoder->encodePassword($user, $plainPassword));
-            if (isset($data["mailbox_number"])) {
-                $user->setMailboxNumber($data["mailbox_number"]);
+            if (isset($data["mailbox_Number"])) {
+                $user->setMailboxNumber($data["mailbox_Number"]);
             }
             if (isset($data["telephone"])) {
                 $user->setTelephone($data["telephone"]);

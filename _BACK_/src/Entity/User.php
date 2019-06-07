@@ -291,7 +291,7 @@ class User implements UserInterface
         $user["last_Name"] = $this->getLastName();
         $user["street_Name"] = $this->getStreetName();
         $user["house_Number"] = $this->getHouseNumber();
-        $user["mailBox_Number"] = $this->getMailboxNumber();
+        $user["mailbox_Number"] = $this->getMailboxNumber();
         $user["city"] = $this->getCity();
         $user["telephone"] = $this->getTelephone();
         $user["postal_Code"] = $this->getPostalCode();
