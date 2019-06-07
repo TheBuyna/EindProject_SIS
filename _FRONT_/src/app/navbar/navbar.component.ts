@@ -46,16 +46,11 @@ export class NavbarComponent implements OnInit {
         this.themeService.toggleDark();
       }
     });
-    // if (this.authService.loggedIn()) {
-    //   // this.setTheme(this.theme);
-    //   console.log('asdfk;lj;lkj')
-    // }
   }
 
   
   ngOnInit() {
     this.getAvatarUrl();
-    // this.themeService.toggleTheme(this.theme);
     this.setTheme(this.theme);
   }
 
@@ -75,7 +70,6 @@ export class NavbarComponent implements OnInit {
       this.darkTheme.setValue(true);
     }
   }
-  
   getAvatarUrl() {
     this.authService.getUseremail().subscribe(
       (res) => {
@@ -90,7 +84,7 @@ export class NavbarComponent implements OnInit {
     )
   }
 
-  searchFunc(){
+  searchFunc() {
     // if (this.tsearch) {
     //   this.articleService.get_article(this.tsearch).subscribe((result) => {
     //     this.searchedArticles = result['articles'];
