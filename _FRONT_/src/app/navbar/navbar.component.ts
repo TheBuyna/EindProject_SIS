@@ -56,6 +56,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.getAvatarUrl();
     // this.themeService.toggleTheme(this.theme);
+    this.setTheme(this.theme);
   }
 
   @HostListener('window:scroll', ['$event'])
