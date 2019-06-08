@@ -1,12 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-weather></app-weather>
 <navbar></navbar>
 <!-- <app-category [searchRequest]="searchRequest"></app-category> -->
 <div class="containerCustom">
     <ng-flash-message></ng-flash-message>
     <router-outlet></router-outlet> 
-     
-
+    <ngx-spinner
+    bdOpacity = 0.9
+    bdColor = "#333"
+    size = "medium"
+    color = "#fff"
+    type = "timer"
+    [fullScreen] = "false"
+    >
+    <p style="color: white" > Loading... </p>
+    </ngx-spinner>    
 </div>
 <footer></footer>
 <app-scroll-top></app-scroll-top>

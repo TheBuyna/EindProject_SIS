@@ -16,5 +16,4 @@ export class StringFilterPipe implements PipeTransform {
       -1 < item['addedAt']['date'].toLowerCase().indexOf(q.toLowerCase())
       );
 }
-
 }

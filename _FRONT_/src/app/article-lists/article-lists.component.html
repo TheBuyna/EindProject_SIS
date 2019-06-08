@@ -7,7 +7,7 @@
                      name="q"
                      class="form-control"
                      placeholder="Search..."
-                     [(ngModel)]="filter"
+                     [(ngModel)]="searchFilter"
               >
               <div class="input-group-append">
                   <button type="submit"
@@ -22,16 +22,16 @@
           <thead>
           <tr>
               <th scope="col">Title</th>
-              <th>Description</th>
-              <th>Read at</th>
+              <th class="d-none d-lg-table-cell">Description</th>
+              <th class="d-none d-md-table-cell">Read at</th>
               <th> </th>
           </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let article of allHisotryArticles|stringFilter: filter|paginate: { itemsPerPage: 5, currentPage: p }">
+              <tr *ngFor="let article of allHisotryArticles|stringFilter: searchFilter|paginate: { itemsPerPage: 5, currentPage: p }">
                   <td>{{ article.title | truncateText: 30}}</td>
-                  <td>{{ article.description | truncateText: 50}}</td>
-                  <td>{{ article.addedAt.date}}</td>
+                  <td class="d-none d-lg-table-cell">{{ article.description | truncateText: 50}}</td>
+                  <td class="d-none d-md-table-cell">{{ article.addedAt.date}}</td>
                   <td class="buttonsRow">
                       <a class="btn btn-primary" href="{{article.url}}" target="_blank">
                           <span class="fa fa-external-link"></span>

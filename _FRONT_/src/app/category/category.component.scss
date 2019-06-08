@@ -97,6 +97,11 @@
             height: 50%;
           }
 
+          
+          font-weight: normal;
+          font-size: 1em;
+          color: var(--text-color);
+
           &:hover {
             .main-feature-small-img {
               img {

@@ -44,11 +44,11 @@
             margin: auto 0;
             margin-right: .2em;
             overflow: hidden;
-            border: 1px black solid;
+            // border: 1px black solid;
     
             img {
               width: 100%;
-              height: 100%;
+              // height: 100%;
               transition: transform .4s ease;
             }
           }
@@ -85,5 +85,10 @@
     }
 }
 
-
-
+@media screen and (min-width: 1200px) and (max-width: 1685px) {
+  .lNews-image { 
+    img {
+      height: 100%;
+    }
+  }
+}

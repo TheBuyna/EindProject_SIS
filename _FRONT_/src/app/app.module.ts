@@ -37,6 +37,7 @@ import { TruncateTextPipe } from './truncate-text.pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { StringFilterPipe } from './string-filter.pipe';
 import { WeatherComponent } from './weather/weather.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,10 @@ import { WeatherComponent } from './weather/weather.component';
     NgbModule,
     ModalModule.forRoot(),
     NgxPaginationModule,
+    NgxSpinnerModule,
+  ],
+  exports: [    // optional in your case
+    NgxSpinnerModule
   ],
   providers: [
     ArticleService, AuthGuard, ThemeService, 
