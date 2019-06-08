@@ -25,8 +25,6 @@ class ArticleController extends AbstractController
         $source_id = $data["source"]["id"];
         $source_name = $data["source"]["name"];
         $author = $data["author"];
-        $title = $data["title"];
-        $description = $data["description"];
         $url = $data["url"];
         $urlToImage = $data["urlToImage"];
         $publishedAt = $data["publishedAt"];
@@ -40,14 +38,22 @@ class ArticleController extends AbstractController
                 ->setSourceId($source_id)
                 ->setSourceName($source_name)
                 ->setAuthor($author)
-                ->setTitle($title)
-                ->setDescription($description)
                 ->setUrl($url)
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
                 ->setAddedAt(new \DateTime())
                 ->setUser($user);
+                if (isset($data["description"])) {
+                    $article->setDescription($data["description"]);
+                } elseif (!isset($data["description"])) {
+                    $article->setDescription('No description!');
+                }
+                if (isset($data["title"])) {
+                    $article->setTitle($data["title"]);
+                } elseif (!isset($data["title"])) {
+                    $article->setDescription('No title!');
+                }
             $em->persist($article);
             $em->flush();
         } catch (\Exception $exception) {
@@ -86,14 +92,22 @@ class ArticleController extends AbstractController
                 ->setSourceId($source_id)
                 ->setSourceName($source_name)
                 ->setAuthor($author)
-                ->setTitle($title)
-                ->setDescription($description)
                 ->setUrl($url)
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
                 ->setAddedAt(new \DateTime())
                 ->setUser($user);
+                if (isset($data["description"])) {
+                    $article->setDescription($data["description"]);
+                } elseif (!isset($data["description"])) {
+                    $article->setDescription('No description!');
+                }
+                if (isset($data["title"])) {
+                    $article->setTitle($data["title"]);
+                } elseif (!isset($data["title"])) {
+                    $article->setDescription('No title!');
+                }
             $em->persist($article);
             $em->flush();
         } catch (\Exception $exception) {

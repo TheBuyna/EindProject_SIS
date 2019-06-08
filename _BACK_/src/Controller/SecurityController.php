@@ -34,7 +34,7 @@ class SecurityController extends AbstractController
 //        return $this->render('base.html.twig', [
 //            'message' => 'TODO HOMEPAGE',
 //        ]);
-        return new RedirectResponse($this->router->generate('app_login'));
+        return new RedirectResponse($this->router->generate('app_form_users'));
     }
 
     /**
@@ -236,8 +236,8 @@ class SecurityController extends AbstractController
             ->setStreetName($streetName)
             ->setHouseNumber($houseNumber)
             ->setCity($city);
-            if (isset($data["mailBox_Number"])) {
-                $user->setMailboxNumber($data["mailBox_Number"]);
+            if (isset($data["mailbox_Number"])) {
+                $user->setMailboxNumber($data["mailbox_Number"]);
             }
             if (isset($data["telephone"])) {
                 $user->setTelephone($data["telephone"]);

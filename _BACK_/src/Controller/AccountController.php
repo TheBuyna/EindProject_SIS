@@ -112,6 +112,12 @@ class AccountController extends BaseController
                     $user,
                     $plainPassword
                 ));
+                if (isset($data["mailboxNumber"])) {
+                    $user->setMailboxNumber($data["mailboxNumber"]);
+                }
+                if (isset($data["telephone"])) {
+                    $user->setTelephone($data["telephone"]);
+                }
             $em->persist($user);
             $em->flush();
             $this->addFlash('success', 'User Created!');
