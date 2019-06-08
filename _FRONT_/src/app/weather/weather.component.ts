@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { WeatherService } from '../services/weather.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
+import { NgFlashMessageService } from 'ng-flash-messages';
 
 @Component({
   selector: 'app-weather',
@@ -8,40 +12,54 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, private weatherService: WeatherService, private spinner: NgxSpinnerService, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
+  currentWeather: [];
+  hourlyWeather: [];
+  dailyWeather: [];
+  geocode: [];
   ngOnInit() {
-    // this.geocode('antwerpen');
+    this.getCurrentWeather('antwerpen');
+    /** spinner starts on init */
+    this.spinner.show();
   }
-  latitude;
-  longitude;
-  location;
-  geocode(address) {
-    const URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1IjoidGhlYnV5bmEiLCJhIjoiY2pzdWZuYmxiMXhhajRhb2VndTBkejd1YiJ9.-w5sSkmdFb6Fy796In5Afg'
-    
-    this.http.get(URL).subscribe(
+
+  getCurrentWeather(location: string) {
+    this.weatherService.getWeather(location).subscribe(
       (res) => {
-        this.latitude = res['features']['0']['center']['1'];
-        this.longitude = res['features']['0']['center']['0'];
-        this.location =res['features']['0']['place_name'];
-        console.log(res['features']['0']['center']);
-        this.forecast(this.latitude, this.longitude);
+        // console.log(res['weather']['currently']);
+        /** spinner starts on init */
+        this.spinner.show();
+        this.currentWeather = res['weather']['currently'];
+        this.hourlyWeather = res['weather']['hourly'];
+        this.dailyWeather = res['weather']['daily'];
+        this.geocode = res['geocode'];
+        console.log(this.currentWeather);
+        // console.log(this.hourlyWeather);
+        console.log(this.dailyWeather);
+        // console.log(this.geocode);
+        this.spinner.hide();
       },
       (err) => {
-        console.log('error: ' + err);
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            this.router.navigate(['/auth/login']);
+            this.ngFlashMessageService.showFlashMessage({
+              messages: [err.error.message],
+              dismissible: true,
+              timeout: 10000,
+              type: 'danger'
+            });
+            if (err.error.message === 'Expired JWT Token' || err.error.message === 'Invalid JWT Token'){
+              localStorage.removeItem('token');
+            }
+          }
+        }
+        this.spinner.hide();
       }
     );
- }
+  }
 
- forecast(latitude, longitude) {
-  const URL = 'https://api.darksky.net/forecast/93efca3b6502e663700ecb988a4be0b0/' + latitude + ',' + longitude + '?units=si&lang=nl';
-  this.http.get(URL).subscribe(
-    (res) => {
-      console.log(res['daily']['data']['0']['summary']);
-    },
-    (err) => {
-      console.log(err['error']);
-    }
-  );
- }
+  checkMethod(){
+    console.log('button works!!');
+  }
 }

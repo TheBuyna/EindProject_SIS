@@ -53,6 +53,9 @@
           <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
             <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
           </li>
+          <li *ngIf="authService.loggedIn() && currentWeather" class="sideWeather">
+              <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.summary}} <br> {{currentWeather.temperature}}&#176;C</a>
+            </li>
         </ul>
       </div>
     </div>
@@ -65,7 +68,6 @@
   <!-- </div> -->
   <div class="mainmenu">
     <ul class="unlist wrap">
-      <li><a [routerLink]="['/category']" title="">category</a></li>
       <li><a routerLink="/home" title="">HOME</a></li>
       <!-- Dropdown for Category -->
       <li ngbDropdown *ngIf="authService.loggedIn()">
@@ -100,6 +102,9 @@
       <li *ngIf="!authService.loggedIn()">
         <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
       </li>
+      <li *ngIf="authService.loggedIn() && currentWeather">
+        <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.temperature}}&#176;C</a>
+      </li>
     </ul>
   </div>
   <div class="search-logo">
@@ -108,7 +113,7 @@
   <div>
     <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(ngModel)]="enable" class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
     <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(formControl)]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
-    <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [formControl]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch>
+    <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [formControl]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark" (click)="authService.setTheme(theme);"></ui-switch>
   </div>
   <div class="handle"><a href="#" title="">TNS | The News Spot</a></div>
 </nav>

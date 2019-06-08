@@ -7,6 +7,7 @@ import { ThemeService } from '../services/theme.service';
 import { AuthService } from '../services/auth.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
+import { WeatherService } from '../services/weather.service';
 //import { EventEmitter } from 'protractor';
 
 @Component({
@@ -23,20 +24,23 @@ export class NavbarComponent implements OnInit {
 
   avatar_url;
   theme = 'light';
-  
-  toggleEvent(event){
-    this.toggle = !this.toggle;
-  }
-  
-  searchDisplay(event){
-    this.visible = !this.visible;
-  }
+  tsearch: any;
+  searchedArticles;
+  currentWeather: [];
 
   currentModeDark: boolean;
 
   darkTheme = new FormControl(false);
-  
-  constructor(private themeService: ThemeService, private articleService:ArticleService, public authService: AuthService, private router:Router) {
+
+  toggleEvent(event){
+    this.toggle = !this.toggle;
+  }
+
+  searchDisplay(event){
+    this.visible = !this.visible;
+  }
+
+  constructor(private themeService: ThemeService, private articleService:ArticleService, public authService: AuthService, private router:Router, private weatherService: WeatherService) {
     this.darkTheme.valueChanges.subscribe(value => {
       if (!value) {
         this.theme = 'light';
@@ -47,21 +51,19 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
-
   
   ngOnInit() {
+    this.getCurrentWeather('antwerpen');
     this.getAvatarUrl();
     this.setTheme(this.theme);
   }
+  
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     this.toggle = true;
     this.visible = true;
   }
-  
-  tsearch: any;
-  searchedArticles;
 
   setTheme(theme: string) {
     if (theme === 'light') {
@@ -76,7 +78,6 @@ export class NavbarComponent implements OnInit {
         this.avatar_url = res['user']['email'];
         this.theme = res['user']['theme'];
         this.setTheme(this.theme);
-        console.log(this.theme);
       },
       (err) => {
         console.log(err.error);
@@ -99,4 +100,17 @@ export class NavbarComponent implements OnInit {
     console.log(this.tsearch);
     this.router.navigate(['/category/sports', {searchQuery: this.tsearch} ]);
   }
+
+  getCurrentWeather(location: string) {
+    this.weatherService.getWeather(location).subscribe(
+      (res) => {
+        // console.log(res['weather']['currently']);
+        this.currentWeather = res['weather']['currently'];
+      },
+      (err) => {
+        console.log(err['error']);
+      }
+    );
+  }
+
 }
