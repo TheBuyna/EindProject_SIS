@@ -26,17 +26,12 @@ export class WeatherComponent implements OnInit {
   getCurrentWeather(location: string) {
     this.weatherService.getWeather(location).subscribe(
       (res) => {
-        // console.log(res['weather']['currently']);
         /** spinner starts on init */
         this.spinner.show();
         this.currentWeather = res['weather']['currently'];
         this.hourlyWeather = res['weather']['hourly'];
         this.dailyWeather = res['weather']['daily'];
         this.geocode = res['geocode'];
-        console.log(this.currentWeather);
-        // console.log(this.hourlyWeather);
-        console.log(this.dailyWeather);
-        // console.log(this.geocode);
         this.spinner.hide();
       },
       (err) => {

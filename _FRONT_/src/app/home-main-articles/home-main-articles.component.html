@@ -11,9 +11,9 @@
             <i class="fa fa-plus"></i>
           </button>
         </div>
-      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
         <div class="main-feature-small-img">
-          <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+          <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
         </div>
         <div class="main-feature-small-text">
           <span id="main-text-category">{{article.source.name}}</span>
@@ -30,9 +30,9 @@
               <i class="fa fa-plus"></i>
             </button>
           </div>
-      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
           <div class="main-feature-big-img">
-              <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+              <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
             </div><!-- end side-wdiget -->
             <div class="main-feature-big-text">
               <span id="main-text-category">{{article.source.name}}</span>

@@ -32,7 +32,7 @@
   <div class="feature-big-widget-wrap">
 
     <div class="feature-big-widget-article" *ngFor="let article of allArticles">
-      <a href="{{article.url}}">
+      <a href="{{article.url}}" title="{{article.source.id}}">
           <div class="main-feature-big-img">
               <img src="{{article.urlToImage}}" alt="noImage">
               <div class="feNews-info">

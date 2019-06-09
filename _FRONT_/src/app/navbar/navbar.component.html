@@ -26,13 +26,13 @@
               Category
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <li><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-              <li><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-              <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-              <li><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-              <li><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-              <li><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-              <li><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+              <li><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+              <li><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+              <li><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+              <li><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+              <li><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+              <li><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+              <li><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
             </div>
           </li>
           <!-- end Dropdown Category -->
@@ -48,10 +48,10 @@
           </li>
           <!-- end Dropdown -->
           <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
-            <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
+            <a routerLink="/auth/login" title="Login"><i class="fa fa-sign-in-alt"></i> Login</a>
           </li>
           <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
-            <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
+            <a routerLink="/auth/register" title="Register"><i class="fa fa-user-plus"></i> Register</a>
           </li>
           <li *ngIf="authService.loggedIn() && currentWeather" class="sideWeather">
               <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.summary}} <br> {{currentWeather.temperature}}&#176;C</a>
@@ -75,13 +75,13 @@
           Category
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-            <li><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-            <li><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-            <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-            <li><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-            <li><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-            <li><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-            <li><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+            <li><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+            <li><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+            <li><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+            <li><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+            <li><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+            <li><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+            <li><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
         </div>
       </li>
       <!-- end Dropdown Category -->
@@ -97,10 +97,10 @@
       </li>
       <!-- end Dropdown -->
       <li *ngIf="!authService.loggedIn()">
-        <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
+        <a routerLink="/auth/login" title="Login"><i class="fa fa-sign-in-alt"></i> Login</a>
       </li>
       <li *ngIf="!authService.loggedIn()">
-        <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
+        <a routerLink="/auth/register" title="Register"><i class="fa fa-user-plus"></i> Register</a>
       </li>
       <li *ngIf="authService.loggedIn() && currentWeather">
         <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.temperature}}&#176;C</a>
