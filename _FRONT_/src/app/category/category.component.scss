@@ -10,7 +10,11 @@
       text-transform: uppercase;
     }
   }
-
+  @media screen and (max-width: 780px) {
+    .readLaterLabel {
+      display: none;
+    }
+  }
   .feature-article-widget {
     display: flex;
     flex-direction: column;
@@ -23,6 +27,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 50% 30%;
       transition: transform 1s ease;
     }
 
@@ -47,6 +52,53 @@
       margin: 0;
       padding: 0 .5em;
       text-transform: uppercase;
+    }
+    /**Animations **/
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+
+      @-webkit-keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+      }
+
+      @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+      .fadeIn {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      }
+
+    .carousalContainer {
+      height: 50vh;
+      .readLater {
+        margin-right: 20em;
+      }
+
+      img {
+        max-height: 50vh;
+      }
+    }
+    @media screen and (max-width: 780px) {
+      .carousalContainer {
+        .readLater {
+          margin-top: .3em;
+          margin-right: 2em;
+          z-index: 5;
+        }
+        
+        .carousel-caption {
+          h3 {
+            font-size: 1em;
+          }
+        }
+      }
     }
 
     .feature-small-widget-wrap {
@@ -120,6 +172,14 @@
       height: 800px;
       margin-left: 10%;
       margin-right: 10%;
+      position: relative;
+      
+      .btnReadLater {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        margin-top: 1em;
+      }
 
       @media screen and (max-width: 780px) {
         height: 550px;
@@ -210,6 +270,15 @@
 
       .feature-big-widget-article2 {
         border-bottom: 1px solid $LighterGrey;
+        
+        @media screen and (max-width: 780px) {
+          .btnReadLater {
+            .btn{
+              color: var(--text-color);
+              border: 1px solid  var(--text-color);
+            }
+          }
+        }
 
         a {
           display: flex;

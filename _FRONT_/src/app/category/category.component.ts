@@ -21,6 +21,7 @@ export class CategoryComponent implements OnInit {
   category;
   allArticles;
   searchText;
+  noPause = false;
   ngOnInit() {
     this.authService.checkToken();
     this.route.paramMap.subscribe(params => {

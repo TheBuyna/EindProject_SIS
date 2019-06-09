@@ -35,6 +35,7 @@ import { ArticleListsComponent } from './article-lists/article-lists.component';
 import { TruncateTextPipe } from './truncate-text.pipe';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { StringFilterPipe } from './string-filter.pipe';
 import { WeatherComponent } from './weather/weather.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -73,6 +74,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ModalModule.forRoot(),
     NgxPaginationModule,
     NgxSpinnerModule,
+    CarouselModule.forRoot(),
   ],
   exports: [    // optional in your case
     NgxSpinnerModule
