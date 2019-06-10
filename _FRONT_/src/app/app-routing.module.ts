@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticleListsComponent } from './article-lists/article-lists.component';
+import { ContactusComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path:  'auth', loadChildren:  './auth/auth.module#AuthModule'},
   { path: 'profile', component: ProfileComponent},
-  { path: 'listArticles/:listName', component: ArticleListsComponent }
+  { path: 'listArticles/:listName', component: ArticleListsComponent },
+  { path: 'contact', component: ContactusComponent }
 ];
 
 @NgModule({

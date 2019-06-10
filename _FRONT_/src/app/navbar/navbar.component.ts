@@ -7,6 +7,7 @@ import { ThemeService } from '../services/theme.service';
 import { AuthService } from '../services/auth.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
+
 //import { EventEmitter } from 'protractor';
 
 @Component({
@@ -15,8 +16,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  //@Output() sendevent: EventEmitter<any> = new EventEmitter();
 
   public toggle : boolean = true;
   public visible : boolean = true;
@@ -30,6 +29,10 @@ export class NavbarComponent implements OnInit {
   
   searchDisplay(event){
     this.visible = !this.visible;
+  }
+
+  closeFunc() {
+    alert('test');
   }
 
   currentModeDark: boolean;
@@ -46,16 +49,11 @@ export class NavbarComponent implements OnInit {
         this.themeService.toggleDark();
       }
     });
-    // if (this.authService.loggedIn()) {
-    //   // this.setTheme(this.theme);
-    //   console.log('asdfk;lj;lkj')
-    // }
   }
 
   
   ngOnInit() {
     this.getAvatarUrl();
-    // this.themeService.toggleTheme(this.theme);
     this.setTheme(this.theme);
   }
 

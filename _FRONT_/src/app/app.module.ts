@@ -36,6 +36,7 @@ import { TruncateTextPipe } from './truncate-text.pipe';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { StringFilterPipe } from './string-filter.pipe';
+import { ContactusComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { StringFilterPipe } from './string-filter.pipe';
     ArticleListsComponent,
     TruncateTextPipe,
     StringFilterPipe,
+    ContactusComponent,
   ],
   imports: [
     CommonModule,

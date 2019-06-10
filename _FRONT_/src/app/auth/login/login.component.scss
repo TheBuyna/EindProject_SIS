@@ -2,11 +2,11 @@
 :root { background: var(--background-color); }
 .login_card {
     height: 50vh;
-    width: 45vw;
+  //  width: 45vw;
     margin: 0 auto;
     margin-top: 25vh;
     margin-bottom: 20vh;
-    background: $Grey;
+    background: var(--primary-color);
     position: relative;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@
         position: absolute;
         height: 150px;
         width: 150px;
-        top: -4em;
+        top: -.5em;
         // left: 8em;
         border-radius: 50%;
         background: $White;
@@ -44,6 +44,8 @@
     }
 
     .form_container {
+        margin-top: 40px;
+
         form {
             .input-group {
                 padding: 1em;
@@ -61,6 +63,14 @@
 }
 
 @media screen and (max-width: 768px) {
-    .login_card { margin-top: 35vh; }
+    .login_card { 
+        margin-top: 35vh; 
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .login_card { 
+        width: 35vw;
+    }
 }
 

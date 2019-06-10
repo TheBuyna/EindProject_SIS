@@ -14,6 +14,7 @@ export class FooterComponent implements OnInit {
   constructor(private articleService:ArticleService, public authService: AuthService, private router:Router) { }
 
   public toggleMenu : boolean = true;
+  avatar_url;
   
   toggleEvent(event){
     this.toggleMenu = !this.toggleMenu;
@@ -21,6 +22,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAvatarUrl();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -38,4 +40,14 @@ export class FooterComponent implements OnInit {
     })();
   }
 
+  getAvatarUrl() {
+    this.authService.getUseremail().subscribe(
+      (res) => {
+        this.avatar_url = res['user']['email'];
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    )
+  }
 }

@@ -21,7 +21,7 @@
       <table class="table table-striped">
           <thead>
           <tr>
-              <th scope="col">Title</th>
+              <th>Title</th>
               <th>Description</th>
               <th>Read at</th>
               <th> </th>
@@ -61,9 +61,11 @@
               <tr *ngIf="0 >= allHisotryArticles?.length">
                   <td colspan="4" class="text-center">No articles!</td>
               </tr>
-              <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
           </tbody>
       </table>
-        
+      <div class="tbl-foot">
+            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+            <button class="btn-back" [routerLink]="['/profile']">Back</button>
+      </div>
   </div>
 </div>

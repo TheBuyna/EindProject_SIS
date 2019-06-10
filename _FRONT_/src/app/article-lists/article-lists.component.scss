@@ -30,8 +30,10 @@
 }
 
 .my-pagination /deep/ {
-    padding: 1em;
+    padding: 5px 0;
+   // ul { width: 300px; }
     .ngx-pagination {
+        
         a {
             background: var(--background-color);
             color: var(--text-color);
@@ -41,4 +43,13 @@
             color:  var(--text-color);
     }
   }
+}
+
+.tbl-foot {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-back {
+    height: 30px;
+    margin-top: 10px;
 }
