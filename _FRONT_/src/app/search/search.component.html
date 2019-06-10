@@ -1,0 +1,21 @@
+<div class="search-widget-title">
+  <h3>
+    search result for:
+  </h3>
+</div>
+
+<div class="wrap row">
+<div class="search-wrap col-lg-10 col-md-12 col-sm-12 col-xs-12">
+  <div class="search-widget-article" *ngFor="let article of allArticles | slice:0:100;">
+    <a href="{{article.url}}" target="_blank">
+      <div class="search-widget-img">
+        <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+      </div>
+      <div class="search-widget-text">
+        <h2>{{article.title}}</h2>
+        <p>{{article.description}}</p>
+      </div>
+    </a>
+  </div>
+</div>
+</div>

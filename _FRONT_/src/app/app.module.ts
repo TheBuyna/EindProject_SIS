@@ -31,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BeautifyKeyStringPipe } from './beautify-key-string.pipe';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ImagePreloadDirective,
     HomepageComponent,
     ProfileComponent,
-    BeautifyKeyStringPipe
+    BeautifyKeyStringPipe,
+    SearchComponent
   ],
   imports: [
     CommonModule,
