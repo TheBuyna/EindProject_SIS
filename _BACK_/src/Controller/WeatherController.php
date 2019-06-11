@@ -18,13 +18,18 @@ class WeatherController
      * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
      * @Route("api/getWeather/{query}")
+     *
+     * Method to get weather by query
      */
-    public function getCoordination($query)
+    public function getWeatherByQuery($query)
     {
+        // Initialize httpClient class;
         $httpClient = HttpClient::create();
+        // Url to the mapbox, geocode api request
         $URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'.$query.'.json?access_token=pk.eyJ1IjoidGhlYnV5bmEiLCJhIjoiY2pzdWZuYmxiMXhhajRhb2VndTBkejd1YiJ9.-w5sSkmdFb6Fy796In5Afg';
         $response = $httpClient->request('GET', $URL);
         $content = $response->toArray();
+        // Get the latitude and longtitude from the response
         $latitude = $content['features']['0']['center']['1'];
         $longitude = $content['features']['0']['center']['0'];
 //        $location =$content['features']['0']['place_name'];

@@ -27,7 +27,9 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/", name="app_homepage")\
+     * @Route("/", name="app_homepage")
+     * There is no homepage
+     * Every request to home page, will be redirected to user lists
      */
     public function index()
     {
@@ -39,6 +41,7 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/login", name="app_login")
+     * Login page
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
@@ -55,12 +58,16 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/logout", name="app_logout")
+     * Log out system built in by symfony 4
      */
     public function logout()
     {
         throw new \Exception('Will be intercepted before getting here');
     }
 
+
+    // All methods that comes from route /api/* will be first authenticated
+    // Authenticate using lexik/jwt-authentication-bundle by validating jwt token
     /**
      * @Route("api/register", name="api_auth_register", methods={"POST"})
      * @param Request $request
@@ -68,6 +75,9 @@ class SecurityController extends AbstractController
      * @param EntityManagerInterface $em
      * @return JsonResponse
      * @throws \Doctrine\DBAL\ConnectionException
+     *
+     * Method to register user by api request
+     * Will accept registration field via json format
      */
     public function apiRegister(Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $em)
     {
@@ -82,11 +92,11 @@ class SecurityController extends AbstractController
         $postalCode = $data["postal_Code"];
         $plainPassword = $data["password"];
 
+        //Password validation
         $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
         $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
         $contains_number    = preg_match('@[0-9]@', $plainPassword);
 
-        //Password validation
         if (strlen($plainPassword) < 6) {
             return new JsonResponse([
                 "error" => 'Password must be at least 6 characters long'
@@ -152,6 +162,8 @@ class SecurityController extends AbstractController
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @param EntityManagerInterface $em
      * @return JsonResponse
+     *
+     * Method to reset password
      */
     public function apiResetPassword(Request $request,UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $em)
     {
@@ -208,7 +220,6 @@ class SecurityController extends AbstractController
                 "error" => 'Old password is incorrect!'
             ], 500);
         }
-//        return new Response(sprintf('Logged in as %s',$this->getUser()->getFirstName()));
     }
 
     /**
@@ -217,6 +228,9 @@ class SecurityController extends AbstractController
      * @param UserRepository $userRepository
      * @param EntityManagerInterface $em
      * @return JsonResponse
+     *
+     * Method to update user fields in db
+     *
      */
     public function apiUpdateUser(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
     {
@@ -253,6 +267,9 @@ class SecurityController extends AbstractController
     /**
      * @Route("/apiCheck")
      * @return Response
+     *
+     * Method to give all user info's
+     * will validate jwt token first
      */
     public function apiVerify(Request $request)
     {
@@ -261,41 +278,14 @@ class SecurityController extends AbstractController
         ], 200);
     }
 
-    private function passwordValidation($plainPassword) {
-
-        $contains_uppercase = preg_match('@[A-Z]@', $plainPassword);
-        $contains_lowercase = preg_match('@[a-z]@', $plainPassword);
-        $contains_number    = preg_match('@[0-9]@', $plainPassword);
-
-        //Password validation
-        if (strlen($plainPassword) < 6) {
-            return new JsonResponse([
-                "error" => 'Password must be at least 6 characters long'
-            ], 500);
-        }
-        if (!$contains_uppercase) {
-            return new JsonResponse([
-                "error" => 'Password must contain at least one uppercase!'
-            ], 500);
-        }
-        if (!$contains_lowercase) {
-            return new JsonResponse([
-                "error" => 'Password must contain at least one lowercase!'
-            ], 500);
-        }
-        if (!$contains_number) {
-            return new JsonResponse([
-                "error" => 'Password must contain at least one number!'
-            ], 500);
-        }
-    }
-
     /**
      * @Route("/api/setTheme", methods={"PUT"})
      * @param Request $request
      * @param UserRepository $userRepository
      * @param EntityManagerInterface $em
      * @return JsonResponse
+     *
+     * Method to set theme of the frontend site
      */
     public function setTheme(UserRepository $userRepository, Request $request, EntityManagerInterface $em)
     {
