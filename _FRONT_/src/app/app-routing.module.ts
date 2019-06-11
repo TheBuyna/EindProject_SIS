@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ArticleListsComponent } from './article-lists/article-lists.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ContactusComponent } from './contact-us/contact-us.component';
+import { SearchComponent } from './search/search.component';
+
 
 // routing paths
 const routes: Routes = [
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'listArticles/:listName', component: ArticleListsComponent },
   { path: 'weather', component: WeatherComponent},
   { path: 'contact', component: ContactusComponent },
+  { path: 'search/:searchQuery', component: SearchComponent},
 ];
 
 @NgModule({

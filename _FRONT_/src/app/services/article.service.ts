@@ -15,9 +15,9 @@ export class ArticleService {
 
   // Calls to articles handeling : get all, get searched articles, get headlines, get categories, history and read later articles
 
-   get_article(searchQuery: string) {
-      let replacedQuery = searchQuery.split(' ').join('-')
-      let articles = 'https://newsapi.org/v2/everything?q=' + replacedQuery + '&sortBy=publishedAt&apiKey=' + this.API_KEY;
+   get_article(searchQuery: string, pageSize: number = null, page: number = null) {
+      let replacedQuery = searchQuery.split(' ').join('-');
+      let articles = 'https://newsapi.org/v2/everything?q=' + replacedQuery + '&language=en' + (!(pageSize) ? '' : '&pageSize=' + pageSize) + (!(page) ? '' : '&page=' + page) + '&sortBy=publishedAt&apiKey=' + this.API_KEY;
       return this.http.get(articles);
    }
 

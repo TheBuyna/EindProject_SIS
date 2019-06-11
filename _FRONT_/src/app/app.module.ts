@@ -40,6 +40,7 @@ import { StringFilterPipe } from './string-filter.pipe';
 import { WeatherComponent } from './weather/weather.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ContactusComponent } from './contact-us/contact-us.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ContactusComponent } from './contact-us/contact-us.component';
     StringFilterPipe,
     WeatherComponent,
     ContactusComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,

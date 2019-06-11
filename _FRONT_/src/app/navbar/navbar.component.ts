@@ -97,7 +97,7 @@ export class NavbarComponent implements OnInit {
 
     //this.sendevent.emit(this.tsearch);
     console.log(this.tsearch);
-    this.router.navigate(['/category/sports', {searchQuery: this.tsearch} ]);
+    this.router.navigate(['/search', this.tsearch ]);
   }
 
   getCurrentWeather(location: string) {
