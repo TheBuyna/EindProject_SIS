@@ -124,6 +124,7 @@
     right: 0;
     bottom: 40px;
     width: 200px;
+    font-size: .8em;
     background: $BGrey;
     transition: right 1s ease-in-out;
 
@@ -142,6 +143,7 @@
 
 .dropDown {
     background: $DarkGrey;
+    font-size: 1.4em;
     transform: translate(-80px,91px);
 
     a:hover { 
@@ -149,6 +151,8 @@
         cursor: pointer;
     }
 }
+
+.dropDown-foot { font-size: 1.2em; }
 
 @media screen and (min-width: 765px) {
     .foot-bottom-menu-list { display: flex; }
