@@ -31,6 +31,7 @@ export class CategoryComponent implements OnInit {
     });
   }
 
+  // get articles depending on the category
   getArticles() {
     this.articleService.get_top_headlines('us', this.category).subscribe((result) => {
       this.allArticles = result['articles'];

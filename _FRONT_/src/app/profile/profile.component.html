@@ -1,3 +1,4 @@
+  <!-- user profile page -->
   <div class="row" *ngIf="userInfo">
     <div class="col-md-12 container">
       <div class="row">
@@ -9,17 +10,6 @@
         <div class="col-md-10 user-title">
           <div class="user-pad">
             <h3>Welcome back, {{userInfo.first_Name}}</h3>
-            <!-- <div class="buttonsRow">
-                <button class="btn btn-labeled btn-info" (click)="openModal(template)">
-                  <span class="btn-label"><i class="fa fa-key"></i></span> Change Password
-                </button>
-                <a class="btn btn-labeled btn-dark" [routerLink]="['/listArticles/history']">
-                  <span class="btn-label"><i class="fa fa-history"></i></span> History
-                </a>
-                <a class="btn btn-labeled btn-success" [routerLink]="['/listArticles/readLater']">
-                  <span class="btn-label"><i class="fa fa-history"></i></span> Read Laters...
-                </a>
-            </div> -->
           </div>
         </div>
       </div>
@@ -36,9 +26,6 @@
             <button [routerLink]="['/listArticles/readLater']" class="btn-style">
               <span class="fa fa-bookmark btn-icon"></span><span class="btn-txt">Read Laters...</span>
             </button>
-            <!-- <button class="changeDetails">
-              <span (click)="updateInfo()"><i class="fa fa-pencil btn-icon"></i></span>
-            </button> -->
             <button class="btn-style" (click)="updateInfo()">
               <span class="fa fa-pencil btn-icon"></span><span class="btn-txt">Update</span>
             </button>
@@ -46,7 +33,7 @@
       </div>
 
       
-
+      <!-- show user details in form -->
      <div class="row userInfoTable">
         <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit(myform)" ngNativeValidate>
           <div class="row">

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { all } from 'q';
 
 
 @Injectable({
@@ -11,7 +12,8 @@ export class ArticleService {
   constructor(private http:HttpClient) {}
 
   API_KEY = '8242b00c3eee4bf794d4bf1d138ee112';
-  // API_KEY = '8242b00c3eee4bf794d4bf1d138ee112as';
+
+  // Calls to articles handeling : get all, get searched articles, get headlines, get categories, history and read later articles
 
    get_article(searchQuery: string) {
       let replacedQuery = searchQuery.split(' ').join('-')
@@ -20,7 +22,6 @@ export class ArticleService {
    }
 
    get_top_headlines(country: string, category: string = null, pageLimit: number = null){
-// tslint:disable-next-line: max-line-length
      const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + '&apiKey=' + this.API_KEY;
      return this.http.get(headLineArticle);
    }

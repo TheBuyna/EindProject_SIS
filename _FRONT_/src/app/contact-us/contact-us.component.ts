@@ -22,7 +22,7 @@ export class ContactusComponent {
   }
 
   constructor(private fb: FormBuilder, private contactusService: ContactusService) {
-
+    // creating form with fields requirements
     this.contactForm = fb.group({
       'contactFormName': ['', Validators.required],
       'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
@@ -31,6 +31,7 @@ export class ContactusComponent {
     });
   }
 
+  // submit function
   onSubmit() {
     this.contactusService.sendMessage(this.contactForm.value).subscribe(() => {
       alert('Your message has been sent.');

@@ -25,11 +25,13 @@ export class FooterComponent implements OnInit {
     this.getAvatarUrl();
   }
 
+  // host listener for a scroll event
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     this.toggleMenu = true;
   }
 
+  // scroll to top if a menu item is pressed
   scrollToTop() {
     (function smoothscroll() {
         var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -40,6 +42,7 @@ export class FooterComponent implements OnInit {
     })();
   }
 
+  // get user avatar
   getAvatarUrl() {
     this.authService.getUseremail().subscribe(
       (res) => {

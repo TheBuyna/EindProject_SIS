@@ -1,15 +1,11 @@
+// CSS Top news component
+
 @import "../../variables.scss";
 
-
-
 #tNews-top-wrap {
-  //width: 100%;
-  //margin: 5em 0 2em 0;
-
   div {
     padding: 0;
   }
-
 
   #tNews-main {
     width: 24.8%;
@@ -17,12 +13,9 @@
     position: relative;
     overflow: hidden;
 
-    
-
     a {
       color: #FFF;
       text-decoration: none;
-
 
       #main-text-bg {
         position: absolute;

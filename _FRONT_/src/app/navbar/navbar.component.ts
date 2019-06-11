@@ -27,13 +27,14 @@ export class NavbarComponent implements OnInit {
     this.toggle = !this.toggle;
   }
   
+  // toggle search label 
   searchDisplay(event){
     this.visible = !this.visible;
   }
 
-  closeFunc() {
-    alert('test');
-  }
+  // closeFunc() {
+  //   alert('test');
+  // }
 
   currentModeDark: boolean;
 

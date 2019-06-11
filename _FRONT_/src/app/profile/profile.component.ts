@@ -45,18 +45,6 @@ export class ProfileComponent implements OnInit {
       console.log(this.profileForm);
     }
 
-    // profileForm = new FormGroup({
-    //   first_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   last_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   street_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   house_Number: new FormControl({value:'', disabled: true} , Validators.required),
-    //   mailBox_Number: new FormControl({value:'', disabled: true} , Validators.required),
-    //   city: new FormControl({value:'', disabled: true} , Validators.required),
-    //   telephone: new FormControl({value:'', disabled: true} , Validators.required),
-    //   postal_Code: new FormControl({value:'', disabled: true} , Validators.required),
-    //   email: new FormControl({value:'', disabled: true} , Validators.required),
-    // });
-
     onSubmit(myForm) {
       // console.log(this.profileForm);
       // this.profileForm.disable();
@@ -82,6 +70,7 @@ export class ProfileComponent implements OnInit {
       );
     }
 
+  
   private CHECK_JWT = "http://localhost:8000/apiCheck";
   userInfo = [];
   avatar_Url;
@@ -89,6 +78,7 @@ export class ProfileComponent implements OnInit {
   userValues= [];
   closeResult;
   ngOnInit() {
+    // check if token is valid
     this.http.get(this.CHECK_JWT).subscribe(
       (resultaat) => {
       this.userInfo = resultaat['user'];
@@ -135,6 +125,7 @@ export class ProfileComponent implements OnInit {
       );
   }
 
+  // password reset function
   resetPassword(form) {
     console.log(form.value);
     const httpOptions = {
@@ -159,6 +150,4 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
-  
 }

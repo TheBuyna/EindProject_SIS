@@ -24,7 +24,9 @@ export class RegisterComponent implements OnInit {
     this.isPasswordError = false;
   }
 
+  // Register function
   register(form) {
+    // if registration is success navigate to login pagina
     console.log(form.value);
     this.auth.registerUser(form.value).subscribe(
       (res) => {
@@ -38,7 +40,7 @@ export class RegisterComponent implements OnInit {
 
       },
       (err) => {
-        // console.log(err.error.error);
+        // possible error messages for registration
         if (err.error.error.includes('Duplicate entry')) {
           this.isEmailError = true;
           this.emailError = 'Sorry, but user with this email has already been registered!';

@@ -1,3 +1,4 @@
+<!-- Navigation bar -->
 <nav class="mainnav">
   <div>
     <div class="hamburger" (click)="toggleEvent($event)">
@@ -7,6 +8,7 @@
     </div>
     <div class="sidenav" [hidden]="toggle">
       <div>
+        <!-- social media navigation -->
         <ul class="social-wrap unlist">
           <li class="facebook"><a href="https://www.facebook.com/" title="Facebook" target="_blank"><span class="fa fa-facebook"></span></a></li>
           <li class="twitter"><a href="https://twitter.com/" title="Twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
@@ -131,6 +133,7 @@
   </form>
 </div>
 
+<!-- right side social media navigation -->
 <div class="icon-bar" [hidden]="!toggle">
   <a href="https://www.facebook.com/" title="Facebook" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
   <a href="https://twitter.com/" title="Twitter" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>

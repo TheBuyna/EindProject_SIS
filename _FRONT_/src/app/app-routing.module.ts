@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ArticleListsComponent } from './article-lists/article-lists.component';
 import { ContactusComponent } from './contact-us/contact-us.component';
 
+// routing paths
 const routes: Routes = [
   {
     path: 'category/:categoryName',
