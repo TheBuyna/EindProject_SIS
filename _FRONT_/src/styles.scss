@@ -27,7 +27,7 @@ body {
 }
 
 .containerCustom {
-    width: 80%; 
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -44,3 +44,7 @@ body {
       margin: 1em;
     }
   }
+
+@media screen and (max-width: 480px) {
+   // body { width: auto; }
+}

@@ -7,7 +7,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticleListsComponent } from './article-lists/article-lists.component';
 import { WeatherComponent } from './weather/weather.component';
+import { ContactusComponent } from './contact-us/contact-us.component';
 
+// routing paths
 const routes: Routes = [
   {
     path: 'category/:categoryName',
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path:  'auth', loadChildren:  './auth/auth.module#AuthModule'},
   { path: 'profile', component: ProfileComponent},
   { path: 'listArticles/:listName', component: ArticleListsComponent },
-  { path: 'weather', component: WeatherComponent}
+  { path: 'weather', component: WeatherComponent},
+  { path: 'contact', component: ContactusComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,43 @@
+// CSS contact us form
+
+@import "../../variables.scss";
+
+.contact{
+    padding: 4%;
+}
+.col-md-3{
+    background: $LightGrey;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+    margin-top:10%;
+}
+.contact-info img{
+    margin-bottom: 15%;
+}
+.contact-info h2{
+    margin-bottom: 10%;
+}
+.col-md-9{
+    background: var(--backgroud-color);
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+    font-weight:600;
+}
+.contact-form button{
+    color: #fff;
+    font-weight: 600;
+}
+.contact-form button:focus{
+    box-shadow:none;
+}
+
+@media screen and (max-width: 768px) {
+    .contact { margin-top: 80px; }
+    .col-md-3 { border-radius: 0.5rem; }
+}

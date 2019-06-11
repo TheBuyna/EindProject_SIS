@@ -12,7 +12,6 @@ import { ArticleService } from './services/article.service';
 })
 export class AppComponent {
   title = 'TNS | The News Spot';
-  //event: string = 'test app';
   
   darkTheme =  new FormControl(false);
   
@@ -20,11 +19,10 @@ export class AppComponent {
 
   constructor(private themeService: ThemeService, private articleService: ArticleService) {}
 
-  broadcastTop($e){
-    console.log('event ontvangen');
-   // this.fire = $e;
-    console.log($e);
-  }
+  // broadcastTop($e){
+  //   console.log('event ontvangen');
+  //   console.log($e);
+  // }
 
   // searchRequest: string;
 

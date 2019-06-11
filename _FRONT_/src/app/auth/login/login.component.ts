@@ -15,7 +15,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  // Login function
   login(form) {
+    // check login credentials
     this.auth.loginUser(form.value).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
@@ -41,6 +43,5 @@ export class LoginComponent implements OnInit {
         });
       }
     );
-    // console.log(httpOptions);
   }
 }

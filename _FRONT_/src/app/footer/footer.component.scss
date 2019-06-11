@@ -1,3 +1,5 @@
+// CSS footer
+
 @import "../../variables.scss";
 
 :host {
@@ -27,7 +29,10 @@
     color: $White;
     font-size: 1.6em;
 
-    a { color: yellow; }
+    a { 
+        color: yellow; 
+        text-decoration: none;
+    }
 }
 
 .foot-widget-left,
@@ -85,9 +90,12 @@
     p { margin: 8px 0; }
 }
 
+.foot-bottom-menu { margin-right: 80px; }
+
 .foot-bottom-menu-list {
     display: none;
     margin: 8px 0;
+    cursor: pointer;
     
     li {
         width: 100px;
@@ -96,7 +104,7 @@
     }
 }
 
-    .menu {
+.menu {
     position: absolute;
     top: 0;
     right: 0;
@@ -124,7 +132,7 @@
     li {
         padding: .5em;
         border-bottom: 1px solid $DimGrey;
-        
+        cursor: pointer;
     }
 
     li:last-child { border-bottom: 0; }

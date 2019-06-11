@@ -11,8 +11,9 @@ export class ScrollTopComponent implements OnInit {
   windowScrolled: boolean;
     constructor(@Inject(DOCUMENT) private document: Document) {}
     
-    @Output() totop: EventEmitter<any> = new EventEmitter();
+    //@Output() totop: EventEmitter<any> = new EventEmitter();
 
+    // Listen to a scroll event
     @HostListener("window:scroll", [])
        onWindowScroll() {
         if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
@@ -22,6 +23,7 @@ export class ScrollTopComponent implements OnInit {
             this.windowScrolled = false;
         }
     }
+    // smooth scroll to top
     scrollToTop() {
         (function smoothscroll() {
             var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -31,7 +33,7 @@ export class ScrollTopComponent implements OnInit {
             }
         })();
         
-        this.totop.emit();
+      //  this.totop.emit();
     }
     ngOnInit() {}
 

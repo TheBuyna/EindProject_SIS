@@ -39,6 +39,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { StringFilterPipe } from './string-filter.pipe';
 import { WeatherComponent } from './weather/weather.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ContactusComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     TruncateTextPipe,
     StringFilterPipe,
     WeatherComponent,
+    ContactusComponent,
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,7 @@
       </div>
   </div>
     
+  <!-- Registration form -->
   <div class="form_container">
     <!-- <form [formGroup]="myform" (ngSubmit)="register(myform)" class="form form-register col-md-4" ngNativeValidate> -->
     <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register col-md-4" ngNativeValidate>
@@ -18,6 +19,7 @@
         <input name="last_Name" [(ngModel)]="last_Name" id="register-lastName" type="text" class="form-control" required>
       </div>
       <div class="form-group">
+        <!-- check if email is valid -->
         <label 
         [ngClass]="{  'user': true,
                       'text-danger': isEmailError}" 
@@ -56,6 +58,7 @@
       </div>
 
       <div class="form-group">
+        <!-- check is password is valid -->
         <label 
         [ngClass]="{  'lock': true,
                       'text-danger': isPasswordError}" 

@@ -17,8 +17,6 @@ import { WeatherService } from '../services/weather.service';
 })
 export class NavbarComponent implements OnInit {
 
-  //@Output() sendevent: EventEmitter<any> = new EventEmitter();
-
   public toggle : boolean = true;
   public visible : boolean = true;
 
@@ -35,7 +33,8 @@ export class NavbarComponent implements OnInit {
   toggleEvent(event){
     this.toggle = !this.toggle;
   }
-
+  
+  // toggle search label 
   searchDisplay(event){
     this.visible = !this.visible;
   }

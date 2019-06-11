@@ -2,6 +2,7 @@
   <div class="col-sm-12">
       <h1>{{listTitle}}</h1>
       <form>
+          <!-- search articles function -->
           <div class="input-group mb-3">
               <input type="text"
                      name="q"
@@ -16,6 +17,7 @@
                   </button>
               </div>
           </div>
+          <!-- end search function -->
       </form>
 
       <table class="table table-striped">
@@ -40,6 +42,7 @@
                           <span class="fa fa-trash"></span>
                       </button>
                   </td>
+                  <!-- modal for delete article -->
                   <ng-template #confirmModal>
                       <div class="modal-header">
                         <h4 class="modal-title pull-left">Delete Article?</h4>
@@ -68,6 +71,8 @@
               </tr>
           </tbody>
       </table>
-        
+      <div class="tbl-foot">
+            <button class="btn-back" [routerLink]="['/profile']">Back</button>
+      </div>
   </div>
 </div>
