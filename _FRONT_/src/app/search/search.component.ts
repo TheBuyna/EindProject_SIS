@@ -13,9 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService, private spinner: NgxSpinnerService) { }
-
-
+  constructor(private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService, private spinner: NgxSpinnerService) { }
   allArticles;
   totalResult;
   searchText;
