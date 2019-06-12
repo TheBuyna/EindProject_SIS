@@ -301,4 +301,33 @@ class SecurityController extends AbstractController
             "success" => "Theme has been set to ". $theme ."!"
         ], 200);
     }
+
+    /**
+     * @param \Swift_Mailer $mailer
+     * @Route("/contact")
+     */
+    public function sendEmail(\Swift_Mailer $mailer, Request $request)
+    {
+        $data = json_decode($request->getContent(),true);
+        $message = (new \Swift_Message('from tns'))
+            ->setFrom($data['contactFormEmail'])
+            ->setTo('thenewsspot.contacts@gmail.com')
+            ->setBody(
+                $this->renderView(
+                // templates/emails/registration.html.twig
+                'email/contact.html.twig',
+                [
+                    'firstName' => $data['contactFormName'],
+                    'lastName' => $data['contactFormNamelast'],
+                    'email' => $data['contactFormEmail'],
+                    'comment' => $data['contactFormMessage']
+                ]
+                ),
+                'text/html'
+            );
+        $mailer->send($message);
+        return new JsonResponse([
+            "success" => "The mail has been sent!"
+        ], 200);
+    }
 }
