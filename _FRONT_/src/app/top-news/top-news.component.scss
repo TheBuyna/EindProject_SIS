@@ -82,4 +82,7 @@
       }
     }
   }
+  @media screen and (max-width: 480px) {
+    #tNews-main:first-of-type { margin-top: 3em;}
+  }
 }

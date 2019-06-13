@@ -7,7 +7,13 @@
 <div class="wrap row">
 <div class="search-wrap col-lg-10 col-md-12 col-sm-12 col-xs-12">
   <div class="search-widget-article" *ngFor="let article of allArticles | paginate: {itemsPerPage: 10, currentPage: p, totalItems: totalResult }">
-    <a href="{{article.url}}" target="_blank">
+      <div class="btnReadLater" *ngIf="authService.loggedIn()">
+          <button class="btn btn-outline-secondary btn-sm" id="dropdownBasic1"  (click)="articleService.saveReadLaterArticle(article)">
+              <span class="readLaterLabel">Read Later... </span>
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+    <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || articleService.saveArticle(article)">
       <div class="search-widget-img">
         <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
       </div>
