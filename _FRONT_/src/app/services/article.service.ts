@@ -35,7 +35,7 @@ export class ArticleService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveHistoryArticle';
+    const SAVE_ARTICLE_URL = 'http://wdev.be/saker/be/api/article/saveHistoryArticle';
     console.log(article);
     this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
       (response) => {
@@ -51,7 +51,7 @@ export class ArticleService {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  const SAVE_ARTICLE_URL = 'http://localhost:8000/api/article/saveReadLaterArticle';
+  const SAVE_ARTICLE_URL = 'http://wdev.be/saker/be/api/article/saveReadLaterArticle';
   console.log(article);
   this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
     (response) => {
@@ -69,14 +69,14 @@ export class ArticleService {
     } else if (listName === 'readLater') {
       listUrl = 'getReadLaterArticles';
     }
-    return this.http.get('http://localhost:8000/api/article/' + listUrl);
+    return this.http.get('http://wdev.be/saker/be/api/article/' + listUrl);
  }
 
  deleteHistoryArticle(id: any) {
-  return this.http.get('http://localhost:8000/api/article/deleteHistoryArticle/' + id);
+  return this.http.get('http://wdev.be/saker/be/api/article/deleteHistoryArticle/' + id);
  }
 
  deleteReadLaterArticle(id: any) {
-  return this.http.get('http://localhost:8000/api/article/deleteReadLaterArticle/' + id);
+  return this.http.get('http://wdev.be/saker/be/api/article/deleteReadLaterArticle/' + id);
  }
 }

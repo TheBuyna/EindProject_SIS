@@ -8,7 +8,6 @@ import { AuthService } from '../services/auth.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
 import { WeatherService } from '../services/weather.service';
-//import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'navbar',
