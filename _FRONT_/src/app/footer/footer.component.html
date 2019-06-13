@@ -24,7 +24,7 @@
       <h3>Latest News</h3>
       <div>
         <ul class="blog-list unlist links-style">
-          <li class="links-style-news" *ngFor="let article of allArticles | slice:21;"><a href="{{article.url}}" target="_blank" title="">{{article.title}}</a></li>
+          <li class="links-style-news" *ngFor="let article of allArticles | slice:21;"><a href="{{article.url}}" target="_blank" title="" (click)="!authService.loggedIn() || articleService.saveArticle(article)">{{article.title}}</a></li>
         </ul>
       </div>
     </div>
@@ -34,46 +34,46 @@
     <div>
       <ul class="unlist w-countries">
         <div class="first">
-            <li>Austria</li>
-            <li>Australia</li>
-            <li>Belgium</li>
-            <li>Brazil</li>
-            <li>Bulgaria</li>
-            <li>Canada</li>
-            <li>China</li>
-            <li>France</li>
-            <li>Germany</li>
-            <li>Greece</li>
-            <li>Hungary</li>
-            <li>India</li>
+            <li><a [routerLink]="['/world', 'at']">Austria</a></li>
+            <li><a [routerLink]="['/world', 'au']">Australia</a></li>
+            <li><a [routerLink]="['/world', 'be']">Belgium</a></li>
+            <li><a [routerLink]="['/world', 'br']">Brazil</a></li>
+            <li><a [routerLink]="['/world', 'bg']">Bulgaria</a></li>
+            <li><a [routerLink]="['/world', 'ca']">Canada</a></li>
+            <li><a [routerLink]="['/world', 'cn']">China</a></li>
+            <li><a [routerLink]="['/world', 'fr']">France</a></li>
+            <li><a [routerLink]="['/world', 'de']">Germany</a></li>
+            <li><a [routerLink]="['/world', 'gr']">Greece</a></li>
+            <li><a [routerLink]="['/world', 'hu']">Hungary</a></li>
+            <li><a [routerLink]="['/world', 'in']">India</a></li>
         </div>
         <div class="second">
-            <li>Ireland</li>
-            <li>Israel</li>
-            <li>Italy</li>
-            <li>Japan</li>
-            <li>Latvia</li>
-            <li>Mexico</li>
-            <li>Netherlands</li>
-            <li>NZ</li>
-            <li>Philippines</li>
-            <li>Poland</li>
-            <li>Portugal</li>
-            <li>Romania</li>
+            <li><a [routerLink]="['/world', 'ie']">Ireland</a></li>
+            <li><a [routerLink]="['/world', 'il']">Israel</a></li>
+            <li><a [routerLink]="['/world', 'it']">Italy</a></li>
+            <li><a [routerLink]="['/world', 'jp']">Japan</a></li>
+            <li><a [routerLink]="['/world', 'lv']">Latvia</a></li>
+            <li><a [routerLink]="['/world', 'mx']">Mexico</a></li>
+            <li><a [routerLink]="['/world', 'nl']">Netherlands</a></li>
+            <li><a [routerLink]="['/world', 'nz']">New Zealand</a></li>
+            <li><a [routerLink]="['/world', 'ph']">Philippines</a></li>
+            <li><a [routerLink]="['/world', 'pl']">Poland</a></li>
+            <li><a [routerLink]="['/world', 'pt']">Portugal</a></li>
+            <li><a [routerLink]="['/world', 'ro']">Romania</a></li>
         </div>
         <div class="third">
-            <li>Russia</li>
-            <li>Singapore</li>
-            <li>ZA</li>
-            <li>Sweden</li>
-            <li>Switzerland</li>
-            <li>Taiwan</li>
-            <li>Thailand</li>
-            <li>UAE</li>
-            <li>Ukraine</li>
-            <li>UK</li>
-            <li>US</li>
-            <li>Venuzuela</li>
+            <li><a [routerLink]="['/world', 'ru']">Russia</a></li>
+            <li><a [routerLink]="['/world', 'sg']">Singapore</a></li>
+            <li><a [routerLink]="['/world', 'za']">South Africa</a></li>
+            <li><a [routerLink]="['/world', 'se']">Sweden</a></li>
+            <li><a [routerLink]="['/world', 'ch']">Switzerland</a></li>
+            <li><a [routerLink]="['/world', 'tw']">Taiwan</a></li>
+            <li><a [routerLink]="['/world', 'th']">Thailand</a></li>
+            <li><a [routerLink]="['/world', 'ae']">UAE</a></li>
+            <li><a [routerLink]="['/world', 'ua']">Ukraine</a></li>
+            <li><a [routerLink]="['/world', 'gb']">UK</a></li>
+            <li><a [routerLink]="['/world', 'us']">US</a></li>
+            <li><a [routerLink]="['/world', 've']">Venuzuela</a></li>
         </div>
       </ul>
     </div>

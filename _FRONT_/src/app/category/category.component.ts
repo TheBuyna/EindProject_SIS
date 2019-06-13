@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService) { }
 
-  SERVER_URL = "http://localhost:8000/apiCheck";
+  SERVER_URL = "https://wdev.be/buyna/be/apiCheck";
 
   category;
   allArticles;

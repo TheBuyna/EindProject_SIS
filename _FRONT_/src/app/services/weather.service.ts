@@ -9,7 +9,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeather(location: string) {
-    return this.http.get('http://localhost:8000/api/getWeather/' + location);
+    return this.http.get('https://wdev.be/buyna/be/api/getWeather/' + location);
   }
 
   /// Helper to make weather icons work
