@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    // box-sizing: border-box;
+    overflow-x: hidden;
     background: var(--primary-color);
     color: var(--text-color);
     margin: 0;

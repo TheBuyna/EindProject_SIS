@@ -85,17 +85,6 @@ export class NavbarComponent implements OnInit {
   }
 
   searchFunc() {
-    // if (this.tsearch) {
-    //   this.articleService.get_article(this.tsearch).subscribe((result) => {
-    //     this.searchedArticles = result['articles'];
-    //     this.visible = true;
-    //     console.log(this.searchedArticles);
-
-    //     this.tsearch = '';
-    //   });
-    // }
-
-    //this.sendevent.emit(this.tsearch);
     console.log(this.tsearch);
     this.router.navigate(['/search', this.tsearch ]);
   }
@@ -111,5 +100,4 @@ export class NavbarComponent implements OnInit {
       }
     );
   }
-
 }

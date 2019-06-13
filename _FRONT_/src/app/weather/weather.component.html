@@ -22,7 +22,7 @@
 
 
   <div *ngIf="currentWeather" class="jumbotron currentWeather">
-    <h1 class="display-4">{{ geocode.features['0'].text }} {{ currentWeather.time * 1000 | date: 'H:mm'  }} :</h1>
+    <h1 class="display-4">{{ geocode.features['0'].text }} {{ currentWeather.time * 1000 | date: 'H:mm'  }}</h1>
     <p class="lead">{{currentWeather.summary}}</p>
     <div class="row">
       <div class="col">

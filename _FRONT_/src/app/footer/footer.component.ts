@@ -15,6 +15,7 @@ export class FooterComponent implements OnInit {
 
   public toggleMenu : boolean = true;
   avatar_url;
+  allArticles;
   
   toggleEvent(event){
     this.toggleMenu = !this.toggleMenu;
@@ -23,6 +24,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.getAvatarUrl();
+    this.get_articles();
   }
 
   // host listener for a scroll event
@@ -52,5 +54,11 @@ export class FooterComponent implements OnInit {
         console.log(err.error);
       }
     )
+  }
+
+  get_articles() {
+    this.articleService.get_top_headlines('us', 'general', 26).subscribe((result) => {
+        this.allArticles = result['articles'];
+    });
   }
 }
