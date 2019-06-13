@@ -87,6 +87,8 @@ export class NavbarComponent implements OnInit {
   searchFunc() {
     console.log(this.tsearch);
     this.router.navigate(['/search', this.tsearch ]);
+    this.tsearch = '';
+    this.visible = true;
   }
 
   getCurrentWeather(location: string) {

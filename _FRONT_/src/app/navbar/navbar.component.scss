@@ -61,7 +61,7 @@
         margin-left: 80px;
         padding-top: 5px;
 
-        a { color: yellow; }
+        a { color: $Yellow; }
     }
 }
 
@@ -204,7 +204,7 @@ a { text-decoration: none; }
     padding-top: 8px;
     z-index: -100;
 
-    a { color: yellow; }
+    a { color: $Yellow; }
 }
 
 .icon-bar {
@@ -223,7 +223,7 @@ a { text-decoration: none; }
     text-align: center;
     padding: 10px;
     transition: all 0.3s ease;
-    color: white;
+    color: $White;
     font-size: 20px;
   }
 
