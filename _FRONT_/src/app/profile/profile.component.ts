@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
     }
 
   
-  private CHECK_JWT = "https://wdev.be/buyna/be/apiCheck";
+  private CHECK_JWT = "https://wdev.be/buyna/ew/be/apiCheck";
   userInfo = [];
   avatar_Url;
   userKeys = [];
@@ -131,7 +131,7 @@ export class ProfileComponent implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    this.http.post("https://wdev.be/buyna/be/api/resetPassword", form.value, httpOptions).subscribe(
+    this.http.post("https://wdev.be/buyna/ew/be/api/resetPassword", form.value, httpOptions).subscribe(
       (res) => {
         this.ngFlashMessageService.showFlashMessage({
         messages: [res['success']],
