@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BeautifyKeyStringPipe implements PipeTransform {
 
+  // Beautify text
   transform(inputString: any): any {
     if (!inputString) {
       return inputString;

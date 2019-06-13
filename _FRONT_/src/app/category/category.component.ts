@@ -16,11 +16,12 @@ export class CategoryComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService) { }
 
-  SERVER_URL = "http://localhost:8000/apiCheck";
+  SERVER_URL = "https://wdev.be/buyna/ew/be/apiCheck";
 
   category;
   allArticles;
   searchText;
+  noPause = false;
   ngOnInit() {
     this.authService.checkToken();
     this.route.paramMap.subscribe(params => {
@@ -31,8 +32,9 @@ export class CategoryComponent implements OnInit {
     });
   }
 
+  // get articles depending on the category
   getArticles() {
-    this.articleService.get_top_headlines('us', this.category).subscribe((result) => {
+    this.articleService.get_top_headlines('us', this.category,100).subscribe((result) => {
       this.allArticles = result['articles'];
   });
   }

@@ -12,27 +12,30 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+//All controllers that comes from route /api/* will be first authenticated
 class ArticleController extends AbstractController
 {
     /**
      * @Route("api/article/saveHistoryArticle", name="api_article_save", methods={"POST"})
+     * Method to save article that has been read by the registered user
      */
     public function saveHistoryArticle(Request $request, EntityManagerInterface $em)
     {
+        //Get the user id from token
         $user = $this->getUser();
+        //Get the content from the given json
         $data = json_decode($request->getContent(),true);
 
         $source_id = $data["source"]["id"];
         $source_name = $data["source"]["name"];
         $author = $data["author"];
-        $title = $data["title"];
-        $description = $data["description"];
         $url = $data["url"];
         $urlToImage = $data["urlToImage"];
         $publishedAt = $data["publishedAt"];
         $content = $data["content"];
         date_default_timezone_set('Europe/Brussels');
 
+        //Save the article using orm doctrine functions
         try{
             $article = new HistoryArticle();
 
@@ -40,14 +43,22 @@ class ArticleController extends AbstractController
                 ->setSourceId($source_id)
                 ->setSourceName($source_name)
                 ->setAuthor($author)
-                ->setTitle($title)
-                ->setDescription($description)
                 ->setUrl($url)
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
                 ->setAddedAt(new \DateTime())
                 ->setUser($user);
+                if (isset($data["description"])) {
+                    $article->setDescription($data["description"]);
+                } elseif (!isset($data["description"])) {
+                    $article->setDescription('No description!');
+                }
+                if (isset($data["title"])) {
+                    $article->setTitle($data["title"]);
+                } elseif (!isset($data["title"])) {
+                    $article->setDescription('No title!');
+                }
             $em->persist($article);
             $em->flush();
         } catch (\Exception $exception) {
@@ -62,6 +73,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("api/article/saveReadLaterArticle", name="api_read_later_article_save", methods={"POST"})
+     * Controller to save article to read later, by the registered user
      */
     public function saveReadLaterArticle(Request $request, EntityManagerInterface $em)
     {
@@ -86,14 +98,22 @@ class ArticleController extends AbstractController
                 ->setSourceId($source_id)
                 ->setSourceName($source_name)
                 ->setAuthor($author)
-                ->setTitle($title)
-                ->setDescription($description)
                 ->setUrl($url)
                 ->setUrlToImage($urlToImage)
                 ->setPublishedAt($publishedAt)
                 ->setContent($content)
                 ->setAddedAt(new \DateTime())
                 ->setUser($user);
+                if (isset($data["description"])) {
+                    $article->setDescription($data["description"]);
+                } elseif (!isset($data["description"])) {
+                    $article->setDescription('No description!');
+                }
+                if (isset($data["title"])) {
+                    $article->setTitle($data["title"]);
+                } elseif (!isset($data["title"])) {
+                    $article->setDescription('No title!');
+                }
             $em->persist($article);
             $em->flush();
         } catch (\Exception $exception) {
@@ -109,6 +129,8 @@ class ArticleController extends AbstractController
     /**
      * @Route("/api/article/getHistoryArticles")
      * @return JsonResponse
+     * Controller to get all read articles from the database
+     * Will send the results to frontend  in json format
      */
     public function getHistoryArticles(HistoryArticleRepository $historyArticleRepository)
     {
@@ -119,6 +141,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/api/article/deleteHistoryArticle/{id}")
+     * Controller to delete article from 'history' db with the given id
      */
     public function deleteHistoryArticle(EntityManagerInterface $em, HistoryArticleRepository $historyArticleRepository, $id)
     {
@@ -139,6 +162,8 @@ class ArticleController extends AbstractController
     /**
      * @Route("/api/article/getReadLaterArticles")
      * @return JsonResponse
+     * Controller to get all saved 'read later' articles from the database
+     * Will send the results to frontend  in json format
      */
     public function getReadLaterArticles(ReadLaterArticleRepository $readLaterArticleRepository)
     {
@@ -149,6 +174,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/api/article/deleteReadLaterArticle/{id}")
+     * Controller to delete article from 'read later' db with the given id
      */
     public function deleteReadLaterArticle(EntityManagerInterface $em, ReadLaterArticleRepository $readLaterArticleRepository, $id)
     {

@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
       last_Name: [{value:'', disabled: this.isDisabled}],
       street_Name: [{value:'', disabled: this.isDisabled}],
       house_Number: [{value:'', disabled: this.isDisabled}],
-      mailBox_Number: [{value:'', disabled: this.isDisabled}],
+      mailbox_Number: [{value:'', disabled: this.isDisabled}],
       city: [{value:'', disabled: this.isDisabled}],
       telephone: [{value:'', disabled: this.isDisabled}],
       postal_Code: [{value:'', disabled: this.isDisabled}],
@@ -44,18 +44,6 @@ export class ProfileComponent implements OnInit {
       this.profileForm.enable();
       console.log(this.profileForm);
     }
-
-    // profileForm = new FormGroup({
-    //   first_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   last_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   street_Name: new FormControl({value:'', disabled: true} , Validators.required),
-    //   house_Number: new FormControl({value:'', disabled: true} , Validators.required),
-    //   mailBox_Number: new FormControl({value:'', disabled: true} , Validators.required),
-    //   city: new FormControl({value:'', disabled: true} , Validators.required),
-    //   telephone: new FormControl({value:'', disabled: true} , Validators.required),
-    //   postal_Code: new FormControl({value:'', disabled: true} , Validators.required),
-    //   email: new FormControl({value:'', disabled: true} , Validators.required),
-    // });
 
     onSubmit(myForm) {
       // console.log(this.profileForm);
@@ -82,13 +70,15 @@ export class ProfileComponent implements OnInit {
       );
     }
 
-  private CHECK_JWT = "http://localhost:8000/apiCheck";
+  
+  private CHECK_JWT = "https://wdev.be/buyna/ew/be/apiCheck";
   userInfo = [];
   avatar_Url;
   userKeys = [];
   userValues= [];
   closeResult;
   ngOnInit() {
+    // check if token is valid
     this.http.get(this.CHECK_JWT).subscribe(
       (resultaat) => {
       this.userInfo = resultaat['user'];
@@ -135,12 +125,13 @@ export class ProfileComponent implements OnInit {
       );
   }
 
+  // password reset function
   resetPassword(form) {
     console.log(form.value);
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    this.http.post("http://127.0.0.1:8000/api/resetPassword", form.value, httpOptions).subscribe(
+    this.http.post("https://wdev.be/buyna/ew/be/api/resetPassword", form.value, httpOptions).subscribe(
       (res) => {
         this.ngFlashMessageService.showFlashMessage({
         messages: [res['success']],
@@ -159,6 +150,4 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
-  
 }

@@ -31,6 +31,7 @@ export class ArticleListsComponent implements OnInit {
     });
   }
 
+  // get all articles 
   getAllHistoryArticles(listName: string) {
     this.articleService.getUserArticle(listName).subscribe(
       (res) => {
@@ -43,6 +44,7 @@ export class ArticleListsComponent implements OnInit {
     );
   }
 
+  // show Modal function
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(
       template,
@@ -50,8 +52,8 @@ export class ArticleListsComponent implements OnInit {
       );
   }
 
+  // delete article from the list
   deleteArticle(id: string) {
-    // ((this.listName == 'history') ? this.articleService.deleteHistoryArticle(id) : this.articleService.deleteReadLaterArticle(id))
     ((this.listName == 'history') ? this.articleService.deleteHistoryArticle(id) : this.articleService.deleteReadLaterArticle(id)).subscribe(
       (res) => {
         console.log(res);

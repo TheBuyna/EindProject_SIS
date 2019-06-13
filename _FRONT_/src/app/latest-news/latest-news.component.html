@@ -1,114 +1,23 @@
+<!-- Latest news component -->
 <div class="latest-news-title">
   <h3>Latest news</h3>
 </div>
 <div class="latest-news-wrap">
-  <div class="latest-news-widgets"*ngFor="let article of allArticles">
+  <div class="latest-news-widgets" *ngFor="let article of allArticles">
       <div class="btnReadLater" *ngIf="authService.loggedIn()">
           <button class="btn btn-outline-secondary btn-sm" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
             <i class="fa fa-plus"></i>
           </button>
         </div>
-    <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+    <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
       <div class="lNews-image">
-        <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+        <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
       </div>
       <div class="lNews-text">
         <span  id="main-text-category">{{article.source.name}}</span>
         <p>{{article.title}}</p>
-        
-        
       </div>
     </a>
   </div>
-  <!-- <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span  id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p>bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll </p>
-      </div>
-    </a></div>
-  <div class="latest-news-widgets"><a>
-      <div class="lNews-image">
-        <img src="http://www.mvpthemes.com/flexmag/wp-content/uploads/2015/08/man-headphones.jpg">
-      </div>
-      <div class="lNews-text">
-        <span id="main-text-category">tech</span>
-        <p class="main-text-paragraph">bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll bla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd llbla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd llbla bla bla bla bla bla bla bla vala ladlld lddl dldd lddl ddldd ll</p>
-      </div>
-    </a></div> -->
 </div>
 

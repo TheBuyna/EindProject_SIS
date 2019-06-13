@@ -13,12 +13,16 @@ export class RightSidebarComponent implements OnInit {
 
   allArticles;
   ngOnInit() {
-    this.get_articles('sports', 'fr');
+    this.get_articles();
   }
 
-  get_articles(category: string, country: string) {
-    this.articleService.get_article_category(category, country).subscribe((result) => {
+  get_articles() {
+    this.articleService.get_top_headlines('us',null,20,2).subscribe((result) => {
         this.allArticles = result['articles'];
+        console.log(result['articles']);
+    },
+    (err) => {
+      console.log(err);
     });
   }
 

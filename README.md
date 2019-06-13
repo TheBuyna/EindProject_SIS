@@ -21,12 +21,17 @@ ng serve
 
 ### **Symfony 4(_BACK_)**
 **Stap 1**
-> **TIP**:
+> **TIP 1:**
 > Jij moet eerst [Composer](https://getcomposer.org/download/) package manager globaal installeren.
 
-Voor backend gebruiken wij Symfony 4. Om Symfony te laten werken moet jij de volgende command uitvoeren in jouw symfony directory(_BACK_)
+
+
+Voor backend gebruiken wij Symfony 4. Om Symfony te laten werken moet jij de volgende command uitvoeren
+
+> **TIP 2:**
+> Vergeet niet dat alle commando van backend in de _BACK_ directory uitgevoerd moeten worden.
 ```
-composer install
+$ composer install
 ```
 Dit installeert al je nodige packages.
 
@@ -35,18 +40,21 @@ Dit installeert al je nodige packages.
 Zoek naar de .env file in de _BACK_ folder. In de file is er een gedeelte `DATABASE_URL`. Pas het aan naar jouw lokale database.
 Bijvorbeeld:
 
+```
+DATABASE_URL=mysql://<<gebruikersNaam>>:<<wachtwoord>>@127.0.0.1:3306/news_website_db
+```
 
 **Stap 3: Installeer de database en de dummy data**
 ```
-php bin/console doctrine:database:create
-php bin/console doctrine:migrations:migrate
-php bin/console doctrine:fixtures:load
+$ php bin/console doctrine:database:create
+$ php bin/console doctrine:migrations:migrate
+$ php bin/console doctrine:fixtures:load
 ```
 Als jij error krijgt dat de database bestaat, zou dat normaal gezien geen probleem zijn, dus werk gewoon verder aan jouw project. Maar als jij problemen krijgt met de database, dan verwijder de hele database met de volgende commando:
 ```
-php bin/console doctrine:database:drop --force
+$ php bin/console doctrine:database:drop --force
 ```
-Probeer nu opnieuw de database te installeren.
+Probeer nu opnieuw de database te installeren met bovenste 3 commandos.$ 
 
 **Stap 4: Genereer private en public key voor jwt**
 
@@ -59,7 +67,7 @@ $ openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 
 Start jouw backend server:
 ```
-php bin/console server:run
+$ php bin/console server:run
 ```
 
 ## Git
@@ -101,7 +109,7 @@ Of gewoon alle changes in één keer:
 git add .
 ```
 
-Dit command voegt jij changes in jouw project naar de 'staging area'. Wanneer jij commit doet, al jouw changes in 'staging area' gaat dan committen.
+Dit command voegt jij changes in jouw project naar de 'staging area'. Wanneer jij commit doet, al jouw changes in 'staging area' gaat dan opgeslagen worden.
 
 **Stap 3: git commit**
 
@@ -125,7 +133,7 @@ Na elke meetings/springs gaan wij mergen.
 
 **Stap 1**
 
-Ga naar jouw branch die jij wenst te mergen. In dit geval naar _master_ branch.
+Ga naar jouw branch die jij wenst te mergen. In meeste geval naar _master_ branch.
 ```
 git checkout master
 ```

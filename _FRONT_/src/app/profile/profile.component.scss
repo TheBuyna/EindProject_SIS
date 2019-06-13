@@ -1,3 +1,6 @@
+// CSS user profile
+
+@import "../../variables.scss";
 
 .userInfoTable {
   margin-top: 1em;
@@ -9,80 +12,91 @@
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-  .no-padding {
-    padding-right: 0;
-  }
+.no-padding {
+  padding-right: 0;
+}
 
-  .user-image {
-    img {
-      width: 100px;
+.user-image {
+  img {
+    width: 100px;
+  }
+}
+
+.user-title {
+  padding: 40px 0 0 100px;
+
+}
+
+.detailsTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 0;
+  margin-left: -16px;
+}
+
+.changeDetails {
+  border: none;
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+
+.labelField {
+  width: 150px;
+  padding-top: 20px;
+}
+
+.inputField { padding-left: 5px; }
+
+.btn-style {
+  border: 1px solid var(--text-color);
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.btn-txt {
+  padding-left: 10px;
+}
+
+.div-btn-update {
+  text-align: center;
+  padding: 40px;
+}
+
+.btn-update {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.modal-header,
+.modal-body,
+.modal-footer { 
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+.close { color: $White !important; }
+
+@media screen and (max-width: 860px) {
+    .btn-style {
+        padding: 10px;
+        margin-right: 10px;
     }
+    .btn-icon { font-size: 1.5em; }
+    .btn-txt { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+  .user-image {
+    margin-top: 5em;
+    text-align: center;
   }
 
   .user-title {
-    padding: 40px 0 0 100px;
-
+    padding: 40px 0 0 0;
   }
 
   .detailsTitle {
-    display: flex;
-    justify-content: space-between;
-    margin: 2em 0;
-    margin-left: -16px;
+    display: block;
   }
-
-  .changeDetails {
-    border: none;
-    background: var(--primary-color);
-    color: var(--text-color);
-    border-bottom: 1px solid;
-    margin: 10px 0 0 20px;
-  }
-
-
-  .labelField {
-    width: 150px;
-    padding-top: 20px;
-  }
-
-  .btn-style {
-    border: none;
-    border-bottom: 1px solid;
-    background: var(--primary-color);
-    color: var(--text-color);
-  }
-
-  .pwd {
-    padding-right: 10px;
-  }
-
-  .div-btn-update {
-    text-align: center;
-    padding: 40px;
-  }
-
-  .btn-update {
-    background: var(--primary-color);
-    color: var(--text-color);
-  }
-
-  @media screen and (max-width: 768px) {
-    .user-image {
-      margin-top: 5em;
-      text-align: center;
-    }
-
-    .user-title {
-      padding: 40px 0 0 0;
-    }
-
-    .detailsTitle {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .container {
-      margin-left: 50px;
-    }
-  }
+}

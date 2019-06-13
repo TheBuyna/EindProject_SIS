@@ -1,3 +1,4 @@
+<!-- Navigation bar -->
 <nav class="mainnav">
   <div>
     <div class="hamburger" (click)="toggleEvent($event)">
@@ -7,109 +8,124 @@
     </div>
     <div class="sidenav" [hidden]="toggle">
       <div>
+        <!-- social media navigation -->
         <ul class="social-wrap unlist">
-          <li class="facebook"><a href="#" title=""><span class="fa fa-facebook"></span></a></li>
-          <li class="twitter"><a href="#" title=""><span class="fa fa-twitter"></span></a></li>
-          <li class="google"><a href="#" title=""><span class="fa fa-google-plus"></span></a></li>
-          <li class="instagram"><a href="#" title=""><span class="fa fa-instagram"></span></a></li>
-          <li class="linkedin"><a href="#" title=""><span class="fa fa-linkedin"></span></a></li>
-          <li class="youtube"><a href="#" title=""><span class="fa fa-youtube"></span></a></li>
-          <li class="pinterest"><a href="#" title=""><span class="fa fa-pinterest"></span></a></li>
+          <li class="facebook"><a href="https://www.facebook.com/" title="Facebook" target="_blank"><span class="fa fa-facebook"></span></a></li>
+          <li class="twitter"><a href="https://twitter.com/" title="Twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
+          <li class="google"><a href="https://accounts.google.com/" title="Google Plus" target="_blank"><span class="fa fa-google-plus"></span></a></li>
+          <li class="instagram"><a href="https://www.instagram.com/" title="Instagram" target="_blank"><span class="fa fa-instagram"></span></a></li>
+          <li class="linkedin"><a href="https://www.linkedin.com/" title="Linkedin"target="_blank"><span class="fa fa-linkedin"></span></a></li>
+          <li class="youtube"><a href="https://www.youtube.com/" title="Youtube" target="_blank"><span class="fa fa-youtube"></span></a></li>
+          <li class="pinterest"><a href="https://nl.pinterest.com/" title="Pinterest" target="_blank"><span class="fa fa-pinterest"></span></a></li>
         </ul>
       </div>
       <div>
         <ul class="menu-wrap unlist">
-          <li (click)="toggleEvent($event)"><a [routerLink]="['/home']" title="">HOME</a></li>
+          <li (click)="toggleEvent($event)"><a [routerLink]="['/home']" title="Home Page">HOME</a></li>
            <!-- Dropdown for Category -->
           <li ngbDropdown *ngIf="authService.loggedIn()">
             <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
               Category
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <li><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-              <li><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-              <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-              <li><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-              <li><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-              <li><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-              <li><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+              <li><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+              <li><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+              <li><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+              <li><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+              <li><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+              <li><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+              <li><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
             </div>
           </li>
           <!-- end Dropdown Category -->
+
+          <li (click)="toggleEvent($event)"><a [routerLink]="['/contact']" title="Contact Us">Contact Us</a></li>
+
           <!-- Dropdown for logged in user -->
-          <li ngbDropdown *ngIf="authService.loggedIn()">
+          <li ngbDropdown *ngIf="authService.loggedIn()" (click)="closeFunc()" class="show">
             <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
               <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
             </a>
-            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-              <a ngbDropdownItem (click)="authService.logoutUser(theme)"><i class="fa fa-sign-out"></i> Logout</a>
+            <!-- (click)="toggleEvent($event)" -->
+            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
+              <div>
+                  <a ngbDropdownItem [routerLink]="['/profile']" title="Profile"><i class="fa fa-user-circle"></i> Profile</a>
+                  <a ngbDropdownItem (click)="authService.logoutUser(theme)" title="Logout"><i class="fa fa-sign-out"></i> Logout</a>
+              </div>
+              
             </div>
           </li>
           <!-- end Dropdown -->
           <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
-            <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
+            <a routerLink="/auth/login" title="Login"><i class="fa fa-sign-in-alt"></i> Login</a>
           </li>
           <li *ngIf="!authService.loggedIn()" (click)="toggleEvent($event)">
-            <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
+            <a routerLink="/auth/register" title="Register"><i class="fa fa-user-plus"></i> Register</a>
           </li>
+          <li *ngIf="authService.loggedIn() && currentWeather" class="sideWeather">
+              <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.summary}} <br> {{currentWeather.temperature}}&#176;C</a>
+            </li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="logo">
-    <h1><a href="#" title="Home">TNS</a></h1>
+    <h1><a [routerLink]="['/home']" title="Home">TNS</a></h1>
   </div>
 
   <!-- </div> -->
   <div class="mainmenu">
     <ul class="unlist wrap">
-      <li><a routerLink="/home" title="">HOME</a></li>
+      <li><a [routerLink]="['/home']" title="Home Page">HOME</a></li>
       <!-- Dropdown for Category -->
       <li ngbDropdown *ngIf="authService.loggedIn()">
         <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
           Category
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-            <li><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-            <li><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-            <li><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-            <li><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-            <li><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-            <li><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-            <li><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+            <li><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+            <li><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+            <li><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+            <li><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+            <li><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+            <li><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+            <li><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
         </div>
       </li>
       <!-- end Dropdown Category -->
+
+      <li><a [routerLink]="['/contact']" title="Contact Us">Contact Us</a></li>
+
       <!-- Dropdown for logged in user -->
       <li ngbDropdown *ngIf="authService.loggedIn()">
         <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
           <img class="nav-profile-img rounded-circle"  src="https://robohash.org/{{avatar_url}}?size=20x20">
         </a>
         <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
-          <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-          <a ngbDropdownItem (click)="authService.logoutUser(theme)"><i class="fa fa-sign-out"></i> Logout</a>
+          <a ngbDropdownItem [routerLink]="['/profile']" title="Profile"><i class="fa fa-user-circle"></i> Profile</a>
+          <a ngbDropdownItem (click)="authService.logoutUser(theme)" title="Logout"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
       <!-- end Dropdown -->
       <li *ngIf="!authService.loggedIn()">
-        <a routerLink="/auth/login" title=""><i class="fa fa-sign-in-alt"></i> Login</a>
+        <a routerLink="/auth/login" title="Login"><i class="fa fa-sign-in-alt"></i> Login</a>
       </li>
       <li *ngIf="!authService.loggedIn()">
-        <a routerLink="/auth/register" title=""><i class="fa fa-user-plus"></i> Register</a>
+        <a routerLink="/auth/register" title="Register"><i class="fa fa-user-plus"></i> Register</a>
+      </li>
+      <li *ngIf="authService.loggedIn() && currentWeather">
+        <a routerLink="/weather" title="{{currentWeather.summary}}"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i> {{currentWeather.temperature}}&#176;C</a>
       </li>
     </ul>
   </div>
-  <div class="search-logo">
+  <div class="search-logo" *ngIf="authService.loggedIn()">
     <i class="fa fa-search" (click)="searchDisplay($event)"></i>
   </div>
   <div>
-    <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(ngModel)]="enable" class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
-    <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(formControl)]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
-    <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [formControl]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch>
+    <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [formControl]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Dark" checkedLabel="Light" (click)="authService.setTheme(theme);"></ui-switch>
   </div>
-  <div class="handle"><a href="#" title="">TNS | The News Spot</a></div>
+  <div class="handle"><a href="#" title="Home Page">TNS | The News Spot</a></div>
 </nav>
 
 <!-- Search form -->
@@ -121,10 +137,13 @@
   </form>
 </div>
 
+<!-- right side social media navigation -->
 <div class="icon-bar" [hidden]="!toggle">
-  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="google"><i class="fa fa-google"></i></a>
-  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+  <a href="https://www.facebook.com/" title="Facebook" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://twitter.com/" title="Twitter" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="https://accounts.google.com/" title="Google Plus" target="_blank" class="google"><i class="fa fa-google-plus"></i></a>
+  <a href="https://www.instagram.com/" title="Instagram" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/" title="Linkedin" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.youtube.com/" title="Youtube" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+  <a href="https://nl.pinterest.com/" title="Pinterest" target="_blank" class="pinterest"><i class="fa fa-pinterest"></i></a>
 </div>

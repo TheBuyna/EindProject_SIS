@@ -2,12 +2,13 @@
   <div class="col-sm-12">
       <h1>{{listTitle}}</h1>
       <form>
+          <!-- search articles function -->
           <div class="input-group mb-3">
               <input type="text"
                      name="q"
                      class="form-control"
                      placeholder="Search..."
-                     [(ngModel)]="filter"
+                     [(ngModel)]="searchFilter"
               >
               <div class="input-group-append">
                   <button type="submit"
@@ -16,22 +17,23 @@
                   </button>
               </div>
           </div>
+          <!-- end search function -->
       </form>
 
       <table class="table table-striped">
           <thead>
           <tr>
               <th scope="col">Title</th>
-              <th>Description</th>
-              <th>Read at</th>
+              <th class="d-none d-lg-table-cell">Description</th>
+              <th class="d-none d-md-table-cell">Read at</th>
               <th> </th>
           </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let article of allHisotryArticles|stringFilter: filter|paginate: { itemsPerPage: 5, currentPage: p }">
+              <tr *ngFor="let article of allHisotryArticles|stringFilter: searchFilter|paginate: { itemsPerPage: 5, currentPage: p }">
                   <td>{{ article.title | truncateText: 30}}</td>
-                  <td>{{ article.description | truncateText: 50}}</td>
-                  <td>{{ article.addedAt.date}}</td>
+                  <td class="d-none d-lg-table-cell">{{ article.description | truncateText: 50}}</td>
+                  <td class="d-none d-md-table-cell">{{ article.addedAt.date}}</td>
                   <td class="buttonsRow">
                       <a class="btn btn-primary" href="{{article.url}}" target="_blank">
                           <span class="fa fa-external-link"></span>
@@ -40,6 +42,7 @@
                           <span class="fa fa-trash"></span>
                       </button>
                   </td>
+                  <!-- modal for delete article -->
                   <ng-template #confirmModal>
                       <div class="modal-header">
                         <h4 class="modal-title pull-left">Delete Article?</h4>
@@ -48,7 +51,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                          <p>Are you sure you want to delete this article {{ article.title }}</p>
+                          <p>Are you sure you want to delete this article:<br> <b><i>{{ article.title }}</i></b></p>
                       </div>
                       <div class="modal-footer">
                           <a class="btn btn-danger" (click)="deleteArticle(article.id);modalRef.hide()">
@@ -61,9 +64,15 @@
               <tr *ngIf="0 >= allHisotryArticles?.length">
                   <td colspan="4" class="text-center">No articles!</td>
               </tr>
-              <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+              <tr>
+                <td colspan="4" class="text-center">
+                    <pagination-controls class="my-pagination" (pageChange)="p = $event" autoHide="true"></pagination-controls>
+                </td>
+              </tr>
           </tbody>
       </table>
-        
+      <div class="tbl-foot">
+            <button class="btn-back" [routerLink]="['/profile']">Back</button>
+      </div>
   </div>
 </div>

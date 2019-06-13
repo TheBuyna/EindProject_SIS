@@ -1,121 +1,166 @@
-  <div class="foot">
-    <div class="row">
-      <div class="foot-widget-left col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
-        <div class="foot-logo"><a href="#" title="">TNS | The News Spot</a></div>
-        <div class="foot-info">
-          <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem?</p>
-          <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem?</p>
-        </div>
-        <div class="foot-social">
-          <ul class="foot-social-list unlist social links-style">
-            <li><a href="#" title=""><span class="fa fa-facebook"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-twitter"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-google-plus"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-instagram"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-linkedin"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-youtube"></span></a></li>
-            <li><a href="#" title=""><span class="fa fa-pinterest"></span></a></li>
-            <li></li>
-          </ul>
-        </div>
+<div class="foot">
+  <div class="row">
+    <div class="foot-widget-left col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
+      <div class="foot-logo"><a [routerLink]="['/home']" title="">TNS | The News Spot</a></div>
+      <div class="foot-info">
+        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem?</p>
+        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem?</p>
       </div>
-
-      <div class="foot-widget-midden col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
-        <h3>Latest News</h3>
-        <div>
-          <ul class="blog-list unlist links-style">
-            <li><a href="#" title="">LINK</a></li>
-            <li><a href="#" title="">LINK</a></li>
-            <li><a href="#" title="">LINK</a></li>
-            <li><a href="#" title="">LINK</a></li>
-            <li><a href="#" title="">LINK</a></li>
-          </ul>
-        </div>
+      <div class="foot-social">
+        <ul class="foot-social-list unlist social links-style">
+          <li><a href="https://www.facebook.com/" title="" target="_blank"><span class="fa fa-facebook"></span></a></li>
+          <li><a href="https://twitter.com/" title="" target="_blank"><span class="fa fa-twitter"></span></a></li>
+          <li><a href="https://accounts.google.com/" title="" target="_blank"><span class="fa fa-google-plus"></span></a></li>
+          <li><a href="https://www.instagram.com/" title="" target="_blank"><span class="fa fa-instagram"></span></a></li>
+          <li><a href="https://www.linkedin.com/" title="" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+          <li><a href="https://www.youtube.com/" title="" target="_blank"><span class="fa fa-youtube"></span></a></li>
+          <li><a href="https://nl.pinterest.com/" title="" target="_blank"><span class="fa fa-pinterest"></span></a></li>
+          <li></li>
+        </ul>
       </div>
+    </div>
 
-    <div class="foot-widget-right col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
-      <h3>Popular Tags</h3>
+    <div class="foot-widget-midden col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
+      <h3>Latest News</h3>
       <div>
-        <p>links.....</p>
+        <ul class="blog-list unlist links-style">
+          <li class="links-style-news" *ngFor="let article of allArticles | slice:21;"><a href="{{article.url}}" target="_blank" title="" (click)="!authService.loggedIn() || articleService.saveArticle(article)">{{article.title}}</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="foot-toggle-menu" [hidden]="toggleMenu">
-        <ul class="foot-toggle-menu-list unlist links-style">
-          <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="Home Page">HOME</a></li>
-          <!-- Dropdown for Category -->
-          <li ngbDropdown *ngIf="authService.loggedIn()">
-            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
-              Category
-            </a>
-            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{'show-scrollTop': windowScrolled}">
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
-            </div>
-          </li>
-          <!-- end Dropdown Category -->
-          <!-- Dropdown for logged in user -->
-          <li ngbDropdown *ngIf="authService.loggedIn()">
-            <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
-              <img class="nav-profile-img rounded-circle" src="#">
-            </a>
-            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
-            </div>
-          </li>
-          <!-- end Dropdown -->
-        </ul>
-    </div>
-
-    <div class="foot-bottom">
-      <div class="foot-bottom-text">
-        <p>Copyright © 2019    TNS | The News Spot.</p>
-      </div>
-
-      <div class="hamburger" (click)="toggleEvent($event)">
-          <a class="menu">
-            <span class="fa fa-reorder"></span>
-          </a>
-      </div>
-
-      <div class="foot-bottom-menu">
-        <ul class="foot-bottom-menu-list unlist links-style">
-          <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="">HOME</a></li>
-          <!-- Dropdown for Category -->
-          <li ngbDropdown *ngIf="authService.loggedIn()">
-            <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
-              Category
-            </a>
-            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
-              <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
-            </div>
-          </li>
-          <!-- end Dropdown Category -->
-          <!-- Dropdown for logged in user -->
-          <li ngbDropdown *ngIf="authService.loggedIn()">
-            <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
-              <img class="nav-profile-img rounded-circle" src="#">
-            </a>
-            <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
-              <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
-              <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
-            </div>
-          </li>
-          <!-- end Dropdown -->
-        </ul>
-      </div>
+  <div class="foot-widget-right col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
+    <h3>World</h3>
+    <div>
+      <ul class="unlist w-countries">
+        <div class="first">
+            <li><a [routerLink]="['/world', 'at']">Austria</a></li>
+            <li><a [routerLink]="['/world', 'au']">Australia</a></li>
+            <li><a [routerLink]="['/world', 'be']">Belgium</a></li>
+            <li><a [routerLink]="['/world', 'br']">Brazil</a></li>
+            <li><a [routerLink]="['/world', 'bg']">Bulgaria</a></li>
+            <li><a [routerLink]="['/world', 'ca']">Canada</a></li>
+            <li><a [routerLink]="['/world', 'cn']">China</a></li>
+            <li><a [routerLink]="['/world', 'fr']">France</a></li>
+            <li><a [routerLink]="['/world', 'de']">Germany</a></li>
+            <li><a [routerLink]="['/world', 'gr']">Greece</a></li>
+            <li><a [routerLink]="['/world', 'hu']">Hungary</a></li>
+            <li><a [routerLink]="['/world', 'in']">India</a></li>
+        </div>
+        <div class="second">
+            <li><a [routerLink]="['/world', 'ie']">Ireland</a></li>
+            <li><a [routerLink]="['/world', 'il']">Israel</a></li>
+            <li><a [routerLink]="['/world', 'it']">Italy</a></li>
+            <li><a [routerLink]="['/world', 'jp']">Japan</a></li>
+            <li><a [routerLink]="['/world', 'lv']">Latvia</a></li>
+            <li><a [routerLink]="['/world', 'mx']">Mexico</a></li>
+            <li><a [routerLink]="['/world', 'nl']">Netherlands</a></li>
+            <li><a [routerLink]="['/world', 'nz']">New Zealand</a></li>
+            <li><a [routerLink]="['/world', 'ph']">Philippines</a></li>
+            <li><a [routerLink]="['/world', 'pl']">Poland</a></li>
+            <li><a [routerLink]="['/world', 'pt']">Portugal</a></li>
+            <li><a [routerLink]="['/world', 'ro']">Romania</a></li>
+        </div>
+        <div class="third">
+            <li><a [routerLink]="['/world', 'ru']">Russia</a></li>
+            <li><a [routerLink]="['/world', 'sg']">Singapore</a></li>
+            <li><a [routerLink]="['/world', 'za']">South Africa</a></li>
+            <li><a [routerLink]="['/world', 'se']">Sweden</a></li>
+            <li><a [routerLink]="['/world', 'ch']">Switzerland</a></li>
+            <li><a [routerLink]="['/world', 'tw']">Taiwan</a></li>
+            <li><a [routerLink]="['/world', 'th']">Thailand</a></li>
+            <li><a [routerLink]="['/world', 'ae']">UAE</a></li>
+            <li><a [routerLink]="['/world', 'ua']">Ukraine</a></li>
+            <li><a [routerLink]="['/world', 'gb']">UK</a></li>
+            <li><a [routerLink]="['/world', 'us']">US</a></li>
+            <li><a [routerLink]="['/world', 've']">Venuzuela</a></li>
+        </div>
+      </ul>
     </div>
   </div>
+
+  <div class="foot-toggle-menu" [hidden]="toggleMenu">
+      <ul class="foot-toggle-menu-list unlist links-style">
+        <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="Home Page">HOME</a></li>
+        <!-- Dropdown for Category -->
+        <li ngbDropdown *ngIf="authService.loggedIn()">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
+            Category
+          </a>
+          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{'show-scrollTop': windowScrolled}">
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+          </div>
+        </li>
+        <!-- end Dropdown Category -->
+
+        <li><a (click)="scrollToTop()" [routerLink]="['/contact']" title="Contact Us">Contact Us</a></li>
+
+        <!-- Dropdown for logged in user -->
+        <li ngbDropdown *ngIf="authService.loggedIn()">
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
+            <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
+          </a>
+          <div class="dropDown  dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+            <a (click)="scrollToTop()" ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
+            <a (click)="scrollToTop()" ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+          </div>
+        </li>
+        <!-- end Dropdown -->
+      </ul>
+  </div>
+
+  <div class="foot-bottom">
+    <div class="foot-bottom-text">
+      <p>Copyright © 2019    TNS | The News Spot.</p>
+    </div>
+
+    <div class="hamburger" (click)="toggleEvent($event)">
+        <a class="menu">
+          <span class="fa fa-reorder"></span>
+        </a>
+    </div>
+
+    <div class="foot-bottom-menu">
+      <ul class="foot-bottom-menu-list unlist links-style">
+        <li (click)="scrollToTop()"><a [routerLink]="['/home']" title="">HOME</a></li>
+        <!-- Dropdown for Category -->
+        <li ngbDropdown *ngIf="authService.loggedIn()">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
+            Category
+          </a>
+          <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'sports']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'health']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'science']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>
+            <li (click)="scrollToTop()"><a [routerLink]="['/category', 'technology']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>
+          </div>
+        </li>
+        <!-- end Dropdown Category -->
+
+        <li><a (click)="scrollToTop()" [routerLink]="['/contact']" title="Contact Us">Contact Us</a></li>
+
+        <!-- Dropdown for logged in user -->
+        <li ngbDropdown *ngIf="authService.loggedIn()">
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
+            <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
+          </a>
+          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+            <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
+            <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
+          </div>
+        </li>
+        <!-- end Dropdown -->
+      </ul>
+    </div>
+  </div>
+</div>
 

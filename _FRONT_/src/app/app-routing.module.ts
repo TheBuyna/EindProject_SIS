@@ -6,7 +6,13 @@ import { AuthGuard } from './auth.guard';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticleListsComponent } from './article-lists/article-lists.component';
+import { WeatherComponent } from './weather/weather.component';
+import { ContactusComponent } from './contact-us/contact-us.component';
+import { SearchComponent } from './search/search.component';
+import { WorldComponent } from './world/world.component';
 
+
+// routing paths
 const routes: Routes = [
   {
     path: 'category/:categoryName',
@@ -17,7 +23,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path:  'auth', loadChildren:  './auth/auth.module#AuthModule'},
   { path: 'profile', component: ProfileComponent},
-  { path: 'listArticles/:listName', component: ArticleListsComponent }
+  { path: 'listArticles/:listName', component: ArticleListsComponent },
+  { path: 'weather', component: WeatherComponent},
+  { path: 'contact', component: ContactusComponent },
+  { path: 'search/:searchQuery', component: SearchComponent},
+  { path: 'world/:countryCode', component: WorldComponent},
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+  <!-- Top news component -->
   <div id="tNews-top-wrap" class="row">
     <div id="tNews-main" class="col-sm-12 col-lg-6 col-md-6 col-xl-3 col-12"
       *ngFor="let article of allArticles | slice:0:4; let i=index">
@@ -9,9 +10,9 @@
             </button>
           </div>
         </div>
-      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
         <div class="tNews-main-img">
-          <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+          <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
         </div>
         <div id="main-text-bg"></div>
         <div class="tNews-main-text">

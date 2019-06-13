@@ -1,3 +1,4 @@
+<!-- Home page articles divided by article title -->
 <div class="main-small-widget-title">
   <h3>
     Featured News
@@ -5,15 +6,15 @@
 </div>
 <div class="feature-article-widget">
   <div class="feature-small-widget-wrap">
-    <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:0:3;">
+    <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:4:7;">
       <div class="btnReadLater" *ngIf="authService.loggedIn()">
           <button class="btn btn-outline-light btn-sm" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
             <i class="fa fa-plus"></i>
           </button>
         </div>
-      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
         <div class="main-feature-small-img">
-          <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+          <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
         </div>
         <div class="main-feature-small-text">
           <span id="main-text-category">{{article.source.name}}</span>
@@ -23,16 +24,16 @@
     </div>
   </div>
   <div class="feature-big-widget-wrap">
-    <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:3;">
+    <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:7;">
           <div class="btnReadLater" *ngIf="authService.loggedIn()">
             <button class="btn btn-outline-secondary" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
                 Read Later...
               <i class="fa fa-plus"></i>
             </button>
           </div>
-      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)">
+      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || saveHistoryArticle(article)" title="Source: {{article.source.name}}">
           <div class="main-feature-big-img">
-              <img src="{{article.urlToImage}}" default="/assets/images/placeholder_4.png" class="img">
+              <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">
             </div><!-- end side-wdiget -->
             <div class="main-feature-big-text">
               <span id="main-text-category">{{article.source.name}}</span>

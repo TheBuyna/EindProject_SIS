@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+// saved colors to toggle
 export const lightTheme = {
   'primary-color': '#EEEEEE',
   'background-color': '#FFFFFF',

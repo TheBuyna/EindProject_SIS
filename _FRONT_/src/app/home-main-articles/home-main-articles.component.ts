@@ -12,33 +12,35 @@ export class HomeMainArticlesComponent implements OnInit {
 
   constructor(private articleService: ArticleService, private authService: AuthService) { }
   allArticles: any;
-  @Input('messages') mess: any;
+  //@Input('messages') mess: any;
   
   ngOnInit() {
-    this.get_articles('belgium');
+    this.get_articles('us');
   }
 
 
-  get_articles(search: string) {
-    this.articleService.get_article(search).subscribe((result) => {
+  get_articles(country: string) {
+    this.articleService.get_top_headlines(country,null,20,1).subscribe((result) => {
         this.allArticles = result['articles'];
     });
   }
   
-  toUp() {
-    (function smoothscroll() {
-        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentScroll > 0) {
-            window.requestAnimationFrame(smoothscroll);
-            window.scrollTo(0, currentScroll - (currentScroll / 8));
-        }
-    })();
-  }
+  // toUp() {
+  //   (function smoothscroll() {
+  //       var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  //       if (currentScroll > 0) {
+  //           window.requestAnimationFrame(smoothscroll);
+  //           window.scrollTo(0, currentScroll - (currentScroll / 8));
+  //       }
+  //   })();
+  // }
 
+  // save user read history
   saveHistoryArticle(article) {
     this.articleService.saveArticle(article);
   }
 
+  // user saved articles
   saveReadLaterArticle(article) {
     this.articleService.saveReadLaterArticle(article);
   }

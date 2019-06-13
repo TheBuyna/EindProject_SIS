@@ -61,7 +61,7 @@
         margin-left: 80px;
         padding-top: 5px;
 
-        a { color: yellow; }
+        a { color: $Yellow; }
     }
 }
 
@@ -78,6 +78,7 @@
 
         li { border-bottom: 1px solid $DimGrey; }
         li:last-child { border-bottom: 0; }
+        
     }
 
     a { 
@@ -93,10 +94,7 @@
     background: $DarkGrey;
     width: 300px;
 
-    li { 
-        padding: 1em 0 1em; 
-        margin-left: 15px;
-    }
+    li { padding: 1em; }
 
     a { color: $White; }
     a:hover { color: $Grey; }
@@ -105,8 +103,6 @@
 ui-switch {
     position: fixed;
     z-index: 500;
-
-    .checked[_ngcontent-hic-c8] { background: #FFCC00; }
 }
 
 .social-wrap {
@@ -155,6 +151,7 @@ a { text-decoration: none; }
 
 .wrap:hover > li a { 
     color: $Grey; 
+    cursor: pointer;
 }
 .wrap:hover > li a:hover { 
     color: $White; 
@@ -165,9 +162,8 @@ a { text-decoration: none; }
     color: $White;
     top: 0;
     right: 0;
-    margin-right: 90px;
-    padding: 8px 0;
-    height: 100%;
+    margin-right: 120px;
+    padding: 10px 0;
     font-size: 1.5em;
     cursor: pointer;
     z-index: 500;
@@ -175,6 +171,7 @@ a { text-decoration: none; }
 
 .search-frm {
     display: block;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -203,11 +200,11 @@ a { text-decoration: none; }
     font-family: 'Almendra SC', serif;
     color: $White;
     font-size: 1.6em;
-    text-align: center;
+    margin-left: 70px;
     padding-top: 8px;
     z-index: -100;
 
-    a { color: yellow; }
+    a { color: $Yellow; }
 }
 
 .icon-bar {
@@ -224,9 +221,9 @@ a { text-decoration: none; }
   .icon-bar a {
     display: block;
     text-align: center;
-    padding: 16px;
+    padding: 10px;
     transition: all 0.3s ease;
-    color: white;
+    color: $White;
     font-size: 20px;
   }
 
@@ -242,8 +239,8 @@ a { text-decoration: none; }
 
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 60px; }
+    //.icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
-    .search-logo { margin-right: 70px; }
 }
 
 @media screen and (max-width: 768px) {
@@ -253,9 +250,18 @@ a { text-decoration: none; }
         width: 100%;
         top: 0;
     }
+
+    .search-frm { margin-top: 60px; }
     .icon-bar {
         width: 30px;
 
         a { padding: 10px 0; }
     }
+}
+
+@media screen and (max-width: 450px) {
+   .logo { display: block; }
+   .handle { display: none; }
+   .darkmode { margin-right: 30px; }
+   .menu-wrap { width: 100%; }
 }

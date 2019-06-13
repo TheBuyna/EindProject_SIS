@@ -1,0 +1,75 @@
+@import "../../variables.scss";
+
+
+.weatherComponent {
+    padding-top: 1em;
+    width: 100%;
+
+    .searchBar {
+        width: 40%;
+        float: right;
+    }
+    .weatherIcon {
+        font-size: 4em;
+    }
+
+    .currentWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        // width: 48%;
+        border: 1px solid var(--text-color);
+
+        .col {
+            text-align: center;
+        }
+    }
+
+    .dailyWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        position: relative;
+
+        .card {
+            height: 100%;
+            background: var(--background-color);
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            .card-header {
+                margin-bottom: 1em;
+                border-bottom: 1px solid var(--text-color);
+            }
+            .weatherIcon {
+                font-size: 6em;
+                text-align: center;
+            }
+        }
+    }
+    .hourlyWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        table {
+            background: var(--background-color);
+            color: var(--text-color);
+            tr:hover {
+                background:  $LightGrey;
+                color: var(--background-color);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .weatherComponent {
+    
+        .searchBar {
+            padding-top: 2em;
+            width: 100%;
+        }
+
+        .currentWeather {
+            width: 100%;
+        }
+    }
+}

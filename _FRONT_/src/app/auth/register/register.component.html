@@ -5,18 +5,21 @@
       </div>
   </div>
     
+  <!-- Registration form -->
   <div class="form_container">
+    <!-- <form [formGroup]="myform" (ngSubmit)="register(myform)" class="form form-register col-md-4" ngNativeValidate> -->
     <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register col-md-4" ngNativeValidate>
 
       <div class="form-group">
             <label class="user" for="register-firstName"><span class="hidden">First Name *</span></label>
-            <input name="first_name" [(ngModel)]="first_name" id="register-firstName" type="text" class="form-control" required>
+            <input name="first_Name" [(ngModel)]="first_Name" id="register-firstName" type="text" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="user" for="register-lastName"><span class="hidden">Last Name *</span></label>
-        <input name="last_name" [(ngModel)]="last_name" id="register-lastName" type="text" class="form-control" required>
+        <input name="last_Name" [(ngModel)]="last_Name" id="register-lastName" type="text" class="form-control" required>
       </div>
       <div class="form-group">
+        <!-- check if email is valid -->
         <label 
         [ngClass]="{  'user': true,
                       'text-danger': isEmailError}" 
@@ -31,15 +34,15 @@
       </div>
       <div class="form-group">
         <label class="user" for="register-streetName"><span class="hidden">Street Name *</span></label>
-        <input name="street_name" [(ngModel)]="street_name" id="register-streetName" type="text" class="form-control" required>
+        <input name="street_Name" [(ngModel)]="street_Name" id="register-streetName" type="text" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="user" for="register-houseNumber"><span class="hidden">House Number *</span></label>
-        <input name="house_number" [(ngModel)]="house_number" id="register-houseNumber" type="text" class="form-control" required>
+        <input name="house_Number" [(ngModel)]="house_Number" id="register-houseNumber" type="text" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="user" for="register-mailBoxNumber"><span class="hidden">Mailbox Number</span></label>
-        <input name="mailbox_number" [(ngModel)]="mailbox_number" id="register-mailBoxNumber" type="text" class="form-control">
+        <input name="mailbox_Number" [(ngModel)]="mailbox_Number" id="register-mailBoxNumber" type="text" class="form-control">
       </div>
       <div class="form-group">
         <label class="user" for="register-city"><span class="hidden">City *</span></label>
@@ -47,7 +50,7 @@
       </div>
       <div class="form-group">
         <label class="user" for="register-postalCode"><span class="hidden">Postal Code *</span></label>
-        <input name="postal_code" [(ngModel)]="postal_code" id="register-postalCode" type="text" class="form-control" required>
+        <input name="postal_Code" [(ngModel)]="postal_Code" id="register-postalCode" type="text" class="form-control" required>
       </div>
       <div class="form-group">
         <label class="user" for="register-telephone"><span class="hidden">Telephone</span></label>
@@ -55,6 +58,7 @@
       </div>
 
       <div class="form-group">
+        <!-- check is password is valid -->
         <label 
         [ngClass]="{  'lock': true,
                       'text-danger': isPasswordError}" 

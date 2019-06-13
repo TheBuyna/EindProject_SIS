@@ -1,15 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+// @import '~weather-icons/css/weather-icons.min.css';
+@import 'assets/css/weather-icons.css';
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import url('https://fonts.googleapis.com/css?family=Almendra+SC&display=swap');
 @import "variables.scss";
 @import '~ngx-ui-switch/ui-switch.component.scss';
 
+* {
+    box-sizing: border-box;
+  }
+
 html {
     background: var(--primary-color);
 }
+
 body {
-    box-sizing: border-box;
+    overflow-x: hidden;
     background: var(--primary-color);
     color: var(--text-color);
     margin: 0;
@@ -19,7 +27,7 @@ body {
 }
 
 .containerCustom {
-    width: 80%; 
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -36,3 +44,8 @@ body {
       margin: 1em;
     }
   }
+
+@media screen and (max-width: 480px) {
+   // body { width: auto; }
+   .containerCustom { width: 100%; }  
+}
