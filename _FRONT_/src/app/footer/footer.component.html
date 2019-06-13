@@ -24,19 +24,58 @@
       <h3>Latest News</h3>
       <div>
         <ul class="blog-list unlist links-style">
-          <li><a href="#" title="">LINK</a></li>
-          <li><a href="#" title="">LINK</a></li>
-          <li><a href="#" title="">LINK</a></li>
-          <li><a href="#" title="">LINK</a></li>
-          <li><a href="#" title="">LINK</a></li>
+          <li class="links-style-news" *ngFor="let article of allArticles | slice:21;"><a href="{{article.url}}" target="_blank" title="">{{article.title}}</a></li>
         </ul>
       </div>
     </div>
 
   <div class="foot-widget-right col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">
-    <h3>Popular Tags</h3>
+    <h3>World</h3>
     <div>
-      <p>links.....</p>
+      <ul class="unlist w-countries">
+        <div class="first">
+            <li>Austria</li>
+            <li>Australia</li>
+            <li>Belgium</li>
+            <li>Brazil</li>
+            <li>Bulgaria</li>
+            <li>Canada</li>
+            <li>China</li>
+            <li>France</li>
+            <li>Germany</li>
+            <li>Greece</li>
+            <li>Hungary</li>
+            <li>India</li>
+        </div>
+        <div class="second">
+            <li>Ireland</li>
+            <li>Israel</li>
+            <li>Italy</li>
+            <li>Japan</li>
+            <li>Latvia</li>
+            <li>Mexico</li>
+            <li>Netherlands</li>
+            <li>NZ</li>
+            <li>Philippines</li>
+            <li>Poland</li>
+            <li>Portugal</li>
+            <li>Romania</li>
+        </div>
+        <div class="third">
+            <li>Russia</li>
+            <li>Singapore</li>
+            <li>ZA</li>
+            <li>Sweden</li>
+            <li>Switzerland</li>
+            <li>Taiwan</li>
+            <li>Thailand</li>
+            <li>UAE</li>
+            <li>Ukraine</li>
+            <li>UK</li>
+            <li>US</li>
+            <li>Venuzuela</li>
+        </div>
+      </ul>
     </div>
   </div>
 
@@ -48,7 +87,7 @@
           <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">
             Category
           </a>
-          <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{'show-scrollTop': windowScrolled}">
+          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{'show-scrollTop': windowScrolled}">
             <li (click)="scrollToTop()"><a [routerLink]="['/category', 'general']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>
             <li (click)="scrollToTop()"><a [routerLink]="['/category', 'business']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>
             <li (click)="scrollToTop()"><a [routerLink]="['/category', 'entertainment']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>
@@ -67,7 +106,7 @@
           <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
             <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
           </a>
-          <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+          <div class="dropDown  dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
             <a (click)="scrollToTop()" ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
             <a (click)="scrollToTop()" ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
           </div>
@@ -114,7 +153,7 @@
           <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">
             <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
           </a>
-          <div class="dropDown dropDown-foot" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
+          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">
             <a ngbDropdownItem [routerLink]="['/profile']"><i class="fa fa-user-circle"></i> Profile</a>
             <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>
           </div>
