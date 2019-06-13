@@ -123,8 +123,6 @@
     <i class="fa fa-search" (click)="searchDisplay($event)"></i>
   </div>
   <div>
-    <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(ngModel)]="enable" class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
-    <!-- <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [(formControl)]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Light" checkedLabel="Dark"></ui-switch> -->
     <ui-switch size="small" defaultBgColor= '#FFCC00' defaultBoColor= '#476EFF' color="black" [formControl]="darkTheme" (themeFromLogin)="setTheme($event)"class="darkmode" uncheckedLabel="Dark" checkedLabel="Light" (click)="authService.setTheme(theme);"></ui-switch>
   </div>
   <div class="handle"><a href="#" title="Home Page">TNS | The News Spot</a></div>
