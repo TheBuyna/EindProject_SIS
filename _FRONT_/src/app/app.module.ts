@@ -41,6 +41,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ContactusComponent } from './contact-us/contact-us.component';
 import { SearchComponent } from './search/search.component';
+import { WorldComponent } from './world/world.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SearchComponent } from './search/search.component';
     WeatherComponent,
     ContactusComponent,
     SearchComponent,
+    WorldComponent,
   ],
   imports: [
     CommonModule,

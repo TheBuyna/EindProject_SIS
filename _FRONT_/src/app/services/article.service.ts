@@ -21,8 +21,8 @@ export class ArticleService {
       return this.http.get(articles);
    }
 
-   get_top_headlines(country: string, category: string = null, pageLimit: number = null){
-     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + '&apiKey=' + this.API_KEY;
+   get_top_headlines(country: string, category: string = null, pageLimit: number = null, page: number = null) {
+     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + (!(page) ? '' : '&page=' + page) + '&apiKey=' + this.API_KEY;
      return this.http.get(headLineArticle);
    }
 

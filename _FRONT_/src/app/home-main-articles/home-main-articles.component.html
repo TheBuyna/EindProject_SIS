@@ -6,7 +6,7 @@
 </div>
 <div class="feature-article-widget">
   <div class="feature-small-widget-wrap">
-    <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:0:3;">
+    <div class="feature-small-widget-article" *ngFor="let article of allArticles | slice:4:7;">
       <div class="btnReadLater" *ngIf="authService.loggedIn()">
           <button class="btn btn-outline-light btn-sm" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
             <i class="fa fa-plus"></i>
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="feature-big-widget-wrap">
-    <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:3;">
+    <div class="feature-big-widget-article" *ngFor="let article of allArticles | slice:7;">
           <div class="btnReadLater" *ngIf="authService.loggedIn()">
             <button class="btn btn-outline-secondary" id="dropdownBasic1" (click)="saveReadLaterArticle(article)">
                 Read Later...
