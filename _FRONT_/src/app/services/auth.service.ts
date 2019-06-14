@@ -9,10 +9,10 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 })
 export class AuthService {
 
-  private REGISTER_URL = "http://wdev.be/saker/be/api/register";
-  private LOGIN_URL = "http://wdev.be/saker/be/api/login_check";
-  private CHECK_JWT = "http://wdev.be/saker/be/apiCheck";
-  private UPDATE_URL = 'http://wdev.be/saker/be/api/updateuser';
+  private REGISTER_URL = "https://wdev.be/saker/ew/be/api/register";
+  private LOGIN_URL = "https://wdev.be/saker/ew/be/api/login_check";
+  private CHECK_JWT = "https://wdev.be/saker/ew/be/apiCheck";
+  private UPDATE_URL = 'https://wdev.be/saker/ew/be/api/updateuser';
   public redirectUrl: string;
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
 
@@ -46,7 +46,7 @@ export class AuthService {
     let themeJson = {
       'theme': theme
     }
-    return this.http.put('http://wdev.be/saker/be/api/setTheme', themeJson, { headers: { 'Content-Type': 'application/json' } }).subscribe(
+    return this.http.put('https://wdev.be/saker/ew/be/api/setTheme', themeJson, { headers: { 'Content-Type': 'application/json' } }).subscribe(
       (res) => {
         console.log(res);
       },

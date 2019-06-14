@@ -77,6 +77,16 @@
 
 .w-countries {
     display: flex;
+    
+    li {
+        a {
+            text-decoration: none;
+            color: $LightGrey;
+            &:hover {
+                color: $White;
+            }
+        }
+    }
 }
 .first { margin-right: 20px; }
 .second { margin: 0 20px; }

@@ -9,6 +9,7 @@ import { ArticleListsComponent } from './article-lists/article-lists.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ContactusComponent } from './contact-us/contact-us.component';
 import { SearchComponent } from './search/search.component';
+import { WorldComponent } from './world/world.component';
 
 
 // routing paths
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent},
   { path: 'contact', component: ContactusComponent },
   { path: 'search/:searchQuery', component: SearchComponent},
+  { path: 'world/:countryCode', component: WorldComponent},
 ];
 
 @NgModule({

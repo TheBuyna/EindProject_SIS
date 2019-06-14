@@ -15,12 +15,12 @@ export class HomeMainArticlesComponent implements OnInit {
   //@Input('messages') mess: any;
   
   ngOnInit() {
-    this.get_articles('belgium');
+    this.get_articles('us');
   }
 
 
-  get_articles(search: string) {
-    this.articleService.get_article(search).subscribe((result) => {
+  get_articles(country: string) {
+    this.articleService.get_top_headlines(country,null,20,1).subscribe((result) => {
         this.allArticles = result['articles'];
     });
   }

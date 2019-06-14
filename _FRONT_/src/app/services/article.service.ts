@@ -11,7 +11,8 @@ export class ArticleService {
 
   constructor(private http:HttpClient) {}
 
-  API_KEY = '8242b00c3eee4bf794d4bf1d138ee112';
+  // API_KEY = '8242b00c3eee4bf794d4bf1d138ee112';
+  API_KEY = '3213f6c214e349e8a57e955f56defe33';
 
   // Calls to articles handeling : get all, get searched articles, get headlines, get categories, history and read later articles
 
@@ -21,8 +22,8 @@ export class ArticleService {
       return this.http.get(articles);
    }
 
-   get_top_headlines(country: string, category: string = null, pageLimit: number = null){
-     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + '&apiKey=' + this.API_KEY;
+   get_top_headlines(country: string, category: string = null, pageLimit: number = null, page: number = null) {
+     const headLineArticle = 'https://newsapi.org/v2/top-headlines?country=' + country + (!(category) ? '' : '&category=' + category) + (!(pageLimit) ? '' : '&pageSize=' + pageLimit) + (!(page) ? '' : '&page=' + page) + '&apiKey=' + this.API_KEY;
      return this.http.get(headLineArticle);
    }
 
@@ -35,7 +36,7 @@ export class ArticleService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    const SAVE_ARTICLE_URL = 'http://wdev.be/saker/be/api/article/saveHistoryArticle';
+    const SAVE_ARTICLE_URL = 'https://wdev.be/saker/ew/be/api/article/saveHistoryArticle';
     console.log(article);
     this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
       (response) => {
@@ -51,7 +52,7 @@ export class ArticleService {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  const SAVE_ARTICLE_URL = 'http://wdev.be/saker/be/api/article/saveReadLaterArticle';
+  const SAVE_ARTICLE_URL = 'https://wdev.be/saker/ew/be/api/article/saveReadLaterArticle';
   console.log(article);
   this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
     (response) => {
@@ -69,14 +70,14 @@ export class ArticleService {
     } else if (listName === 'readLater') {
       listUrl = 'getReadLaterArticles';
     }
-    return this.http.get('http://wdev.be/saker/be/api/article/' + listUrl);
+    return this.http.get('https://wdev.be/saker/ew/be/api/article/' + listUrl);
  }
 
  deleteHistoryArticle(id: any) {
-  return this.http.get('http://wdev.be/saker/be/api/article/deleteHistoryArticle/' + id);
+  return this.http.get('https://wdev.be/saker/ew/be/api/article/deleteHistoryArticle/' + id);
  }
 
  deleteReadLaterArticle(id: any) {
-  return this.http.get('http://wdev.be/saker/be/api/article/deleteReadLaterArticle/' + id);
+  return this.http.get('https://wdev.be/saker/ew/be/api/article/deleteReadLaterArticle/' + id);
  }
 }
