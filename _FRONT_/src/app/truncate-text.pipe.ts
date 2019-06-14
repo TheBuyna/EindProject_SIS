@@ -41,7 +41,6 @@ export class TruncateTextPipe implements PipeTransform {
 
       };
     }
-    // console.log((truncatedText + elipses).length);
 
     return truncatedText + elipses;
   }

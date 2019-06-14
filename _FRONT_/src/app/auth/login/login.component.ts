@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
           }
         )
         if (this.auth.redirectUrl) {
-          console.log(this.auth.redirectUrl);
           this.router.navigate([this.auth.redirectUrl]);
         } else {
           this.router.navigate(['/home']);

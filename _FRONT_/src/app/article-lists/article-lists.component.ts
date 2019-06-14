@@ -36,7 +36,6 @@ export class ArticleListsComponent implements OnInit {
     this.articleService.getUserArticle(listName).subscribe(
       (res) => {
         this.allHisotryArticles = res['article'];
-        console.log(res);
       },
       (err) => {
         console.log(err)
@@ -56,7 +55,6 @@ export class ArticleListsComponent implements OnInit {
   deleteArticle(id: string) {
     ((this.listName == 'history') ? this.articleService.deleteHistoryArticle(id) : this.articleService.deleteReadLaterArticle(id)).subscribe(
       (res) => {
-        console.log(res);
         this.ngFlashMessageService.showFlashMessage({
           messages: [res['success']],
           dismissible: true,
@@ -66,7 +64,6 @@ export class ArticleListsComponent implements OnInit {
         this.getAllHistoryArticles(this.listName)
       },
       (err) => {
-        console.log(err);
         this.ngFlashMessageService.showFlashMessage({
           messages: [err.error],
           dismissible: true,

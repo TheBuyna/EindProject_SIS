@@ -14,7 +14,6 @@ import { HomeMainArticlesComponent } from './home-main-articles/home-main-articl
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { CommonModule } from '@angular/common';
 
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ArticleService } from './services/article.service';
 import { CategoryComponent } from './category/category.component';

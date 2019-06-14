@@ -42,11 +42,9 @@ export class ProfileComponent implements OnInit {
 
     updateInfo() {
       this.profileForm.enable();
-      console.log(this.profileForm);
     }
 
     onSubmit(myForm) {
-      // console.log(this.profileForm);
       this.profileForm.disable();
 
       this.auth.updateUser(myForm.value).subscribe(
@@ -116,7 +114,6 @@ export class ProfileComponent implements OnInit {
     for (let value of valuesInput){
       this.userValues.push(value);
     }
-    console.log(this.userInfo);
   }
 
   openModal(template: TemplateRef<any>) {
@@ -127,7 +124,6 @@ export class ProfileComponent implements OnInit {
 
   // password reset function
   resetPassword(form) {
-    console.log(form.value);
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

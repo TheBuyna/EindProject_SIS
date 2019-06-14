@@ -22,7 +22,6 @@ export class SearchComponent implements OnInit {
     this.authService.checkToken();
     this.route.paramMap.subscribe(params => {
       this.searchText = params.get('searchQuery');
-      console.log('hier is : ' + this.searchText);
       this.getArticles(1);
     });
   }

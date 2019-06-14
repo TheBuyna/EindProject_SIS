@@ -213,9 +213,6 @@ a { text-decoration: none; }
     top: calc(50% - 150px);
     right: 0;
     z-index: 800;
-    // -webkit-transform: translateY(-50%);
-    // -ms-transform: translateY(-50%);
-    // transform: translateY(-50%);
   }
   
   .icon-bar a {
@@ -239,7 +236,6 @@ a { text-decoration: none; }
 
     .handle { z-index: 100; }
     .sidenav ul { margin-top: 60px; }
-    //.icon-bar { display: none; }
     .search-btn { margin-right: 80px; }
 }
 

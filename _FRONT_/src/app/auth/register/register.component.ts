@@ -38,7 +38,6 @@ export class RegisterComponent implements OnInit {
   // Register function
   register(form) {
     // if registration is success navigate to login pagina
-    console.log(form.value);
     this.auth.registerUser(form.value).subscribe(
       (res) => {
         this.router.navigate(['/auth/login']);

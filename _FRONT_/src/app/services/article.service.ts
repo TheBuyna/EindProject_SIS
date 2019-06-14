@@ -37,7 +37,7 @@ export class ArticleService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     const SAVE_ARTICLE_URL = 'https://wdev.be/saker/ew/be/api/article/saveHistoryArticle';
-    console.log(article);
+    
     this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
       (response) => {
         console.log(response);
@@ -53,7 +53,7 @@ export class ArticleService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   const SAVE_ARTICLE_URL = 'https://wdev.be/saker/ew/be/api/article/saveReadLaterArticle';
-  console.log(article);
+  
   this.http.post(SAVE_ARTICLE_URL, article, httpOptions).subscribe(
     (response) => {
       console.log(response);
