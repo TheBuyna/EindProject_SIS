@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ContactusService {
 
-  url: string = 'https://wdev.be/buyna/be/contact';
+  url: string = 'https://wdev.be/saker/ew/be/contact';
   constructor(private http: HttpClient) { }
 
   sendMessage(messageContent: any) {

@@ -47,7 +47,7 @@
               <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">
             </a>
             <!-- (click)="toggleEvent($event)" -->
-            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink">
+            <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" [hidden]="toggle">
               <div>
                   <a ngbDropdownItem [routerLink]="['/profile']" title="Profile"><i class="fa fa-user-circle"></i> Profile</a>
                   <a ngbDropdownItem (click)="authService.logoutUser(theme)" title="Logout"><i class="fa fa-sign-out"></i> Logout</a>
