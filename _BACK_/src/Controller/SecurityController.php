@@ -99,7 +99,7 @@ class SecurityController extends AbstractController
 
         if (strlen($plainPassword) < 6) {
             return new JsonResponse([
-                "error" => 'Password must be at least 6 characters long'
+                "error" => 'Password must be at least 6 characters long: '.$plainPassword
             ], 500);
         }
         if (!$contains_uppercase) {
@@ -124,6 +124,13 @@ class SecurityController extends AbstractController
                 "error" => 'Invalid email address!'
             ], 500);
         }
+
+
+        if ($data["agreedTerms"] == false) {
+            return new JsonResponse([
+                "error" => 'Sorry, but you have to agree to our agreements and conditions!'
+            ], 500);
+        }
         try{
             $user = new User();
 
@@ -143,6 +150,7 @@ class SecurityController extends AbstractController
             if (isset($data["telephone"])) {
                 $user->setTelephone($data["telephone"]);
             }
+            $user->agreeToTerms();
             $em->persist($user);
             $em->flush();
         } catch (\Exception $exception) {

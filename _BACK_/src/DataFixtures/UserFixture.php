@@ -26,6 +26,7 @@ class UserFixture extends BaseFixture
             $user->setHouseNumber($this->faker->buildingNumber);
             $user->setCity($this->faker->city);
             $user->setPostalCode($this->faker->postcode);
+            $user->agreeToTerms();
 
             $user->setPassword($this->passwordEncoder->encodePassword(
                $user,
@@ -45,6 +46,7 @@ class UserFixture extends BaseFixture
             $user->setCity($this->faker->city);
             $user->setRoles(["ROLE_ADMIN"]);
             $user->setPostalCode($this->faker->postcode);
+            $user->agreeToTerms();
 
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,

@@ -71,6 +71,10 @@
           {{passwordError}}
         </div>
       </div>
+      <div class="form-check">
+        <input name="agreedTerms" [(ngModel)]="agreedTerms" type="checkbox" class="form-check-input" id="exampleCheck1" required>
+        <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions *</label>
+      </div>
       <div class="btn-register">
         <button type="submit" class="btn btn-dark col-md-12">Register</button>
       </div>

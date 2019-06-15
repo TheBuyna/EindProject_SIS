@@ -17,9 +17,6 @@ class UserFormType extends AbstractType
     {
         $builder
             ->add('email')
-//            ->add('roles', CheckboxType::class, [
-//                'required' => false
-//            ])
             ->add('firstName')
             ->add('lastName')
             ->add(

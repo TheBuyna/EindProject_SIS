@@ -31,7 +31,10 @@
   display: flex;
   justify-content: space-between;
   margin: 2em 0;
-  margin-left: -16px;
+  // margin-left: -16px;
+}
+.row {
+  margin: 0;
 }
 
 .changeDetails {

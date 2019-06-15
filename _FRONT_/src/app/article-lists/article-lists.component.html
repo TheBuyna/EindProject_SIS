@@ -33,7 +33,7 @@
               <tr *ngFor="let article of allHisotryArticles|stringFilter: searchFilter|paginate: { itemsPerPage: 5, currentPage: p }">
                   <td>{{ article.title | truncateText: 30}}</td>
                   <td class="d-none d-lg-table-cell">{{ article.description | truncateText: 50}}</td>
-                  <td class="d-none d-md-table-cell">{{ article.addedAt.date}}</td>
+                  <td class="d-none d-md-table-cell">{{ article.addedAt.date | date: 'd/MMMM/y H:mm'}}</td>
                   <td class="buttonsRow">
                       <a class="btn btn-primary" href="{{article.url}}" target="_blank">
                           <span class="fa fa-external-link"></span>

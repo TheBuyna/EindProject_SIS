@@ -95,6 +95,11 @@ class User implements UserInterface
      */
     private $theme;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $agreedTermsAt;
+
     public function __construct()
     {
         $this->historyArticles = new ArrayCollection();
@@ -373,5 +378,22 @@ class User implements UserInterface
         $this->theme = $theme;
 
         return $this;
+    }
+
+    public function getAgreedTermsAt(): ?\DateTimeInterface
+    {
+        return $this->agreedTermsAt;
+    }
+
+    public function setAgreedTermsAt(\DateTimeInterface $agreedTermsAt): self
+    {
+        $this->agreedTermsAt = $agreedTermsAt;
+
+        return $this;
+    }
+
+    public function agreeToTerms()
+    {
+        $this->agreedTermsAt = new \DateTime();
     }
 }

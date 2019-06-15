@@ -54,6 +54,14 @@
               transition: transform .4s ease;
             }
           }
+          
+          @media screen and (max-width: 767px) {
+            .lNews-image { 
+                height: 15vh;
+            }
+          }
+
+
     
           .lNews-text {
             width: 60%;
