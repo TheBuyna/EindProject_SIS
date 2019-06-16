@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { ArticleService } from '../services/article.service';
 import { AuthService } from '../services/auth.service';
@@ -12,7 +12,6 @@ export class HomeMainArticlesComponent implements OnInit {
 
   constructor(private articleService: ArticleService, private authService: AuthService) { }
   allArticles: any;
-  //@Input('messages') mess: any;
   
   ngOnInit() {
     this.get_articles('us');
@@ -24,16 +23,6 @@ export class HomeMainArticlesComponent implements OnInit {
         this.allArticles = result['articles'];
     });
   }
-  
-  // toUp() {
-  //   (function smoothscroll() {
-  //       var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-  //       if (currentScroll > 0) {
-  //           window.requestAnimationFrame(smoothscroll);
-  //           window.scrollTo(0, currentScroll - (currentScroll / 8));
-  //       }
-  //   })();
-  // }
 
   // save user read history
   saveHistoryArticle(article) {

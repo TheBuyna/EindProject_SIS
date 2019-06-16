@@ -19,7 +19,6 @@ export class RightSidebarComponent implements OnInit {
   get_articles() {
     this.articleService.get_top_headlines('us',null,20,2).subscribe((result) => {
         this.allArticles = result['articles'];
-        console.log(result['articles']);
     },
     (err) => {
       console.log(err);

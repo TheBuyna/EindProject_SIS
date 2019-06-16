@@ -19,15 +19,4 @@ export class AppComponent {
 
   constructor(private themeService: ThemeService, private articleService: ArticleService) {}
 
-  // broadcastTop($e){
-  //   console.log('event ontvangen');
-  //   console.log($e);
-  // }
-
-  // searchRequest: string;
-
-  // broadcast($e){
-  //   this.searchRequest = $e;
-  //   console.log(this.searchRequest);
-  // }
 }

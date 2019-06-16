@@ -38,7 +38,7 @@ export class ContactusComponent {
       this.contactForm.reset();
       this.disabledSubmitButton = true;
     }, error => {
-      console.log('Error', error);
+         console.log('Error', error);
     });
   }
 

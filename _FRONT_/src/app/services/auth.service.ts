@@ -36,7 +36,6 @@ export class AuthService {
   }
 
   logoutUser(theme: string) {
-    // console.log(theme);
     this.setTheme(theme);
     localStorage.removeItem('token');
     this.router.navigate(['/']);
@@ -56,15 +55,12 @@ export class AuthService {
     );
   }
   updateUser(formValue) {
-    console.log(formValue);
     return this.http.put(this.UPDATE_URL, formValue, { headers: { 'Content-Type': 'application/json' } });
   }
 
   checkToken() {
     this.http.get(this.CHECK_JWT).subscribe(
       (resultaat) => {
-      // console.log(resultaat);
-      console.log(JSON.stringify(resultaat));
     },
     (err) => {
       if (err instanceof HttpErrorResponse) {

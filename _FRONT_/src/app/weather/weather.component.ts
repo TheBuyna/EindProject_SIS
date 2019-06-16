@@ -55,6 +55,5 @@ export class WeatherComponent implements OnInit {
   }
 
   checkMethod(){
-    console.log('button works!!');
   }
 }

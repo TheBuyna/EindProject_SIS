@@ -8,7 +8,6 @@ import { AuthService } from '../services/auth.service';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
 import { WeatherService } from '../services/weather.service';
-//import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'navbar',
@@ -85,7 +84,6 @@ export class NavbarComponent implements OnInit {
   }
 
   searchFunc() {
-    console.log(this.tsearch);
     this.router.navigate(['/search', this.tsearch ]);
     this.tsearch = '';
     this.visible = true;
@@ -94,7 +92,6 @@ export class NavbarComponent implements OnInit {
   getCurrentWeather(location: string) {
     this.weatherService.getWeather(location).subscribe(
       (res) => {
-        // console.log(res['weather']['currently']);
         this.currentWeather = res['weather']['currently'];
       },
       (err) => {

@@ -19,7 +19,6 @@ export class FooterComponent implements OnInit {
   
   toggleEvent(event){
     this.toggleMenu = !this.toggleMenu;
-    console.log("toggled");
   }
 
   ngOnInit() {

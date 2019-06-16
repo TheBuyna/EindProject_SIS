@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, HostListener, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Inject, HostListener, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
@@ -10,8 +10,6 @@ export class ScrollTopComponent implements OnInit {
 
   windowScrolled: boolean;
     constructor(@Inject(DOCUMENT) private document: Document) {}
-    
-    //@Output() totop: EventEmitter<any> = new EventEmitter();
 
     // Listen to a scroll event
     @HostListener("window:scroll", [])
@@ -23,7 +21,7 @@ export class ScrollTopComponent implements OnInit {
             this.windowScrolled = false;
         }
     }
-    // smooth scroll to top
+
     scrollToTop() {
         (function smoothscroll() {
             var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -32,8 +30,6 @@ export class ScrollTopComponent implements OnInit {
                 window.scrollTo(0, currentScroll - (currentScroll / 8));
             }
         })();
-        
-      //  this.totop.emit();
     }
     ngOnInit() {}
 

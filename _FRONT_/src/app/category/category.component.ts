@@ -12,8 +12,6 @@ import { AuthService } from '../services/auth.service';
 })
 export class CategoryComponent implements OnInit {
 
-  //@Input() searchRequest;
-
   constructor(private http: HttpClient, private router: Router, private ngFlashMessageService: NgFlashMessageService, private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService) { }
 
   SERVER_URL = "https://wdev.be/buyna/ew/be/apiCheck";
@@ -27,7 +25,6 @@ export class CategoryComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.category =  params.get('categoryName');
       this.searchText = params.get('searQuery');
-      console.log(this.searchText);
       this.getArticles();
     });
   }
