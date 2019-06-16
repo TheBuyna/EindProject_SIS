@@ -14,6 +14,10 @@ Dit installeert al uw dependent packages van angular en meer...
 
 **Stap 2**
 
+Verander alle URL van de requests voor authentication en weer requests in de services en componenten... naar jouw backend server.
+
+**Stap 3**
+
 Start jouw frontend server:
 ```
 ng serve
