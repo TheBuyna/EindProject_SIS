@@ -1,0 +1,1177 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>news-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">news-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>FooterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/footer/footer.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>footer</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./footer.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./footer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allArticles">allArticles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService">authService</a>
+                            </li>
+                            <li>
+                                <a href="#avatar_url">avatar_url</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toggleMenu">toggleMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#get_articles">get_articles</a>
+                            </li>
+                            <li>
+                                <a href="#getAvatarUrl">getAvatarUrl</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#scrollToTop">scrollToTop</a>
+                            </li>
+                            <li>
+                                <a href="#toggleEvent">toggleEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll">window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(articleService: <a href="../injectables/ArticleService.html">ArticleService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/footer/footer.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>articleService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArticleService.html" target="_self" >ArticleService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:scroll"></a>
+                    <span class="name">
+                        <b>
+                            window:scroll
+                        </b>
+                        <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:scroll(e)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/footer/footer.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="get_articles"></a>
+                    <span class="name">
+                        <b>
+                            get_articles
+                        </b>
+                        <a href="#get_articles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>get_articles()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/footer/footer.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAvatarUrl"></a>
+                    <span class="name">
+                        <b>
+                            getAvatarUrl
+                        </b>
+                        <a href="#getAvatarUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAvatarUrl()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/footer/footer.component.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/footer/footer.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollToTop"></a>
+                    <span class="name">
+                        <b>
+                            scrollToTop
+                        </b>
+                        <a href="#scrollToTop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scrollToTop()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/footer/footer.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleEvent"></a>
+                    <span class="name">
+                        <b>
+                            toggleEvent
+                        </b>
+                        <a href="#toggleEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleEvent(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/footer/footer.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allArticles"></a>
+                        <span class="name">
+                            <b>
+                            allArticles</b>
+                            <a href="#allArticles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/footer/footer.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="authService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            authService</b>
+                            <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/footer/footer.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="avatar_url"></a>
+                        <span class="name">
+                            <b>
+                            avatar_url</b>
+                            <a href="#avatar_url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/footer/footer.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toggleMenu</b>
+                            <a href="#toggleMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/footer/footer.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostListener, OnInit } from &#x27;@angular/core&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { ArticleService } from &#x27;../services/article.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { DOCUMENT } from &#x27;@angular/platform-browser&#x27;;
+
+@Component({
+  selector: &#x27;footer&#x27;,
+  templateUrl: &#x27;./footer.component.html&#x27;,
+  styleUrls: [&#x27;./footer.component.scss&#x27;]
+})
+export class FooterComponent implements OnInit {
+
+  constructor(private articleService:ArticleService, public authService: AuthService, private router:Router) { }
+
+  public toggleMenu : boolean &#x3D; true;
+  avatar_url;
+  allArticles;
+  
+  toggleEvent(event){
+    this.toggleMenu &#x3D; !this.toggleMenu;
+  }
+
+  ngOnInit() {
+    this.getAvatarUrl();
+    this.get_articles();
+  }
+
+  // host listener for a scroll event
+  @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])
+  onWindowScroll(e) {
+    this.toggleMenu &#x3D; true;
+  }
+
+  // scroll to top if a menu item is pressed
+  scrollToTop() {
+    (function smoothscroll() {
+        var currentScroll &#x3D; document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll &gt; 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo(0, currentScroll - (currentScroll / 8));
+        }
+    })();
+  }
+
+  // get user avatar
+  getAvatarUrl() {
+    this.authService.getUseremail().subscribe(
+      (res) &#x3D;&gt; {
+        this.avatar_url &#x3D; res[&#x27;user&#x27;][&#x27;email&#x27;];
+      },
+      (err) &#x3D;&gt; {
+        console.log(err.error);
+      }
+    )
+  }
+
+  get_articles() {
+    this.articleService.get_top_headlines(&#x27;us&#x27;, &#x27;general&#x27;, 26).subscribe((result) &#x3D;&gt; {
+        this.allArticles &#x3D; result[&#x27;articles&#x27;];
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;foot&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;foot-widget-left col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12&quot;&gt;
+      &lt;div class&#x3D;&quot;foot-logo&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/home&#x27;]&quot; title&#x3D;&quot;&quot;&gt;TNS | The News Spot&lt;/a&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;foot-info&quot;&gt;
+        &lt;p&gt;Welcome to The News Spot. An interactive news website that keeps you informed of the latest developments from all over the world.&lt;/p&gt;
+        &lt;p&gt;The development team wishes you a lot of surfing pleasure on our site.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;foot-social&quot;&gt;
+        &lt;ul class&#x3D;&quot;foot-social-list unlist social links-style&quot;&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://www.facebook.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-facebook&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://twitter.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://accounts.google.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-google-plus&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://www.instagram.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-instagram&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://www.linkedin.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-linkedin&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://www.youtube.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-youtube&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;https://nl.pinterest.com/&quot; title&#x3D;&quot;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;span class&#x3D;&quot;fa fa-pinterest&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;foot-widget-midden col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12&quot;&gt;
+      &lt;h3&gt;Latest News&lt;/h3&gt;
+      &lt;div&gt;
+        &lt;ul class&#x3D;&quot;blog-list unlist links-style&quot;&gt;
+          &lt;li class&#x3D;&quot;links-style-news&quot; *ngFor&#x3D;&quot;let article of allArticles | slice:21;&quot;&gt;&lt;a href&#x3D;&quot;{{article.url}}&quot; target&#x3D;&quot;_blank&quot; title&#x3D;&quot;&quot; (click)&#x3D;&quot;!authService.loggedIn() || articleService.saveArticle(article)&quot;&gt;{{article.title}}&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;foot-widget-right col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12&quot;&gt;
+    &lt;h3&gt;World&lt;/h3&gt;
+    &lt;div&gt;
+      &lt;ul class&#x3D;&quot;unlist w-countries&quot;&gt;
+        &lt;div class&#x3D;&quot;first&quot;&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;at&#x27;]&quot;&gt;Austria&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;au&#x27;]&quot;&gt;Australia&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;be&#x27;]&quot;&gt;Belgium&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;br&#x27;]&quot;&gt;Brazil&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;bg&#x27;]&quot;&gt;Bulgaria&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ca&#x27;]&quot;&gt;Canada&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;cn&#x27;]&quot;&gt;China&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;fr&#x27;]&quot;&gt;France&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;de&#x27;]&quot;&gt;Germany&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;gr&#x27;]&quot;&gt;Greece&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;hu&#x27;]&quot;&gt;Hungary&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;in&#x27;]&quot;&gt;India&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;second&quot;&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ie&#x27;]&quot;&gt;Ireland&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;il&#x27;]&quot;&gt;Israel&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;it&#x27;]&quot;&gt;Italy&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;jp&#x27;]&quot;&gt;Japan&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;lv&#x27;]&quot;&gt;Latvia&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;mx&#x27;]&quot;&gt;Mexico&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;nl&#x27;]&quot;&gt;Netherlands&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;nz&#x27;]&quot;&gt;New Zealand&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ph&#x27;]&quot;&gt;Philippines&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;pl&#x27;]&quot;&gt;Poland&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;pt&#x27;]&quot;&gt;Portugal&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ro&#x27;]&quot;&gt;Romania&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;third&quot;&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ru&#x27;]&quot;&gt;Russia&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;sg&#x27;]&quot;&gt;Singapore&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;za&#x27;]&quot;&gt;South Africa&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;se&#x27;]&quot;&gt;Sweden&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ch&#x27;]&quot;&gt;Switzerland&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;tw&#x27;]&quot;&gt;Taiwan&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;th&#x27;]&quot;&gt;Thailand&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ae&#x27;]&quot;&gt;UAE&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ua&#x27;]&quot;&gt;Ukraine&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;gb&#x27;]&quot;&gt;UK&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;us&#x27;]&quot;&gt;US&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/world&#x27;, &#x27;ve&#x27;]&quot;&gt;Venuzuela&lt;/a&gt;&lt;/li&gt;
+        &lt;/div&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;foot-toggle-menu&quot; [hidden]&#x3D;&quot;toggleMenu&quot;&gt;
+      &lt;ul class&#x3D;&quot;foot-toggle-menu-list unlist links-style&quot;&gt;
+        &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/home&#x27;]&quot; title&#x3D;&quot;Home Page&quot;&gt;HOME&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- Dropdown for Category --&gt;
+        &lt;li ngbDropdown *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; ngbDropdownToggle id&#x3D;&quot;navbarDropdownMenuLink&quot;&gt;
+            Category
+          &lt;/a&gt;
+          &lt;div class&#x3D;&quot;dropDown dropDown-foot-menu&quot; ngbDropdownMenu aria-labelledby&#x3D;&quot;navbarDropdownMenuLink&quot; (click)&#x3D;&quot;toggleEvent($event)&quot; [ngClass]&#x3D;&quot;{&#x27;show-scrollTop&#x27;: windowScrolled}&quot;&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;general&#x27;]&quot; title&#x3D;&quot;General&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;General&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;business&#x27;]&quot; title&#x3D;&quot;Business&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Business&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;entertainment&#x27;]&quot; title&#x3D;&quot;Entertainment&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Entertainment&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;sports&#x27;]&quot; title&#x3D;&quot;Sports&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Sports&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;health&#x27;]&quot; title&#x3D;&quot;Health&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Health&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;science&#x27;]&quot; title&#x3D;&quot;Science&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Science&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;technology&#x27;]&quot; title&#x3D;&quot;Technology&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Technology&lt;/a&gt;&lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- end Dropdown Category --&gt;
+
+        &lt;li&gt;&lt;a (click)&#x3D;&quot;scrollToTop()&quot; [routerLink]&#x3D;&quot;[&#x27;/contact&#x27;]&quot; title&#x3D;&quot;Contact Us&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+
+        &lt;!-- Dropdown for logged in user --&gt;
+        &lt;li ngbDropdown *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link&quot; ngbDropdownToggle id&#x3D;&quot;navbarDropdownMenuLink&quot;&gt;
+            &lt;img class&#x3D;&quot;nav-profile-img rounded-circle&quot; src&#x3D;&quot;https://robohash.org/{{avatar_url}}?size&#x3D;25x25&quot;&gt;
+          &lt;/a&gt;
+          &lt;div class&#x3D;&quot;dropDown  dropDown-foot-menu&quot; ngbDropdownMenu aria-labelledby&#x3D;&quot;navbarDropdownMenuLink&quot; (click)&#x3D;&quot;toggleEvent($event)&quot;&gt;
+            &lt;a (click)&#x3D;&quot;scrollToTop()&quot; ngbDropdownItem [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;]&quot;&gt;&lt;i class&#x3D;&quot;fa fa-user-circle&quot;&gt;&lt;/i&gt; Profile&lt;/a&gt;
+            &lt;a (click)&#x3D;&quot;scrollToTop()&quot; ngbDropdownItem (click)&#x3D;&quot;authService.logoutUser()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-sign-out&quot;&gt;&lt;/i&gt; Logout&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- end Dropdown --&gt;
+      &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;foot-bottom&quot;&gt;
+    &lt;div class&#x3D;&quot;foot-bottom-text&quot;&gt;
+      &lt;p&gt;Copyright © 2019    TNS | The News Spot.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;hamburger&quot; (click)&#x3D;&quot;toggleEvent($event)&quot;&gt;
+        &lt;a class&#x3D;&quot;menu&quot;&gt;
+          &lt;span class&#x3D;&quot;fa fa-reorder&quot;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;foot-bottom-menu&quot;&gt;
+      &lt;ul class&#x3D;&quot;foot-bottom-menu-list unlist links-style&quot;&gt;
+        &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/home&#x27;]&quot; title&#x3D;&quot;&quot;&gt;HOME&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- Dropdown for Category --&gt;
+        &lt;li ngbDropdown *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; ngbDropdownToggle id&#x3D;&quot;navbarDropdownMenuLink&quot;&gt;
+            Category
+          &lt;/a&gt;
+          &lt;div class&#x3D;&quot;dropDown&quot; ngbDropdownMenu aria-labelledby&#x3D;&quot;navbarDropdownMenuLink&quot; (click)&#x3D;&quot;toggleEvent($event)&quot;&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;general&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;General&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;business&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Business&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;entertainment&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Entertainment&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;sports&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Sports&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;health&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Health&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;science&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Science&lt;/a&gt;&lt;/li&gt;
+            &lt;li (click)&#x3D;&quot;scrollToTop()&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/category&#x27;, &#x27;technology&#x27;]&quot; title&#x3D;&quot;&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot; ngbDropdownItem&gt;Technology&lt;/a&gt;&lt;/li&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- end Dropdown Category --&gt;
+
+        &lt;li&gt;&lt;a (click)&#x3D;&quot;scrollToTop()&quot; [routerLink]&#x3D;&quot;[&#x27;/contact&#x27;]&quot; title&#x3D;&quot;Contact Us&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+
+        &lt;!-- Dropdown for logged in user --&gt;
+        &lt;li ngbDropdown *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+          &lt;a class&#x3D;&quot;nav-link&quot; ngbDropdownToggle id&#x3D;&quot;navbarDropdownMenuLink&quot;&gt;
+            &lt;img class&#x3D;&quot;nav-profile-img rounded-circle&quot; src&#x3D;&quot;https://robohash.org/{{avatar_url}}?size&#x3D;25x25&quot;&gt;
+          &lt;/a&gt;
+          &lt;div class&#x3D;&quot;dropDown dropDown-foot-menu&quot; ngbDropdownMenu aria-labelledby&#x3D;&quot;navbarDropdownMenuLink&quot; (click)&#x3D;&quot;toggleEvent($event)&quot;&gt;
+            &lt;a ngbDropdownItem [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;]&quot;&gt;&lt;i class&#x3D;&quot;fa fa-user-circle&quot;&gt;&lt;/i&gt; Profile&lt;/a&gt;
+            &lt;a ngbDropdownItem (click)&#x3D;&quot;authService.logoutUser()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-sign-out&quot;&gt;&lt;/i&gt; Logout&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- end Dropdown --&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./footer.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// CSS footer
+
+@import &quot;../../variables.scss&quot;;
+
+:host {
+    clear: both;
+}
+.unlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.foot {
+    width: 100%;
+    background: var(--footer-main);
+    min-height: 100px;
+    color: $LightGrey;
+    padding: 1em 1.5em;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: .5s ease-in-out;
+    border-top: 1px solid $DarkGrey;
+}
+
+.foot-logo {
+    font-family: &#x27;Almendra SC&#x27;, serif;
+    color: $White;
+    font-size: 1.6em;
+
+    a { 
+        color: $Yellow; 
+        text-decoration: none;
+    }
+}
+
+.foot-widget-left,
+.foot-widget-midden,
+.foot-widget-right {
+    padding: 20px;
+
+    h3 { color: $White; }
+}
+
+.foot-widget-right { margin-bottom: 20px; }
+
+.social {
+    display: flex;
+    top: 0;
+    
+    li { padding: 10px 10px 10px 0; }
+}
+
+.links-style a {
+    text-decoration: none;
+    color: $LightGrey;
+}
+
+.links-style-news { border-bottom: 1px solid $DarkGrey; }
+
+.links-style a:hover { color: $White; }
+
+.blog-list {
+    li {
+        width: 100%;
+        border-bottom: 1px solid $DimGrey;
+        padding: 1em 0;
+        font-size: .8em;
+    }
+
+    li:last-child {
+        border: none;
+        margin-bottom: 30px;
+    }
+}
+
+.w-countries {
+    display: flex;
+    
+    li {
+        a {
+            text-decoration: none;
+            color: $LightGrey;
+            &amp;:hover {
+                color: $White;
+            }
+        }
+    }
+}
+.first { margin-right: 20px; }
+.second { margin: 0 20px; }
+.third { margin-left: 20px; }
+
+.foot-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--footer-bottom);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $BGrey;
+    transition: .5s all ease-in-out;
+}
+
+.foot-bottom-text {
+    padding-left: 20px;
+    font-size: .8em;
+
+    p { margin: 8px 0; }
+}
+
+.foot-bottom-menu { margin-right: 80px; }
+
+.foot-bottom-menu-list {
+    display: none;
+    margin: 8px 0;
+    cursor: pointer;
+    
+    li {
+        width: 100px;
+        text-align: center;
+        font-size: .8em;
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background: var(--footer-bottom);
+    width: 30px;
+    margin: 5px 32px 0 0;
+    font-size: 1em;
+    text-align: center;
+    color: $LightGrey;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.foot-toggle-menu {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    width: 200px;
+    font-size: .8em;
+    background: $BGrey;
+    transition: right 1s ease-in-out;
+
+    ul { transition: right 1s ease-in-out; }
+
+    li {
+        padding: .5em;
+        border-bottom: 1px solid $DimGrey;
+        cursor: pointer;
+    }
+
+    li:last-child { border-bottom: 0; }
+}
+
+.nav-link { padding: 0; }
+
+.dropDown {
+    background: $DarkGrey;
+    font-size: 1.4em;
+    transform: translate(-80px,91px);
+
+    a:hover { 
+        background: $DarkGrey;
+        cursor: pointer;
+    }
+}
+
+.dropDown-foot-menu { 
+    font-size: 1em; 
+    li { border: none; }
+}
+
+@media screen and (min-width: 765px) {
+    .foot-bottom-menu-list { display: flex; }
+
+    .foot-toggle-menu { display: none; }
+
+    .menu { display: none; }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="foot">  <div class="row">    <div class="foot-widget-left col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">      <div class="foot-logo"><a [routerLink]="[\'/home\']" title="">TNS | The News Spot</a></div>      <div class="foot-info">        <p>Welcome to The News Spot. An interactive news website that keeps you informed of the latest developments from all over the world.</p>        <p>The development team wishes you a lot of surfing pleasure on our site.</p>      </div>      <div class="foot-social">        <ul class="foot-social-list unlist social links-style">          <li><a href="https://www.facebook.com/" title="" target="_blank"><span class="fa fa-facebook"></span></a></li>          <li><a href="https://twitter.com/" title="" target="_blank"><span class="fa fa-twitter"></span></a></li>          <li><a href="https://accounts.google.com/" title="" target="_blank"><span class="fa fa-google-plus"></span></a></li>          <li><a href="https://www.instagram.com/" title="" target="_blank"><span class="fa fa-instagram"></span></a></li>          <li><a href="https://www.linkedin.com/" title="" target="_blank"><span class="fa fa-linkedin"></span></a></li>          <li><a href="https://www.youtube.com/" title="" target="_blank"><span class="fa fa-youtube"></span></a></li>          <li><a href="https://nl.pinterest.com/" title="" target="_blank"><span class="fa fa-pinterest"></span></a></li>          <li></li>        </ul>      </div>    </div>    <div class="foot-widget-midden col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">      <h3>Latest News</h3>      <div>        <ul class="blog-list unlist links-style">          <li class="links-style-news" *ngFor="let article of allArticles | slice:21;"><a href="{{article.url}}" target="_blank" title="" (click)="!authService.loggedIn() || articleService.saveArticle(article)">{{article.title}}</a></li>        </ul>      </div>    </div>  <div class="foot-widget-right col-sm-12 col-lg-6 col-md-6 col-xl-4 col-12">    <h3>World</h3>    <div>      <ul class="unlist w-countries">        <div class="first">            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'at\']">Austria</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'au\']">Australia</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'be\']">Belgium</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'br\']">Brazil</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'bg\']">Bulgaria</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ca\']">Canada</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'cn\']">China</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'fr\']">France</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'de\']">Germany</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'gr\']">Greece</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'hu\']">Hungary</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'in\']">India</a></li>        </div>        <div class="second">            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ie\']">Ireland</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'il\']">Israel</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'it\']">Italy</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'jp\']">Japan</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'lv\']">Latvia</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'mx\']">Mexico</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'nl\']">Netherlands</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'nz\']">New Zealand</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ph\']">Philippines</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'pl\']">Poland</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'pt\']">Portugal</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ro\']">Romania</a></li>        </div>        <div class="third">            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ru\']">Russia</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'sg\']">Singapore</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'za\']">South Africa</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'se\']">Sweden</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ch\']">Switzerland</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'tw\']">Taiwan</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'th\']">Thailand</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ae\']">UAE</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ua\']">Ukraine</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'gb\']">UK</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'us\']">US</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/world\', \'ve\']">Venuzuela</a></li>        </div>      </ul>    </div>  </div>  <div class="foot-toggle-menu" [hidden]="toggleMenu">      <ul class="foot-toggle-menu-list unlist links-style">        <li (click)="scrollToTop()"><a [routerLink]="[\'/home\']" title="Home Page">HOME</a></li>        <!-- Dropdown for Category -->        <li ngbDropdown *ngIf="authService.loggedIn()">          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">            Category          </a>          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)" [ngClass]="{\'show-scrollTop\': windowScrolled}">            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'general\']" title="General" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'business\']" title="Business" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'entertainment\']" title="Entertainment" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'sports\']" title="Sports" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'health\']" title="Health" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'science\']" title="Science" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'technology\']" title="Technology" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>          </div>        </li>        <!-- end Dropdown Category -->        <li><a (click)="scrollToTop()" [routerLink]="[\'/contact\']" title="Contact Us">Contact Us</a></li>        <!-- Dropdown for logged in user -->        <li ngbDropdown *ngIf="authService.loggedIn()">          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">            <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">          </a>          <div class="dropDown  dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">            <a (click)="scrollToTop()" ngbDropdownItem [routerLink]="[\'/profile\']"><i class="fa fa-user-circle"></i> Profile</a>            <a (click)="scrollToTop()" ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>          </div>        </li>        <!-- end Dropdown -->      </ul>  </div>  <div class="foot-bottom">    <div class="foot-bottom-text">      <p>Copyright © 2019    TNS | The News Spot.</p>    </div>    <div class="hamburger" (click)="toggleEvent($event)">        <a class="menu">          <span class="fa fa-reorder"></span>        </a>    </div>    <div class="foot-bottom-menu">      <ul class="foot-bottom-menu-list unlist links-style">        <li (click)="scrollToTop()"><a [routerLink]="[\'/home\']" title="">HOME</a></li>        <!-- Dropdown for Category -->        <li ngbDropdown *ngIf="authService.loggedIn()">          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdownMenuLink">            Category          </a>          <div class="dropDown" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'general\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>General</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'business\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Business</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'entertainment\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Entertainment</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'sports\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Sports</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'health\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Health</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'science\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Science</a></li>            <li (click)="scrollToTop()"><a [routerLink]="[\'/category\', \'technology\']" title="" *ngIf="authService.loggedIn()" ngbDropdownItem>Technology</a></li>          </div>        </li>        <!-- end Dropdown Category -->        <li><a (click)="scrollToTop()" [routerLink]="[\'/contact\']" title="Contact Us">Contact Us</a></li>        <!-- Dropdown for logged in user -->        <li ngbDropdown *ngIf="authService.loggedIn()">          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink">            <img class="nav-profile-img rounded-circle" src="https://robohash.org/{{avatar_url}}?size=25x25">          </a>          <div class="dropDown dropDown-foot-menu" ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" (click)="toggleEvent($event)">            <a ngbDropdownItem [routerLink]="[\'/profile\']"><i class="fa fa-user-circle"></i> Profile</a>            <a ngbDropdownItem (click)="authService.logoutUser()"><i class="fa fa-sign-out"></i> Logout</a>          </div>        </li>        <!-- end Dropdown -->      </ul>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleListsComponent', 'selector': 'app-article-lists'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ContactusComponent', 'selector': 'app-contact-us'},{'name': 'FooterComponent', 'selector': 'footer'},{'name': 'HomeMainArticlesComponent', 'selector': 'app-home-main-articles'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LatestNewsComponent', 'selector': 'app-latest-news'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RightSidebarComponent', 'selector': 'app-right-sidebar'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SportsComponent', 'selector': 'app-sports'},{'name': 'TopNewsComponent', 'selector': 'app-top-news'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WorldComponent', 'selector': 'app-world'}];
+    var DIRECTIVES = [{'name': 'ImagePreloadDirective', 'selector': 'img[default]'}];
+    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

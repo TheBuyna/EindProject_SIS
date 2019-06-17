@@ -1,0 +1,878 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>news-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">news-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>WeatherComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/weather/weather.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-weather</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./weather.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./weather.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentWeather">currentWeather</a>
+                            </li>
+                            <li>
+                                <a href="#dailyWeather">dailyWeather</a>
+                            </li>
+                            <li>
+                                <a href="#geocode">geocode</a>
+                            </li>
+                            <li>
+                                <a href="#hourlyWeather">hourlyWeather</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkMethod">checkMethod</a>
+                            </li>
+                            <li>
+                                <a href="#getCurrentWeather">getCurrentWeather</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, weatherService: <a href="../injectables/WeatherService.html">WeatherService</a>, spinner: NgxSpinnerService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, ngFlashMessageService: NgFlashMessageService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/weather/weather.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>weatherService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WeatherService.html" target="_self" >WeatherService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgxSpinnerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ngFlashMessageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgFlashMessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkMethod"></a>
+                    <span class="name">
+                        <b>
+                            checkMethod
+                        </b>
+                        <a href="#checkMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkMethod()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/weather/weather.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentWeather"></a>
+                    <span class="name">
+                        <b>
+                            getCurrentWeather
+                        </b>
+                        <a href="#getCurrentWeather"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCurrentWeather(location: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/weather/weather.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/weather/weather.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentWeather"></a>
+                        <span class="name">
+                            <b>
+                            currentWeather</b>
+                            <a href="#currentWeather"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/weather/weather.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dailyWeather"></a>
+                        <span class="name">
+                            <b>
+                            dailyWeather</b>
+                            <a href="#dailyWeather"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/weather/weather.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="geocode"></a>
+                        <span class="name">
+                            <b>
+                            geocode</b>
+                            <a href="#geocode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/weather/weather.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hourlyWeather"></a>
+                        <span class="name">
+                            <b>
+                            hourlyWeather</b>
+                            <a href="#hourlyWeather"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/weather/weather.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { WeatherService } from &#x27;../services/weather.service&#x27;;
+import { NgxSpinnerService } from &#x27;ngx-spinner&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NgFlashMessageService } from &#x27;ng-flash-messages&#x27;;
+
+@Component({
+  selector: &#x27;app-weather&#x27;,
+  templateUrl: &#x27;./weather.component.html&#x27;,
+  styleUrls: [&#x27;./weather.component.scss&#x27;]
+})
+export class WeatherComponent implements OnInit {
+
+  constructor(private http: HttpClient, private weatherService: WeatherService, private spinner: NgxSpinnerService, private router: Router, private ngFlashMessageService: NgFlashMessageService) { }
+  currentWeather: [];
+  hourlyWeather: [];
+  dailyWeather: [];
+  geocode: [];
+  ngOnInit() {
+    this.getCurrentWeather(&#x27;antwerpen&#x27;);
+    /** spinner starts on init */
+    this.spinner.show();
+  }
+
+  getCurrentWeather(location: string) {
+    this.weatherService.getWeather(location).subscribe(
+      (res) &#x3D;&gt; {
+        /** spinner starts on init */
+        this.spinner.show();
+        this.currentWeather &#x3D; res[&#x27;weather&#x27;][&#x27;currently&#x27;];
+        this.hourlyWeather &#x3D; res[&#x27;weather&#x27;][&#x27;hourly&#x27;];
+        this.dailyWeather &#x3D; res[&#x27;weather&#x27;][&#x27;daily&#x27;];
+        this.geocode &#x3D; res[&#x27;geocode&#x27;];
+        this.spinner.hide();
+      },
+      (err) &#x3D;&gt; {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status &#x3D;&#x3D;&#x3D; 401) {
+            this.router.navigate([&#x27;/auth/login&#x27;]);
+            this.ngFlashMessageService.showFlashMessage({
+              messages: [err.error.message],
+              dismissible: true,
+              timeout: 10000,
+              type: &#x27;danger&#x27;
+            });
+            if (err.error.message &#x3D;&#x3D;&#x3D; &#x27;Expired JWT Token&#x27; || err.error.message &#x3D;&#x3D;&#x3D; &#x27;Invalid JWT Token&#x27;){
+              localStorage.removeItem(&#x27;token&#x27;);
+            }
+          }
+        }
+        this.spinner.hide();
+      }
+    );
+  }
+
+  checkMethod(){
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;weatherComponent&quot;&gt;
+    &lt;div class&#x3D;&quot;input-group mb-3 mt-3 searchBar&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot;
+               name&#x3D;&quot;q&quot;
+               class&#x3D;&quot;form-control&quot;
+               placeholder&#x3D;&quot;Search...&quot;
+               [(ngModel)]&#x3D;&quot;searchQuery&quot;
+        &gt;
+        &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+            &lt;button type&#x3D;&quot;submit&quot;
+                    class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;getCurrentWeather(searchQuery)&quot;&gt;
+                &lt;span class&#x3D;&quot;fa fa-search&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;h1&gt;
+    &lt;i class&#x3D;&quot;wi wi-barometer&quot;&gt;&lt;/i&gt; Your Weather Forecast
+  &lt;/h1&gt;
+
+  &lt;p *ngIf&#x3D;&quot;geocode&quot;&gt;Current Position: Latitude: {{ geocode.features[&#x27;0&#x27;].center[&#x27;1&#x27;] }} / Longtitude: {{ geocode.features[&#x27;0&#x27;].center[&#x27;0&#x27;] }}
+  &lt;/p&gt;
+
+
+  &lt;div *ngIf&#x3D;&quot;currentWeather&quot; class&#x3D;&quot;jumbotron currentWeather&quot;&gt;
+    &lt;h1 class&#x3D;&quot;display-4&quot;&gt;{{ geocode.features[&#x27;0&#x27;].text }} {{ currentWeather.time * 1000 | date: &#x27;H:mm&#x27;  }}&lt;/h1&gt;
+    &lt;p class&#x3D;&quot;lead&quot;&gt;{{currentWeather.summary}}&lt;/p&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i [class]&#x3D;&quot;this.weatherService.weatherIcon(currentWeather.icon)&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Feels like&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.temperature }}&amp;#176;C&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i class&#x3D;&quot;wi wi-humidity&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Humidity&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.humidity * 100 | number}}%&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i class&#x3D;&quot;wi wi-barometer&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Pressure&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.pressure}}hPa&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i class&#x3D;&quot;wi wi-strong-wind&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Wind speed&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.windSpeed}}km/h&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i class&#x3D;&quot;wi wi-cloudy&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Cloud cover&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.cloudCover * 100 | number}}%&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;weatherIcon&quot;&gt;&lt;i class&#x3D;&quot;fa fa-eye&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+          &lt;p&gt;Visibility&lt;/p&gt;
+          &lt;h2&gt;{{ currentWeather.visibility}}km&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div *ngIf&#x3D;&quot;dailyWeather&quot; class&#x3D;&quot;jumbotron dailyWeather&quot;&gt;
+    &lt;h1 class&#x3D;&quot;display-4&quot;&gt;Seven Day Forecast&lt;/h1&gt;
+    &lt;p class&#x3D;&quot;lead&quot;&gt;{{dailyWeather.summary}}&lt;/p&gt;
+    &lt;hr class&#x3D;&quot;my-4&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3&quot; *ngFor&#x3D;&quot;let day of dailyWeather.data&quot;
+        style&#x3D;&quot;margin-bottom: 1em;&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header&quot;&gt;
+            {{ day.time * 1000 | date: &#x27;EE - d/MMM&#x27;  }}
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-img-top weatherIcon&quot;&gt;
+            &lt;i [class]&#x3D;&quot;this.weatherService.weatherIcon(day.icon)&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;
+              &lt;i class&#x3D;&quot;wi wi-thermometer&quot;&gt;&lt;/i&gt; {{day.temperatureHigh}}&amp;#176;C - 
+              &lt;i class&#x3D;&quot;wi wi-thermometer-exterior&quot;&gt;&lt;/i&gt; {{day.temperatureLow}}&amp;#176;C
+            &lt;/h5&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ day.summary }}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div *ngIf&#x3D;&quot;hourlyWeather&quot; class&#x3D;&quot;jumbotron hourlyWeather&quot;&gt;
+    &lt;h1 class&#x3D;&quot;display-4&quot;&gt;Next 48 hour Forecast&lt;/h1&gt;
+    &lt;p class&#x3D;&quot;lead&quot;&gt;{{hourlyWeather.summary}}&lt;/p&gt;
+    &lt;hr class&#x3D;&quot;my-4&quot;&gt;
+    &lt;table class&#x3D;&quot;table table-hover&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope&#x3D;&quot;col&quot;&gt;&lt;i class&#x3D;&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+          &lt;th scope&#x3D;&quot;col&quot;&gt;&lt;i class&#x3D;&quot;wi wi-celsius&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+          &lt;th scope&#x3D;&quot;col&quot;&gt;&lt;i class&#x3D;&quot;fa fa-align-left&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+          &lt;th scope&#x3D;&quot;col&quot;&gt;&lt;i class&#x3D;&quot;wi wi-raindrops&quot;&gt;&lt;/i&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr *ngFor&#x3D;&quot;let day of hourlyWeather.data&quot;&gt;
+          &lt;th scope&#x3D;&quot;row&quot;&gt;{{ day.time * 1000 | date: &#x27;EE&#x27;  }} - {{ day.time * 1000 | date: &#x27;H:mm&#x27;  }}&lt;/th&gt;
+          &lt;td&gt;{{day.temperature}}&amp;#176;C&lt;/td&gt;
+          &lt;td&gt;&lt;i [class]&#x3D;&quot;this.weatherService.weatherIcon(day.icon)&quot;&gt;&lt;/i&gt; {{ day.summary }}&lt;/td&gt;
+          &lt;td&gt;{{ day.precipProbability * 100 | number}}%&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./weather.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../variables.scss&quot;;
+
+
+.weatherComponent {
+    padding-top: 1em;
+    width: 100%;
+
+    .searchBar {
+        width: 40%;
+        float: right;
+    }
+    .weatherIcon {
+        font-size: 4em;
+    }
+
+    .currentWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+
+        .col {
+            text-align: center;
+        }
+    }
+
+    .dailyWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        position: relative;
+
+        .card {
+            height: 100%;
+            background: var(--background-color);
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            .card-header {
+                margin-bottom: 1em;
+                border-bottom: 1px solid var(--text-color);
+            }
+            .weatherIcon {
+                font-size: 6em;
+                text-align: center;
+            }
+        }
+    }
+    .hourlyWeather {
+        background: var(--background-color);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        table {
+            background: var(--background-color);
+            color: var(--text-color);
+            tr:hover {
+                background:  $LightGrey;
+                color: var(--background-color);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .weatherComponent {
+    
+        .searchBar {
+            padding-top: 2em;
+            width: 100%;
+        }
+
+        .currentWeather {
+            width: 100%;
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="weatherComponent">    <div class="input-group mb-3 mt-3 searchBar">        <input type="text"               name="q"               class="form-control"               placeholder="Search..."               [(ngModel)]="searchQuery"        >        <div class="input-group-append">            <button type="submit"                    class="btn btn-outline-secondary" (click)="getCurrentWeather(searchQuery)">                <span class="fa fa-search"></span>            </button>        </div>    </div>  <h1>    <i class="wi wi-barometer"></i> Your Weather Forecast  </h1>  <p *ngIf="geocode">Current Position: Latitude: {{ geocode.features[\'0\'].center[\'1\'] }} / Longtitude: {{ geocode.features[\'0\'].center[\'0\'] }}  </p>  <div *ngIf="currentWeather" class="jumbotron currentWeather">    <h1 class="display-4">{{ geocode.features[\'0\'].text }} {{ currentWeather.time * 1000 | date: \'H:mm\'  }}</h1>    <p class="lead">{{currentWeather.summary}}</p>    <div class="row">      <div class="col">          <div class="weatherIcon"><i [class]="this.weatherService.weatherIcon(currentWeather.icon)"></i></div>          <p>Feels like</p>          <h2>{{ currentWeather.temperature }}&#176;C</h2>      </div>      <div class="col">          <div class="weatherIcon"><i class="wi wi-humidity"></i></div>          <p>Humidity</p>          <h2>{{ currentWeather.humidity * 100 | number}}%</h2>      </div>      <div class="col">          <div class="weatherIcon"><i class="wi wi-barometer"></i></div>          <p>Pressure</p>          <h2>{{ currentWeather.pressure}}hPa</h2>      </div>      <div class="col">          <div class="weatherIcon"><i class="wi wi-strong-wind"></i></div>          <p>Wind speed</p>          <h2>{{ currentWeather.windSpeed}}km/h</h2>      </div>      <div class="col">          <div class="weatherIcon"><i class="wi wi-cloudy"></i></div>          <p>Cloud cover</p>          <h2>{{ currentWeather.cloudCover * 100 | number}}%</h2>      </div>      <div class="col">          <div class="weatherIcon"><i class="fa fa-eye"></i></div>          <p>Visibility</p>          <h2>{{ currentWeather.visibility}}km</h2>      </div>    </div>  </div>  <div *ngIf="dailyWeather" class="jumbotron dailyWeather">    <h1 class="display-4">Seven Day Forecast</h1>    <p class="lead">{{dailyWeather.summary}}</p>    <hr class="my-4">    <div class="row">      <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let day of dailyWeather.data"        style="margin-bottom: 1em;">        <div class="card">          <div class="card-header">            {{ day.time * 1000 | date: \'EE - d/MMM\'  }}          </div>          <div class="card-img-top weatherIcon">            <i [class]="this.weatherService.weatherIcon(day.icon)"></i>          </div>          <div class="card-body">            <h5 class="card-title">              <i class="wi wi-thermometer"></i> {{day.temperatureHigh}}&#176;C -               <i class="wi wi-thermometer-exterior"></i> {{day.temperatureLow}}&#176;C            </h5>            <p class="card-text">{{ day.summary }}</p>          </div>        </div>      </div>    </div>  </div>  <div *ngIf="hourlyWeather" class="jumbotron hourlyWeather">    <h1 class="display-4">Next 48 hour Forecast</h1>    <p class="lead">{{hourlyWeather.summary}}</p>    <hr class="my-4">    <table class="table table-hover">      <thead>        <tr>          <th scope="col"><i class="fa fa-calendar"></i></th>          <th scope="col"><i class="wi wi-celsius"></i></th>          <th scope="col"><i class="fa fa-align-left"></i></th>          <th scope="col"><i class="wi wi-raindrops"></i></th>        </tr>      </thead>      <tbody>        <tr *ngFor="let day of hourlyWeather.data">          <th scope="row">{{ day.time * 1000 | date: \'EE\'  }} - {{ day.time * 1000 | date: \'H:mm\'  }}</th>          <td>{{day.temperature}}&#176;C</td>          <td><i [class]="this.weatherService.weatherIcon(day.icon)"></i> {{ day.summary }}</td>          <td>{{ day.precipProbability * 100 | number}}%</td>        </tr>      </tbody>    </table>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleListsComponent', 'selector': 'app-article-lists'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ContactusComponent', 'selector': 'app-contact-us'},{'name': 'FooterComponent', 'selector': 'footer'},{'name': 'HomeMainArticlesComponent', 'selector': 'app-home-main-articles'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LatestNewsComponent', 'selector': 'app-latest-news'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RightSidebarComponent', 'selector': 'app-right-sidebar'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SportsComponent', 'selector': 'app-sports'},{'name': 'TopNewsComponent', 'selector': 'app-top-news'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WorldComponent', 'selector': 'app-world'}];
+    var DIRECTIVES = [{'name': 'ImagePreloadDirective', 'selector': 'img[default]'}];
+    var ACTUAL_COMPONENT = {'name': 'WeatherComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WeatherComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

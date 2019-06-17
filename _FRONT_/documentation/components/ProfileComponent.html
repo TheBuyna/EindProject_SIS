@@ -1,0 +1,1382 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>news-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">news-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/profile/profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-profile</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./profile.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#avatar_Url">avatar_Url</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#CHECK_JWT">CHECK_JWT</a>
+                            </li>
+                            <li>
+                                <a href="#closeResult">closeResult</a>
+                            </li>
+                            <li>
+                                <a href="#isDisabled">isDisabled</a>
+                            </li>
+                            <li>
+                                <a href="#modalRef">modalRef</a>
+                            </li>
+                            <li>
+                                <a href="#profileForm">profileForm</a>
+                            </li>
+                            <li>
+                                <a href="#userInfo">userInfo</a>
+                            </li>
+                            <li>
+                                <a href="#userKeys">userKeys</a>
+                            </li>
+                            <li>
+                                <a href="#userValues">userValues</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#openModal">openModal</a>
+                            </li>
+                            <li>
+                                <a href="#resetPassword">resetPassword</a>
+                            </li>
+                            <li>
+                                <a href="#sortResults">sortResults</a>
+                            </li>
+                            <li>
+                                <a href="#updateInfo">updateInfo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auth: <a href="../injectables/AuthService.html">AuthService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, ngFlashMessageService: NgFlashMessageService, modalService: BsModalService, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/profile/profile.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ngFlashMessageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgFlashMessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/profile/profile.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit(myForm)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/profile/profile.component.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>myForm</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModal"></a>
+                    <span class="name">
+                        <b>
+                            openModal
+                        </b>
+                        <a href="#openModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModal(template: TemplateRef<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/profile/profile.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td>
+                                            <code>TemplateRef&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                        <b>
+                            resetPassword
+                        </b>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetPassword(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/profile/profile.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortResults"></a>
+                    <span class="name">
+                        <b>
+                            sortResults
+                        </b>
+                        <a href="#sortResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortResults(inputJson)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/profile/profile.component.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inputJson</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateInfo"></a>
+                    <span class="name">
+                        <b>
+                            updateInfo
+                        </b>
+                        <a href="#updateInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/profile/profile.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="avatar_Url"></a>
+                        <span class="name">
+                            <b>
+                            avatar_Url</b>
+                            <a href="#avatar_Url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/profile/profile.component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CHECK_JWT"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            CHECK_JWT</b>
+                            <a href="#CHECK_JWT"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;https://wdev.be/saker/ew/be/apiCheck&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/profile/profile.component.ts:72</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="closeResult"></a>
+                        <span class="name">
+                            <b>
+                            closeResult</b>
+                            <a href="#closeResult"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/profile/profile.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDisabled"></a>
+                        <span class="name">
+                            <b>
+                            isDisabled</b>
+                            <a href="#isDisabled"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/profile/profile.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalRef"></a>
+                        <span class="name">
+                            <b>
+                            modalRef</b>
+                            <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BsModalRef</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/profile/profile.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="profileForm"></a>
+                        <span class="name">
+                            <b>
+                            profileForm</b>
+                            <a href="#profileForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.fb.group({
+      first_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      last_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      street_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      house_Number: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      mailbox_Number: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      city: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      telephone: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      postal_Code: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      email: [{value:&#x27;&#x27;, disabled: this.isDisabled}]
+      
+    })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/profile/profile.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userInfo"></a>
+                        <span class="name">
+                            <b>
+                            userInfo</b>
+                            <a href="#userInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/profile/profile.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userKeys"></a>
+                        <span class="name">
+                            <b>
+                            userKeys</b>
+                            <a href="#userKeys"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/profile/profile.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userValues"></a>
+                        <span class="name">
+                            <b>
+                            userValues</b>
+                            <a href="#userValues"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/profile/profile.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, TemplateRef } from &#x27;@angular/core&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NgFlashMessageService } from &#x27;ng-flash-messages&#x27;;
+import { ThemeService } from &#x27;../services/theme.service&#x27;;
+import { FormGroup, FormControl, FormBuilder, FormArray, Validators, NgForm} from &#x27;@angular/forms&#x27;;
+
+
+import { BsModalService, BsModalRef } from &#x27;ngx-bootstrap/modal&#x27;;
+@Component({
+  selector: &#x27;app-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;,
+  styleUrls: [&#x27;./profile.component.scss&#x27;]
+})
+export class ProfileComponent implements OnInit {
+
+  modalRef: BsModalRef;
+  isDisabled &#x3D; true;
+
+  constructor(
+    private auth: AuthService,
+    private http: HttpClient,
+    private router: Router,
+    private ngFlashMessageService: NgFlashMessageService,
+    private modalService: BsModalService,
+    private fb: FormBuilder
+    ) { }
+
+    profileForm &#x3D; this.fb.group({
+      first_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      last_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      street_Name: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      house_Number: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      mailbox_Number: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      city: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      telephone: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      postal_Code: [{value:&#x27;&#x27;, disabled: this.isDisabled}],
+      email: [{value:&#x27;&#x27;, disabled: this.isDisabled}]
+      
+    });
+
+    updateInfo() {
+      this.profileForm.enable();
+    }
+
+    onSubmit(myForm) {
+      this.profileForm.disable();
+
+      this.auth.updateUser(myForm.value).subscribe(
+        (res) &#x3D;&gt; {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [res[&#x27;success&#x27;]],
+            dismissible: true,
+            timeout: 5000,
+            type: &#x27;success&#x27;
+          });
+  
+        },
+        (err) &#x3D;&gt; {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [&#x27;An error occured while updating!!&#x27;],
+            dismissible: true,
+            timeout: 5000,
+            type: &#x27;danger&#x27;
+          });
+        }
+      );
+    }
+
+  
+  private CHECK_JWT &#x3D; &quot;https://wdev.be/saker/ew/be/apiCheck&quot;;
+  userInfo &#x3D; [];
+  avatar_Url;
+  userKeys &#x3D; [];
+  userValues&#x3D; [];
+  closeResult;
+  ngOnInit() {
+    // check if token is valid
+    this.http.get(this.CHECK_JWT).subscribe(
+      (resultaat) &#x3D;&gt; {
+      this.userInfo &#x3D; resultaat[&#x27;user&#x27;];
+      this.avatar_Url &#x3D; this.userInfo[&#x27;avatar_Url&#x27;];
+      delete this.userInfo[&#x27;avatar_Url&#x27;];
+      delete this.userInfo[&#x27;theme&#x27;]
+      this.sortResults(this.userInfo);
+    },
+    (err) &#x3D;&gt; {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status &#x3D;&#x3D;&#x3D; 401) {
+          this.router.navigate([&#x27;/auth/login&#x27;]);
+          this.ngFlashMessageService.showFlashMessage({
+            messages: [err.error.message],
+            dismissible: true,
+            timeout: 10000,
+            type: &#x27;danger&#x27;
+          });
+          if (err.error.message &#x3D;&#x3D;&#x3D; &#x27;Expired JWT Token&#x27; || err.error.message &#x3D;&#x3D;&#x3D; &#x27;Invalid JWT Token&#x27;){
+            localStorage.removeItem(&#x27;token&#x27;);
+          }
+        }
+      }
+    }
+    );
+  }
+
+  sortResults(inputJson) {
+    let keysInput &#x3D; Object.keys(inputJson);
+    let valuesInput &#x3D; Object.values(inputJson);
+
+    for (let key of keysInput){
+      this.userKeys.push(key);
+    }
+    for (let value of valuesInput){
+      this.userValues.push(value);
+    }
+  }
+
+  openModal(template: TemplateRef&lt;any&gt;) {
+    this.modalRef &#x3D; this.modalService.show(
+      template
+      );
+  }
+
+  // password reset function
+  resetPassword(form) {
+    const httpOptions &#x3D; {
+      headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; })
+    };
+    this.http.post(&quot;https://wdev.be/saker/ew/be/api/resetPassword&quot;, form.value, httpOptions).subscribe(
+      (res) &#x3D;&gt; {
+        this.ngFlashMessageService.showFlashMessage({
+        messages: [res[&#x27;success&#x27;]],
+        dismissible: true,
+        timeout: 5000,
+        type: &#x27;success&#x27;
+      });
+      },
+      (err) &#x3D;&gt; {
+        this.ngFlashMessageService.showFlashMessage({
+          messages: [err.error.error],
+          dismissible: true,
+          timeout: 5000,
+          type: &#x27;danger&#x27;
+        });
+      }
+    );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">  &lt;!-- user profile page --&gt;
+  &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;userInfo&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12 container&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-2 profilePic&quot;&gt;
+          &lt;div class&#x3D;&quot;user-image&quot;&gt;
+            &lt;img src&#x3D;&quot;{{avatar_Url}}&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-10 user-title&quot;&gt;
+          &lt;div class&#x3D;&quot;user-pad&quot;&gt;
+            &lt;h3&gt;Welcome back, {{userInfo.first_Name}}&lt;/h3&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;detailsTitle&quot;&gt;
+        &lt;h3&gt;Profile Details&lt;/h3&gt;
+        &lt;div&gt;
+            &lt;button class&#x3D;&quot;btn-style&quot; (click)&#x3D;&quot;openModal(template)&quot;&gt;
+              &lt;span class&#x3D;&quot;fa fa-key btn-icon&quot;&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;btn-txt&quot;&gt;Change Password&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button [routerLink]&#x3D;&quot;[&#x27;/listArticles/history&#x27;]&quot; class&#x3D;&quot;btn-style&quot;&gt;
+              &lt;span class&#x3D;&quot;fa fa-history btn-icon&quot;&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;btn-txt&quot;&gt;History&lt;/span&gt; 
+            &lt;/button&gt;
+            &lt;button [routerLink]&#x3D;&quot;[&#x27;/listArticles/readLater&#x27;]&quot; class&#x3D;&quot;btn-style&quot;&gt;
+              &lt;span class&#x3D;&quot;fa fa-bookmark btn-icon&quot;&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;btn-txt&quot;&gt;Read Laters...&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn-style&quot; (click)&#x3D;&quot;updateInfo()&quot;&gt;
+              &lt;span class&#x3D;&quot;fa fa-pencil btn-icon&quot;&gt;&lt;/span&gt;&lt;span class&#x3D;&quot;btn-txt&quot;&gt;Update&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      
+      &lt;!-- show user details in form --&gt;
+     &lt;div class&#x3D;&quot;row userInfoTable&quot;&gt;
+        &lt;form #myform&#x3D;&quot;ngForm&quot; [formGroup]&#x3D;&quot;profileForm&quot; (ngSubmit)&#x3D;&quot;onSubmit(myform)&quot; ngNativeValidate&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div *ngFor&#x3D;&quot;let key of userKeys; let i &#x3D; index&quot; class&#x3D;&quot;col-md-6&quot;&gt;
+                  &lt;label class&#x3D;&quot;labelField&quot;&gt;
+                    {{key|beautifyKeyString}}
+                    &lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;userValues[i]&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;{{key}}&quot; value&#x3D;&quot;{{userValues[i]}}&quot; class&#x3D;&quot;inputField&quot;&gt;
+                  
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;div-btn-update&quot;&gt;
+            &lt;button type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!profileForm.valid&quot; class&#x3D;&quot;btn btn-dark col-md-2&quot;&gt;Update&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;!-- Modal for reset password --&gt;
+&lt;ng-template #template&gt;
+  &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+    &lt;h4 class&#x3D;&quot;modal-title pull-left&quot;&gt;Password Reset&lt;/h4&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close pull-right&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modalRef.hide()&quot;&gt;
+      &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;form #myform&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;resetPassword(myform); modalRef.hide()&quot; class&#x3D;&quot;form form-login&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;oldPassword&quot;&gt;Enter your old password: &lt;/label&gt;
+                &lt;input name&#x3D;&quot;oldPassword&quot; id&#x3D;&quot;oldPassword&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; required ngModel&gt;
+            &lt;/div&gt;
+        
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;plainNewPassword&quot;&gt;Enter your new password: &lt;/label&gt;
+                &lt;input name&#x3D;&quot;plainNewPassword&quot; id&#x3D;&quot;plainNewPassword&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; required ngModel&gt;
+            &lt;/div&gt;
+        
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;verifyNewPassword&quot;&gt;Verify your new password: &lt;/label&gt;
+                &lt;input name&#x3D;&quot;verifyNewPassword&quot; id&#x3D;&quot;verifyNewPassword&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; required ngModel&gt;
+            &lt;/div&gt;
+        
+            &lt;div class&#x3D;&quot;col-12 text-center&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Reset Password&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./profile.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// CSS user profile
+
+@import &quot;../../variables.scss&quot;;
+
+.userInfoTable {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.no-padding {
+  padding-right: 0;
+}
+
+.user-image {
+  img {
+    width: 100px;
+  }
+}
+.row {
+  margin: 0;
+}
+.user-title {
+  padding: 40px 0 0 100px;
+
+}
+
+.detailsTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 0;
+}
+
+.changeDetails {
+  border: none;
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+
+.labelField {
+  width: 150px;
+  padding-top: 20px;
+}
+
+.inputField { padding-left: 5px; }
+
+.btn-style {
+  border: 1px solid var(--text-color);
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.btn-txt {
+  padding-left: 10px;
+}
+
+.div-btn-update {
+  text-align: center;
+  padding: 40px;
+}
+
+.btn-update {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.modal-header,
+.modal-body,
+.modal-footer { 
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+.close { color: $White !important; }
+
+@media screen and (max-width: 860px) {
+    .btn-style {
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .btn-icon { font-size: 1.5em; }
+    .btn-txt { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+  .user-image {
+    margin-top: 5em;
+    text-align: center;
+  }
+
+  .user-title {
+    padding: 40px 0 0 0;
+  }
+
+  .detailsTitle {
+    display: block;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>  <!-- user profile page -->  <div class="row" *ngIf="userInfo">    <div class="col-md-12 container">      <div class="row">        <div class="col-md-2 profilePic">          <div class="user-image">            <img src="{{avatar_Url}}">          </div>        </div>        <div class="col-md-10 user-title">          <div class="user-pad">            <h3>Welcome back, {{userInfo.first_Name}}</h3>          </div>        </div>      </div>      <div class="detailsTitle">        <h3>Profile Details</h3>        <div>            <button class="btn-style" (click)="openModal(template)">              <span class="fa fa-key btn-icon"></span><span class="btn-txt">Change Password</span>            </button>            <button [routerLink]="[\'/listArticles/history\']" class="btn-style">              <span class="fa fa-history btn-icon"></span><span class="btn-txt">History</span>             </button>            <button [routerLink]="[\'/listArticles/readLater\']" class="btn-style">              <span class="fa fa-bookmark btn-icon"></span><span class="btn-txt">Read Laters...</span>            </button>            <button class="btn-style" (click)="updateInfo()">              <span class="fa fa-pencil btn-icon"></span><span class="btn-txt">Update</span>            </button>        </div>      </div>            <!-- show user details in form -->     <div class="row userInfoTable">        <form #myform="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit(myform)" ngNativeValidate>          <div class="row">              <div *ngFor="let key of userKeys; let i = index" class="col-md-6">                  <label class="labelField">                    {{key|beautifyKeyString}}                    </label>                    <input [(ngModel)]="userValues[i]" type="text" formControlName="{{key}}" value="{{userValues[i]}}" class="inputField">                                </div>          </div>          <div class="div-btn-update">            <button type="submit" [disabled]="!profileForm.valid" class="btn btn-dark col-md-2">Update</button>          </div>        </form>      </div>    </div>  </div><!-- Modal for reset password --><ng-template #template>  <div class="modal-header">    <h4 class="modal-title pull-left">Password Reset</h4>    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">      <span aria-hidden="true">&times;</span>    </button>  </div>  <div class="modal-body">        <form #myform="ngForm" (ngSubmit)="resetPassword(myform); modalRef.hide()" class="form form-login">            <div class="form-group">                <label for="oldPassword">Enter your old password: </label>                <input name="oldPassword" id="oldPassword" type="password" class="form-control" required ngModel>            </div>                    <div class="form-group">                <label for="plainNewPassword">Enter your new password: </label>                <input name="plainNewPassword" id="plainNewPassword" type="password" class="form-control" required ngModel>            </div>                    <div class="form-group">                <label for="verifyNewPassword">Verify your new password: </label>                <input name="verifyNewPassword" id="verifyNewPassword" type="password" class="form-control" required ngModel>            </div>                    <div class="col-12 text-center">                <button type="submit" class="btn btn-primary">Reset Password</button>            </div>        </form>  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleListsComponent', 'selector': 'app-article-lists'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ContactusComponent', 'selector': 'app-contact-us'},{'name': 'FooterComponent', 'selector': 'footer'},{'name': 'HomeMainArticlesComponent', 'selector': 'app-home-main-articles'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LatestNewsComponent', 'selector': 'app-latest-news'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RightSidebarComponent', 'selector': 'app-right-sidebar'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SportsComponent', 'selector': 'app-sports'},{'name': 'TopNewsComponent', 'selector': 'app-top-news'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WorldComponent', 'selector': 'app-world'}];
+    var DIRECTIVES = [{'name': 'ImagePreloadDirective', 'selector': 'img[default]'}];
+    var ACTUAL_COMPONENT = {'name': 'ProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

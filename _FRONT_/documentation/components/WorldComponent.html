@@ -1,0 +1,995 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>news-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">news-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>WorldComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/world/world.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-world</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./world.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./world.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allArticles">allArticles</a>
+                            </li>
+                            <li>
+                                <a href="#country">country</a>
+                            </li>
+                            <li>
+                                <a href="#noPause">noPause</a>
+                            </li>
+                            <li>
+                                <a href="#searchText">searchText</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getArticles">getArticles</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, articleService: <a href="../injectables/ArticleService.html">ArticleService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/world/world.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>articleService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArticleService.html" target="_self" >ArticleService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getArticles"></a>
+                    <span class="name">
+                        <b>
+                            getArticles
+                        </b>
+                        <a href="#getArticles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getArticles()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/world/world.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/world/world.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allArticles"></a>
+                        <span class="name">
+                            <b>
+                            allArticles</b>
+                            <a href="#allArticles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/world/world.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="country"></a>
+                        <span class="name">
+                            <b>
+                            country</b>
+                            <a href="#country"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/world/world.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noPause"></a>
+                        <span class="name">
+                            <b>
+                            noPause</b>
+                            <a href="#noPause"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/world/world.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchText"></a>
+                        <span class="name">
+                            <b>
+                            searchText</b>
+                            <a href="#searchText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/world/world.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ArticleService } from &#x27;../services/article.service&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-world&#x27;,
+  templateUrl: &#x27;./world.component.html&#x27;,
+  styleUrls: [&#x27;./world.component.scss&#x27;]
+})
+export class WorldComponent implements OnInit {
+
+  constructor( private route: ActivatedRoute, private articleService: ArticleService, private authService: AuthService) { }
+  country;
+  allArticles;
+  searchText;
+  noPause &#x3D; false;
+  ngOnInit() {
+    this.authService.checkToken();
+    this.route.paramMap.subscribe(params &#x3D;&gt; {
+      this.country &#x3D;  params.get(&#x27;countryCode&#x27;);
+      this.getArticles();
+    });
+  }
+  // get articles depending on the category
+  getArticles() {
+    this.articleService.get_top_headlines(this.country, null, 100).subscribe((result) &#x3D;&gt; {
+      this.allArticles &#x3D; result[&#x27;articles&#x27;];
+  });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Display articles for specified category --&gt;
+&lt;div class&#x3D;&quot;main-small-widget-title&quot;&gt;
+  &lt;h3&gt;
+    {{category}}
+  &lt;/h3&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;feature-article-widget&quot;&gt;
+  &lt;div class&#x3D;&quot;carousalContainer&quot;&gt;
+      &lt;carousel [noPause]&#x3D;&quot;noPause&quot;&gt;
+          &lt;slide *ngFor&#x3D;&quot;let article of allArticles | slice:0:3;&quot; class&#x3D;&quot;animated fadeIn&quot;&gt;
+              &lt;div class&#x3D;&quot;readLater&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+                  &lt;div class&#x3D;&quot;btnReadLater&quot;&gt;
+                    &lt;button class&#x3D;&quot;btn btn-outline-light&quot; (click)&#x3D;&quot;articleService.saveReadLaterArticle(article)&quot;&gt;
+                        &lt;span class&#x3D;&quot;readLaterLabel&quot;&gt;Read Later... &lt;/span&gt;
+                      &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;a href&#x3D;&quot;{{article.url}}&quot; target&#x3D;&quot;_blank&quot; (click)&#x3D;&quot;!authService.loggedIn() || articleService.saveArticle(article)&quot; title&#x3D;&quot;Source: {{article.source.name}}&quot;&gt;
+                &lt;img src&#x3D;&quot;{{article.urlToImage}}&quot; default&#x3D;&quot;assets/images/placeholder_4.png&quot; class&#x3D;&quot;img&quot;&gt;
+                &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
+                  &lt;h3&gt;{{article.title}}&lt;/h3&gt;
+                  &lt;p class&#x3D;&quot; d-none d-md-block&quot;&gt;{{article.description}}&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/slide&gt;
+        &lt;/carousel&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;feature-big-widget-wrap row&quot;&gt;
+    &lt;div class&#x3D;&quot;feature-big-widget-article col-lg-6 col-md-12 col-sm-12 col-xs-12&quot; *ngFor&#x3D;&quot;let article of allArticles | slice:3:15;&quot;&gt;
+        &lt;div class&#x3D;&quot;btnReadLater&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+          &lt;button class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;articleService.saveReadLaterArticle(article)&quot;&gt;
+              Read Later...
+            &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;a href&#x3D;&quot;{{article.url}}&quot; target&#x3D;&quot;_blank&quot; (click)&#x3D;&quot;!authService.loggedIn() || articleService.saveArticle(article)&quot; title&#x3D;&quot;Source: {{article.source.name}}&quot;&gt;
+          &lt;div class&#x3D;&quot;main-feature-big-img&quot;&gt;
+              &lt;img src&#x3D;&quot;{{article.urlToImage}}&quot; default&#x3D;&quot;assets/images/placeholder_4.png&quot; class&#x3D;&quot;img&quot;&gt;
+            &lt;/div&gt;&lt;!-- end side-wdiget --&gt;
+            &lt;div class&#x3D;&quot;main-feature-big-text&quot;&gt;
+              &lt;span id&#x3D;&quot;main-text-category&quot;&gt;{{article.source.name}}&lt;/span&gt;
+              &lt;p style&#x3D;&quot;margin-bottom: 3.5em&quot;&gt;{{article.description}}&lt;/p&gt;
+            &lt;/div&gt;&lt;!-- end side-widget-text --&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;feature-big-widget-wrap2 row&quot;&gt;
+    &lt;div class&#x3D;&quot;feature-big-widget-article2 col-lg-9 col-md-12 col-sm-12 col-xs-12&quot; *ngFor&#x3D;&quot;let article of allArticles | slice:15:100;&quot;&gt;
+        &lt;div class&#x3D;&quot;readLater&quot; *ngIf&#x3D;&quot;authService.loggedIn()&quot;&gt;
+            &lt;div class&#x3D;&quot;btnReadLater&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-outline-secondary&quot; (click)&#x3D;&quot;articleService.saveReadLaterArticle(article)&quot;&gt;
+                  &lt;span class&#x3D;&quot;readLaterLabel&quot;&gt;Read Later... &lt;/span&gt;
+                &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;a href&#x3D;&quot;{{article.url}}&quot; target&#x3D;&quot;_blank&quot; (click)&#x3D;&quot;!authService.loggedIn() || articleService.saveArticle(article)&quot; title&#x3D;&quot;Source: {{article.source.name}}&quot;&gt;
+        &lt;div class&#x3D;&quot;main-feature-big-img2&quot;&gt;
+            &lt;img src&#x3D;&quot;{{article.urlToImage}}&quot; default&#x3D;&quot;assets/images/placeholder_4.png&quot; class&#x3D;&quot;img&quot;&gt;
+          &lt;/div&gt;&lt;!-- end side-wdiget --&gt;
+          &lt;div class&#x3D;&quot;main-feature-big-text2&quot;&gt;
+            &lt;h2&gt;{{article.title}}&lt;/h2&gt;
+            &lt;p&gt;{{article.description}}&lt;/p&gt;
+          &lt;/div&gt;&lt;!-- end side-widget-text --&gt;
+    &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  
+
+  
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./world.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// CSS category page
+
+@import &quot;../../variables.scss&quot;;
+
+:host {
+
+  .main-small-widget-title {
+    margin-top: 2em;
+
+    h3 {
+      font-size: 1.68rem;
+      text-transform: uppercase;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    .readLaterLabel {
+      display: none;
+    }
+  }
+  .feature-article-widget {
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+    padding: 15px;
+    transition: .5s all ease-in-out;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 30%;
+      transition: transform 1s ease;
+    }
+
+    .feNews-info {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $Black;
+
+      div { 
+        color: $White; 
+        font-size: .8em;
+      }
+
+      span { padding: 0 4px; }
+    }
+
+    #main-text-category {
+      color: $LightGrey;
+      display: block;
+      margin: 0;
+      padding: 0 .5em;
+      text-transform: uppercase;
+    }
+    /**Animations **/
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+
+      @-webkit-keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+      }
+
+      @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+      .fadeIn {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      }
+
+    .carousalContainer {
+      height: 50vh;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      .readLater {
+        margin-right: 20em;
+      }
+
+      img {
+        max-height: 50vh;
+      }
+    }
+    @media screen and (max-width: 780px) {
+      .carousalContainer {
+        .readLater {
+          margin-top: .3em;
+          margin-right: 2em;
+          z-index: 5;
+        }
+        
+        .carousel-caption {
+          h3 {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+
+    .feature-small-widget-wrap {
+      display: flex;
+      background: var(--background-color);
+      border-bottom: 1px solid $LightGrey;
+      padding-bottom: 0;
+      justify-content: space-between;
+
+      .feature-small-widget-article {
+        width: calc(100% / 3);
+        margin: .2em;
+        margin-bottom: 1em;
+        padding-bottom: 0;
+        background: var(--background-color);
+
+        @media screen and (max-width: 415px) {
+          margin: 0;
+          margin-bottom: 1em;
+        }
+
+        a {
+          width: 100%;
+          color: #000;
+          text-decoration: none;
+          font-size: .8em;
+
+          h2 {
+            font-size: 20px;
+            margin-top: 1em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            
+            @media screen and (max-width: 780px) {
+              font-size: 16px;
+              margin-top: 0.5em;
+            }
+
+            @media screen and (max-width: 415px) {
+              font-size: 8px;
+              margin-top: 4px;
+            }
+          }
+
+          .main-feature-small-img {
+            overflow: hidden;
+            position: relative;
+            height: 50%;
+          }
+
+          
+          font-weight: normal;
+          font-size: 1em;
+          color: var(--text-color);
+
+          &amp;:hover {
+            .main-feature-small-img {
+              img {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .feature-big-widget-wrap {
+      margin-top: 1em;
+      padding-right: 2px;
+      overflow-y: auto;
+      height: 800px;
+      margin-left: 10%;
+      margin-right: 10%;
+      position: relative;
+      
+      .btnReadLater {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        margin-top: 1em;
+      }
+
+      @media screen and (max-width: 780px) {
+        height: 550px;
+      }
+
+      @media screen and (max-width: 415px) {
+        height: 250px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .feature-big-widget-article {
+        border-bottom: 5px solid $LighterGrey;
+
+        a {
+          display: flex;
+          text-decoration: none;
+          color: var(--text-color);
+          margin: 1em 0;
+          background: var(--background-color);
+
+          @media screen and (max-width: 415px) {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .main-feature-big-img {
+            overflow: hidden;
+            position: relative;
+            width: 40%;
+            max-block-size: 100%;
+
+            @media screen and (max-width: 415px) {
+              width: 100%;
+            }
+
+            img {
+                max-height: 25vh;
+            }
+          }
+
+          .main-feature-big-text {
+              width: 60%;
+              transition: .5s all ease-in-out;
+              padding: 1em;
+              
+              @media screen and (max-width: 415px) {
+                width: 100%;
+                padding: 0.5em;
+              }
+             
+            #main-text-category {
+
+              @media screen and (max-width: 415px) {
+                font-size: 1em;
+                margin-bottom: 5px;
+              }
+            } 
+
+            p {
+              padding-left: .5em;
+              font-size: .8em;
+
+              @media screen and (max-width: 415px) {
+                padding-left: 0;
+                font-size: .6em;
+              }
+            }
+          }
+
+
+
+          &amp;:hover {
+            .main-feature-big-img {
+              
+              img {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .feature-big-widget-wrap2 {
+      margin-top: 5em;
+      padding-right: 2px;
+
+      .feature-big-widget-article2 {
+        border-bottom: 1px solid $LighterGrey;
+        
+        @media screen and (max-width: 780px) {
+          .btnReadLater {
+            .btn{
+              color: var(--text-color);
+              border: 1px solid  var(--text-color);
+            }
+          }
+        }
+
+        a {
+          display: flex;
+          text-decoration: none;
+          color: var(--text-color);
+          margin: 1em 0;
+          background: var(--background-color);
+
+          .main-feature-big-img2 {
+            overflow: hidden;
+            position: relative;
+            width: 40%;
+            max-block-size: 100%;
+
+            img {
+                max-height: 25vh;
+            }
+          }
+
+          .main-feature-big-text2 {
+              width: 60%;
+              transition: .5s all ease-in-out;
+              padding: 2em;
+
+              @media screen and (max-width: 780px) {
+                padding: 0.5em;
+              }
+
+            h2 {
+              font-size: 1em;
+              padding-left: .5em;
+              margin-top: 2em;
+            }
+
+            p {
+              padding-left: .5em;
+              font-size: .8em;
+
+              @media screen and (max-width: 415px) {
+                display: none;
+              }
+            }
+          }
+
+          &amp;:hover {
+            .main-feature-big-img2 {
+              
+              img { transform: scale(1.1); }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-small-widget-title { 
+    h3 {
+      margin-top: 3em;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Display articles for specified category --><div class="main-small-widget-title">  <h3>    {{category}}  </h3></div><div class="feature-article-widget">  <div class="carousalContainer">      <carousel [noPause]="noPause">          <slide *ngFor="let article of allArticles | slice:0:3;" class="animated fadeIn">              <div class="readLater" *ngIf="authService.loggedIn()">                  <div class="btnReadLater">                    <button class="btn btn-outline-light" (click)="articleService.saveReadLaterArticle(article)">                        <span class="readLaterLabel">Read Later... </span>                      <i class="fa fa-plus"></i>                    </button>                  </div>                </div>            <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || articleService.saveArticle(article)" title="Source: {{article.source.name}}">                <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">                <div class="carousel-caption">                  <h3>{{article.title}}</h3>                  <p class=" d-none d-md-block">{{article.description}}</p>                </div>            </a>          </slide>        </carousel>  </div>  <div class="feature-big-widget-wrap row">    <div class="feature-big-widget-article col-lg-6 col-md-12 col-sm-12 col-xs-12" *ngFor="let article of allArticles | slice:3:15;">        <div class="btnReadLater" *ngIf="authService.loggedIn()">          <button class="btn btn-outline-secondary" (click)="articleService.saveReadLaterArticle(article)">              Read Later...            <i class="fa fa-plus"></i>          </button>        </div>      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || articleService.saveArticle(article)" title="Source: {{article.source.name}}">          <div class="main-feature-big-img">              <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">            </div><!-- end side-wdiget -->            <div class="main-feature-big-text">              <span id="main-text-category">{{article.source.name}}</span>              <p style="margin-bottom: 3.5em">{{article.description}}</p>            </div><!-- end side-widget-text -->      </a>    </div>  </div>  <div class="feature-big-widget-wrap2 row">    <div class="feature-big-widget-article2 col-lg-9 col-md-12 col-sm-12 col-xs-12" *ngFor="let article of allArticles | slice:15:100;">        <div class="readLater" *ngIf="authService.loggedIn()">            <div class="btnReadLater">              <button class="btn btn-outline-secondary" (click)="articleService.saveReadLaterArticle(article)">                  <span class="readLaterLabel">Read Later... </span>                <i class="fa fa-plus"></i>              </button>            </div>          </div>      <a href="{{article.url}}" target="_blank" (click)="!authService.loggedIn() || articleService.saveArticle(article)" title="Source: {{article.source.name}}">        <div class="main-feature-big-img2">            <img src="{{article.urlToImage}}" default="assets/images/placeholder_4.png" class="img">          </div><!-- end side-wdiget -->          <div class="main-feature-big-text2">            <h2>{{article.title}}</h2>            <p>{{article.description}}</p>          </div><!-- end side-widget-text -->    </a>    </div>  </div>  </div>    </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleListsComponent', 'selector': 'app-article-lists'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ContactusComponent', 'selector': 'app-contact-us'},{'name': 'FooterComponent', 'selector': 'footer'},{'name': 'HomeMainArticlesComponent', 'selector': 'app-home-main-articles'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LatestNewsComponent', 'selector': 'app-latest-news'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RightSidebarComponent', 'selector': 'app-right-sidebar'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SportsComponent', 'selector': 'app-sports'},{'name': 'TopNewsComponent', 'selector': 'app-top-news'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WorldComponent', 'selector': 'app-world'}];
+    var DIRECTIVES = [{'name': 'ImagePreloadDirective', 'selector': 'img[default]'}];
+    var ACTUAL_COMPONENT = {'name': 'WorldComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WorldComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
